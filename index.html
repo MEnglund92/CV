@@ -4,19 +4,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CV | Mattias Englund</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Fira+Code&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
     <style>
         :root {
-            /* Mörkt tema färgpalett */
-            --bg-color: #0f172a;       /* Mycket mörk blå/svart */
-            --card-bg: #1e293b;        /* Lite ljusare mörkblå för boxar */
-            --text-main: #e2e8f0;      /* Ljusgrå text */
-            --text-muted: #94a3b8;     /* Mörkare grå för datum/detaljer */
-            --accent: #38bdf8;         /* Ljusblå accentfärg (IT-känsla) */
-            --accent-hover: #0ea5e9;   /* Mörkare blå vid hovring */
+            --bg-color: #0f172a;
+            --card-bg: #1e293b;
+            --text-main: #e2e8f0;
+            --text-muted: #94a3b8;
+            --accent: #38bdf8;
+            --accent-hover: #0ea5e9;
             --border: #334155;
+            --terminal-bg: #020617;
         }
 
         body {
@@ -30,227 +30,154 @@
 
         .container {
             max-width: 900px;
-            margin: 60px auto;
+            margin: 40px auto;
             padding: 20px;
         }
 
-        /* HEADER */
-        header {
-            text-align: center;
-            margin-bottom: 60px;
-            padding-bottom: 40px;
-            border-bottom: 1px solid var(--border);
+        /* --- TERMINAL HERO SECTION (DET SOM STICKER UT) --- */
+        .terminal-hero {
+            background-color: var(--terminal-bg);
+            border-radius: 12px;
+            padding: 30px;
+            margin-bottom: 40px;
+            border: 1px solid var(--border);
+            box-shadow: 0 0 20px rgba(56, 189, 248, 0.1);
+            font-family: 'Fira Code', monospace; /* Kod-typsnitt */
         }
 
-        h1 {
-            font-size: 3.5rem;
-            margin: 0;
-            font-weight: 700;
-            background: linear-gradient(to right, #38bdf8, #818cf8);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            letter-spacing: -1px;
-        }
-
-        .subtitle {
-            font-size: 1.3rem;
-            color: var(--text-muted);
-            margin-top: 10px;
-            font-weight: 300;
-        }
-
-        /* KONTAKT & KNAPPAR */
-        .actions {
-            margin-top: 30px;
+        .terminal-header {
             display: flex;
-            justify-content: center;
-            gap: 15px;
-            flex-wrap: wrap;
+            gap: 8px;
+            margin-bottom: 20px;
+            border-bottom: 1px solid var(--border);
+            padding-bottom: 10px;
         }
 
-        .btn {
+        .dot { width: 12px; height: 12px; border-radius: 50%; }
+        .red { background-color: #ef4444; }
+        .yellow { background-color: #f59e0b; }
+        .green { background-color: #22c55e; }
+
+        .terminal-text {
+            color: var(--accent);
+            font-size: 1.1rem;
+        }
+
+        .command { color: #22c55e; margin-right: 10px; }
+        .cursor {
+            display: inline-block;
+            width: 10px;
+            background-color: var(--accent);
+            animation: blink 1s infinite;
+        }
+
+        @keyframes blink { 0% { opacity: 0; } 50% { opacity: 1; } 100% { opacity: 0; } }
+
+        /* VANLIG HEADER */
+        header { text-align: center; margin-bottom: 50px; }
+        
+        h1 {
+            font-size: 3rem;
+            margin: 10px 0;
+            font-weight: 700;
+            color: white;
+        }
+
+        .status-badge {
             display: inline-flex;
             align-items: center;
-            gap: 8px;
-            padding: 12px 24px;
-            border-radius: 8px;
-            text-decoration: none;
+            background: rgba(34, 197, 94, 0.1);
+            color: #4ade80;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.9rem;
             font-weight: 600;
-            transition: all 0.3s ease;
-            border: 1px solid transparent;
+            border: 1px solid rgba(34, 197, 94, 0.3);
+            margin-bottom: 15px;
         }
 
-        .btn-primary {
-            background-color: var(--accent);
-            color: #0f172a;
+        .status-dot {
+            width: 8px;
+            height: 8px;
+            background-color: #4ade80;
+            border-radius: 50%;
+            margin-right: 8px;
+            box-shadow: 0 0 8px #4ade80;
+            animation: pulse 2s infinite;
         }
 
-        .btn-primary:hover {
-            background-color: var(--accent-hover);
-            transform: translateY(-2px);
-        }
+        @keyframes pulse { 0% { opacity: 1; } 50% { opacity: 0.5; } 100% { opacity: 1; } }
 
-        .btn-secondary {
-            background-color: transparent;
-            border: 1px solid var(--border);
-            color: var(--text-main);
+        /* KNAPPAR */
+        .actions { display: flex; justify-content: center; gap: 15px; flex-wrap: wrap; margin-top: 20px; }
+        
+        .btn {
+            display: inline-flex; align-items: center; gap: 8px; padding: 12px 24px;
+            border-radius: 8px; text-decoration: none; font-weight: 600;
+            transition: all 0.3s ease; border: 1px solid transparent;
         }
-
-        .btn-secondary:hover {
-            border-color: var(--accent);
-            color: var(--accent);
-        }
+        .btn-primary { background-color: var(--accent); color: #0f172a; }
+        .btn-primary:hover { background-color: var(--accent-hover); transform: translateY(-2px); }
+        .btn-secondary { background-color: transparent; border: 1px solid var(--border); color: var(--text-main); }
+        .btn-secondary:hover { border-color: var(--accent); color: var(--accent); }
 
         /* SEKTIONER */
         section {
-            background: var(--card-bg);
-            padding: 40px;
-            margin-bottom: 30px;
-            border-radius: 12px;
-            border: 1px solid var(--border);
-            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.3);
+            background: var(--card-bg); padding: 40px; margin-bottom: 30px;
+            border-radius: 12px; border: 1px solid var(--border);
         }
-
         h2 {
-            color: var(--accent);
-            font-size: 1.5rem;
-            margin-top: 0;
-            margin-bottom: 25px;
-            border-bottom: 1px solid var(--border);
-            padding-bottom: 15px;
-            display: flex;
-            align-items: center;
-            gap: 10px;
+            color: var(--accent); font-size: 1.5rem; margin-top: 0; margin-bottom: 25px;
+            border-bottom: 1px solid var(--border); padding-bottom: 15px;
+            display: flex; align-items: center; gap: 10px;
         }
 
-        p {
-            color: var(--text-muted);
+        /* PROJEKT KORT (NYTT!) */
+        .project-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+        .project-card {
+            background: rgba(255,255,255,0.03);
+            padding: 20px; border-radius: 8px; border: 1px solid var(--border);
+            transition: transform 0.2s;
         }
+        .project-card:hover { transform: translateY(-3px); border-color: var(--accent); }
+        .project-title { font-weight: 700; color: var(--text-main); display: block; margin-bottom: 5px; }
+        .project-tech { font-size: 0.85rem; color: var(--accent); font-family: 'Fira Code', monospace; }
 
-        /* JOBB & UTBILDNING */
-        .timeline-item {
-            margin-bottom: 35px;
-            padding-left: 20px;
-            border-left: 2px solid var(--border);
-            position: relative;
-        }
-
-        .timeline-item:last-child {
-            margin-bottom: 0;
-        }
-
+        /* LISTOR & TIMELINE */
+        .timeline-item { margin-bottom: 35px; padding-left: 20px; border-left: 2px solid var(--border); position: relative; }
+        .timeline-item:last-child { margin-bottom: 0; }
         .timeline-item::before {
-            content: '';
-            position: absolute;
-            left: -6px;
-            top: 5px;
-            width: 10px;
-            height: 10px;
-            background: var(--accent);
-            border-radius: 50%;
+            content: ''; position: absolute; left: -6px; top: 5px; width: 10px; height: 10px;
+            background: var(--accent); border-radius: 50%;
         }
+        .role-header { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; margin-bottom: 5px; }
+        .role-title { font-size: 1.2rem; font-weight: 700; color: var(--text-main); }
+        .company-name { font-size: 1rem; color: var(--accent); font-weight: 500; display: block; margin-bottom: 8px; }
+        .date-badge { font-size: 0.85rem; background: rgba(56, 189, 248, 0.1); color: var(--accent); padding: 4px 10px; border-radius: 20px; font-weight: 600; }
+        ul { margin-top: 10px; padding-left: 20px; }
+        li { margin-bottom: 8px; color: var(--text-muted); }
 
-        .role-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            flex-wrap: wrap;
-            margin-bottom: 5px;
-        }
-
-        .role-title {
-            font-size: 1.2rem;
-            font-weight: 700;
-            color: var(--text-main);
-        }
-
-        .company-name {
-            font-size: 1rem;
-            color: var(--accent);
-            font-weight: 500;
-            display: block;
-            margin-bottom: 8px;
-        }
-
-        .date-badge {
-            font-size: 0.85rem;
-            background: rgba(56, 189, 248, 0.1);
-            color: var(--accent);
-            padding: 4px 10px;
-            border-radius: 20px;
-            font-weight: 600;
-        }
-
-        ul {
-            margin-top: 10px;
-            padding-left: 20px;
-        }
-
-        li {
-            margin-bottom: 8px;
-            color: var(--text-muted);
-        }
-
-        /* KOMPETENSER TAGGAR */
-        .skills-grid {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
-        }
-
+        /* SKILLS */
+        .skill-category { font-size: 0.9rem; text-transform: uppercase; letter-spacing: 1px; color: var(--text-muted); margin-top: 30px; margin-bottom: 15px; display: block; font-weight: 700; border-bottom: 1px solid rgba(255,255,255,0.05); padding-bottom: 5px; }
+        .skill-category:first-of-type { margin-top: 0; }
+        .skills-grid { display: flex; flex-wrap: wrap; gap: 10px; }
         .skill-tag {
-            background-color: rgba(255, 255, 255, 0.05);
-            color: var(--text-main);
-            padding: 6px 14px;
-            border-radius: 6px;
-            font-size: 0.9rem;
-            font-weight: 500;
-            border: 1px solid var(--border);
-            transition: all 0.2s;
+            background-color: rgba(255, 255, 255, 0.05); color: var(--text-main);
+            padding: 6px 14px; border-radius: 6px; font-size: 0.9rem; font-weight: 500;
+            border: 1px solid var(--border); transition: all 0.2s;
         }
+        .skill-tag:hover { border-color: var(--accent); background-color: rgba(56, 189, 248, 0.1); cursor: default; }
 
-        .skill-tag:hover {
-            border-color: var(--accent);
-            background-color: rgba(56, 189, 248, 0.1);
-            cursor: default;
-        }
+        /* ÖVRIGT */
+        .misc-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+        .misc-item strong { color: var(--accent); display: block; margin-bottom: 5px; }
 
-        .skill-category {
-            font-size: 0.9rem;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            color: var(--text-muted);
-            margin-top: 30px;
-            margin-bottom: 15px;
-            display: block;
-            font-weight: 700;
-            border-bottom: 1px solid rgba(255,255,255,0.05);
-            padding-bottom: 5px;
-        }
-        
-        .skill-category:first-of-type {
-            margin-top: 0;
-        }
-
-        /* ÖVRIGT-SEKTION (Språk & Körkort) */
-        .misc-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 20px;
-        }
-        .misc-item strong {
-            color: var(--accent);
-            display: block;
-            margin-bottom: 5px;
-        }
-
-        /* MOBILANPASSNING */
         @media (max-width: 600px) {
             h1 { font-size: 2.5rem; }
             .container { margin: 20px auto; }
             .role-header { flex-direction: column; align-items: flex-start; gap: 5px; }
             .date-badge { margin-top: 5px; }
-            .misc-grid { grid-template-columns: 1fr; }
+            .project-grid, .misc-grid { grid-template-columns: 1fr; }
         }
     </style>
 </head>
@@ -258,21 +185,31 @@
 
     <div class="container">
         
+        <div class="terminal-hero">
+            <div class="terminal-header">
+                <div class="dot red"></div>
+                <div class="dot yellow"></div>
+                <div class="dot green"></div>
+            </div>
+            <div class="terminal-content">
+                <span class="command">mattias@portfolio:~$</span>
+                <span id="typewriter"></span><span class="cursor">&nbsp;</span>
+            </div>
+        </div>
+
         <header>
+            <div class="status-badge">
+                <div class="status-dot"></div> Söker LIA våren 2026
+            </div>
             <h1>Mattias Englund</h1>
-            <div class="subtitle">Nätverkstekniker-student | Söker LIA våren 2026</div>
+            <p style="font-size: 1.2rem; color: var(--text-muted);">
+                Nätverkstekniker-student | Ambassadör | Teknikentusiast
+            </p>
             
             <div class="actions">
-                <a href="cv.pdf" download class="btn btn-primary">
-                    <i class="fas fa-file-pdf"></i> Ladda ner CV
-                </a>
-                
-                <a href="mailto:Mattias.Englund1992@gmail.com" class="btn btn-secondary">
-                    <i class="fas fa-envelope"></i> Maila mig
-                </a>
-                <a href="https://linkedin.com/in/mattias-englund-61129331a" target="_blank" class="btn btn-secondary">
-                    <i class="fab fa-linkedin"></i> LinkedIn
-                </a>
+                <a href="cv.pdf" download class="btn btn-primary"><i class="fas fa-file-pdf"></i> Ladda ner CV</a>
+                <a href="mailto:Mattias.Englund1992@gmail.com" class="btn btn-secondary"><i class="fas fa-envelope"></i> Maila mig</a>
+                <a href="https://linkedin.com/in/mattias-englund-61129331a" target="_blank" class="btn btn-secondary"><i class="fab fa-linkedin"></i> LinkedIn</a>
             </div>
         </header>
 
@@ -283,6 +220,22 @@
                 <br><br>
                 Jag brinner för nätverksinfrastruktur, säkerhet och molnlösningar. Som person är jag ansvarsfull och kommunikativ, vilket också återspeglas i mitt uppdrag som <strong>Klassens Ambassadör</strong> på JENSEN. Jag söker nu en LIA-plats där jag får omsätta mina kunskaper i praktiken.
             </p>
+        </section>
+
+        <section>
+            <h2><i class="fas fa-laptop-code"></i> Projekt & Labb</h2>
+            <div class="project-grid">
+                <div class="project-card">
+                    <span class="project-title"><i class="fas fa-network-wired"></i> Cisco Packet Tracer Labb</span>
+                    <span class="project-tech">VLAN • OSPF • DHCP</span>
+                    <p style="font-size: 0.9rem; margin-top: 10px;">Konfigurering av företagsnätverk med segmentering och redundans.</p>
+                </div>
+                <div class="project-card">
+                    <span class="project-title"><i class="fas fa-cloud"></i> Azure Cloud Setup</span>
+                    <span class="project-tech">Azure AD • Virtuella Nätverk</span>
+                    <p style="font-size: 0.9rem; margin-top: 10px;">Uppsättning av hybrid-miljö och hantering av användarrättigheter.</p>
+                </div>
+            </div>
         </section>
 
         <section>
@@ -441,6 +394,23 @@
         </section>
 
     </div>
+
+    <script>
+        const text = "whoami \n> Mattias Englund \n> Network Technician Student...";
+        const speed = 100; // Hastighet i ms
+        let i = 0;
+        
+        function typeWriter() {
+            if (i < text.length) {
+                document.getElementById("typewriter").innerHTML += text.charAt(i);
+                i++;
+                setTimeout(typeWriter, speed);
+            }
+        }
+        
+        // Starta animationen när sidan laddas
+        window.onload = typeWriter;
+    </script>
 
 </body>
 </html>
