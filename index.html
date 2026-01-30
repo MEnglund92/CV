@@ -195,15 +195,15 @@
         .skills-grid {
             display: flex;
             flex-wrap: wrap;
-            gap: 12px;
+            gap: 10px;
         }
 
         .skill-tag {
             background-color: rgba(255, 255, 255, 0.05);
             color: var(--text-main);
-            padding: 8px 16px;
+            padding: 6px 14px;
             border-radius: 6px;
-            font-size: 0.95rem;
+            font-size: 0.9rem;
             font-weight: 500;
             border: 1px solid var(--border);
             transition: all 0.2s;
@@ -220,9 +220,28 @@
             text-transform: uppercase;
             letter-spacing: 1px;
             color: var(--text-muted);
-            margin-top: 20px;
-            margin-bottom: 10px;
+            margin-top: 30px;
+            margin-bottom: 15px;
             display: block;
+            font-weight: 700;
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+            padding-bottom: 5px;
+        }
+        
+        .skill-category:first-of-type {
+            margin-top: 0;
+        }
+
+        /* ÖVRIGT-SEKTION (Språk & Körkort) */
+        .misc-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+        .misc-item strong {
+            color: var(--accent);
+            display: block;
+            margin-bottom: 5px;
         }
 
         /* MOBILANPASSNING */
@@ -231,6 +250,7 @@
             .container { margin: 20px auto; }
             .role-header { flex-direction: column; align-items: flex-start; gap: 5px; }
             .date-badge { margin-top: 5px; }
+            .misc-grid { grid-template-columns: 1fr; }
         }
     </style>
 </head>
@@ -250,7 +270,7 @@
                 <a href="mailto:Mattias.Englund1992@gmail.com" class="btn btn-secondary">
                     <i class="fas fa-envelope"></i> Maila mig
                 </a>
-                <a href="https://www.linkedin.com/in/mattiasenglund/" target="_blank" class="btn btn-secondary">
+                <a href="https://linkedin.com/in/mattias-englund-61129331a" target="_blank" class="btn btn-secondary">
                     <i class="fab fa-linkedin"></i> LinkedIn
                 </a>
             </div>
@@ -259,31 +279,54 @@
         <section>
             <h2><i class="fas fa-user-circle"></i> Om Mig</h2>
             <p>
-                Driven och tekniskt intresserad Nätverkstekniker-student med examen juni 2026. Jag har över 6 års erfarenhet av operativt ledarskap inom logistikbranschen, där jag utvecklat en skarp förmåga att strukturera processer och lösa komplexa problem under tidspress. 
+                Driven och tekniskt intresserad Nätverkstekniker-student med examen juni 2026. Jag har över 6 års erfarenhet av operativt ledarskap inom logistikbranschen, där jag utvecklat en skarp förmåga att strukturera processer och lösa komplexa problem under tidspress.
                 <br><br>
-                Just nu fördjupar jag mig inom Cisco-nätverk, TCP/IP och Python-programmering. Jag söker en LIA-plats där jag får kombinera min nya tekniska kompetens med min vana att ta ansvar och driva projekt i mål.
+                Jag brinner för nätverksinfrastruktur, säkerhet och molnlösningar. Som person är jag ansvarsfull och kommunikativ, vilket också återspeglas i mitt uppdrag som <strong>Klassens Ambassadör</strong> på JENSEN. Jag söker nu en LIA-plats där jag får omsätta mina kunskaper i praktiken.
             </p>
         </section>
 
         <section>
             <h2><i class="fas fa-microchip"></i> Teknisk Kompetens</h2>
             
-            <span class="skill-category">Nätverk & Drift</span>
+            <span class="skill-category">Nätverk & Protokoll</span>
             <div class="skills-grid">
-                <span class="skill-tag">Cisco Networking (CCNA)</span>
-                <span class="skill-tag">TCP/IP & Subnetting</span>
-                <span class="skill-tag">Routing & Switching</span>
-                <span class="skill-tag">VLAN & DHCP</span>
-                <span class="skill-tag">Network Security</span>
+                <span class="skill-tag">Cisco (Routers, IOS)</span>
+                <span class="skill-tag">TCP/IP & OSI</span>
+                <span class="skill-tag">BGP & Routing</span>
+                <span class="skill-tag">Switching & VLAN</span>
+                <span class="skill-tag">SSH (Secure Shell)</span>
+                <span class="skill-tag">DNS & DHCP</span>
+                <span class="skill-tag">LAN / WAN</span>
             </div>
 
-            <span class="skill-category">System & Programmering</span>
+            <span class="skill-category">Säkerhet & Övervakning</span>
             <div class="skills-grid">
-                <span class="skill-tag">Python (Grundläggande)</span>
-                <span class="skill-tag">Windows Server</span>
+                <span class="skill-tag">Firewalls & ACL</span>
+                <span class="skill-tag">VPN & Wireguard</span>
+                <span class="skill-tag">SASE & Zero Trust</span>
+                <span class="skill-tag">ISO 27001 & CIA</span>
+                <span class="skill-tag">Wireshark</span>
+                <span class="skill-tag">Nätverkssäkerhet</span>
+            </div>
+
+            <span class="skill-category">Moln & Virtualisering</span>
+            <div class="skills-grid">
+                <span class="skill-tag">Microsoft Azure</span>
+                <span class="skill-tag">NSG (Network Security Groups)</span>
+                <span class="skill-tag">Docker</span>
+                <span class="skill-tag">Terraform (IaC)</span>
+                <span class="skill-tag">VMware & Hyper-V</span>
+                <span class="skill-tag">KVM & Virtuell Routing</span>
+            </div>
+
+            <span class="skill-category">Verktyg & OS</span>
+            <div class="skills-grid">
                 <span class="skill-tag">Linux / Unix</span>
-                <span class="skill-tag">WMS-system</span>
-                <span class="skill-tag">MS Office 365</span>
+                <span class="skill-tag">Windows Server</span>
+                <span class="skill-tag">Python</span>
+                <span class="skill-tag">Git & GitHub</span>
+                <span class="skill-tag">Visual Studio</span>
+                <span class="skill-tag">AI & Claude</span>
             </div>
         </section>
 
@@ -298,8 +341,9 @@
                 <span class="company-name">JENSEN Yrkeshögskola</span>
                 <p>Yrkesinriktad utbildning med fokus på drift, design och säkerhet i moderna företagsnätverk.</p>
                 <ul>
+                    <li><strong>Roll:</strong> Förtroendevald som Klassens Ambassadör.</li>
                     <li><strong>Kärnkurser:</strong> Datakommunikation, Nätverksdesign, Nätverkssäkerhet & Scripting.</li>
-                    <li><strong>Projekt:</strong> Praktisk konfigurering av switchar/routrar och felsökning i simulerade miljöer.</li>
+                    <li><strong>Projekt:</strong> Praktisk konfigurering av switchar/routrar, felsökning och säkerhetsprotokoll.</li>
                 </ul>
             </div>
 
@@ -377,6 +421,22 @@
                 </div>
                 <span class="company-name">AB Linhult & Jonsdotter</span>
                 <p>Specialsnickeri i historiska miljöer, inklusive renovering av isbrytaren Sankt Erik.</p>
+            </div>
+        </section>
+        
+        <section>
+            <h2><i class="fas fa-globe"></i> Övrigt</h2>
+            <div class="misc-grid">
+                <div class="misc-item">
+                    <strong><i class="fas fa-language"></i> Språk</strong>
+                    Svenska (Modersmål)<br>
+                    Engelska (Mycket god nivå)<br>
+                    Kroatiska/Bosniska (Grundläggande)
+                </div>
+                <div class="misc-item">
+                    <strong><i class="fas fa-car"></i> Körkort</strong>
+                    B-Körkort (Personbil)
+                </div>
             </div>
         </section>
 
