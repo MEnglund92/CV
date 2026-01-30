@@ -43,8 +43,7 @@
             border: 1px solid var(--border);
             box-shadow: 0 0 20px rgba(56, 189, 248, 0.1);
             font-family: 'Fira Code', monospace;
-            /* VIKTIGT: Sätter min-height så den inte hoppar */
-            min-height: 160px; 
+            min-height: 180px; /* Fixerad höjd så den inte hoppar */
             display: flex;
             flex-direction: column;
         }
@@ -65,15 +64,22 @@
         .terminal-content {
             color: var(--accent);
             font-size: 1.1rem;
-            white-space: pre-wrap; /* Gör så att \n (radbrytningar) fungerar */
+            white-space: pre-wrap; /* Viktigt för radbrytningar */
+            line-height: 1.5;
         }
 
-        .command { color: #22c55e; margin-right: 10px; }
+        .command { 
+            color: #22c55e; 
+            margin-right: 8px;
+        }
+        
         .cursor {
             display: inline-block;
             width: 10px;
+            height: 1.2em;
             background-color: var(--accent);
             animation: blink 1s infinite;
+            vertical-align: text-bottom;
         }
 
         @keyframes blink { 0% { opacity: 0; } 50% { opacity: 1; } 100% { opacity: 0; } }
@@ -197,6 +203,7 @@
                 <div class="dot green"></div>
             </div>
             <div class="terminal-content"><span class="command">mattias@portfolio:~$ </span><span id="typewriter"></span><span class="cursor">&nbsp;</span></div>
+        </div>
 
         <header>
             <div class="status-badge">
@@ -402,10 +409,9 @@
     </div>
 
     <script>
-        // Här ställer vi in vad som ska skrivas ut och loopas
-        const baseText = "whoami \n> Mattias Englund \n> "; // Den statiska delen
+        // \n betyder ny rad. Texten kommer hamna rätt tack vare CSS:en.
+        const baseText = "whoami\n> Mattias Englund\n> ";
         
-        // Listan med roller som ska loopas
         const roles = [
             "Network Technician Student...",
             "JENSEN Ambassador...",
@@ -413,47 +419,40 @@
             "Problem Solver..."
         ];
 
-        const typingSpeed = 100; // Hur snabbt den skriver (ms)
-        const deletingSpeed = 50; // Hur snabbt den suddar (ms)
-        const pauseTime = 1500; // Hur länge den väntar innan den suddar (ms)
+        const typingSpeed = 100;
+        const deletingSpeed = 50;
+        const pauseTime = 1500;
 
-        let roleIndex = 0; // Håller koll på vilket ord vi är på
-        let charIndex = 0; // Håller koll på vilken bokstav vi är på
-        let isDeleting = false; // Är vi i "sudda"-läge?
+        let roleIndex = 0;
+        let charIndex = 0;
+        let isDeleting = false;
         
         function typeEffect() {
             const currentRole = roles[roleIndex];
             const element = document.getElementById("typewriter");
             
-            // Hantera själva skrivandet/suddandet av den dynamiska delen
             if (isDeleting) {
-                // Suddar
                 element.innerHTML = baseText + currentRole.substring(0, charIndex - 1);
                 charIndex--;
             } else {
-                // Skriver
                 element.innerHTML = baseText + currentRole.substring(0, charIndex + 1);
                 charIndex++;
             }
 
-            // Bestäm hastighet
             let typeSpeed = isDeleting ? deletingSpeed : typingSpeed;
 
-            // Om hela ordet är skrivet -> Pausa innan vi börjar sudda
             if (!isDeleting && charIndex === currentRole.length) {
                 typeSpeed = pauseTime;
                 isDeleting = true;
             } 
-            // Om hela ordet är suddat -> Byt till nästa ord och börja skriv
             else if (isDeleting && charIndex === 0) {
                 isDeleting = false;
-                roleIndex = (roleIndex + 1) % roles.length; // Loopa tillbaka till 0 om vi är på sista
+                roleIndex = (roleIndex + 1) % roles.length;
             }
 
             setTimeout(typeEffect, typeSpeed);
         }
         
-        // Starta animationen när sidan laddas
         window.onload = typeEffect;
     </script>
 
