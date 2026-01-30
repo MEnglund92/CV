@@ -34,7 +34,7 @@
             padding: 20px;
         }
 
-        /* --- TERMINAL HERO SECTION (DET SOM STICKER UT) --- */
+        /* --- TERMINAL HERO SECTION --- */
         .terminal-hero {
             background-color: var(--terminal-bg);
             border-radius: 12px;
@@ -42,13 +42,17 @@
             margin-bottom: 40px;
             border: 1px solid var(--border);
             box-shadow: 0 0 20px rgba(56, 189, 248, 0.1);
-            font-family: 'Fira Code', monospace; /* Kod-typsnitt */
+            font-family: 'Fira Code', monospace;
+            /* VIKTIGT: Sätter min-height så den inte hoppar */
+            min-height: 160px; 
+            display: flex;
+            flex-direction: column;
         }
 
         .terminal-header {
             display: flex;
             gap: 8px;
-            margin-bottom: 20px;
+            margin-bottom: 15px;
             border-bottom: 1px solid var(--border);
             padding-bottom: 10px;
         }
@@ -58,9 +62,10 @@
         .yellow { background-color: #f59e0b; }
         .green { background-color: #22c55e; }
 
-        .terminal-text {
+        .terminal-content {
             color: var(--accent);
             font-size: 1.1rem;
+            white-space: pre-wrap; /* Gör så att \n (radbrytningar) fungerar */
         }
 
         .command { color: #22c55e; margin-right: 10px; }
@@ -73,7 +78,7 @@
 
         @keyframes blink { 0% { opacity: 0; } 50% { opacity: 1; } 100% { opacity: 0; } }
 
-        /* VANLIG HEADER */
+        /* HEADER */
         header { text-align: center; margin-bottom: 50px; }
         
         h1 {
@@ -132,7 +137,7 @@
             display: flex; align-items: center; gap: 10px;
         }
 
-        /* PROJEKT KORT (NYTT!) */
+        /* PROJEKT KORT */
         .project-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
         .project-card {
             background: rgba(255,255,255,0.03);
@@ -203,7 +208,7 @@
             </div>
             <h1>Mattias Englund</h1>
             <p style="font-size: 1.2rem; color: var(--text-muted);">
-                Nätverkstekniker-student | Ambassadör | Teknikentusiast
+                Studerande Nätverkstekniker • Ambassadör hos JENSEN
             </p>
             
             <div class="actions">
@@ -215,10 +220,10 @@
 
         <section>
             <h2><i class="fas fa-user-circle"></i> Om Mig</h2>
-            <p>
-                Driven och tekniskt intresserad Nätverkstekniker-student med examen juni 2026. Jag har över 6 års erfarenhet av operativt ledarskap inom logistikbranschen, där jag utvecklat en skarp förmåga att strukturera processer och lösa komplexa problem under tidspress.
+            <p style="font-size: 1.05rem; color: #cbd5e1;">
+                Hej! Jag är en driven och nyfiken nätverkstekniker under utbildning som älskar när teknik och människor fungerar ihop. Efter sex år som ledare inom logistikbranschen bestämde jag mig för att följa mitt stora intresse för IT, nätverk och säkerhet.
                 <br><br>
-                Jag brinner för nätverksinfrastruktur, säkerhet och molnlösningar. Som person är jag ansvarsfull och kommunikativ, vilket också återspeglas i mitt uppdrag som <strong>Klassens Ambassadör</strong> på JENSEN. Jag söker nu en LIA-plats där jag får omsätta mina kunskaper i praktiken.
+                Min styrka ligger i kombinationen av teknisk förståelse och ledarskap. Som <strong>Ambassadör hos JENSEN</strong> är jag van att ta ansvar, kommunicera och se till att teamet drar åt samma håll. Jag söker nu en LIA-plats där jag får bidra med mitt engagemang och omsätta mina kunskaper i Cisco, Azure och nätverksdrift i skarpt läge!
             </p>
         </section>
 
@@ -233,7 +238,7 @@
                 <div class="project-card">
                     <span class="project-title"><i class="fas fa-cloud"></i> Azure Cloud Setup</span>
                     <span class="project-tech">Azure AD • Virtuella Nätverk</span>
-                    <p style="font-size: 0.9rem; margin-top: 10px;">Uppsättning av hybrid-miljö och hantering av användarrättigheter.</p>
+                    <p style="font-size: 0.9rem; margin-top: 10px;">Uppsättning av hybridmiljö och hantering av användarrättigheter.</p>
                 </div>
             </div>
         </section>
@@ -249,7 +254,7 @@
                 <span class="skill-tag">Switching & VLAN</span>
                 <span class="skill-tag">SSH (Secure Shell)</span>
                 <span class="skill-tag">DNS & DHCP</span>
-                <span class="skill-tag">LAN / WAN</span>
+                <span class="skill-tag">LAN & WAN</span>
             </div>
 
             <span class="skill-category">Säkerhet & Övervakning</span>
@@ -274,7 +279,7 @@
 
             <span class="skill-category">Verktyg & OS</span>
             <div class="skills-grid">
-                <span class="skill-tag">Linux / Unix</span>
+                <span class="skill-tag">Linux & Unix</span>
                 <span class="skill-tag">Windows Server</span>
                 <span class="skill-tag">Python</span>
                 <span class="skill-tag">Git & GitHub</span>
@@ -289,14 +294,14 @@
             <div class="timeline-item">
                 <div class="role-header">
                     <span class="role-title">Nätverkstekniker</span>
-                    <span class="date-badge">Sep 2025 – Juni 2026</span>
+                    <span class="date-badge">Sep 2025 till Juni 2026</span>
                 </div>
                 <span class="company-name">JENSEN Yrkeshögskola</span>
                 <p>Yrkesinriktad utbildning med fokus på drift, design och säkerhet i moderna företagsnätverk.</p>
                 <ul>
-                    <li><strong>Roll:</strong> Förtroendevald som Klassens Ambassadör.</li>
+                    <li><strong>Roll:</strong> Förtroendevald som Ambassadör för klassen.</li>
                     <li><strong>Kärnkurser:</strong> Datakommunikation, Nätverksdesign, Nätverkssäkerhet & Scripting.</li>
-                    <li><strong>Projekt:</strong> Praktisk konfigurering av switchar/routrar, felsökning och säkerhetsprotokoll.</li>
+                    <li><strong>Projekt:</strong> Praktisk konfigurering av switchar och routrar, felsökning samt säkerhetsprotokoll.</li>
                 </ul>
             </div>
 
@@ -315,8 +320,8 @@
 
             <div class="timeline-item">
                 <div class="role-header">
-                    <span class="role-title">Hantverksprogrammet - Finsnickeri</span>
-                    <span class="date-badge">2009 – 2012</span>
+                    <span class="role-title">Hantverksprogrammet, Finsnickeri</span>
+                    <span class="date-badge">2009 till 2012</span>
                 </div>
                 <span class="company-name">S:t Martins Gymnasium</span>
                 <p>Grundläggande hantverksutbildning med internationell praktik i Tyskland och Bosnien.</p>
@@ -329,7 +334,7 @@
             <div class="timeline-item">
                 <div class="role-header">
                     <span class="role-title">Team Area Manager</span>
-                    <span class="date-badge">Juli 2019 – Sep 2025</span>
+                    <span class="date-badge">Juli 2019 till Sep 2025</span>
                 </div>
                 <span class="company-name">CEVA Logistics</span>
                 <p>Ansvarig för den dagliga operativa driften på ett av företagets logistikcenter med fokus på effektivitet och teamutveckling.</p>
@@ -344,7 +349,7 @@
             <div class="timeline-item">
                 <div class="role-header">
                     <span class="role-title">Lagerarbetare & Gruppansvarig</span>
-                    <span class="date-badge">2018 – 2019</span>
+                    <span class="date-badge">2018 till 2019</span>
                 </div>
                 <span class="company-name">Ingram Micro / Lernia</span>
                 <p>Startade som konsult men blev snabbt direktanställd och befordrad till gruppansvarig för returavdelningen.</p>
@@ -357,7 +362,7 @@
             <div class="timeline-item">
                 <div class="role-header">
                     <span class="role-title">Teknisk Medarbetare (Timmerman)</span>
-                    <span class="date-badge">Jan 2017 – Okt 2018</span>
+                    <span class="date-badge">Jan 2017 till Okt 2018</span>
                 </div>
                 <span class="company-name">Vasamuseet (Statens Maritima Museer)</span>
                 <p>Ett tekniskt precisionsarbete för att säkra bevarandet av kulturarvet Regalskeppet Vasa.</p>
@@ -370,10 +375,15 @@
              <div class="timeline-item">
                 <div class="role-header">
                     <span class="role-title">Snickare</span>
-                    <span class="date-badge">2016 – 2017</span>
+                    <span class="date-badge">2016 till 2017</span>
                 </div>
                 <span class="company-name">AB Linhult & Jonsdotter</span>
-                <p>Specialsnickeri i historiska miljöer, inklusive renovering av isbrytaren Sankt Erik.</p>
+                <p>Specialiserad på båt- och möbelsnickeri i historiska miljöer. Arbetet krävde stor noggrannhet och problemlösningsförmåga.</p>
+                <ul>
+                    <li>Genomförde omfattande renovering av däck och inredningsdetaljer på isbrytaren Sankt Erik.</li>
+                    <li>Arbetade med precisionssnickeri och restaurering av kulturhistoriska objekt.</li>
+                    <li>Deltog i arbetet med bultbyten och strukturförstärkning på Regalskeppet Vasa.</li>
+                </ul>
             </div>
         </section>
         
@@ -396,20 +406,59 @@
     </div>
 
     <script>
-        const text = "whoami \n> Mattias Englund \n> Network Technician Student...";
-        const speed = 100; // Hastighet i ms
-        let i = 0;
+        // Här ställer vi in vad som ska skrivas ut och loopas
+        const baseText = "whoami \n> Mattias Englund \n> "; // Den statiska delen
         
-        function typeWriter() {
-            if (i < text.length) {
-                document.getElementById("typewriter").innerHTML += text.charAt(i);
-                i++;
-                setTimeout(typeWriter, speed);
+        // Listan med roller som ska loopas
+        const roles = [
+            "Network Technician Student...",
+            "JENSEN Ambassador...",
+            "IT Security Enthusiast...",
+            "Problem Solver..."
+        ];
+
+        const typingSpeed = 100; // Hur snabbt den skriver (ms)
+        const deletingSpeed = 50; // Hur snabbt den suddar (ms)
+        const pauseTime = 1500; // Hur länge den väntar innan den suddar (ms)
+
+        let roleIndex = 0; // Håller koll på vilket ord vi är på
+        let charIndex = 0; // Håller koll på vilken bokstav vi är på
+        let isDeleting = false; // Är vi i "sudda"-läge?
+        
+        function typeEffect() {
+            const currentRole = roles[roleIndex];
+            const element = document.getElementById("typewriter");
+            
+            // Hantera själva skrivandet/suddandet av den dynamiska delen
+            if (isDeleting) {
+                // Suddar
+                element.innerHTML = baseText + currentRole.substring(0, charIndex - 1);
+                charIndex--;
+            } else {
+                // Skriver
+                element.innerHTML = baseText + currentRole.substring(0, charIndex + 1);
+                charIndex++;
             }
+
+            // Bestäm hastighet
+            let typeSpeed = isDeleting ? deletingSpeed : typingSpeed;
+
+            // Om hela ordet är skrivet -> Pausa innan vi börjar sudda
+            if (!isDeleting && charIndex === currentRole.length) {
+                typeSpeed = pauseTime;
+                isDeleting = true;
+            } 
+            // Om hela ordet är suddat -> Byt till nästa ord och börja skriv
+            else if (isDeleting && charIndex === 0) {
+                isDeleting = false;
+                roleIndex = (roleIndex + 1) % roles.length; // Loopa tillbaka till 0 om vi är på sista
+            }
+
+            setTimeout(typeEffect, typeSpeed);
         }
         
         // Starta animationen när sidan laddas
-        window.onload = typeWriter;
+        window.onload = typeEffect;
     </script>
 
 </body>
