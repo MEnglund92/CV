@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CV | Mattias Englund</title>
+    <style>
+        :root {
+            --primary-color: #2c3e50; /* Mörkblå */
+            --accent-color: #3498db; /* Ljusblå för länkar/detaljer */
+            --bg-color: #f8f9fa;
+            --text-color: #333;
+            --card-bg: #ffffff;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--bg-color);
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 40px auto;
+            padding: 20px;
+        }
+
+        /* Header / Toppsektion */
+        header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        h1 {
+            font-size: 3em;
+            margin-bottom: 10px;
+            color: var(--primary-color);
+        }
+
+        .subtitle {
+            font-size: 1.5em;
+            color: var(--accent-color);
+            font-weight: 300;
+        }
+
+        .contact-info {
+            margin-top: 20px;
+            font-size: 0.9em;
+        }
+        
+        .contact-info a {
+            color: var(--text-color);
+            text-decoration: none;
+            margin: 0 10px;
+            border-bottom: 1px solid transparent;
+            transition: border-color 0.3s;
+        }
+
+        .contact-info a:hover {
+            border-bottom: 1px solid var(--accent-color);
+        }
+
+        /* Sektioner */
+        section {
+            background: var(--card-bg);
+            padding: 30px;
+            margin-bottom: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+        }
+
+        h2 {
+            border-bottom: 2px solid var(--accent-color);
+            padding-bottom: 10px;
+            margin-top: 0;
+            color: var(--primary-color);
+        }
+
+        /* Erfarenhet & Utbildning Listor */
+        .job-item, .edu-item {
+            margin-bottom: 25px;
+            padding-bottom: 25px;
+            border-bottom: 1px solid #eee;
+        }
+
+        .job-item:last-child, .edu-item:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+
+        .job-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            flex-wrap: wrap;
+        }
+
+        .role {
+            font-weight: bold;
+            font-size: 1.1em;
+            color: var(--primary-color);
+        }
+
+        .company {
+            font-style: italic;
+            color: #666;
+        }
+
+        .date {
+            font-size: 0.9em;
+            color: #888;
+            background: #eee;
+            padding: 2px 8px;
+            border-radius: 4px;
+        }
+
+        /* Taggar för kompetenser (Liknande din lärares) */
+        .skills-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .skill-tag {
+            background-color: var(--accent-color);
+            color: white;
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.9em;
+            font-weight: 500;
+        }
+
+        /* Mobilanpassning */
+        @media (max-width: 600px) {
+            .job-header {
+                flex-direction: column;
+            }
+            .date {
+                margin-top: 5px;
+            }
+            h1 { font-size: 2em; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <header>
+            <h1>Mattias Englund</h1>
+            <div class="subtitle">Nätverkstekniker-student | Söker LIA våren 2026</div>
+            <div class="contact-info">
+                <a href="mailto:Mattias.Englund1992@gmail.com">Mattias.Englund1992@gmail.com</a> •
+                <a href="tel:0704294804">070-429 48 04</a> •
+                <a href="#">LinkedIn</a> •
+                <span>Borås</span>
+            </div>
+        </header>
+
+        <section>
+            <h2>Om Mig</h2>
+            <p>
+                Blivande Nätverkstekniker (examen juni 2026) med stort tekniskt intresse och över 6 års erfarenhet av operativt ledarskap och logistik. 
+                Jag kombinerar nyvunna kunskaper inom Cisco-nätverk, TCP/IP och Python med en gedigen bakgrund inom strukturering av arbetsprocesser och problemlösning. 
+                Söker nu en LIA-plats för våren 2026 där jag kan omsätta mina teoretiska IT-kunskaper i praktiken och bidra med mitt driv och min ansvarskänsla.
+            </p>
+        </section>
+
+        <section>
+            <h2>Teknisk Kompetens</h2>
+            <div class="skills-grid">
+                <span class="skill-tag">Cisco Networking (CCNA)</span>
+                <span class="skill-tag">TCP/IP</span>
+                <span class="skill-tag">Subnetting</span>
+                <span class="skill-tag">Routing & Switching</span>
+                <span class="skill-tag">Python</span>
+                <span class="skill-tag">Linux</span>
+                <span class="skill-tag">Windows Server</span>
+                <span class="skill-tag">WMS</span>
+                <span class="skill-tag">Travers / Skylift</span>
+            </div>
+        </section>
+
+        <section>
+            <h2>Utbildning</h2>
+            <div class="edu-item">
+                <div class="job-header">
+                    <span class="role">Nätverkstekniker</span>
+                    <span class="date">Sep 2025 – Juni 2026</span>
+                </div>
+                <div class="company">JENSEN Yrkeshögskola</div>
+                <p>Yrkesinriktad utbildning med fokus på drift, underhåll och säkerhet i moderna nätverksmiljöer.</p>
+                <ul>
+                    <li>Datakommunikation & Nätverksteknik</li>
+                    <li>Praktiska moment med routrar och switchar</li>
+                </ul>
+            </div>
+
+            <div class="edu-item">
+                <div class="job-header">
+                    <span class="role">Certifikat & Kurser</span>
+                    <span class="date">Okt 2025</span>
+                </div>
+                <div class="company">LinkedIn Learning</div>
+                <ul>
+                    <li>Cisco CCNA (200-301) Cert Prep</li>
+                    <li>Networking Foundations: IP Addressing & Subnetting</li>
+                    <li>Python for Non-Programmers</li>
+                </ul>
+            </div>
+        </section>
+
+        <section>
+            <h2>Arbetslivserfarenhet</h2>
+            
+            <div class="job-item">
+                <div class="job-header">
+                    <span class="role">Team Area Manager</span>
+                    <span class="date">Juli 2019 – Sep 2025</span>
+                </div>
+                <div class="company">CEVA Logistics</div>
+                <p>Ansvarig för daglig drift, personal och processutveckling på logistikcenter.</p>
+                <ul>
+                    <li>Ledde och fördelade arbetet för teamet samt bemanningsplanering.</li>
+                    <li>Superuser i lagersystem och ansvarig för administrativ struktur.</li>
+                    <li>Hanterade akuta driftstörningar och säkerställde leveransprecision.</li>
+                </ul>
+            </div>
+
+            <div class="job-item">
+                <div class="job-header">
+                    <span class="role">Lagerarbetare & Gruppansvarig</span>
+                    <span class="date">2018 – 2019</span>
+                </div>
+                <div class="company">Ingram Micro / Lernia</div>
+                <p>Avancerade från lagerarbete till att ansvara för returavdelningen tillsammans med fyra kollegor.</p>
+            </div>
+
+            <div class="job-item">
+                <div class="job-header">
+                    <span class="role">Teknisk Medarbetare (Timmerman)</span>
+                    <span class="date">Jan 2017 – Okt 2018</span>
+                </div>
+                <div class="company">Vasamuseet (Statens Maritima Museer)</div>
+                <p>Tekniskt precisionsarbete som del i bevarandet av Regalskeppet Vasa. Arbete med bultar och stödkonstruktioner.</p>
+            </div>
+
+            <div class="job-item">
+                <div class="job-header">
+                    <span class="role">Snickare</span>
+                    <span class="date">2016 – 2017</span>
+                </div>
+                <div class="company">AB Linhult & Jonsdotter</div>
+                <p>Kvalificerat möbel- och båtsnickeri, bl.a. renovering av isbrytaren Sankt Erik.</p>
+            </div>
+        </section>
+
+    </div>
+
+</body>
+</html>
