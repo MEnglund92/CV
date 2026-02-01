@@ -36,10 +36,12 @@
             margin: 0;
             padding: 0;
             line-height: 1.7;
+            overflow-x: hidden; /* Förhindrar scroll i sidled */
         }
 
+        /* --- NY BREDD HÄR --- */
         .container {
-            max-width: 900px;
+            max-width: 1200px; /* Ändrat från 900px till 1200px */
             margin: 40px auto;
             padding: 20px;
         }
@@ -78,11 +80,7 @@
             line-height: 1.5;
         }
 
-        .command { 
-            color: #22c55e; 
-            margin-right: 8px;
-        }
-        
+        .command { color: #22c55e; margin-right: 8px; }
         .cursor {
             display: inline-block;
             width: 10px;
@@ -95,10 +93,10 @@
         @keyframes blink { 0% { opacity: 0; } 50% { opacity: 1; } 100% { opacity: 0; } }
 
         /* HEADER */
-        header { text-align: center; margin-bottom: 50px; }
+        header { text-align: center; margin-bottom: 60px; }
         
         h1 {
-            font-size: 3rem;
+            font-size: 3.5rem; /* Lite större text nu när sidan är bredare */
             margin: 10px 0;
             font-weight: 700;
             color: white;
@@ -133,10 +131,10 @@
         .actions { display: flex; justify-content: center; gap: 15px; flex-wrap: wrap; margin-top: 20px; align-items: center; }
         
         .btn {
-            display: inline-flex; align-items: center; gap: 8px; padding: 12px 24px;
+            display: inline-flex; align-items: center; gap: 8px; padding: 12px 28px;
             border-radius: 8px; text-decoration: none; font-weight: 600;
             transition: all 0.3s ease; border: 1px solid transparent;
-            font-size: 0.95rem;
+            font-size: 1rem;
         }
         .btn-primary { background-color: var(--accent); color: #0f172a; }
         .btn-primary:hover { background-color: var(--accent-hover); transform: translateY(-2px); }
@@ -146,93 +144,115 @@
         .email-copy-text {
             width: 100%;
             text-align: center;
-            margin-top: 10px;
-            font-size: 0.85rem;
+            margin-top: 15px;
+            font-size: 0.9rem;
             color: var(--text-muted);
             font-family: 'Fira Code', monospace;
         }
 
-        /* SEKTIONER GENERELLT */
+        /* SEKTIONER */
         section {
-            background: var(--card-bg); padding: 40px; margin-bottom: 30px;
-            border-radius: 12px; border: 1px solid var(--border);
+            background: var(--card-bg); 
+            padding: 50px; /* Mer padding för luftigare känsla */
+            margin-bottom: 40px;
+            border-radius: 16px; 
+            border: 1px solid var(--border);
         }
         h2 {
-            color: var(--accent); font-size: 1.5rem; margin-top: 0; margin-bottom: 25px;
+            color: var(--accent); font-size: 1.8rem; margin-top: 0; margin-bottom: 30px;
             border-bottom: 1px solid var(--border); padding-bottom: 15px;
-            display: flex; align-items: center; gap: 10px;
+            display: flex; align-items: center; gap: 15px;
         }
 
-        /* NYTT: LAYOUT FÖR OM MIG-SEKTIONEN MED ANIMATION */
+        /* --- GRID LAYOUTS MED ANIMATIONER --- */
+        
+        /* Layout för "Om Mig" */
         .about-grid {
             display: grid;
-            grid-template-columns: 3fr 2fr; /* Texten får mer plats än animationen */
-            gap: 40px;
+            grid-template-columns: 1.5fr 1fr; /* Text tar lite mer plats */
+            gap: 50px;
             align-items: center;
         }
         .about-animation lottie-player {
             width: 100%;
-            max-width: 400px; /* Förhindrar att den blir för stor på breda skärmar */
-            margin: 0 auto;
-            /* En snygg "glöd" runt animationen som matchar temat */
-            filter: drop-shadow(0 0 20px rgba(56, 189, 248, 0.15));
+            max-width: 500px;
+            filter: drop-shadow(0 0 30px rgba(56, 189, 248, 0.1));
         }
 
+        /* Layout för "Kompetens" */
+        .skills-wrapper {
+            display: grid;
+            grid-template-columns: 1fr 300px; /* Animationen till höger */
+            gap: 40px;
+            align-items: start;
+        }
 
         /* PROJEKT KORT */
-        .project-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+        .project-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 25px; }
         .project-card {
             background: rgba(255,255,255,0.03);
-            padding: 20px; border-radius: 8px; border: 1px solid var(--border);
+            padding: 25px; border-radius: 12px; border: 1px solid var(--border);
             transition: transform 0.2s;
         }
-        .project-card:hover { transform: translateY(-3px); border-color: var(--accent); }
-        .project-title { font-weight: 700; color: var(--text-main); display: block; margin-bottom: 5px; }
+        .project-card:hover { transform: translateY(-5px); border-color: var(--accent); }
+        .project-title { font-weight: 700; color: var(--text-main); font-size: 1.1rem; display: block; margin-bottom: 5px; }
         .project-tech { font-size: 0.85rem; color: var(--accent); font-family: 'Fira Code', monospace; }
 
         /* LISTOR & TIMELINE */
-        .timeline-item { margin-bottom: 35px; padding-left: 20px; border-left: 2px solid var(--border); position: relative; }
+        .timeline-item { margin-bottom: 40px; padding-left: 25px; border-left: 2px solid var(--border); position: relative; }
         .timeline-item:last-child { margin-bottom: 0; }
         .timeline-item::before {
             content: ''; position: absolute; left: -6px; top: 5px; width: 10px; height: 10px;
             background: var(--accent); border-radius: 50%;
         }
         .role-header { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; margin-bottom: 5px; }
-        .role-title { font-size: 1.2rem; font-weight: 700; color: var(--text-main); }
-        .company-name { font-size: 1rem; color: var(--accent); font-weight: 500; display: block; margin-bottom: 8px; }
-        .date-badge { font-size: 0.85rem; background: rgba(56, 189, 248, 0.1); color: var(--accent); padding: 4px 10px; border-radius: 20px; font-weight: 600; }
+        .role-title { font-size: 1.3rem; font-weight: 700; color: var(--text-main); }
+        .company-name { font-size: 1.1rem; color: var(--accent); font-weight: 500; display: block; margin-bottom: 8px; }
+        .date-badge { font-size: 0.9rem; background: rgba(56, 189, 248, 0.1); color: var(--accent); padding: 5px 12px; border-radius: 20px; font-weight: 600; }
         ul { margin-top: 10px; padding-left: 20px; }
-        li { margin-bottom: 8px; color: var(--text-muted); }
+        li { margin-bottom: 8px; color: var(--text-muted); font-size: 1.05rem; }
 
         /* SKILLS */
-        .skill-category { font-size: 0.9rem; text-transform: uppercase; letter-spacing: 1px; color: var(--text-muted); margin-top: 30px; margin-bottom: 15px; display: block; font-weight: 700; border-bottom: 1px solid rgba(255,255,255,0.05); padding-bottom: 5px; }
+        .skill-category { font-size: 0.95rem; text-transform: uppercase; letter-spacing: 1px; color: var(--text-muted); margin-top: 35px; margin-bottom: 15px; display: block; font-weight: 700; border-bottom: 1px solid rgba(255,255,255,0.05); padding-bottom: 5px; }
         .skill-category:first-of-type { margin-top: 0; }
-        .skills-grid { display: flex; flex-wrap: wrap; gap: 10px; }
+        .skills-grid { display: flex; flex-wrap: wrap; gap: 12px; }
         .skill-tag {
             background-color: rgba(255, 255, 255, 0.05); color: var(--text-main);
-            padding: 6px 14px; border-radius: 6px; font-size: 0.9rem; font-weight: 500;
+            padding: 8px 16px; border-radius: 8px; font-size: 0.95rem; font-weight: 500;
             border: 1px solid var(--border); transition: all 0.2s;
         }
         .skill-tag:hover { border-color: var(--accent); background-color: rgba(56, 189, 248, 0.1); cursor: default; }
 
         /* ÖVRIGT */
-        .misc-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
-        .misc-item strong { color: var(--accent); display: block; margin-bottom: 5px; }
+        .misc-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; }
+        .misc-item strong { color: var(--accent); display: block; margin-bottom: 5px; font-size: 1.1rem; }
 
-        @media (max-width: 768px) {
+        /* FOOTER ANIMATION */
+        .footer-anim {
+            text-align: center;
+            margin-top: 50px;
+            opacity: 0.7;
+        }
+
+        /* RESPONSIVITET (MOBIL) */
+        @media (max-width: 900px) {
             h1 { font-size: 2.5rem; }
-            .container { margin: 20px auto; }
+            .container { margin: 20px auto; padding: 15px; }
             .role-header { flex-direction: column; align-items: flex-start; gap: 5px; }
             .date-badge { margin-top: 5px; }
             .project-grid, .misc-grid { grid-template-columns: 1fr; }
             
-            /* Stacka om-mig sektionen på mobilen */
-            .about-grid {
+            /* Stacka grid på mobilen så de hamnar under varandra */
+            .about-grid, .skills-wrapper {
                 grid-template-columns: 1fr;
                 gap: 30px;
             }
-            /* Lägg animationen överst på mobilen för snyggare flow */
-            .about-animation { order: -1; }
+            .about-animation, .skills-animation { 
+                order: -1; /* Lägg animationen överst på mobil */
+                max-width: 300px;
+                margin: 0 auto;
+            }
+            section { padding: 25px; }
         }
     </style>
 </head>
@@ -254,7 +274,7 @@
                 <div class="status-dot"></div> Söker LIA våren 2026
             </div>
             <h1>Mattias Englund</h1>
-            <p style="font-size: 1.2rem; color: var(--text-muted);">
+            <p style="font-size: 1.4rem; color: var(--text-muted);">
                 Studerande Nätverkstekniker • Ambassadör hos JENSEN
             </p>
             
@@ -262,15 +282,12 @@
                 <a href="cv.pdf" download class="btn btn-primary">
                     <i class="fas fa-file-pdf"></i> Ladda ner CV
                 </a>
-                
                 <a href="mailto:mattias.englund1992@gmail.com" class="btn btn-secondary">
                     <i class="fas fa-envelope"></i> Maila mig
                 </a>
-                
                 <a href="https://linkedin.com/in/mattias-englund-61129331a" target="_blank" class="btn btn-secondary">
                     <i class="fab fa-linkedin"></i> LinkedIn
                 </a>
-
                 <div class="email-copy-text">
                     <i class="fas fa-arrow-up"></i> Eller kopiera: Mattias.Englund1992@gmail.com
                 </div>
@@ -282,17 +299,16 @@
             
             <div class="about-grid">
                 <div class="about-text">
-                    <p style="font-size: 1.05rem; color: #cbd5e1;">
+                    <p style="font-size: 1.1rem; color: #cbd5e1;">
                         Från Team Manager till Nätverkstekniker. Efter sex år inom operativt ledarskap har jag valt att sadla om för att helhjärtat satsa på mitt tekniska intresse. 
                         <br><br>
                         Med min bakgrund inom operativ drift förstår jag vikten av struktur och upptid. Dessa erfarenheter kombinerar jag nu med teknisk kompetens inom Cisco, Azure och nätverkssäkerhet. Som <strong>Ambassadör på JENSEN</strong> drivs jag av ansvar och utveckling. Jag söker en LIA plats våren 2026 där jag får använda både min tekniska problemlösningsförmåga och mitt professionella driv i skarpt läge.
                     </p>
                 </div>
                 <div class="about-animation">
-                    <lottie-player src="https://assets10.lottiefiles.com/packages/lf20_qp1q7mct.json"  background="transparent"  speed="1"  style="width: 100%; height: auto;"  loop  autoplay></lottie-player>
+                    <lottie-player src="https://assets9.lottiefiles.com/packages/lf20_mK7qUz.json"  background="transparent"  speed="1"  style="width: 100%; height: auto;"  loop  autoplay></lottie-player>
                 </div>
             </div>
-
         </section>
 
         <section>
@@ -301,12 +317,12 @@
                 <div class="project-card">
                     <span class="project-title"><i class="fas fa-network-wired"></i> Cisco Packet Tracer Labb</span>
                     <span class="project-tech">VLAN • OSPF • DHCP</span>
-                    <p style="font-size: 0.9rem; margin-top: 10px;">Konfigurering av företagsnätverk med segmentering och redundans.</p>
+                    <p style="font-size: 1rem; margin-top: 10px;">Konfigurering av företagsnätverk med segmentering och redundans.</p>
                 </div>
                 <div class="project-card">
                     <span class="project-title"><i class="fas fa-cloud"></i> Azure Cloud Setup</span>
                     <span class="project-tech">Azure AD • Virtuella Nätverk</span>
-                    <p style="font-size: 0.9rem; margin-top: 10px;">Uppsättning av hybridmiljö och hantering av användarrättigheter.</p>
+                    <p style="font-size: 1rem; margin-top: 10px;">Uppsättning av hybridmiljö och hantering av användarrättigheter.</p>
                 </div>
             </div>
         </section>
@@ -314,45 +330,53 @@
         <section>
             <h2><i class="fas fa-microchip"></i> Teknisk Kompetens</h2>
             
-            <span class="skill-category">Nätverk & Protokoll</span>
-            <div class="skills-grid">
-                <span class="skill-tag">Cisco (Routers, IOS)</span>
-                <span class="skill-tag">TCP/IP & OSI</span>
-                <span class="skill-tag">BGP & Routing</span>
-                <span class="skill-tag">Switching & VLAN</span>
-                <span class="skill-tag">SSH (Secure Shell)</span>
-                <span class="skill-tag">DNS & DHCP</span>
-                <span class="skill-tag">LAN & WAN</span>
-            </div>
+            <div class="skills-wrapper">
+                <div class="skills-content">
+                    <span class="skill-category">Nätverk & Protokoll</span>
+                    <div class="skills-grid">
+                        <span class="skill-tag">Cisco (Routers, IOS)</span>
+                        <span class="skill-tag">TCP/IP & OSI</span>
+                        <span class="skill-tag">BGP & Routing</span>
+                        <span class="skill-tag">Switching & VLAN</span>
+                        <span class="skill-tag">SSH (Secure Shell)</span>
+                        <span class="skill-tag">DNS & DHCP</span>
+                        <span class="skill-tag">LAN & WAN</span>
+                    </div>
 
-            <span class="skill-category">Säkerhet & Övervakning</span>
-            <div class="skills-grid">
-                <span class="skill-tag">Firewalls & ACL</span>
-                <span class="skill-tag">VPN & Wireguard</span>
-                <span class="skill-tag">SASE & Zero Trust</span>
-                <span class="skill-tag">ISO 27001 & CIA</span>
-                <span class="skill-tag">Wireshark</span>
-                <span class="skill-tag">Nätverkssäkerhet</span>
-            </div>
+                    <span class="skill-category">Säkerhet & Övervakning</span>
+                    <div class="skills-grid">
+                        <span class="skill-tag">Firewalls & ACL</span>
+                        <span class="skill-tag">VPN & Wireguard</span>
+                        <span class="skill-tag">SASE & Zero Trust</span>
+                        <span class="skill-tag">ISO 27001 & CIA</span>
+                        <span class="skill-tag">Wireshark</span>
+                        <span class="skill-tag">Nätverkssäkerhet</span>
+                    </div>
 
-            <span class="skill-category">Moln & Virtualisering</span>
-            <div class="skills-grid">
-                <span class="skill-tag">Microsoft Azure</span>
-                <span class="skill-tag">NSG (Network Security Groups)</span>
-                <span class="skill-tag">Docker</span>
-                <span class="skill-tag">Terraform (IaC)</span>
-                <span class="skill-tag">VMware & Hyper-V</span>
-                <span class="skill-tag">KVM & Virtuell Routing</span>
-            </div>
+                    <span class="skill-category">Moln & Virtualisering</span>
+                    <div class="skills-grid">
+                        <span class="skill-tag">Microsoft Azure</span>
+                        <span class="skill-tag">NSG (Network Security Groups)</span>
+                        <span class="skill-tag">Docker</span>
+                        <span class="skill-tag">Terraform (IaC)</span>
+                        <span class="skill-tag">VMware & Hyper-V</span>
+                        <span class="skill-tag">KVM & Virtuell Routing</span>
+                    </div>
 
-            <span class="skill-category">Verktyg & OS</span>
-            <div class="skills-grid">
-                <span class="skill-tag">Linux & Unix</span>
-                <span class="skill-tag">Windows Server</span>
-                <span class="skill-tag">Python</span>
-                <span class="skill-tag">Git & GitHub</span>
-                <span class="skill-tag">Visual Studio</span>
-                <span class="skill-tag">AI & Claude</span>
+                    <span class="skill-category">Verktyg & OS</span>
+                    <div class="skills-grid">
+                        <span class="skill-tag">Linux & Unix</span>
+                        <span class="skill-tag">Windows Server</span>
+                        <span class="skill-tag">Python</span>
+                        <span class="skill-tag">Git & GitHub</span>
+                        <span class="skill-tag">Visual Studio</span>
+                        <span class="skill-tag">AI & Claude</span>
+                    </div>
+                </div>
+
+                <div class="skills-animation">
+                     <lottie-player src="https://assets2.lottiefiles.com/packages/lf20_w51pcehl.json"  background="transparent"  speed="0.5"  style="width: 100%; height: auto;"  loop  autoplay></lottie-player>
+                </div>
             </div>
         </section>
 
@@ -470,6 +494,11 @@
                 </div>
             </div>
         </section>
+
+        <div class="footer-anim">
+            <lottie-player src="https://assets5.lottiefiles.com/packages/lf20_57TxAX.json"  background="transparent"  speed="1"  style="width: 150px; height: 150px; margin: 0 auto;"  loop  autoplay></lottie-player>
+            <p style="color: var(--text-muted); font-size: 0.9rem;">Redo för nästa uppdrag!</p>
+        </div>
 
     </div>
 
