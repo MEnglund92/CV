@@ -36,17 +36,16 @@
             margin: 0;
             padding: 0;
             line-height: 1.7;
-            overflow-x: hidden; /* Förhindrar scroll i sidled */
+            overflow-x: hidden;
         }
 
-        /* --- NY BREDD HÄR --- */
         .container {
-            max-width: 1200px; /* Ändrat från 900px till 1200px */
+            max-width: 1200px;
             margin: 40px auto;
             padding: 20px;
         }
 
-        /* --- TERMINAL HERO SECTION --- */
+        /* --- TERMINAL HERO --- */
         .terminal-hero {
             background-color: var(--terminal-bg);
             border-radius: 12px;
@@ -96,7 +95,7 @@
         header { text-align: center; margin-bottom: 60px; }
         
         h1 {
-            font-size: 3.5rem; /* Lite större text nu när sidan är bredare */
+            font-size: 3.5rem;
             margin: 10px 0;
             font-weight: 700;
             color: white;
@@ -153,7 +152,7 @@
         /* SEKTIONER */
         section {
             background: var(--card-bg); 
-            padding: 50px; /* Mer padding för luftigare känsla */
+            padding: 50px; 
             margin-bottom: 40px;
             border-radius: 16px; 
             border: 1px solid var(--border);
@@ -164,31 +163,42 @@
             display: flex; align-items: center; gap: 15px;
         }
 
-        /* --- GRID LAYOUTS MED ANIMATIONER --- */
+        /* --- LAYOUTS FÖR SEKTIONER --- */
         
-        /* Layout för "Om Mig" */
-        .about-grid {
+        /* Standard 2-kolumn grid (Text + Animation) */
+        .split-section {
             display: grid;
-            grid-template-columns: 1.5fr 1fr; /* Text tar lite mer plats */
+            grid-template-columns: 1.5fr 1fr;
             gap: 50px;
             align-items: center;
         }
-        .about-animation lottie-player {
+        
+        /* Omvänd ordning (Animation till vänster) */
+        .split-section.reverse {
+            grid-template-columns: 1fr 1.5fr;
+        }
+
+        .anim-container lottie-player {
             width: 100%;
-            max-width: 500px;
+            max-width: 400px;
+            margin: 0 auto;
             filter: drop-shadow(0 0 30px rgba(56, 189, 248, 0.1));
         }
 
-        /* Layout för "Kompetens" */
-        .skills-wrapper {
-            display: grid;
-            grid-template-columns: 1fr 300px; /* Animationen till höger */
-            gap: 40px;
-            align-items: start;
+        /* Speciell layout för Skills (Center) */
+        .skills-centered {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .skills-anim-center {
+            width: 100%;
+            max-width: 250px; /* Lagom storlek för mitten */
+            margin-bottom: 30px;
         }
 
         /* PROJEKT KORT */
-        .project-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 25px; }
+        .project-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 25px; width: 100%; }
         .project-card {
             background: rgba(255,255,255,0.03);
             padding: 25px; border-radius: 12px; border: 1px solid var(--border);
@@ -199,6 +209,7 @@
         .project-tech { font-size: 0.85rem; color: var(--accent); font-family: 'Fira Code', monospace; }
 
         /* LISTOR & TIMELINE */
+        .timeline-content { width: 100%; }
         .timeline-item { margin-bottom: 40px; padding-left: 25px; border-left: 2px solid var(--border); position: relative; }
         .timeline-item:last-child { margin-bottom: 0; }
         .timeline-item::before {
@@ -213,9 +224,10 @@
         li { margin-bottom: 8px; color: var(--text-muted); font-size: 1.05rem; }
 
         /* SKILLS */
+        .skills-content { width: 100%; }
         .skill-category { font-size: 0.95rem; text-transform: uppercase; letter-spacing: 1px; color: var(--text-muted); margin-top: 35px; margin-bottom: 15px; display: block; font-weight: 700; border-bottom: 1px solid rgba(255,255,255,0.05); padding-bottom: 5px; }
         .skill-category:first-of-type { margin-top: 0; }
-        .skills-grid { display: flex; flex-wrap: wrap; gap: 12px; }
+        .skills-grid { display: flex; flex-wrap: wrap; gap: 12px; justify-content: center; /* Centrerar taggarna */ }
         .skill-tag {
             background-color: rgba(255, 255, 255, 0.05); color: var(--text-main);
             padding: 8px 16px; border-radius: 8px; font-size: 0.95rem; font-weight: 500;
@@ -224,34 +236,38 @@
         .skill-tag:hover { border-color: var(--accent); background-color: rgba(56, 189, 248, 0.1); cursor: default; }
 
         /* ÖVRIGT */
+        .misc-text { width: 100%; }
         .misc-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; }
         .misc-item strong { color: var(--accent); display: block; margin-bottom: 5px; font-size: 1.1rem; }
 
         /* FOOTER ANIMATION */
         .footer-anim {
             text-align: center;
-            margin-top: 50px;
-            opacity: 0.7;
+            margin-top: 80px; /* Mer avstånd uppåt */
+            margin-bottom: 40px;
+        }
+        .footer-text {
+            color: var(--text-muted); 
+            font-size: 1.8rem; /* Mycket större text */
+            font-weight: 700;
+            margin-top: 10px;
+            letter-spacing: 1px;
         }
 
         /* RESPONSIVITET (MOBIL) */
         @media (max-width: 900px) {
             h1 { font-size: 2.5rem; }
             .container { margin: 20px auto; padding: 15px; }
-            .role-header { flex-direction: column; align-items: flex-start; gap: 5px; }
-            .date-badge { margin-top: 5px; }
-            .project-grid, .misc-grid { grid-template-columns: 1fr; }
             
-            /* Stacka grid på mobilen så de hamnar under varandra */
-            .about-grid, .skills-wrapper {
+            /* Stacka allt på mobilen */
+            .split-section, .split-section.reverse {
                 grid-template-columns: 1fr;
                 gap: 30px;
             }
-            .about-animation, .skills-animation { 
-                order: -1; /* Lägg animationen överst på mobil */
-                max-width: 300px;
-                margin: 0 auto;
-            }
+            /* Animationen ska alltid vara överst eller underst beroende på smak, här lägger vi den sist så texten kommer först */
+            .anim-container { order: -1; max-width: 250px; }
+            
+            .project-grid, .misc-grid { grid-template-columns: 1fr; }
             section { padding: 25px; }
         }
     </style>
@@ -294,210 +310,226 @@
             </div>
         </header>
 
-        <section>
-            <h2><i class="fas fa-user-circle"></i> Om Mig</h2>
-            
-            <div class="about-grid">
-                <div class="about-text">
-                    <p style="font-size: 1.1rem; color: #cbd5e1;">
-                        Från Team Manager till Nätverkstekniker. Efter sex år inom operativt ledarskap har jag valt att sadla om för att helhjärtat satsa på mitt tekniska intresse. 
-                        <br><br>
-                        Med min bakgrund inom operativ drift förstår jag vikten av struktur och upptid. Dessa erfarenheter kombinerar jag nu med teknisk kompetens inom Cisco, Azure och nätverkssäkerhet. Som <strong>Ambassadör på JENSEN</strong> drivs jag av ansvar och utveckling. Jag söker en LIA plats våren 2026 där jag får använda både min tekniska problemlösningsförmåga och mitt professionella driv i skarpt läge.
-                    </p>
-                </div>
-                <div class="about-animation">
-                    <lottie-player src="https://assets9.lottiefiles.com/packages/lf20_mK7qUz.json"  background="transparent"  speed="1"  style="width: 100%; height: auto;"  loop  autoplay></lottie-player>
+        <section class="split-section">
+            <div class="text-content">
+                <h2><i class="fas fa-user-circle"></i> Om Mig</h2>
+                <p style="font-size: 1.1rem; color: #cbd5e1;">
+                    Från Team Manager till Nätverkstekniker. Efter sex år inom operativt ledarskap har jag valt att sadla om för att helhjärtat satsa på mitt tekniska intresse. 
+                    <br><br>
+                    Med min bakgrund inom operativ drift förstår jag vikten av struktur och upptid. Dessa erfarenheter kombinerar jag nu med teknisk kompetens inom Cisco, Azure och nätverkssäkerhet. Som <strong>Ambassadör på JENSEN</strong> drivs jag av ansvar och utveckling. Jag söker en LIA plats våren 2026 där jag får använda både min tekniska problemlösningsförmåga och mitt professionella driv i skarpt läge.
+                </p>
+            </div>
+            <div class="anim-container">
+                <lottie-player src="https://lottie.host/5e0c5026-6519-4876-9694-81498007297e/0z2b2T9yqR.json" background="transparent" speed="1" style="width: 100%; height: auto;" loop autoplay></lottie-player>
+            </div>
+        </section>
+
+        <section class="split-section reverse">
+            <div class="anim-container">
+                <lottie-player src="https://lottie.host/93222955-4654-46c9-959c-8519102283e3/6Q8q9f9v9r.json" background="transparent" speed="1" style="width: 100%; height: auto;" loop autoplay></lottie-player>
+            </div>
+            <div class="text-content">
+                <h2><i class="fas fa-laptop-code"></i> Projekt & Labb</h2>
+                <div class="project-grid">
+                    <div class="project-card">
+                        <span class="project-title"><i class="fas fa-network-wired"></i> Cisco Packet Tracer Labb</span>
+                        <span class="project-tech">VLAN • OSPF • DHCP</span>
+                        <p style="font-size: 1rem; margin-top: 10px;">Konfigurering av företagsnätverk med segmentering och redundans.</p>
+                    </div>
+                    <div class="project-card">
+                        <span class="project-title"><i class="fas fa-cloud"></i> Azure Cloud Setup</span>
+                        <span class="project-tech">Azure AD • Virtuella Nätverk</span>
+                        <p style="font-size: 1rem; margin-top: 10px;">Uppsättning av hybridmiljö och hantering av användarrättigheter.</p>
+                    </div>
                 </div>
             </div>
         </section>
 
-        <section>
-            <h2><i class="fas fa-laptop-code"></i> Projekt & Labb</h2>
-            <div class="project-grid">
-                <div class="project-card">
-                    <span class="project-title"><i class="fas fa-network-wired"></i> Cisco Packet Tracer Labb</span>
-                    <span class="project-tech">VLAN • OSPF • DHCP</span>
-                    <p style="font-size: 1rem; margin-top: 10px;">Konfigurering av företagsnätverk med segmentering och redundans.</p>
-                </div>
-                <div class="project-card">
-                    <span class="project-title"><i class="fas fa-cloud"></i> Azure Cloud Setup</span>
-                    <span class="project-tech">Azure AD • Virtuella Nätverk</span>
-                    <p style="font-size: 1rem; margin-top: 10px;">Uppsättning av hybridmiljö och hantering av användarrättigheter.</p>
-                </div>
-            </div>
-        </section>
-
-        <section>
+        <section class="skills-centered">
             <h2><i class="fas fa-microchip"></i> Teknisk Kompetens</h2>
             
-            <div class="skills-wrapper">
-                <div class="skills-content">
-                    <span class="skill-category">Nätverk & Protokoll</span>
-                    <div class="skills-grid">
-                        <span class="skill-tag">Cisco (Routers, IOS)</span>
-                        <span class="skill-tag">TCP/IP & OSI</span>
-                        <span class="skill-tag">BGP & Routing</span>
-                        <span class="skill-tag">Switching & VLAN</span>
-                        <span class="skill-tag">SSH (Secure Shell)</span>
-                        <span class="skill-tag">DNS & DHCP</span>
-                        <span class="skill-tag">LAN & WAN</span>
-                    </div>
+            <div class="skills-anim-center">
+                 <lottie-player src="https://lottie.host/33895315-9c94-4d8b-a75d-3d44087922d4/hC3R4r8g9p.json" background="transparent" speed="0.7" style="width: 100%; height: auto;" loop autoplay></lottie-player>
+            </div>
 
-                    <span class="skill-category">Säkerhet & Övervakning</span>
-                    <div class="skills-grid">
-                        <span class="skill-tag">Firewalls & ACL</span>
-                        <span class="skill-tag">VPN & Wireguard</span>
-                        <span class="skill-tag">SASE & Zero Trust</span>
-                        <span class="skill-tag">ISO 27001 & CIA</span>
-                        <span class="skill-tag">Wireshark</span>
-                        <span class="skill-tag">Nätverkssäkerhet</span>
-                    </div>
-
-                    <span class="skill-category">Moln & Virtualisering</span>
-                    <div class="skills-grid">
-                        <span class="skill-tag">Microsoft Azure</span>
-                        <span class="skill-tag">NSG (Network Security Groups)</span>
-                        <span class="skill-tag">Docker</span>
-                        <span class="skill-tag">Terraform (IaC)</span>
-                        <span class="skill-tag">VMware & Hyper-V</span>
-                        <span class="skill-tag">KVM & Virtuell Routing</span>
-                    </div>
-
-                    <span class="skill-category">Verktyg & OS</span>
-                    <div class="skills-grid">
-                        <span class="skill-tag">Linux & Unix</span>
-                        <span class="skill-tag">Windows Server</span>
-                        <span class="skill-tag">Python</span>
-                        <span class="skill-tag">Git & GitHub</span>
-                        <span class="skill-tag">Visual Studio</span>
-                        <span class="skill-tag">AI & Claude</span>
-                    </div>
+            <div class="skills-content">
+                <span class="skill-category" style="text-align: center;">Nätverk & Protokoll</span>
+                <div class="skills-grid">
+                    <span class="skill-tag">Cisco (Routers, IOS)</span>
+                    <span class="skill-tag">TCP/IP & OSI</span>
+                    <span class="skill-tag">BGP & Routing</span>
+                    <span class="skill-tag">Switching & VLAN</span>
+                    <span class="skill-tag">SSH (Secure Shell)</span>
+                    <span class="skill-tag">DNS & DHCP</span>
+                    <span class="skill-tag">LAN & WAN</span>
                 </div>
 
-                <div class="skills-animation">
-                     <lottie-player src="https://assets2.lottiefiles.com/packages/lf20_w51pcehl.json"  background="transparent"  speed="0.5"  style="width: 100%; height: auto;"  loop  autoplay></lottie-player>
+                <span class="skill-category" style="text-align: center;">Säkerhet & Övervakning</span>
+                <div class="skills-grid">
+                    <span class="skill-tag">Firewalls & ACL</span>
+                    <span class="skill-tag">VPN & Wireguard</span>
+                    <span class="skill-tag">SASE & Zero Trust</span>
+                    <span class="skill-tag">ISO 27001 & CIA</span>
+                    <span class="skill-tag">Wireshark</span>
+                    <span class="skill-tag">Nätverkssäkerhet</span>
+                </div>
+
+                <span class="skill-category" style="text-align: center;">Moln & Virtualisering</span>
+                <div class="skills-grid">
+                    <span class="skill-tag">Microsoft Azure</span>
+                    <span class="skill-tag">NSG (Network Security Groups)</span>
+                    <span class="skill-tag">Docker</span>
+                    <span class="skill-tag">Terraform (IaC)</span>
+                    <span class="skill-tag">VMware & Hyper-V</span>
+                    <span class="skill-tag">KVM & Virtuell Routing</span>
+                </div>
+
+                <span class="skill-category" style="text-align: center;">Verktyg & OS</span>
+                <div class="skills-grid">
+                    <span class="skill-tag">Linux & Unix</span>
+                    <span class="skill-tag">Windows Server</span>
+                    <span class="skill-tag">Python</span>
+                    <span class="skill-tag">Git & GitHub</span>
+                    <span class="skill-tag">Visual Studio</span>
+                    <span class="skill-tag">AI & Claude</span>
                 </div>
             </div>
         </section>
 
-        <section>
-            <h2><i class="fas fa-graduation-cap"></i> Utbildning</h2>
-            
-            <div class="timeline-item">
-                <div class="role-header">
-                    <span class="role-title">Studerande Nätverkstekniker</span>
-                    <span class="date-badge">Sep 2025 till Juni 2026</span>
+        <section class="split-section">
+            <div class="timeline-content">
+                <h2><i class="fas fa-graduation-cap"></i> Utbildning</h2>
+                
+                <div class="timeline-item">
+                    <div class="role-header">
+                        <span class="role-title">Studerande Nätverkstekniker</span>
+                        <span class="date-badge">Sep 2025 till Juni 2026</span>
+                    </div>
+                    <span class="company-name">JENSEN Yrkeshögskola</span>
+                    <p>Yrkesinriktad utbildning med fokus på drift, design och säkerhet i moderna företagsnätverk.</p>
+                    <ul>
+                        <li><strong>Roll:</strong> Förtroendevald som Ambassadör för klassen.</li>
+                        <li><strong>Kärnkurser:</strong> Datakommunikation, Nätverksdesign, Nätverkssäkerhet & Scripting.</li>
+                        <li><strong>Projekt:</strong> Praktisk konfigurering av switchar och routrar, felsökning samt säkerhetsprotokoll.</li>
+                    </ul>
                 </div>
-                <span class="company-name">JENSEN Yrkeshögskola</span>
-                <p>Yrkesinriktad utbildning med fokus på drift, design och säkerhet i moderna företagsnätverk.</p>
-                <ul>
-                    <li><strong>Roll:</strong> Förtroendevald som Ambassadör för klassen.</li>
-                    <li><strong>Kärnkurser:</strong> Datakommunikation, Nätverksdesign, Nätverkssäkerhet & Scripting.</li>
-                    <li><strong>Projekt:</strong> Praktisk konfigurering av switchar och routrar, felsökning samt säkerhetsprotokoll.</li>
-                </ul>
-            </div>
 
-            <div class="timeline-item">
-                <div class="role-header">
-                    <span class="role-title">Certifikat & Kurser</span>
-                    <span class="date-badge">Utfärdade Okt 2025</span>
+                <div class="timeline-item">
+                    <div class="role-header">
+                        <span class="role-title">Certifikat & Kurser</span>
+                        <span class="date-badge">Utfärdade Okt 2025</span>
+                    </div>
+                    <span class="company-name">LinkedIn Learning</span>
+                    <ul>
+                        <li>Cisco CCNA (200-301) Cert Prep: Network Fundamentals</li>
+                        <li>Networking Foundations: IP Addressing & Subnetting</li>
+                        <li>Python for Non-Programmers</li>
+                    </ul>
                 </div>
-                <span class="company-name">LinkedIn Learning</span>
-                <ul>
-                    <li>Cisco CCNA (200-301) Cert Prep: Network Fundamentals</li>
-                    <li>Networking Foundations: IP Addressing & Subnetting</li>
-                    <li>Python for Non-Programmers</li>
-                </ul>
-            </div>
 
-            <div class="timeline-item">
-                <div class="role-header">
-                    <span class="role-title">Hantverksprogrammet, Finsnickeri</span>
-                    <span class="date-badge">2009 till 2012</span>
+                <div class="timeline-item">
+                    <div class="role-header">
+                        <span class="role-title">Hantverksprogrammet, Finsnickeri</span>
+                        <span class="date-badge">2009 till 2012</span>
+                    </div>
+                    <span class="company-name">S:t Martins Gymnasium</span>
+                    <p>Grundläggande hantverksutbildning med internationell praktik i Tyskland och Bosnien.</p>
                 </div>
-                <span class="company-name">S:t Martins Gymnasium</span>
-                <p>Grundläggande hantverksutbildning med internationell praktik i Tyskland och Bosnien.</p>
+            </div>
+            <div class="anim-container">
+                <lottie-player src="https://lottie.host/7901306b-47e0-4740-9721-a0833b5c23cb/M0p0d2I3d2.json" background="transparent" speed="1" style="width: 100%; height: auto;" loop autoplay></lottie-player>
             </div>
         </section>
 
-        <section>
-            <h2><i class="fas fa-briefcase"></i> Arbetslivserfarenhet</h2>
-            
-            <div class="timeline-item">
-                <div class="role-header">
-                    <span class="role-title">Team Area Manager</span>
-                    <span class="date-badge">Juli 2019 till Sep 2025</span>
-                </div>
-                <span class="company-name">CEVA Logistics</span>
-                <p>Ansvarig för den dagliga operativa driften på ett av företagets logistikcenter med fokus på effektivitet och teamutveckling.</p>
-                <ul>
-                    <li>Ledde ett team genom daglig styrning, resursfördelning och coachning.</li>
-                    <li>Agerade Superuser för lagersystem (WMS) och ansvarade för IT relaterad administration.</li>
-                    <li>Drev förbättringsarbete som resulterade i minskade felkällor och högre leveransprecision mot kund.</li>
-                    <li>Hanterade avvikelser och komplexa logistikproblem under tidspress.</li>
-                </ul>
+        <section class="split-section reverse">
+            <div class="anim-container">
+                <lottie-player src="https://lottie.host/68225577-4b71-419b-a36c-9c7457726581/9x2m4r7j5k.json" background="transparent" speed="1" style="width: 100%; height: auto;" loop autoplay></lottie-player>
             </div>
-
-            <div class="timeline-item">
-                <div class="role-header">
-                    <span class="role-title">Lagerarbetare & Gruppansvarig</span>
-                    <span class="date-badge">2018 till 2019</span>
+            <div class="timeline-content">
+                <h2><i class="fas fa-briefcase"></i> Arbetslivserfarenhet</h2>
+                
+                <div class="timeline-item">
+                    <div class="role-header">
+                        <span class="role-title">Team Area Manager</span>
+                        <span class="date-badge">Juli 2019 till Sep 2025</span>
+                    </div>
+                    <span class="company-name">CEVA Logistics</span>
+                    <p>Ansvarig för den dagliga operativa driften på ett av företagets logistikcenter med fokus på effektivitet och teamutveckling.</p>
+                    <ul>
+                        <li>Ledde ett team genom daglig styrning, resursfördelning och coachning.</li>
+                        <li>Agerade Superuser för lagersystem (WMS) och ansvarade för IT relaterad administration.</li>
+                        <li>Drev förbättringsarbete som resulterade i minskade felkällor och högre leveransprecision mot kund.</li>
+                        <li>Hanterade avvikelser och komplexa logistikproblem under tidspress.</li>
+                    </ul>
                 </div>
-                <span class="company-name">Ingram Micro / Lernia</span>
-                <p>Startade som konsult men blev snabbt direktanställd och befordrad till gruppansvarig för returavdelningen.</p>
-                <ul>
-                    <li>Ansvarade för returflödet för flera nyckelkunder.</li>
-                    <li>Utvecklade och dokumenterade nya rutiner för att säkerställa spårbarhet.</li>
-                </ul>
-            </div>
 
-            <div class="timeline-item">
-                <div class="role-header">
-                    <span class="role-title">Teknisk Medarbetare (Timmerman)</span>
-                    <span class="date-badge">Jan 2017 till Okt 2018</span>
+                <div class="timeline-item">
+                    <div class="role-header">
+                        <span class="role-title">Lagerarbetare & Gruppansvarig</span>
+                        <span class="date-badge">2018 till 2019</span>
+                    </div>
+                    <span class="company-name">Ingram Micro / Lernia</span>
+                    <p>Startade som konsult men blev snabbt direktanställd och befordrad till gruppansvarig för returavdelningen.</p>
+                    <ul>
+                        <li>Ansvarade för returflödet för flera nyckelkunder.</li>
+                        <li>Utvecklade och dokumenterade nya rutiner för att säkerställa spårbarhet.</li>
+                    </ul>
                 </div>
-                <span class="company-name">Vasamuseet (Statens Maritima Museer)</span>
-                <p>Ett tekniskt precisionsarbete för att säkra bevarandet av kulturarvet Regalskeppet Vasa.</p>
-                <ul>
-                    <li>Utförde strukturella förstärkningar, inklusive byte av över 5 500 bultar i skeppsskrovet.</li>
-                    <li>Arbetade på hög höjd med skylift och travers, vilket krävde stort säkerhetsfokus.</li>
-                </ul>
-            </div>
 
-             <div class="timeline-item">
-                <div class="role-header">
-                    <span class="role-title">Snickare</span>
-                    <span class="date-badge">2016 till 2017</span>
+                <div class="timeline-item">
+                    <div class="role-header">
+                        <span class="role-title">Teknisk Medarbetare (Timmerman)</span>
+                        <span class="date-badge">Jan 2017 till Okt 2018</span>
+                    </div>
+                    <span class="company-name">Vasamuseet (Statens Maritima Museer)</span>
+                    <p>Ett tekniskt precisionsarbete för att säkra bevarandet av kulturarvet Regalskeppet Vasa.</p>
+                    <ul>
+                        <li>Utförde strukturella förstärkningar, inklusive byte av över 5 500 bultar i skeppsskrovet.</li>
+                        <li>Arbetade på hög höjd med skylift och travers, vilket krävde stort säkerhetsfokus.</li>
+                    </ul>
                 </div>
-                <span class="company-name">AB Linhult & Jonsdotter</span>
-                <p>Specialiserad på båt- och möbelsnickeri i historiska miljöer. Arbetet krävde stor noggrannhet och problemlösningsförmåga.</p>
-                <ul>
-                    <li>Genomförde omfattande renovering av däck och inredningsdetaljer på isbrytaren Sankt Erik.</li>
-                    <li>Arbetade med precisionssnickeri och restaurering av kulturhistoriska objekt.</li>
-                    <li>Deltog i arbetet med bultbyten och strukturförstärkning på Regalskeppet Vasa.</li>
-                </ul>
+
+                 <div class="timeline-item">
+                    <div class="role-header">
+                        <span class="role-title">Snickare</span>
+                        <span class="date-badge">2016 till 2017</span>
+                    </div>
+                    <span class="company-name">AB Linhult & Jonsdotter</span>
+                    <p>Specialiserad på båt- och möbelsnickeri i historiska miljöer. Arbetet krävde stor noggrannhet och problemlösningsförmåga.</p>
+                    <ul>
+                        <li>Genomförde omfattande renovering av däck och inredningsdetaljer på isbrytaren Sankt Erik.</li>
+                        <li>Arbetade med precisionssnickeri och restaurering av kulturhistoriska objekt.</li>
+                        <li>Deltog i arbetet med bultbyten och strukturförstärkning på Regalskeppet Vasa.</li>
+                    </ul>
+                </div>
             </div>
         </section>
         
-        <section>
-            <h2><i class="fas fa-globe"></i> Övrigt</h2>
-            <div class="misc-grid">
-                <div class="misc-item">
-                    <strong><i class="fas fa-language"></i> Språk</strong>
-                    Svenska (Modersmål)<br>
-                    Engelska (Mycket god nivå)<br>
-                    Kroatiska/Bosniska (Grundläggande)
+        <section class="split-section">
+            <div class="misc-text">
+                <h2><i class="fas fa-globe"></i> Övrigt</h2>
+                <div class="misc-grid">
+                    <div class="misc-item">
+                        <strong><i class="fas fa-language"></i> Språk</strong>
+                        Svenska (Modersmål)<br>
+                        Engelska (Mycket god nivå)<br>
+                        Kroatiska/Bosniska (Grundläggande)
+                    </div>
+                    <div class="misc-item">
+                        <strong><i class="fas fa-car"></i> Körkort</strong>
+                        B-Körkort (Personbil)
+                    </div>
                 </div>
-                <div class="misc-item">
-                    <strong><i class="fas fa-car"></i> Körkort</strong>
-                    B-Körkort (Personbil)
-                </div>
+            </div>
+            <div class="anim-container">
+                <lottie-player src="https://lottie.host/9e0c5026-6519-4876-9694-81498007297e/globe-placeholder.json" background="transparent" speed="1" style="width: 100%; height: auto;" loop autoplay></lottie-player>
+                 <lottie-player src="https://assets6.lottiefiles.com/packages/lf20_2LdxLp.json" background="transparent" speed="1" style="width: 80%; margin: 0 auto;" loop autoplay></lottie-player>
             </div>
         </section>
 
         <div class="footer-anim">
-            <lottie-player src="https://assets5.lottiefiles.com/packages/lf20_57TxAX.json"  background="transparent"  speed="1"  style="width: 150px; height: 150px; margin: 0 auto;"  loop  autoplay></lottie-player>
-            <p style="color: var(--text-muted); font-size: 0.9rem;">Redo för nästa uppdrag!</p>
+            <lottie-player src="https://assets5.lottiefiles.com/packages/lf20_57TxAX.json"  background="transparent"  speed="1"  style="width: 350px; height: 350px; margin: 0 auto;"  loop  autoplay></lottie-player>
+            <p class="footer-text">Redo för nästa uppdrag!</p>
         </div>
 
     </div>
