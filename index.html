@@ -9,6 +9,8 @@
     
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Fira+Code&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
     
     <meta property="og:type" content="website">
     <meta property="og:title" content="Mattias Englund | Nätverkstekniker">
@@ -150,7 +152,7 @@
             font-family: 'Fira Code', monospace;
         }
 
-        /* SEKTIONER */
+        /* SEKTIONER GENERELLT */
         section {
             background: var(--card-bg); padding: 40px; margin-bottom: 30px;
             border-radius: 12px; border: 1px solid var(--border);
@@ -160,6 +162,22 @@
             border-bottom: 1px solid var(--border); padding-bottom: 15px;
             display: flex; align-items: center; gap: 10px;
         }
+
+        /* NYTT: LAYOUT FÖR OM MIG-SEKTIONEN MED ANIMATION */
+        .about-grid {
+            display: grid;
+            grid-template-columns: 3fr 2fr; /* Texten får mer plats än animationen */
+            gap: 40px;
+            align-items: center;
+        }
+        .about-animation lottie-player {
+            width: 100%;
+            max-width: 400px; /* Förhindrar att den blir för stor på breda skärmar */
+            margin: 0 auto;
+            /* En snygg "glöd" runt animationen som matchar temat */
+            filter: drop-shadow(0 0 20px rgba(56, 189, 248, 0.15));
+        }
+
 
         /* PROJEKT KORT */
         .project-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
@@ -201,12 +219,20 @@
         .misc-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
         .misc-item strong { color: var(--accent); display: block; margin-bottom: 5px; }
 
-        @media (max-width: 600px) {
+        @media (max-width: 768px) {
             h1 { font-size: 2.5rem; }
             .container { margin: 20px auto; }
             .role-header { flex-direction: column; align-items: flex-start; gap: 5px; }
             .date-badge { margin-top: 5px; }
             .project-grid, .misc-grid { grid-template-columns: 1fr; }
+            
+            /* Stacka om-mig sektionen på mobilen */
+            .about-grid {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+            /* Lägg animationen överst på mobilen för snyggare flow */
+            .about-animation { order: -1; }
         }
     </style>
 </head>
@@ -253,11 +279,20 @@
 
         <section>
             <h2><i class="fas fa-user-circle"></i> Om Mig</h2>
-            <p style="font-size: 1.05rem; color: #cbd5e1;">
-                Från Team Manager till Nätverkstekniker. Efter sex år inom operativt ledarskap har jag valt att sadla om för att helhjärtat satsa på mitt tekniska intresse. 
-                <br><br>
-                Med min bakgrund inom operativ drift förstår jag vikten av struktur och upptid. Dessa erfarenheter kombinerar jag nu med teknisk kompetens inom Cisco, Azure och nätverkssäkerhet. Som <strong>Ambassadör på JENSEN</strong> drivs jag av ansvar och utveckling. Jag söker en LIA plats våren 2026 där jag får använda både min tekniska problemlösningsförmåga och mitt professionella driv i skarpt läge.
-            </p>
+            
+            <div class="about-grid">
+                <div class="about-text">
+                    <p style="font-size: 1.05rem; color: #cbd5e1;">
+                        Från Team Manager till Nätverkstekniker. Efter sex år inom operativt ledarskap har jag valt att sadla om för att helhjärtat satsa på mitt tekniska intresse. 
+                        <br><br>
+                        Med min bakgrund inom operativ drift förstår jag vikten av struktur och upptid. Dessa erfarenheter kombinerar jag nu med teknisk kompetens inom Cisco, Azure och nätverkssäkerhet. Som <strong>Ambassadör på JENSEN</strong> drivs jag av ansvar och utveckling. Jag söker en LIA plats våren 2026 där jag får använda både min tekniska problemlösningsförmåga och mitt professionella driv i skarpt läge.
+                    </p>
+                </div>
+                <div class="about-animation">
+                    <lottie-player src="https://assets10.lottiefiles.com/packages/lf20_qp1q7mct.json"  background="transparent"  speed="1"  style="width: 100%; height: auto;"  loop  autoplay></lottie-player>
+                </div>
+            </div>
+
         </section>
 
         <section>
