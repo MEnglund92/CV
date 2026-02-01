@@ -4,8 +4,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CV | Mattias Englund</title>
+    
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>👨‍💻</text></svg>">
+    
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Fira+Code&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Mattias Englund | Nätverkstekniker">
+    <meta property="og:description" content="Studerande Nätverkstekniker & Ambassadör på JENSEN. Se mitt portfolio och CV här.">
+    <meta property="og:image" content="https://menglund92.github.io/profilbild.jpg">
     
     <style>
         :root {
@@ -120,17 +128,27 @@
         @keyframes pulse { 0% { opacity: 1; } 50% { opacity: 0.5; } 100% { opacity: 1; } }
 
         /* KNAPPAR */
-        .actions { display: flex; justify-content: center; gap: 15px; flex-wrap: wrap; margin-top: 20px; }
+        .actions { display: flex; justify-content: center; gap: 15px; flex-wrap: wrap; margin-top: 20px; align-items: center; }
         
         .btn {
             display: inline-flex; align-items: center; gap: 8px; padding: 12px 24px;
             border-radius: 8px; text-decoration: none; font-weight: 600;
             transition: all 0.3s ease; border: 1px solid transparent;
+            font-size: 0.95rem;
         }
         .btn-primary { background-color: var(--accent); color: #0f172a; }
         .btn-primary:hover { background-color: var(--accent-hover); transform: translateY(-2px); }
         .btn-secondary { background-color: transparent; border: 1px solid var(--border); color: var(--text-main); }
         .btn-secondary:hover { border-color: var(--accent); color: var(--accent); }
+
+        .email-copy-text {
+            width: 100%;
+            text-align: center;
+            margin-top: 10px;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            font-family: 'Fira Code', monospace;
+        }
 
         /* SEKTIONER */
         section {
@@ -202,7 +220,7 @@
                 <div class="dot yellow"></div>
                 <div class="dot green"></div>
             </div>
-            <div class="terminal-content"><span class="command">mattias-englund@network:~$</span><span id="typewriter"></span><span class="cursor">&nbsp;</span></div>
+            <div class="terminal-content"><span class="command">mattias@MacBook-Pro ~ % </span><span id="typewriter"></span><span class="cursor">&nbsp;</span></div>
         </div>
 
         <header>
@@ -215,9 +233,21 @@
             </p>
             
             <div class="actions">
-                <a href="cv.pdf" download class="btn btn-primary"><i class="fas fa-file-pdf"></i> Ladda ner CV</a>
-                <a href="mailto:Mattias.Englund1992@gmail.com" class="btn btn-secondary"><i class="fas fa-envelope"></i> Maila mig</a>
-                <a href="https://linkedin.com/in/mattias-englund-61129331a" target="_blank" class="btn btn-secondary"><i class="fab fa-linkedin"></i> LinkedIn</a>
+                <a href="cv.pdf" download class="btn btn-primary">
+                    <i class="fas fa-file-pdf"></i> Ladda ner CV
+                </a>
+                
+                <a href="mailto:mattias.englund1992@gmail.com" class="btn btn-secondary">
+                    <i class="fas fa-envelope"></i> Maila mig
+                </a>
+                
+                <a href="https://linkedin.com/in/mattias-englund-61129331a" target="_blank" class="btn btn-secondary">
+                    <i class="fab fa-linkedin"></i> LinkedIn
+                </a>
+
+                <div class="email-copy-text">
+                    <i class="fas fa-arrow-up"></i> Eller kopiera: Mattias.Englund1992@gmail.com
+                </div>
             </div>
         </header>
 
