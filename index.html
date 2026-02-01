@@ -10,7 +10,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Fira+Code&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
-    <script src="https://unpkg.com/@lottiefiles/lottie-player@1.5.7/dist/lottie-player.js"></script>
+    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
     
     <meta property="og:type" content="website">
     <meta property="og:title" content="Mattias Englund | Nätverkstekniker">
@@ -183,7 +183,6 @@
             filter: drop-shadow(0 0 30px rgba(56, 189, 248, 0.1));
         }
 
-        /* Speciell layout för Skills */
         .skills-centered {
             display: flex;
             flex-direction: column;
@@ -254,15 +253,11 @@
             text-shadow: 0 0 20px rgba(56, 189, 248, 0.3);
         }
 
-        /* RESPONSIVITET (MOBIL) */
+        /* RESPONSIVITET */
         @media (max-width: 900px) {
             h1 { font-size: 2.5rem; }
             .container { margin: 20px auto; padding: 15px; }
-            
-            .split-section, .split-section.reverse {
-                grid-template-columns: 1fr;
-                gap: 30px;
-            }
+            .split-section, .split-section.reverse { grid-template-columns: 1fr; gap: 30px; }
             .anim-container { order: -1; max-width: 250px; }
             .project-grid, .misc-grid { grid-template-columns: 1fr; }
             section { padding: 25px; }
@@ -272,38 +267,22 @@
 <body>
 
     <div class="container">
-        
         <div class="terminal-hero">
             <div class="terminal-header">
-                <div class="dot red"></div>
-                <div class="dot yellow"></div>
-                <div class="dot green"></div>
+                <div class="dot red"></div><div class="dot yellow"></div><div class="dot green"></div>
             </div>
             <div class="terminal-content"><span class="command">mattias@MacBook-Pro ~ % </span><span id="typewriter"></span><span class="cursor">&nbsp;</span></div>
         </div>
 
         <header>
-            <div class="status-badge">
-                <div class="status-dot"></div> Söker LIA våren 2026
-            </div>
+            <div class="status-badge"><div class="status-dot"></div> Söker LIA våren 2026</div>
             <h1>Mattias Englund</h1>
-            <p style="font-size: 1.4rem; color: var(--text-muted);">
-                Studerande Nätverkstekniker • Ambassadör hos JENSEN
-            </p>
-            
+            <p style="font-size: 1.4rem; color: var(--text-muted);">Studerande Nätverkstekniker • Ambassadör hos JENSEN</p>
             <div class="actions">
-                <a href="cv.pdf" download class="btn btn-primary">
-                    <i class="fas fa-file-pdf"></i> Ladda ner CV
-                </a>
-                <a href="mailto:mattias.englund1992@gmail.com" class="btn btn-secondary">
-                    <i class="fas fa-envelope"></i> Maila mig
-                </a>
-                <a href="https://linkedin.com/in/mattias-englund-61129331a" target="_blank" class="btn btn-secondary">
-                    <i class="fab fa-linkedin"></i> LinkedIn
-                </a>
-                <div class="email-copy-text">
-                    <i class="fas fa-arrow-up"></i> Eller kopiera: Mattias.Englund1992@gmail.com
-                </div>
+                <a href="cv.pdf" download class="btn btn-primary"><i class="fas fa-file-pdf"></i> Ladda ner CV</a>
+                <a href="mailto:mattias.englund1992@gmail.com" class="btn btn-secondary"><i class="fas fa-envelope"></i> Maila mig</a>
+                <a href="https://linkedin.com/in/mattias-englund-61129331a" target="_blank" class="btn btn-secondary"><i class="fab fa-linkedin"></i> LinkedIn</a>
+                <div class="email-copy-text"><i class="fas fa-arrow-up"></i> Eller kopiera: Mattias.Englund1992@gmail.com</div>
             </div>
         </header>
 
@@ -344,51 +323,33 @@
 
         <section class="skills-centered">
             <h2><i class="fas fa-microchip"></i> Teknisk Kompetens</h2>
-            
             <div class="skills-anim-center">
                  <lottie-player src="https://assets2.lottiefiles.com/packages/lf20_1LhsaB.json" background="transparent" speed="0.7" style="width: 100%; height: auto;" loop autoplay></lottie-player>
             </div>
-
             <div class="skills-content">
                 <span class="skill-category" style="text-align: center;">Nätverk & Protokoll</span>
                 <div class="skills-grid">
-                    <span class="skill-tag">Cisco (Routers, IOS)</span>
-                    <span class="skill-tag">TCP/IP & OSI</span>
-                    <span class="skill-tag">BGP & Routing</span>
-                    <span class="skill-tag">Switching & VLAN</span>
-                    <span class="skill-tag">SSH (Secure Shell)</span>
-                    <span class="skill-tag">DNS & DHCP</span>
-                    <span class="skill-tag">LAN & WAN</span>
+                    <span class="skill-tag">Cisco (Routers, IOS)</span><span class="skill-tag">TCP/IP & OSI</span>
+                    <span class="skill-tag">BGP & Routing</span><span class="skill-tag">Switching & VLAN</span>
+                    <span class="skill-tag">SSH</span><span class="skill-tag">DNS & DHCP</span><span class="skill-tag">LAN & WAN</span>
                 </div>
-
                 <span class="skill-category" style="text-align: center;">Säkerhet & Övervakning</span>
                 <div class="skills-grid">
-                    <span class="skill-tag">Firewalls & ACL</span>
-                    <span class="skill-tag">VPN & Wireguard</span>
-                    <span class="skill-tag">SASE & Zero Trust</span>
-                    <span class="skill-tag">ISO 27001 & CIA</span>
-                    <span class="skill-tag">Wireshark</span>
-                    <span class="skill-tag">Nätverkssäkerhet</span>
+                    <span class="skill-tag">Firewalls & ACL</span><span class="skill-tag">VPN & Wireguard</span>
+                    <span class="skill-tag">SASE & Zero Trust</span><span class="skill-tag">ISO 27001</span>
+                    <span class="skill-tag">Wireshark</span><span class="skill-tag">Nätverkssäkerhet</span>
                 </div>
-
                 <span class="skill-category" style="text-align: center;">Moln & Virtualisering</span>
                 <div class="skills-grid">
-                    <span class="skill-tag">Microsoft Azure</span>
-                    <span class="skill-tag">NSG (Network Security Groups)</span>
-                    <span class="skill-tag">Docker</span>
-                    <span class="skill-tag">Terraform (IaC)</span>
-                    <span class="skill-tag">VMware & Hyper-V</span>
-                    <span class="skill-tag">KVM & Virtuell Routing</span>
+                    <span class="skill-tag">Azure</span><span class="skill-tag">NSG</span>
+                    <span class="skill-tag">Docker</span><span class="skill-tag">Terraform</span>
+                    <span class="skill-tag">VMware</span><span class="skill-tag">KVM</span>
                 </div>
-
                 <span class="skill-category" style="text-align: center;">Verktyg & OS</span>
                 <div class="skills-grid">
-                    <span class="skill-tag">Linux & Unix</span>
-                    <span class="skill-tag">Windows Server</span>
-                    <span class="skill-tag">Python</span>
-                    <span class="skill-tag">Git & GitHub</span>
-                    <span class="skill-tag">Visual Studio</span>
-                    <span class="skill-tag">AI & Claude</span>
+                    <span class="skill-tag">Linux</span><span class="skill-tag">Windows Server</span>
+                    <span class="skill-tag">Python</span><span class="skill-tag">Git</span>
+                    <span class="skill-tag">VS Code</span><span class="skill-tag">AI</span>
                 </div>
             </div>
         </section>
@@ -396,7 +357,6 @@
         <section class="split-section">
             <div class="timeline-content">
                 <h2><i class="fas fa-graduation-cap"></i> Utbildning</h2>
-                
                 <div class="timeline-item">
                     <div class="role-header">
                         <span class="role-title">Studerande Nätverkstekniker</span>
@@ -404,33 +364,20 @@
                     </div>
                     <span class="company-name">JENSEN Yrkeshögskola</span>
                     <p>Yrkesinriktad utbildning med fokus på drift, design och säkerhet i moderna företagsnätverk.</p>
-                    <ul>
-                        <li><strong>Roll:</strong> Förtroendevald som Ambassadör för klassen.</li>
-                        <li><strong>Kärnkurser:</strong> Datakommunikation, Nätverksdesign, Nätverkssäkerhet & Scripting.</li>
-                        <li><strong>Projekt:</strong> Praktisk konfigurering av switchar och routrar, felsökning samt säkerhetsprotokoll.</li>
-                    </ul>
                 </div>
-
                 <div class="timeline-item">
                     <div class="role-header">
                         <span class="role-title">Certifikat & Kurser</span>
                         <span class="date-badge">Utfärdade Okt 2025</span>
                     </div>
                     <span class="company-name">LinkedIn Learning</span>
-                    <ul>
-                        <li>Cisco CCNA (200-301) Cert Prep: Network Fundamentals</li>
-                        <li>Networking Foundations: IP Addressing & Subnetting</li>
-                        <li>Python for Non-Programmers</li>
-                    </ul>
                 </div>
-
                 <div class="timeline-item">
                     <div class="role-header">
                         <span class="role-title">Hantverksprogrammet, Finsnickeri</span>
                         <span class="date-badge">2009 till 2012</span>
                     </div>
                     <span class="company-name">S:t Martins Gymnasium</span>
-                    <p>Grundläggande hantverksutbildning med internationell praktik i Tyskland och Bosnien.</p>
                 </div>
             </div>
             <div class="anim-container">
@@ -440,11 +387,10 @@
 
         <section class="split-section reverse">
             <div class="anim-container">
-                <lottie-player src="https://assets3.lottiefiles.com/packages/lf20_ujGd2E.json" background="transparent" speed="1" style="width: 100%; height: auto;" loop autoplay></lottie-player>
+                <lottie-player src="https://lottie.host/880a4b08-301e-4501-9c87-99e746e08d6d/r4d5H4n2O6.json" background="transparent" speed="1" style="width: 100%; height: auto;" loop autoplay></lottie-player>
             </div>
             <div class="timeline-content">
                 <h2><i class="fas fa-briefcase"></i> Arbetslivserfarenhet</h2>
-                
                 <div class="timeline-item">
                     <div class="role-header">
                         <span class="role-title">Team Area Manager</span>
@@ -452,52 +398,27 @@
                     </div>
                     <span class="company-name">CEVA Logistics</span>
                     <p>Ansvarig för den dagliga operativa driften på ett av företagets logistikcenter med fokus på effektivitet och teamutveckling.</p>
-                    <ul>
-                        <li>Ledde ett team genom daglig styrning, resursfördelning och coachning.</li>
-                        <li>Agerade Superuser för lagersystem (WMS) och ansvarade för IT relaterad administration.</li>
-                        <li>Drev förbättringsarbete som resulterade i minskade felkällor och högre leveransprecision mot kund.</li>
-                        <li>Hanterade avvikelser och komplexa logistikproblem under tidspress.</li>
-                    </ul>
                 </div>
-
                 <div class="timeline-item">
                     <div class="role-header">
                         <span class="role-title">Lagerarbetare & Gruppansvarig</span>
                         <span class="date-badge">2018 till 2019</span>
                     </div>
                     <span class="company-name">Ingram Micro / Lernia</span>
-                    <p>Startade som konsult men blev snabbt direktanställd och befordrad till gruppansvarig för returavdelningen.</p>
-                    <ul>
-                        <li>Ansvarade för returflödet för flera nyckelkunder.</li>
-                        <li>Utvecklade och dokumenterade nya rutiner för att säkerställa spårbarhet.</li>
-                    </ul>
                 </div>
-
                 <div class="timeline-item">
                     <div class="role-header">
                         <span class="role-title">Teknisk Medarbetare (Timmerman)</span>
                         <span class="date-badge">Jan 2017 till Okt 2018</span>
                     </div>
                     <span class="company-name">Vasamuseet (Statens Maritima Museer)</span>
-                    <p>Ett tekniskt precisionsarbete för att säkra bevarandet av kulturarvet Regalskeppet Vasa.</p>
-                    <ul>
-                        <li>Utförde strukturella förstärkningar, inklusive byte av över 5 500 bultar i skeppsskrovet.</li>
-                        <li>Arbetade på hög höjd med skylift och travers, vilket krävde stort säkerhetsfokus.</li>
-                    </ul>
                 </div>
-
-                 <div class="timeline-item">
+                <div class="timeline-item">
                     <div class="role-header">
                         <span class="role-title">Snickare</span>
                         <span class="date-badge">2016 till 2017</span>
                     </div>
                     <span class="company-name">AB Linhult & Jonsdotter</span>
-                    <p>Specialiserad på båt- och möbelsnickeri i historiska miljöer. Arbetet krävde stor noggrannhet och problemlösningsförmåga.</p>
-                    <ul>
-                        <li>Genomförde omfattande renovering av däck och inredningsdetaljer på isbrytaren Sankt Erik.</li>
-                        <li>Arbetade med precisionssnickeri och restaurering av kulturhistoriska objekt.</li>
-                        <li>Deltog i arbetet med bultbyten och strukturförstärkning på Regalskeppet Vasa.</li>
-                    </ul>
                 </div>
             </div>
         </section>
@@ -508,9 +429,7 @@
                 <div class="misc-grid">
                     <div class="misc-item">
                         <strong><i class="fas fa-language"></i> Språk</strong>
-                        Svenska (Modersmål)<br>
-                        Engelska (Mycket god nivå)<br>
-                        Kroatiska/Bosniska (Grundläggande)
+                        Svenska (Modersmål)<br>Engelska (Mycket god nivå)<br>Kroatiska/Bosniska (Grundläggande)
                     </div>
                     <div class="misc-item">
                         <strong><i class="fas fa-car"></i> Körkort</strong>
@@ -519,12 +438,12 @@
                 </div>
             </div>
             <div class="anim-container">
-                <lottie-player src="https://assets10.lottiefiles.com/packages/lf20_p5yompqu.json" background="transparent" speed="1" style="width: 100%; height: auto;" loop autoplay></lottie-player>
+                 <lottie-player src="https://lottie.host/804c8657-6d33-40b3-8b77-3e817454805e/u2b2T9yqR.json" background="transparent" speed="1" style="width: 100%; height: auto;" loop autoplay></lottie-player>
             </div>
         </section>
 
         <div class="footer-anim">
-            <lottie-player src="https://assets4.lottiefiles.com/packages/lf20_j1adre6n.json"  background="transparent"  speed="1"  style="width: 450px; height: 450px; margin: 0 auto;"  loop  autoplay></lottie-player>
+            <lottie-player src="https://lottie.host/369b7647-7502-4529-a793-1b919502802d/9x2m4r7j5k.json"  background="transparent"  speed="1"  style="width: 450px; height: 450px; margin: 0 auto;"  loop  autoplay></lottie-player>
             <p class="footer-text">Redo för nästa uppdrag!</p>
         </div>
 
@@ -532,50 +451,21 @@
 
     <script>
         const baseText = "whoami\n> Mattias Englund\n> ";
-        
-        const roles = [
-            "Network Technician Student...",
-            "JENSEN Ambassador...",
-            "Future Network Engineer...",
-            "Powered by Coffee & TCP/IP..."
-        ];
-
-        const typingSpeed = 100;
-        const deletingSpeed = 50;
-        const pauseTime = 1500;
-
-        let roleIndex = 0;
-        let charIndex = 0;
-        let isDeleting = false;
+        const roles = ["Network Technician Student...", "JENSEN Ambassador...", "Future Network Engineer...", "Powered by Coffee & TCP/IP..."];
+        const typingSpeed = 100; const deletingSpeed = 50; const pauseTime = 1500;
+        let roleIndex = 0; let charIndex = 0; let isDeleting = false;
         
         function typeEffect() {
             const currentRole = roles[roleIndex];
             const element = document.getElementById("typewriter");
-            
-            if (isDeleting) {
-                element.innerHTML = baseText + currentRole.substring(0, charIndex - 1);
-                charIndex--;
-            } else {
-                element.innerHTML = baseText + currentRole.substring(0, charIndex + 1);
-                charIndex++;
-            }
-
+            if (isDeleting) { element.innerHTML = baseText + currentRole.substring(0, charIndex - 1); charIndex--; } 
+            else { element.innerHTML = baseText + currentRole.substring(0, charIndex + 1); charIndex++; }
             let typeSpeed = isDeleting ? deletingSpeed : typingSpeed;
-
-            if (!isDeleting && charIndex === currentRole.length) {
-                typeSpeed = pauseTime;
-                isDeleting = true;
-            } 
-            else if (isDeleting && charIndex === 0) {
-                isDeleting = false;
-                roleIndex = (roleIndex + 1) % roles.length;
-            }
-
+            if (!isDeleting && charIndex === currentRole.length) { typeSpeed = pauseTime; isDeleting = true; } 
+            else if (isDeleting && charIndex === 0) { isDeleting = false; roleIndex = (roleIndex + 1) % roles.length; }
             setTimeout(typeEffect, typeSpeed);
         }
-        
         window.onload = typeEffect;
     </script>
-
 </body>
 </html>
