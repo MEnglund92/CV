@@ -11,6 +11,8 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
     <script src="https://unpkg.com/@lottiefiles/lottie-player@1.5.7/dist/lottie-player.js"></script>
+
+    <script src="https://unpkg.com/@dotlottie/player-component@latest/dist/dotlottie-player.mjs" type="module"></script>
     
     <meta property="og:type" content="website">
     <meta property="og:title" content="Mattias Englund | Nätverkstekniker">
@@ -193,7 +195,9 @@
             justify-content: center;
         }
 
-        .anim-container lottie-player {
+        /* Hanterar både gamla lottie-player och nya dotlottie-player */
+        .anim-container lottie-player,
+        .anim-container dotlottie-player {
             width: 100%;
             height: auto;
             filter: drop-shadow(0 0 40px rgba(56, 189, 248, 0.15));
@@ -341,7 +345,7 @@
 
         <section class="split-section reverse">
             <div class="anim-container">
-                <lottie-player src="https://assets9.lottiefiles.com/packages/lf20_fcfjwiyb.json" background="transparent" speed="1" style="width: 100%; height: 100%;" loop autoplay></lottie-player>
+                <dotlottie-player src="https://lottie.host/90ee1a42-08ea-4358-aa56-9c4420e457c4/s6RU2jB7cY.lottie" background="transparent" speed="1" style="width: 100%; height: 100%;" loop autoplay></dotlottie-player>
             </div>
             <div class="text-content">
                 <h2><i class="fas fa-laptop-code"></i> Projekt & Labb</h2>
@@ -458,7 +462,7 @@
 
         <section class="split-section reverse">
             <div class="anim-container">
-                <lottie-player src="https://assets2.lottiefiles.com/packages/lf20_9wjm14ni.json" background="transparent" speed="1" style="width: 100%; height: 100%;" loop autoplay></lottie-player>
+                <dotlottie-player src="https://lottie.host/a79956a3-b796-4968-9906-7323504cae88/9XNUbBz2T1.lottie" background="transparent" speed="1" style="width: 100%; height: 100%;" loop autoplay></dotlottie-player>
             </div>
             <div class="timeline-content">
                 <h2><i class="fas fa-briefcase"></i> Arbetslivserfarenhet</h2>
@@ -537,7 +541,7 @@
                 </div>
             </div>
             <div class="anim-container">
-                <lottie-player src="https://assets4.lottiefiles.com/packages/lf20_j3uxewf6.json" background="transparent" speed="1" style="width: 100%; height: 100%;" loop autoplay></lottie-player>
+                <dotlottie-player src="https://lottie.host/e4136ddc-eb78-4ccf-8aab-44ded26234e2/PvKIU0LvJ2.lottie" background="transparent" speed="1" style="width: 100%; height: 100%;" loop autoplay></dotlottie-player>
             </div>
         </section>
 
