@@ -39,18 +39,68 @@
             overflow-x: hidden;
         }
 
-        /* BREDD UPPDATERAD TILL 1400px */
+        /* BREDD: 1300px enligt önskemål */
         .container {
-            max-width: 1400px; 
+            max-width: 1300px; 
             margin: 60px auto;
             padding: 20px;
+        }
+
+        /* --- NYA CSS-ANIMATIONER FÖR IKONER (FAILSAFE) --- */
+        .tech-icon-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 300px;
+            width: 100%;
+            gap: 30px;
+        }
+
+        .huge-icon {
+            font-size: 10rem; /* Mycket stor ikon */
+            color: var(--accent);
+            opacity: 0.8;
+            filter: drop-shadow(0 0 30px rgba(56, 189, 248, 0.3));
+        }
+
+        /* Animation: Svävande */
+        .float-anim {
+            animation: float 4s ease-in-out infinite;
+        }
+        
+        /* Animation: Pulserande (för nätverk) */
+        .pulse-anim {
+            animation: pulse-glow 3s infinite;
+        }
+
+        /* Animation: Flygplan */
+        .fly-anim {
+            animation: fly-in 3s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+            100% { transform: translateY(0px); }
+        }
+
+        @keyframes pulse-glow {
+            0% { transform: scale(1); opacity: 0.8; }
+            50% { transform: scale(1.05); opacity: 1; filter: drop-shadow(0 0 50px rgba(56, 189, 248, 0.6)); }
+            100% { transform: scale(1); opacity: 0.8; }
+        }
+
+        @keyframes fly-in {
+            0% { transform: translate(0, 0) rotate(0deg); }
+            50% { transform: translate(10px, -10px) rotate(-5deg); }
+            100% { transform: translate(0, 0) rotate(0deg); }
         }
 
         /* --- TERMINAL HERO --- */
         .terminal-hero {
             background-color: var(--terminal-bg);
             border-radius: 12px;
-            padding: 40px; /* Lite mer padding för den breda looken */
+            padding: 40px;
             margin-bottom: 60px;
             border: 1px solid var(--border);
             box-shadow: 0 0 30px rgba(56, 189, 248, 0.15);
@@ -75,7 +125,7 @@
 
         .terminal-content {
             color: var(--accent);
-            font-size: 1.2rem; /* Lite större text i terminalen */
+            font-size: 1.2rem;
             white-space: pre-wrap; 
             line-height: 1.6;
         }
@@ -96,7 +146,7 @@
         header { text-align: center; margin-bottom: 100px; }
         
         h1 {
-            font-size: 4rem; /* Större rubrik för bredare skärm */
+            font-size: 4rem;
             margin: 15px 0;
             font-weight: 800;
             color: white;
@@ -154,7 +204,7 @@
         /* SEKTIONER */
         section {
             background: var(--card-bg); 
-            padding: 80px; /* Rejält med luft inuti korten */
+            padding: 80px; 
             margin-bottom: 60px;
             border-radius: 20px; 
             border: 1px solid var(--border);
@@ -169,8 +219,8 @@
         
         .split-section {
             display: grid;
-            grid-template-columns: 1.2fr 1fr; /* Balanserad bredd */
-            gap: 80px; /* Mer avstånd mellan text och animation */
+            grid-template-columns: 1.2fr 1fr;
+            gap: 80px;
             align-items: center;
         }
         
@@ -178,7 +228,6 @@
             grid-template-columns: 1fr 1.2fr;
         }
 
-        /* LÄSVÄNLIGHET: Texten får inte bli för bred även om containern är 1400px */
         .text-content p {
             max-width: 650px; 
             font-size: 1.1rem;
@@ -186,7 +235,7 @@
 
         .anim-container {
             width: 100%;
-            max-width: 500px; /* Låter animationerna bli lite större */
+            max-width: 500px;
             margin: 0 auto;
             min-height: 350px; 
             display: flex;
@@ -208,7 +257,7 @@
         }
         .skills-anim-center {
             width: 100%;
-            max-width: 300px; /* Lite större chip */
+            max-width: 300px;
             margin-bottom: 50px;
             min-height: 300px;
         }
@@ -273,7 +322,7 @@
         }
 
         /* RESPONSIVITET (MOBIL) */
-        @media (max-width: 1100px) { /* Brytpunkt justerad */
+        @media (max-width: 1100px) {
             h1 { font-size: 2.8rem; }
             .container { margin: 20px auto; padding: 15px; width: 95%; }
             
@@ -459,7 +508,9 @@
 
         <section class="split-section reverse">
             <div class="anim-container">
-                <lottie-player src="https://assets5.lottiefiles.com/packages/lf20_vk214w.json" background="transparent" speed="1" style="width: 100%; height: 100%;" loop autoplay></lottie-player>
+                <div class="tech-icon-container">
+                    <i class="fas fa-network-wired huge-icon pulse-anim"></i>
+                </div>
             </div>
             <div class="timeline-content">
                 <h2><i class="fas fa-briefcase"></i> Arbetslivserfarenhet</h2>
@@ -538,12 +589,17 @@
                 </div>
             </div>
             <div class="anim-container">
-                <lottie-player src="https://assets1.lottiefiles.com/packages/lf20_hXfP9V.json" background="transparent" speed="1" style="width: 100%; height: 100%;" loop autoplay></lottie-player>
+                <div class="tech-icon-container">
+                    <i class="fas fa-globe-americas huge-icon float-anim"></i>
+                    <i class="fas fa-car huge-icon float-anim" style="animation-delay: 1s;"></i>
+                </div>
             </div>
         </section>
 
         <div class="footer-anim">
-            <lottie-player src="https://assets9.lottiefiles.com/packages/lf20_x62chJ.json"  background="transparent"  speed="1"  style="width: 350px; height: 350px; margin: 0 auto;"  loop  autoplay></lottie-player>
+            <div class="tech-icon-container">
+                 <i class="fas fa-paper-plane huge-icon fly-anim" style="font-size: 8rem;"></i>
+            </div>
             <p class="footer-text">Redo för nästa uppdrag!</p>
         </div>
 
