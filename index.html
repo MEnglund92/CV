@@ -163,7 +163,7 @@
             display: flex; align-items: center; gap: 15px;
         }
 
-        /* --- LAYOUTS FÖR SEKTIONER --- */
+        /* --- LAYOUTS & ANIMATIONER --- */
         
         .split-section {
             display: grid;
@@ -176,12 +176,12 @@
             grid-template-columns: 1fr 1.5fr;
         }
 
-        /* FIX: Tvinga animation-containern att ha en storlek */
+        /* Container för både Lottie och Ikoner */
         .anim-container {
             width: 100%;
             max-width: 400px;
             margin: 0 auto;
-            min-height: 300px; /* VIKTIGT: Gör att rutan inte kollapsar */
+            min-height: 300px;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -191,6 +191,25 @@
             width: 100%;
             height: auto;
             filter: drop-shadow(0 0 30px rgba(56, 189, 248, 0.1));
+        }
+
+        /* STIL FÖR IKON-ANIMATIONER (ERSÄTTER TRASIGA LOTTIES) */
+        .icon-anim {
+            font-size: 10rem; /* Stora ikoner */
+            color: var(--accent);
+            filter: drop-shadow(0 0 20px rgba(56, 189, 248, 0.2));
+            animation: floatIcon 3s ease-in-out infinite;
+        }
+
+        .icon-group {
+            display: flex;
+            gap: 30px;
+        }
+
+        @keyframes floatIcon {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-15px); }
+            100% { transform: translateY(0px); }
         }
 
         /* Speciell layout för Skills */
@@ -203,7 +222,7 @@
             width: 100%;
             max-width: 250px;
             margin-bottom: 30px;
-            min-height: 250px; /* Fix för höjd */
+            min-height: 250px;
         }
 
         /* PROJEKT */
@@ -451,7 +470,7 @@
 
         <section class="split-section reverse">
             <div class="anim-container">
-                <lottie-player src="https://assets6.lottiefiles.com/packages/lf20_lC7k2N.json" background="transparent" speed="1" style="width: 100%; height: 100%;" loop autoplay></lottie-player>
+                <i class="fas fa-network-wired icon-anim"></i>
             </div>
             <div class="timeline-content">
                 <h2><i class="fas fa-briefcase"></i> Arbetslivserfarenhet</h2>
@@ -530,7 +549,10 @@
                 </div>
             </div>
             <div class="anim-container">
-                <lottie-player src="https://assets3.lottiefiles.com/packages/lf20_7uw9w0.json" background="transparent" speed="1" style="width: 100%; height: 100%;" loop autoplay></lottie-player>
+                <div class="icon-group">
+                    <i class="fas fa-globe-europe icon-anim"></i>
+                    <i class="fas fa-car-side icon-anim" style="animation-delay: 1s;"></i>
+                </div>
             </div>
         </section>
 
