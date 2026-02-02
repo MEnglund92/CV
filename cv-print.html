@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CV | Mattias Englund</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        :root {
+            --primary: #2563eb; /* En professionell mörkare blå */
+            --text-dark: #1e293b;
+            --text-light: #64748b;
+            --bg-gray: #f8fafc;
+            --border: #e2e8f0;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: white;
+            color: var(--text-dark);
+            margin: 0;
+            padding: 0;
+            line-height: 1.5;
+            -webkit-print-color-adjust: exact; /* Tvingar webbläsaren att skriva ut färger */
+        }
+
+        .container {
+            max-width: 900px; /* A4-bredd optimering */
+            margin: 0 auto;
+            padding: 40px;
+        }
+
+        /* HEADER */
+        header {
+            border-bottom: 2px solid var(--border);
+            padding-bottom: 20px;
+            margin-bottom: 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+        }
+
+        .header-content h1 {
+            font-size: 2.5rem;
+            margin: 0;
+            color: var(--text-dark);
+            font-weight: 800;
+            line-height: 1.2;
+        }
+
+        .header-content .role {
+            font-size: 1.2rem;
+            color: var(--primary);
+            font-weight: 600;
+            margin-top: 5px;
+            display: block;
+        }
+
+        .contact-info {
+            text-align: right;
+            font-size: 0.9rem;
+            color: var(--text-dark);
+        }
+
+        .contact-info div { margin-bottom: 4px; }
+        .contact-info i { color: var(--primary); margin-right: 8px; width: 15px; }
+
+        /* SEKTIONER */
+        section { margin-bottom: 25px; }
+
+        h2 {
+            font-size: 1.1rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--text-light);
+            border-bottom: 1px solid var(--border);
+            padding-bottom: 5px;
+            margin-bottom: 15px;
+            font-weight: 700;
+        }
+
+        h3 {
+            font-size: 1.1rem;
+            margin: 0 0 5px 0;
+            color: var(--text-dark);
+        }
+
+        p { margin: 0 0 10px 0; color: #334155; }
+
+        /* PROFIL */
+        .profile-text {
+            font-size: 1rem;
+            line-height: 1.6;
+            color: #334155;
+        }
+
+        /* TVÅ-KOLUMNS LAYOUT FÖR INFO */
+        .grid-2 {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+        }
+
+        /* KUNSKAPER / SKILLS */
+        .skills-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+        }
+        
+        .skill-group strong {
+            display: block;
+            color: var(--primary);
+            font-size: 0.9rem;
+            margin-bottom: 4px;
+        }
+        
+        .skill-group span {
+            font-size: 0.9rem;
+            color: #475569;
+        }
+
+        /* ERFARENHET & UTBILDNING LISTA */
+        .timeline-item {
+            margin-bottom: 20px;
+            page-break-inside: avoid; /* Försöker undvika att bryta mitt i ett jobb */
+        }
+
+        .item-header {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 5px;
+        }
+
+        .item-title { font-weight: 700; font-size: 1rem; }
+        .item-company { color: var(--primary); font-weight: 600; }
+        .item-date { font-size: 0.85rem; color: var(--text-light); font-weight: 600; background: var(--bg-gray); padding: 2px 8px; border-radius: 4px; height: fit-content;}
+
+        .item-desc {
+            font-size: 0.95rem;
+            margin-top: 5px;
+        }
+        
+        .item-desc ul {
+            margin: 5px 0 0 0;
+            padding-left: 20px;
+        }
+        
+        .item-desc li { margin-bottom: 3px; }
+
+        /* Projekt-kort för print */
+        .project-item {
+            background: var(--bg-gray);
+            padding: 15px;
+            border-radius: 8px;
+            border: 1px solid var(--border);
+            margin-bottom: 10px;
+        }
+        .project-tech {
+            font-size: 0.8rem;
+            color: var(--primary);
+            font-family: monospace;
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        /* PRINT SPECIFICS */
+        @media print {
+            body { background: white; }
+            .container { width: 100%; max-width: 100%; padding: 20px; }
+            a { text-decoration: none; color: inherit; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        
+        <header>
+            <div class="header-content">
+                <h1>Mattias Englund</h1>
+                <span class="role">Studerande Nätverkstekniker • Ambassadör hos JENSEN</span>
+                <div style="margin-top: 10px; font-size: 0.9rem; font-weight: 600; color: #16a34a;">
+                    Status: Söker LIA våren 2026
+                </div>
+            </div>
+            <div class="contact-info">
+                <div><i class="fas fa-envelope"></i> Mattias.Englund1992@gmail.com</div>
+                <div><i class="fas fa-phone"></i> 070-429 48 04</div>
+                <div><i class="fab fa-linkedin"></i> linkedin.com/in/mattias-englund</div>
+                <div><i class="fas fa-map-marker-alt"></i> Stockholm, Sverige</div>
+            </div>
+        </header>
+
+        <section>
+            <h2>Profil</h2>
+            <p class="profile-text">
+                Från Team Manager till Nätverkstekniker. Efter sex år inom operativt ledarskap har jag valt att sadla om för att helhjärtat satsa på mitt tekniska intresse. Med min bakgrund inom operativ drift förstår jag vikten av struktur och upptid. Dessa erfarenheter kombinerar jag nu med teknisk kompetens inom Cisco, Azure och nätverkssäkerhet. Som <strong>Ambassadör på JENSEN</strong> drivs jag av ansvar och utveckling. Jag söker en LIA-plats våren 2026 där jag får använda både min tekniska problemlösningsförmåga och mitt professionella driv i skarpt läge.
+            </p>
+        </section>
+
+        <div class="grid-2">
+            
+            <div>
+                <section>
+                    <h2>Teknisk Kompetens</h2>
+                    <div class="skills-container" style="display: flex; flex-direction: column; gap: 10px;">
+                        <div class="skill-group">
+                            <strong>Nätverk & Protokoll</strong>
+                            <span>Cisco (Routers, IOS), TCP/IP & OSI, BGP & Routing, Switching, VLAN, SSH, DNS, DHCP.</span>
+                        </div>
+                        <div class="skill-group">
+                            <strong>Säkerhet</strong>
+                            <span>Firewalls & ACL, VPN, SASE & Zero Trust, ISO 27001, Wireshark.</span>
+                        </div>
+                        <div class="skill-group">
+                            <strong>Moln & Virtualisering</strong>
+                            <span>Azure, NSG, Docker, Terraform, VMware, Hyper-V.</span>
+                        </div>
+                        <div class="skill-group">
+                            <strong>Verktyg</strong>
+                            <span>Linux, Windows Server, Python, Git, Visual Studio.</span>
+                        </div>
+                    </div>
+                </section>
+
+                <section>
+                    <h2>Övrigt</h2>
+                    <div class="skills-container" style="display: block;">
+                        <div class="skill-group" style="margin-bottom: 10px;">
+                            <strong>Språk</strong>
+                            <span>Svenska (Modersmål), Engelska (Mycket god), Kroatiska/Bosniska (Grund).</span>
+                        </div>
+                        <div class="skill-group">
+                            <strong>Körkort</strong>
+                            <span>B-Körkort (Personbil)</span>
+                        </div>
+                    </div>
+                </section>
+            </div>
+
+            <div>
+                <section>
+                    <h2>Projekt & Labb</h2>
+                    <div class="project-item">
+                        <div class="item-title">Cisco Packet Tracer Labb</div>
+                        <span class="project-tech">VLAN • OSPF • DHCP</span>
+                        <p style="font-size: 0.9rem; margin-top: 5px;">Konfigurering av företagsnätverk med segmentering och redundans.</p>
+                    </div>
+                    <div class="project-item">
+                        <div class="item-title">Azure Cloud Setup</div>
+                        <span class="project-tech">Azure AD • Virtuella Nätverk</span>
+                        <p style="font-size: 0.9rem; margin-top: 5px;">Uppsättning av hybridmiljö och hantering av användarrättigheter.</p>
+                    </div>
+                </section>
+                
+                <section>
+                    <h2>Utbildning</h2>
+                    <div class="timeline-item">
+                        <div class="item-header">
+                            <div>
+                                <div class="item-title">Nätverkstekniker</div>
+                                <div class="item-company">JENSEN Yrkeshögskola</div>
+                            </div>
+                            <div class="item-date">Sep 2025 - Juni 2026</div>
+                        </div>
+                        <div class="item-desc">
+                            <ul>
+                                <li><strong>Roll:</strong> Förtroendevald Ambassadör.</li>
+                                <li><strong>Kurser:</strong> Datakommunikation, Design, Säkerhet, Scripting.</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="timeline-item">
+                        <div class="item-header">
+                            <div>
+                                <div class="item-title">Certifikat & Kurser</div>
+                                <div class="item-company">LinkedIn Learning</div>
+                            </div>
+                            <div class="item-date">Okt 2025</div>
+                        </div>
+                        <div class="item-desc" style="font-size: 0.85rem;">
+                            Cisco CCNA Cert Prep, IP Addressing & Subnetting, Python Basics.
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+
+        <section>
+            <h2>Arbetslivserfarenhet</h2>
+
+            <div class="timeline-item">
+                <div class="item-header">
+                    <div>
+                        <div class="item-title">Team Area Manager</div>
+                        <div class="item-company">CEVA Logistics</div>
+                    </div>
+                    <div class="item-date">Juli 2019 - Sep 2025</div>
+                </div>
+                <div class="item-desc">
+                    Ansvarig för den dagliga operativa driften.
+                    <ul>
+                        <li>Ledde ett team genom daglig styrning och coachning.</li>
+                        <li>Superuser för lagersystem (WMS) och ansvarig för IT-administration.</li>
+                        <li>Drev förbättringsarbete för minskade felkällor och högre leveransprecision.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="item-header">
+                    <div>
+                        <div class="item-title">Lagerarbetare & Gruppansvarig</div>
+                        <div class="item-company">Ingram Micro / Lernia</div>
+                    </div>
+                    <div class="item-date">2018 - 2019</div>
+                </div>
+                <div class="item-desc">
+                    <ul>
+                        <li>Ansvarade för returflödet för nyckelkunder.</li>
+                        <li>Utvecklade rutiner för att säkerställa spårbarhet.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="item-header">
+                    <div>
+                        <div class="item-title">Teknisk Medarbetare (Timmerman)</div>
+                        <div class="item-company">Vasamuseet</div>
+                    </div>
+                    <div class="item-date">Jan 2017 - Okt 2018</div>
+                </div>
+                <div class="item-desc">
+                    Tekniskt precisionsarbete för bevarandet av Regalskeppet Vasa. Strukturförstärkning och arbete på hög höjd.
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="item-header">
+                    <div>
+                        <div class="item-title">Snickare</div>
+                        <div class="item-company">AB Linhult & Jonsdotter</div>
+                    </div>
+                    <div class="item-date">2016 - 2017</div>
+                </div>
+                <div class="item-desc">
+                    Specialiserad på båt- och möbelsnickeri i historiska miljöer. Precisionsarbete och problemlösning.
+                </div>
+            </div>
+        </section>
+
+    </div>
+
+</body>
+</html>
