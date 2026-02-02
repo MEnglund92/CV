@@ -39,61 +39,11 @@
             overflow-x: hidden;
         }
 
-        /* BREDD: 1300px enligt önskemål */
+        /* BREDD: 1300px */
         .container {
             max-width: 1300px; 
             margin: 60px auto;
             padding: 20px;
-        }
-
-        /* --- NYA CSS-ANIMATIONER FÖR IKONER (FAILSAFE) --- */
-        .tech-icon-container {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 300px;
-            width: 100%;
-            gap: 30px;
-        }
-
-        .huge-icon {
-            font-size: 10rem; /* Mycket stor ikon */
-            color: var(--accent);
-            opacity: 0.8;
-            filter: drop-shadow(0 0 30px rgba(56, 189, 248, 0.3));
-        }
-
-        /* Animation: Svävande */
-        .float-anim {
-            animation: float 4s ease-in-out infinite;
-        }
-        
-        /* Animation: Pulserande (för nätverk) */
-        .pulse-anim {
-            animation: pulse-glow 3s infinite;
-        }
-
-        /* Animation: Flygplan */
-        .fly-anim {
-            animation: fly-in 3s ease-in-out infinite;
-        }
-
-        @keyframes float {
-            0% { transform: translateY(0px); }
-            50% { transform: translateY(-20px); }
-            100% { transform: translateY(0px); }
-        }
-
-        @keyframes pulse-glow {
-            0% { transform: scale(1); opacity: 0.8; }
-            50% { transform: scale(1.05); opacity: 1; filter: drop-shadow(0 0 50px rgba(56, 189, 248, 0.6)); }
-            100% { transform: scale(1); opacity: 0.8; }
-        }
-
-        @keyframes fly-in {
-            0% { transform: translate(0, 0) rotate(0deg); }
-            50% { transform: translate(10px, -10px) rotate(-5deg); }
-            100% { transform: translate(0, 0) rotate(0deg); }
         }
 
         /* --- TERMINAL HERO --- */
@@ -508,9 +458,7 @@
 
         <section class="split-section reverse">
             <div class="anim-container">
-                <div class="tech-icon-container">
-                    <i class="fas fa-network-wired huge-icon pulse-anim"></i>
-                </div>
+                <lottie-player src="https://assets10.lottiefiles.com/packages/lf20_2glqweqs.json" background="transparent" speed="1" style="width: 100%; height: 100%;" loop autoplay></lottie-player>
             </div>
             <div class="timeline-content">
                 <h2><i class="fas fa-briefcase"></i> Arbetslivserfarenhet</h2>
@@ -589,17 +537,12 @@
                 </div>
             </div>
             <div class="anim-container">
-                <div class="tech-icon-container">
-                    <i class="fas fa-globe-americas huge-icon float-anim"></i>
-                    <i class="fas fa-car huge-icon float-anim" style="animation-delay: 1s;"></i>
-                </div>
+                <lottie-player src="https://assets6.lottiefiles.com/packages/lf20_bhebjzpu.json" background="transparent" speed="1" style="width: 100%; height: 100%;" loop autoplay></lottie-player>
             </div>
         </section>
 
         <div class="footer-anim">
-            <div class="tech-icon-container">
-                 <i class="fas fa-paper-plane huge-icon fly-anim" style="font-size: 8rem;"></i>
-            </div>
+            <lottie-player src="https://assets9.lottiefiles.com/packages/lf20_x62chJ.json"  background="transparent"  speed="1"  style="width: 350px; height: 350px; margin: 0 auto;"  loop  autoplay></lottie-player>
             <p class="footer-text">Redo för nästa uppdrag!</p>
         </div>
 
