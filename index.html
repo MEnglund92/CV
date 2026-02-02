@@ -176,10 +176,20 @@
             grid-template-columns: 1fr 1.5fr;
         }
 
-        .anim-container lottie-player {
+        /* FIX: Tvinga animation-containern att ha en storlek */
+        .anim-container {
             width: 100%;
             max-width: 400px;
             margin: 0 auto;
+            min-height: 300px; /* VIKTIGT: Gör att rutan inte kollapsar */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .anim-container lottie-player {
+            width: 100%;
+            height: auto;
             filter: drop-shadow(0 0 30px rgba(56, 189, 248, 0.1));
         }
 
@@ -193,6 +203,7 @@
             width: 100%;
             max-width: 250px;
             margin-bottom: 30px;
+            min-height: 250px; /* Fix för höjd */
         }
 
         /* PROJEKT */
@@ -440,7 +451,7 @@
 
         <section class="split-section reverse">
             <div class="anim-container">
-                <lottie-player src="https://assets2.lottiefiles.com/packages/lf20_9wjm14ni.json" background="transparent" speed="1" style="width: 100%; height: auto;" loop autoplay></lottie-player>
+                <lottie-player src="https://assets5.lottiefiles.com/packages/lf20_9wjm14ni.json" background="transparent" speed="1" style="width: 100%; height: auto;" loop autoplay></lottie-player>
             </div>
             <div class="timeline-content">
                 <h2><i class="fas fa-briefcase"></i> Arbetslivserfarenhet</h2>
@@ -519,7 +530,7 @@
                 </div>
             </div>
             <div class="anim-container">
-                <lottie-player src="https://assets2.lottiefiles.com/packages/lf20_zmsa1xdo.json" background="transparent" speed="1" style="width: 100%; height: auto;" loop autoplay></lottie-player>
+                <lottie-player src="https://assets5.lottiefiles.com/packages/lf20_afwjhFb2.json" background="transparent" speed="1" style="width: 100%; height: auto;" loop autoplay></lottie-player>
             </div>
         </section>
 
