@@ -39,9 +39,9 @@
             overflow-x: hidden;
         }
 
-        /* BREDD UPPDATERAD TILL 1300px */
+        /* BREDD UPPDATERAD TILL 1400px */
         .container {
-            max-width: 1300px; 
+            max-width: 1400px; 
             margin: 60px auto;
             padding: 20px;
         }
@@ -50,7 +50,7 @@
         .terminal-hero {
             background-color: var(--terminal-bg);
             border-radius: 12px;
-            padding: 40px;
+            padding: 40px; /* Lite mer padding för den breda looken */
             margin-bottom: 60px;
             border: 1px solid var(--border);
             box-shadow: 0 0 30px rgba(56, 189, 248, 0.15);
@@ -75,7 +75,7 @@
 
         .terminal-content {
             color: var(--accent);
-            font-size: 1.2rem;
+            font-size: 1.2rem; /* Lite större text i terminalen */
             white-space: pre-wrap; 
             line-height: 1.6;
         }
@@ -96,7 +96,7 @@
         header { text-align: center; margin-bottom: 100px; }
         
         h1 {
-            font-size: 4rem;
+            font-size: 4rem; /* Större rubrik för bredare skärm */
             margin: 15px 0;
             font-weight: 800;
             color: white;
@@ -154,7 +154,7 @@
         /* SEKTIONER */
         section {
             background: var(--card-bg); 
-            padding: 80px;
+            padding: 80px; /* Rejält med luft inuti korten */
             margin-bottom: 60px;
             border-radius: 20px; 
             border: 1px solid var(--border);
@@ -169,8 +169,8 @@
         
         .split-section {
             display: grid;
-            grid-template-columns: 1.2fr 1fr;
-            gap: 80px;
+            grid-template-columns: 1.2fr 1fr; /* Balanserad bredd */
+            gap: 80px; /* Mer avstånd mellan text och animation */
             align-items: center;
         }
         
@@ -178,6 +178,7 @@
             grid-template-columns: 1fr 1.2fr;
         }
 
+        /* LÄSVÄNLIGHET: Texten får inte bli för bred även om containern är 1400px */
         .text-content p {
             max-width: 650px; 
             font-size: 1.1rem;
@@ -185,7 +186,7 @@
 
         .anim-container {
             width: 100%;
-            max-width: 500px;
+            max-width: 500px; /* Låter animationerna bli lite större */
             margin: 0 auto;
             min-height: 350px; 
             display: flex;
@@ -207,7 +208,7 @@
         }
         .skills-anim-center {
             width: 100%;
-            max-width: 300px;
+            max-width: 300px; /* Lite större chip */
             margin-bottom: 50px;
             min-height: 300px;
         }
@@ -272,7 +273,7 @@
         }
 
         /* RESPONSIVITET (MOBIL) */
-        @media (max-width: 1100px) {
+        @media (max-width: 1100px) { /* Brytpunkt justerad */
             h1 { font-size: 2.8rem; }
             .container { margin: 20px auto; padding: 15px; width: 95%; }
             
@@ -458,28 +459,11 @@
 
         <section class="split-section reverse">
             <div class="anim-container">
-                <lottie-player src="https://assets2.lottiefiles.com/packages/lf20_w51pcehl.json" background="transparent" speed="1" style="width: 100%; height: 100%;" loop autoplay></lottie-player>
-                </div>
-            <script>
-                document.querySelector('.split-section.reverse .anim-container lottie-player').setAttribute('src', 'https://assets5.lottiefiles.com/packages/lf20_vnikrcia.json'); 
-                // Vänta, laptop var vnikrcia. Låt oss ta en annan för dokument.
-                // Använder en stabil "Document" länk:
-                document.querySelector('.split-section.reverse .anim-container lottie-player').setAttribute('src', 'https://assets8.lottiefiles.com/packages/lf20_bty3ak8q.json'); // Schedule/Doc
-            </script>
-            
-            <div class="anim-container" style="position: absolute; opacity: 0; pointer-events: none;"></div>
-        </section>
-        
-        <script>
-            // Tar bort den felaktiga sektionen om den renderades fel och ersätter innehållet manuellt i koden nedan
-        </script>
-
-        <section class="split-section reverse">
-            <div class="anim-container">
-                <lottie-player src="https://assets8.lottiefiles.com/packages/lf20_bty3ak8q.json" background="transparent" speed="1" style="width: 100%; height: 100%;" loop autoplay></lottie-player>
+                <lottie-player src="https://assets5.lottiefiles.com/packages/lf20_vk214w.json" background="transparent" speed="1" style="width: 100%; height: 100%;" loop autoplay></lottie-player>
             </div>
             <div class="timeline-content">
                 <h2><i class="fas fa-briefcase"></i> Arbetslivserfarenhet</h2>
+                
                 <div class="timeline-item">
                     <div class="role-header">
                         <span class="role-title">Team Area Manager</span>
@@ -494,6 +478,7 @@
                         <li>Hanterade avvikelser och komplexa logistikproblem under tidspress.</li>
                     </ul>
                 </div>
+
                 <div class="timeline-item">
                     <div class="role-header">
                         <span class="role-title">Lagerarbetare & Gruppansvarig</span>
@@ -501,22 +486,37 @@
                     </div>
                     <span class="company-name">Ingram Micro / Lernia</span>
                     <p>Startade som konsult men blev snabbt direktanställd och befordrad till gruppansvarig för returavdelningen.</p>
+                    <ul>
+                        <li>Ansvarade för returflödet för flera nyckelkunder.</li>
+                        <li>Utvecklade och dokumenterade nya rutiner för att säkerställa spårbarhet.</li>
+                    </ul>
                 </div>
-                 <div class="timeline-item">
+
+                <div class="timeline-item">
                     <div class="role-header">
-                        <span class="role-title">Teknisk Medarbetare</span>
+                        <span class="role-title">Teknisk Medarbetare (Timmerman)</span>
                         <span class="date-badge">Jan 2017 till Okt 2018</span>
                     </div>
-                    <span class="company-name">Vasamuseet</span>
+                    <span class="company-name">Vasamuseet (Statens Maritima Museer)</span>
                     <p>Ett tekniskt precisionsarbete för att säkra bevarandet av kulturarvet Regalskeppet Vasa.</p>
+                    <ul>
+                        <li>Utförde strukturella förstärkningar, inklusive byte av över 5 500 bultar i skeppsskrovet.</li>
+                        <li>Arbetade på hög höjd med skylift och travers, vilket krävde stort säkerhetsfokus.</li>
+                    </ul>
                 </div>
+
                  <div class="timeline-item">
                     <div class="role-header">
                         <span class="role-title">Snickare</span>
                         <span class="date-badge">2016 till 2017</span>
                     </div>
                     <span class="company-name">AB Linhult & Jonsdotter</span>
-                    <p>Specialiserad på båt- och möbelsnickeri i historiska miljöer.</p>
+                    <p>Specialiserad på båt- och möbelsnickeri i historiska miljöer. Arbetet krävde stor noggrannhet och problemlösningsförmåga.</p>
+                    <ul>
+                        <li>Genomförde omfattande renovering av däck och inredningsdetaljer på isbrytaren Sankt Erik.</li>
+                        <li>Arbetade med precisionssnickeri och restaurering av kulturhistoriska objekt.</li>
+                        <li>Deltog i arbetet med bultbyten och strukturförstärkning på Regalskeppet Vasa.</li>
+                    </ul>
                 </div>
             </div>
         </section>
@@ -538,7 +538,7 @@
                 </div>
             </div>
             <div class="anim-container">
-                <lottie-player src="https://assets2.lottiefiles.com/packages/lf20_7uw9w0.json" background="transparent" speed="1" style="width: 100%; height: 100%;" loop autoplay></lottie-player>
+                <lottie-player src="https://assets1.lottiefiles.com/packages/lf20_hXfP9V.json" background="transparent" speed="1" style="width: 100%; height: 100%;" loop autoplay></lottie-player>
             </div>
         </section>
 
