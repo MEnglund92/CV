@@ -35,13 +35,14 @@
             color: var(--text-main);
             margin: 0;
             padding: 0;
-            line-height: 1.7;
+            line-height: 1.8; /* Lite luftigare text */
             overflow-x: hidden;
         }
 
+        /* JUSTERAD BREDD: 1000px ser oftast snyggast ut på desktop för CV */
         .container {
-            max-width: 1200px;
-            margin: 40px auto;
+            max-width: 1000px; 
+            margin: 60px auto; /* Lite mer marginal upp/ner */
             padding: 20px;
         }
 
@@ -50,9 +51,9 @@
             background-color: var(--terminal-bg);
             border-radius: 12px;
             padding: 30px;
-            margin-bottom: 40px;
+            margin-bottom: 50px;
             border: 1px solid var(--border);
-            box-shadow: 0 0 20px rgba(56, 189, 248, 0.1);
+            box-shadow: 0 0 30px rgba(56, 189, 248, 0.15);
             font-family: 'Fira Code', monospace;
             min-height: 180px;
             display: flex;
@@ -92,13 +93,14 @@
         @keyframes blink { 0% { opacity: 0; } 50% { opacity: 1; } 100% { opacity: 0; } }
 
         /* HEADER */
-        header { text-align: center; margin-bottom: 60px; }
+        header { text-align: center; margin-bottom: 80px; }
         
         h1 {
             font-size: 3.5rem;
-            margin: 10px 0;
-            font-weight: 700;
+            margin: 15px 0;
+            font-weight: 800;
             color: white;
+            letter-spacing: -1px;
         }
 
         .status-badge {
@@ -106,8 +108,8 @@
             align-items: center;
             background: rgba(34, 197, 94, 0.1);
             color: #4ade80;
-            padding: 5px 15px;
-            border-radius: 20px;
+            padding: 6px 18px;
+            border-radius: 30px;
             font-size: 0.9rem;
             font-weight: 600;
             border: 1px solid rgba(34, 197, 94, 0.3);
@@ -120,14 +122,14 @@
             background-color: #4ade80;
             border-radius: 50%;
             margin-right: 8px;
-            box-shadow: 0 0 8px #4ade80;
+            box-shadow: 0 0 10px #4ade80;
             animation: pulse 2s infinite;
         }
 
         @keyframes pulse { 0% { opacity: 1; } 50% { opacity: 0.5; } 100% { opacity: 1; } }
 
         /* KNAPPAR */
-        .actions { display: flex; justify-content: center; gap: 15px; flex-wrap: wrap; margin-top: 20px; align-items: center; }
+        .actions { display: flex; justify-content: center; gap: 15px; flex-wrap: wrap; margin-top: 25px; align-items: center; }
         
         .btn {
             display: inline-flex; align-items: center; gap: 8px; padding: 12px 28px;
@@ -136,7 +138,7 @@
             font-size: 1rem;
         }
         .btn-primary { background-color: var(--accent); color: #0f172a; }
-        .btn-primary:hover { background-color: var(--accent-hover); transform: translateY(-2px); }
+        .btn-primary:hover { background-color: var(--accent-hover); transform: translateY(-2px); box-shadow: 0 10px 20px -10px rgba(56, 189, 248, 0.5); }
         .btn-secondary { background-color: transparent; border: 1px solid var(--border); color: var(--text-main); }
         .btn-secondary:hover { border-color: var(--accent); color: var(--accent); }
 
@@ -152,36 +154,40 @@
         /* SEKTIONER */
         section {
             background: var(--card-bg); 
-            padding: 50px; 
-            margin-bottom: 40px;
+            padding: 60px; /* Mer padding internt */
+            margin-bottom: 50px;
             border-radius: 16px; 
             border: 1px solid var(--border);
         }
         h2 {
-            color: var(--accent); font-size: 1.8rem; margin-top: 0; margin-bottom: 30px;
-            border-bottom: 1px solid var(--border); padding-bottom: 15px;
-            display: flex; align-items: center; gap: 15px;
+            color: var(--accent); font-size: 2rem; margin-top: 0; margin-bottom: 40px;
+            border-bottom: 1px solid var(--border); padding-bottom: 20px;
+            display: flex; align-items: center; gap: 15px; font-weight: 700;
         }
 
-        /* --- LAYOUTS FÖR SEKTIONER --- */
+        /* --- LAYOUTS --- */
         
         .split-section {
             display: grid;
-            grid-template-columns: 1.5fr 1fr;
-            gap: 50px;
+            grid-template-columns: 1.4fr 1fr; /* Text tar lite mer plats */
+            gap: 60px;
             align-items: center;
         }
         
         .split-section.reverse {
-            grid-template-columns: 1fr 1.5fr;
+            grid-template-columns: 1fr 1.4fr;
         }
 
-        /* FIX: Tvinga animation-containern att ha en storlek */
+        /* LÄSVÄNLIGHET: Gör att textrader inte blir för långa */
+        .text-content p {
+            max-width: 550px; 
+        }
+
         .anim-container {
             width: 100%;
             max-width: 400px;
             margin: 0 auto;
-            min-height: 300px; /* VIKTIGT: Gör att rutan inte kollapsar */
+            min-height: 300px; 
             display: flex;
             align-items: center;
             justify-content: center;
@@ -193,7 +199,7 @@
             filter: drop-shadow(0 0 30px rgba(56, 189, 248, 0.1));
         }
 
-        /* Speciell layout för Skills */
+        /* SKILLS */
         .skills-centered {
             display: flex;
             flex-direction: column;
@@ -202,15 +208,15 @@
         .skills-anim-center {
             width: 100%;
             max-width: 250px;
-            margin-bottom: 30px;
-            min-height: 250px; /* Fix för höjd */
+            margin-bottom: 40px;
+            min-height: 250px;
         }
 
         /* PROJEKT */
-        .project-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 25px; width: 100%; }
+        .project-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; width: 100%; }
         .project-card {
             background: rgba(255,255,255,0.03);
-            padding: 25px; border-radius: 12px; border: 1px solid var(--border);
+            padding: 30px; border-radius: 12px; border: 1px solid var(--border);
             transition: transform 0.2s;
         }
         .project-card:hover { transform: translateY(-5px); border-color: var(--accent); }
@@ -219,27 +225,27 @@
 
         /* LISTOR & TIMELINE */
         .timeline-content { width: 100%; }
-        .timeline-item { margin-bottom: 40px; padding-left: 25px; border-left: 2px solid var(--border); position: relative; }
+        .timeline-item { margin-bottom: 50px; padding-left: 30px; border-left: 2px solid var(--border); position: relative; }
         .timeline-item:last-child { margin-bottom: 0; }
         .timeline-item::before {
-            content: ''; position: absolute; left: -6px; top: 5px; width: 10px; height: 10px;
-            background: var(--accent); border-radius: 50%;
+            content: ''; position: absolute; left: -7px; top: 5px; width: 12px; height: 12px;
+            background: var(--accent); border-radius: 50%; border: 3px solid var(--card-bg);
         }
         .role-header { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; margin-bottom: 5px; }
-        .role-title { font-size: 1.3rem; font-weight: 700; color: var(--text-main); }
-        .company-name { font-size: 1.1rem; color: var(--accent); font-weight: 500; display: block; margin-bottom: 8px; }
+        .role-title { font-size: 1.4rem; font-weight: 700; color: var(--text-main); }
+        .company-name { font-size: 1.1rem; color: var(--accent); font-weight: 500; display: block; margin-bottom: 10px; }
         .date-badge { font-size: 0.9rem; background: rgba(56, 189, 248, 0.1); color: var(--accent); padding: 5px 12px; border-radius: 20px; font-weight: 600; }
-        ul { margin-top: 10px; padding-left: 20px; }
-        li { margin-bottom: 8px; color: var(--text-muted); font-size: 1.05rem; }
+        ul { margin-top: 15px; padding-left: 20px; }
+        li { margin-bottom: 10px; color: var(--text-muted); font-size: 1.05rem; }
 
-        /* SKILLS */
-        .skills-content { width: 100%; }
-        .skill-category { font-size: 0.95rem; text-transform: uppercase; letter-spacing: 1px; color: var(--text-muted); margin-top: 35px; margin-bottom: 15px; display: block; font-weight: 700; border-bottom: 1px solid rgba(255,255,255,0.05); padding-bottom: 5px; }
+        /* SKILLS STYLING */
+        .skills-content { width: 100%; text-align: center; }
+        .skill-category { font-size: 0.95rem; text-transform: uppercase; letter-spacing: 2px; color: var(--text-muted); margin-top: 40px; margin-bottom: 20px; display: block; font-weight: 700; border-bottom: 1px solid rgba(255,255,255,0.05); padding-bottom: 5px; max-width: 600px; margin-left: auto; margin-right: auto;}
         .skill-category:first-of-type { margin-top: 0; }
-        .skills-grid { display: flex; flex-wrap: wrap; gap: 12px; justify-content: center; }
+        .skills-grid { display: flex; flex-wrap: wrap; gap: 12px; justify-content: center; max-width: 800px; margin: 0 auto; }
         .skill-tag {
             background-color: rgba(255, 255, 255, 0.05); color: var(--text-main);
-            padding: 8px 16px; border-radius: 8px; font-size: 0.95rem; font-weight: 500;
+            padding: 10px 20px; border-radius: 8px; font-size: 0.95rem; font-weight: 500;
             border: 1px solid var(--border); transition: all 0.2s;
         }
         .skill-tag:hover { border-color: var(--accent); background-color: rgba(56, 189, 248, 0.1); cursor: default; }
@@ -247,22 +253,22 @@
         /* ÖVRIGT */
         .misc-text { width: 100%; }
         .misc-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; }
-        .misc-item strong { color: var(--accent); display: block; margin-bottom: 5px; font-size: 1.1rem; }
+        .misc-item strong { color: var(--accent); display: block; margin-bottom: 10px; font-size: 1.2rem; }
 
         /* FOOTER ANIMATION */
         .footer-anim {
             text-align: center;
-            margin-top: 100px;
+            margin-top: 120px;
             margin-bottom: 80px;
         }
         .footer-text {
             color: var(--text-muted); 
             font-size: 2.5rem; 
-            font-weight: 700;
+            font-weight: 800;
             margin-top: 20px;
-            letter-spacing: 1px;
+            letter-spacing: -1px;
             color: var(--accent);
-            text-shadow: 0 0 20px rgba(56, 189, 248, 0.3);
+            text-shadow: 0 0 30px rgba(56, 189, 248, 0.2);
         }
 
         /* RESPONSIVITET (MOBIL) */
@@ -272,11 +278,12 @@
             
             .split-section, .split-section.reverse {
                 grid-template-columns: 1fr;
-                gap: 30px;
+                gap: 40px;
             }
-            .anim-container { order: -1; max-width: 250px; }
+            .text-content p { max-width: 100%; }
+            .anim-container { order: -1; max-width: 250px; min-height: 200px; }
             .project-grid, .misc-grid { grid-template-columns: 1fr; }
-            section { padding: 25px; }
+            section { padding: 30px; }
         }
     </style>
 </head>
@@ -361,7 +368,7 @@
             </div>
 
             <div class="skills-content">
-                <span class="skill-category" style="text-align: center;">Nätverk & Protokoll</span>
+                <span class="skill-category">Nätverk & Protokoll</span>
                 <div class="skills-grid">
                     <span class="skill-tag">Cisco (Routers, IOS)</span>
                     <span class="skill-tag">TCP/IP & OSI</span>
@@ -372,7 +379,7 @@
                     <span class="skill-tag">LAN & WAN</span>
                 </div>
 
-                <span class="skill-category" style="text-align: center;">Säkerhet & Övervakning</span>
+                <span class="skill-category">Säkerhet & Övervakning</span>
                 <div class="skills-grid">
                     <span class="skill-tag">Firewalls & ACL</span>
                     <span class="skill-tag">VPN & Wireguard</span>
@@ -382,7 +389,7 @@
                     <span class="skill-tag">Nätverkssäkerhet</span>
                 </div>
 
-                <span class="skill-category" style="text-align: center;">Moln & Virtualisering</span>
+                <span class="skill-category">Moln & Virtualisering</span>
                 <div class="skills-grid">
                     <span class="skill-tag">Microsoft Azure</span>
                     <span class="skill-tag">NSG (Network Security Groups)</span>
@@ -392,7 +399,7 @@
                     <span class="skill-tag">KVM & Virtuell Routing</span>
                 </div>
 
-                <span class="skill-category" style="text-align: center;">Verktyg & OS</span>
+                <span class="skill-category">Verktyg & OS</span>
                 <div class="skills-grid">
                     <span class="skill-tag">Linux & Unix</span>
                     <span class="skill-tag">Windows Server</span>
