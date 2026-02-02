@@ -35,14 +35,14 @@
             color: var(--text-main);
             margin: 0;
             padding: 0;
-            line-height: 1.8; /* Lite luftigare text */
+            line-height: 1.8;
             overflow-x: hidden;
         }
 
-        /* JUSTERAD BREDD: 1000px ser oftast snyggast ut på desktop för CV */
+        /* BREDD UPPDATERAD TILL 1400px */
         .container {
-            max-width: 1000px; 
-            margin: 60px auto; /* Lite mer marginal upp/ner */
+            max-width: 1400px; 
+            margin: 60px auto;
             padding: 20px;
         }
 
@@ -50,12 +50,12 @@
         .terminal-hero {
             background-color: var(--terminal-bg);
             border-radius: 12px;
-            padding: 30px;
-            margin-bottom: 50px;
+            padding: 40px; /* Lite mer padding för den breda looken */
+            margin-bottom: 60px;
             border: 1px solid var(--border);
             box-shadow: 0 0 30px rgba(56, 189, 248, 0.15);
             font-family: 'Fira Code', monospace;
-            min-height: 180px;
+            min-height: 200px;
             display: flex;
             flex-direction: column;
         }
@@ -63,27 +63,27 @@
         .terminal-header {
             display: flex;
             gap: 8px;
-            margin-bottom: 15px;
+            margin-bottom: 20px;
             border-bottom: 1px solid var(--border);
-            padding-bottom: 10px;
+            padding-bottom: 15px;
         }
 
-        .dot { width: 12px; height: 12px; border-radius: 50%; }
+        .dot { width: 14px; height: 14px; border-radius: 50%; }
         .red { background-color: #ef4444; }
         .yellow { background-color: #f59e0b; }
         .green { background-color: #22c55e; }
 
         .terminal-content {
             color: var(--accent);
-            font-size: 1.1rem;
+            font-size: 1.2rem; /* Lite större text i terminalen */
             white-space: pre-wrap; 
-            line-height: 1.5;
+            line-height: 1.6;
         }
 
         .command { color: #22c55e; margin-right: 8px; }
         .cursor {
             display: inline-block;
-            width: 10px;
+            width: 12px;
             height: 1.2em;
             background-color: var(--accent);
             animation: blink 1s infinite;
@@ -93,10 +93,10 @@
         @keyframes blink { 0% { opacity: 0; } 50% { opacity: 1; } 100% { opacity: 0; } }
 
         /* HEADER */
-        header { text-align: center; margin-bottom: 80px; }
+        header { text-align: center; margin-bottom: 100px; }
         
         h1 {
-            font-size: 3.5rem;
+            font-size: 4rem; /* Större rubrik för bredare skärm */
             margin: 15px 0;
             font-weight: 800;
             color: white;
@@ -108,20 +108,20 @@
             align-items: center;
             background: rgba(34, 197, 94, 0.1);
             color: #4ade80;
-            padding: 6px 18px;
+            padding: 8px 20px;
             border-radius: 30px;
-            font-size: 0.9rem;
+            font-size: 1rem;
             font-weight: 600;
             border: 1px solid rgba(34, 197, 94, 0.3);
-            margin-bottom: 15px;
+            margin-bottom: 20px;
         }
 
         .status-dot {
-            width: 8px;
-            height: 8px;
+            width: 10px;
+            height: 10px;
             background-color: #4ade80;
             border-radius: 50%;
-            margin-right: 8px;
+            margin-right: 10px;
             box-shadow: 0 0 10px #4ade80;
             animation: pulse 2s infinite;
         }
@@ -129,24 +129,24 @@
         @keyframes pulse { 0% { opacity: 1; } 50% { opacity: 0.5; } 100% { opacity: 1; } }
 
         /* KNAPPAR */
-        .actions { display: flex; justify-content: center; gap: 15px; flex-wrap: wrap; margin-top: 25px; align-items: center; }
+        .actions { display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; margin-top: 30px; align-items: center; }
         
         .btn {
-            display: inline-flex; align-items: center; gap: 8px; padding: 12px 28px;
+            display: inline-flex; align-items: center; gap: 10px; padding: 14px 32px;
             border-radius: 8px; text-decoration: none; font-weight: 600;
             transition: all 0.3s ease; border: 1px solid transparent;
-            font-size: 1rem;
+            font-size: 1.1rem;
         }
         .btn-primary { background-color: var(--accent); color: #0f172a; }
-        .btn-primary:hover { background-color: var(--accent-hover); transform: translateY(-2px); box-shadow: 0 10px 20px -10px rgba(56, 189, 248, 0.5); }
+        .btn-primary:hover { background-color: var(--accent-hover); transform: translateY(-3px); box-shadow: 0 10px 25px -10px rgba(56, 189, 248, 0.6); }
         .btn-secondary { background-color: transparent; border: 1px solid var(--border); color: var(--text-main); }
         .btn-secondary:hover { border-color: var(--accent); color: var(--accent); }
 
         .email-copy-text {
             width: 100%;
             text-align: center;
-            margin-top: 15px;
-            font-size: 0.9rem;
+            margin-top: 20px;
+            font-size: 1rem;
             color: var(--text-muted);
             font-family: 'Fira Code', monospace;
         }
@@ -154,40 +154,41 @@
         /* SEKTIONER */
         section {
             background: var(--card-bg); 
-            padding: 60px; /* Mer padding internt */
-            margin-bottom: 50px;
-            border-radius: 16px; 
+            padding: 80px; /* Rejält med luft inuti korten */
+            margin-bottom: 60px;
+            border-radius: 20px; 
             border: 1px solid var(--border);
         }
         h2 {
-            color: var(--accent); font-size: 2rem; margin-top: 0; margin-bottom: 40px;
-            border-bottom: 1px solid var(--border); padding-bottom: 20px;
-            display: flex; align-items: center; gap: 15px; font-weight: 700;
+            color: var(--accent); font-size: 2.2rem; margin-top: 0; margin-bottom: 50px;
+            border-bottom: 1px solid var(--border); padding-bottom: 25px;
+            display: flex; align-items: center; gap: 20px; font-weight: 700;
         }
 
         /* --- LAYOUTS --- */
         
         .split-section {
             display: grid;
-            grid-template-columns: 1.4fr 1fr; /* Text tar lite mer plats */
-            gap: 60px;
+            grid-template-columns: 1.2fr 1fr; /* Balanserad bredd */
+            gap: 80px; /* Mer avstånd mellan text och animation */
             align-items: center;
         }
         
         .split-section.reverse {
-            grid-template-columns: 1fr 1.4fr;
+            grid-template-columns: 1fr 1.2fr;
         }
 
-        /* LÄSVÄNLIGHET: Gör att textrader inte blir för långa */
+        /* LÄSVÄNLIGHET: Texten får inte bli för bred även om containern är 1400px */
         .text-content p {
-            max-width: 550px; 
+            max-width: 650px; 
+            font-size: 1.1rem;
         }
 
         .anim-container {
             width: 100%;
-            max-width: 400px;
+            max-width: 500px; /* Låter animationerna bli lite större */
             margin: 0 auto;
-            min-height: 300px; 
+            min-height: 350px; 
             display: flex;
             align-items: center;
             justify-content: center;
@@ -196,7 +197,7 @@
         .anim-container lottie-player {
             width: 100%;
             height: auto;
-            filter: drop-shadow(0 0 30px rgba(56, 189, 248, 0.1));
+            filter: drop-shadow(0 0 40px rgba(56, 189, 248, 0.15));
         }
 
         /* SKILLS */
@@ -207,81 +208,81 @@
         }
         .skills-anim-center {
             width: 100%;
-            max-width: 250px;
-            margin-bottom: 40px;
-            min-height: 250px;
+            max-width: 300px; /* Lite större chip */
+            margin-bottom: 50px;
+            min-height: 300px;
         }
 
         /* PROJEKT */
-        .project-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; width: 100%; }
+        .project-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; width: 100%; }
         .project-card {
             background: rgba(255,255,255,0.03);
-            padding: 30px; border-radius: 12px; border: 1px solid var(--border);
+            padding: 40px; border-radius: 16px; border: 1px solid var(--border);
             transition: transform 0.2s;
         }
-        .project-card:hover { transform: translateY(-5px); border-color: var(--accent); }
-        .project-title { font-weight: 700; color: var(--text-main); font-size: 1.1rem; display: block; margin-bottom: 5px; }
-        .project-tech { font-size: 0.85rem; color: var(--accent); font-family: 'Fira Code', monospace; }
+        .project-card:hover { transform: translateY(-7px); border-color: var(--accent); }
+        .project-title { font-weight: 700; color: var(--text-main); font-size: 1.3rem; display: block; margin-bottom: 10px; }
+        .project-tech { font-size: 0.95rem; color: var(--accent); font-family: 'Fira Code', monospace; }
 
         /* LISTOR & TIMELINE */
         .timeline-content { width: 100%; }
-        .timeline-item { margin-bottom: 50px; padding-left: 30px; border-left: 2px solid var(--border); position: relative; }
+        .timeline-item { margin-bottom: 60px; padding-left: 40px; border-left: 3px solid var(--border); position: relative; }
         .timeline-item:last-child { margin-bottom: 0; }
         .timeline-item::before {
-            content: ''; position: absolute; left: -7px; top: 5px; width: 12px; height: 12px;
-            background: var(--accent); border-radius: 50%; border: 3px solid var(--card-bg);
+            content: ''; position: absolute; left: -9px; top: 6px; width: 15px; height: 15px;
+            background: var(--accent); border-radius: 50%; border: 4px solid var(--card-bg);
         }
-        .role-header { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; margin-bottom: 5px; }
-        .role-title { font-size: 1.4rem; font-weight: 700; color: var(--text-main); }
-        .company-name { font-size: 1.1rem; color: var(--accent); font-weight: 500; display: block; margin-bottom: 10px; }
-        .date-badge { font-size: 0.9rem; background: rgba(56, 189, 248, 0.1); color: var(--accent); padding: 5px 12px; border-radius: 20px; font-weight: 600; }
-        ul { margin-top: 15px; padding-left: 20px; }
-        li { margin-bottom: 10px; color: var(--text-muted); font-size: 1.05rem; }
+        .role-header { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; margin-bottom: 10px; }
+        .role-title { font-size: 1.5rem; font-weight: 700; color: var(--text-main); }
+        .company-name { font-size: 1.2rem; color: var(--accent); font-weight: 500; display: block; margin-bottom: 12px; }
+        .date-badge { font-size: 1rem; background: rgba(56, 189, 248, 0.1); color: var(--accent); padding: 6px 15px; border-radius: 20px; font-weight: 600; }
+        ul { margin-top: 20px; padding-left: 20px; }
+        li { margin-bottom: 12px; color: var(--text-muted); font-size: 1.1rem; }
 
         /* SKILLS STYLING */
         .skills-content { width: 100%; text-align: center; }
-        .skill-category { font-size: 0.95rem; text-transform: uppercase; letter-spacing: 2px; color: var(--text-muted); margin-top: 40px; margin-bottom: 20px; display: block; font-weight: 700; border-bottom: 1px solid rgba(255,255,255,0.05); padding-bottom: 5px; max-width: 600px; margin-left: auto; margin-right: auto;}
+        .skill-category { font-size: 1rem; text-transform: uppercase; letter-spacing: 2px; color: var(--text-muted); margin-top: 50px; margin-bottom: 25px; display: block; font-weight: 700; border-bottom: 1px solid rgba(255,255,255,0.05); padding-bottom: 10px; max-width: 700px; margin-left: auto; margin-right: auto;}
         .skill-category:first-of-type { margin-top: 0; }
-        .skills-grid { display: flex; flex-wrap: wrap; gap: 12px; justify-content: center; max-width: 800px; margin: 0 auto; }
+        .skills-grid { display: flex; flex-wrap: wrap; gap: 15px; justify-content: center; max-width: 1000px; margin: 0 auto; }
         .skill-tag {
             background-color: rgba(255, 255, 255, 0.05); color: var(--text-main);
-            padding: 10px 20px; border-radius: 8px; font-size: 0.95rem; font-weight: 500;
+            padding: 12px 24px; border-radius: 10px; font-size: 1rem; font-weight: 500;
             border: 1px solid var(--border); transition: all 0.2s;
         }
         .skill-tag:hover { border-color: var(--accent); background-color: rgba(56, 189, 248, 0.1); cursor: default; }
 
         /* ÖVRIGT */
         .misc-text { width: 100%; }
-        .misc-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; }
-        .misc-item strong { color: var(--accent); display: block; margin-bottom: 10px; font-size: 1.2rem; }
+        .misc-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 50px; }
+        .misc-item strong { color: var(--accent); display: block; margin-bottom: 15px; font-size: 1.3rem; }
 
         /* FOOTER ANIMATION */
         .footer-anim {
             text-align: center;
-            margin-top: 120px;
-            margin-bottom: 80px;
+            margin-top: 150px;
+            margin-bottom: 100px;
         }
         .footer-text {
             color: var(--text-muted); 
-            font-size: 2.5rem; 
+            font-size: 3rem; 
             font-weight: 800;
-            margin-top: 20px;
+            margin-top: 30px;
             letter-spacing: -1px;
             color: var(--accent);
-            text-shadow: 0 0 30px rgba(56, 189, 248, 0.2);
+            text-shadow: 0 0 40px rgba(56, 189, 248, 0.2);
         }
 
         /* RESPONSIVITET (MOBIL) */
-        @media (max-width: 900px) {
-            h1 { font-size: 2.5rem; }
-            .container { margin: 20px auto; padding: 15px; }
+        @media (max-width: 1100px) { /* Brytpunkt justerad */
+            h1 { font-size: 2.8rem; }
+            .container { margin: 20px auto; padding: 15px; width: 95%; }
             
             .split-section, .split-section.reverse {
                 grid-template-columns: 1fr;
-                gap: 40px;
+                gap: 50px;
             }
             .text-content p { max-width: 100%; }
-            .anim-container { order: -1; max-width: 250px; min-height: 200px; }
+            .anim-container { order: -1; max-width: 300px; min-height: 250px; }
             .project-grid, .misc-grid { grid-template-columns: 1fr; }
             section { padding: 30px; }
         }
@@ -305,7 +306,7 @@
                 <div class="status-dot"></div> Söker LIA våren 2026
             </div>
             <h1>Mattias Englund</h1>
-            <p style="font-size: 1.4rem; color: var(--text-muted);">
+            <p style="font-size: 1.6rem; color: var(--text-muted);">
                 Studerande Nätverkstekniker • Ambassadör hos JENSEN
             </p>
             
@@ -328,7 +329,7 @@
         <section class="split-section">
             <div class="text-content">
                 <h2><i class="fas fa-user-circle"></i> Om Mig</h2>
-                <p style="font-size: 1.1rem; color: #cbd5e1;">
+                <p style="font-size: 1.2rem; color: #cbd5e1;">
                     Från Team Manager till Nätverkstekniker. Efter sex år inom operativt ledarskap har jag valt att sadla om för att helhjärtat satsa på mitt tekniska intresse. 
                     <br><br>
                     Med min bakgrund inom operativ drift förstår jag vikten av struktur och upptid. Dessa erfarenheter kombinerar jag nu med teknisk kompetens inom Cisco, Azure och nätverkssäkerhet. Som <strong>Ambassadör på JENSEN</strong> drivs jag av ansvar och utveckling. Jag söker en LIA plats våren 2026 där jag får använda både min tekniska problemlösningsförmåga och mitt professionella driv i skarpt läge.
@@ -349,12 +350,12 @@
                     <div class="project-card">
                         <span class="project-title"><i class="fas fa-network-wired"></i> Cisco Packet Tracer Labb</span>
                         <span class="project-tech">VLAN • OSPF • DHCP</span>
-                        <p style="font-size: 1rem; margin-top: 10px;">Konfigurering av företagsnätverk med segmentering och redundans.</p>
+                        <p style="font-size: 1.1rem; margin-top: 10px;">Konfigurering av företagsnätverk med segmentering och redundans.</p>
                     </div>
                     <div class="project-card">
                         <span class="project-title"><i class="fas fa-cloud"></i> Azure Cloud Setup</span>
                         <span class="project-tech">Azure AD • Virtuella Nätverk</span>
-                        <p style="font-size: 1rem; margin-top: 10px;">Uppsättning av hybridmiljö och hantering av användarrättigheter.</p>
+                        <p style="font-size: 1.1rem; margin-top: 10px;">Uppsättning av hybridmiljö och hantering av användarrättigheter.</p>
                     </div>
                 </div>
             </div>
@@ -368,7 +369,7 @@
             </div>
 
             <div class="skills-content">
-                <span class="skill-category">Nätverk & Protokoll</span>
+                <span class="skill-category" style="text-align: center;">Nätverk & Protokoll</span>
                 <div class="skills-grid">
                     <span class="skill-tag">Cisco (Routers, IOS)</span>
                     <span class="skill-tag">TCP/IP & OSI</span>
@@ -379,7 +380,7 @@
                     <span class="skill-tag">LAN & WAN</span>
                 </div>
 
-                <span class="skill-category">Säkerhet & Övervakning</span>
+                <span class="skill-category" style="text-align: center;">Säkerhet & Övervakning</span>
                 <div class="skills-grid">
                     <span class="skill-tag">Firewalls & ACL</span>
                     <span class="skill-tag">VPN & Wireguard</span>
@@ -389,7 +390,7 @@
                     <span class="skill-tag">Nätverkssäkerhet</span>
                 </div>
 
-                <span class="skill-category">Moln & Virtualisering</span>
+                <span class="skill-category" style="text-align: center;">Moln & Virtualisering</span>
                 <div class="skills-grid">
                     <span class="skill-tag">Microsoft Azure</span>
                     <span class="skill-tag">NSG (Network Security Groups)</span>
@@ -399,7 +400,7 @@
                     <span class="skill-tag">KVM & Virtuell Routing</span>
                 </div>
 
-                <span class="skill-category">Verktyg & OS</span>
+                <span class="skill-category" style="text-align: center;">Verktyg & OS</span>
                 <div class="skills-grid">
                     <span class="skill-tag">Linux & Unix</span>
                     <span class="skill-tag">Windows Server</span>
