@@ -11,157 +11,167 @@
             --dark: #1e293b;
             --blue: #2563eb;
             --gray: #64748b;
-            --border: #e2e8f0;
+            --border: #cbd5e1;
         }
 
         @page {
             size: A4 portrait;
-            margin: 10mm; /* Små marginaler */
+            margin: 8mm; /* Mycket små marginaler för att maximera ytan */
         }
 
         body {
             font-family: 'Inter', sans-serif;
             color: var(--dark);
             background: white;
-            font-size: 10pt;
-            line-height: 1.4;
+            font-size: 9pt; /* Minskad storlek för att allt ska få plats */
+            line-height: 1.35; /* Lite tajtare radavstånd */
             margin: 0;
             padding: 0;
             -webkit-print-color-adjust: exact;
         }
 
-        /* Huvudcontainer A4 */
         .sheet {
             max-width: 210mm;
             margin: 0 auto;
         }
 
-        /* HEADER */
+        /* --- HEADER (Kompakt) --- */
         header {
             text-align: center;
             border-bottom: 2px solid var(--dark);
-            padding-bottom: 10px;
-            margin-bottom: 15px;
-        }
-
-        h1 {
-            font-size: 24pt;
-            text-transform: uppercase;
-            margin: 0;
-            line-height: 1;
-            letter-spacing: 1px;
-        }
-
-        .role {
-            font-size: 11pt;
-            font-weight: 600;
-            color: var(--blue);
-            margin: 4px 0;
+            padding-bottom: 8px;
+            margin-bottom: 10px;
         }
 
         .lia-badge {
             background: #dbeafe;
             color: #1e40af;
             font-weight: 700;
-            font-size: 9pt;
-            padding: 2px 8px;
+            font-size: 8pt;
+            padding: 2px 6px;
             border-radius: 4px;
             display: inline-block;
-            margin-bottom: 5px;
+            margin-bottom: 4px;
+            border: 1px solid #bfdbfe;
         }
 
-        /* KONTAKT RAD */
+        h1 {
+            font-size: 20pt; /* Mindre rubrik */
+            text-transform: uppercase;
+            margin: 0;
+            line-height: 1;
+            letter-spacing: 0.5px;
+        }
+
+        .role {
+            font-size: 10pt;
+            font-weight: 600;
+            color: var(--blue);
+            margin: 2px 0 4px 0;
+        }
+
         .contact-row {
             display: flex;
             justify-content: center;
-            gap: 15px;
-            font-size: 9pt;
+            gap: 12px;
+            font-size: 8.5pt;
             color: var(--gray);
-            margin-top: 5px;
         }
-        .contact-row i { color: var(--dark); margin-right: 4px; }
+        .contact-row i { color: var(--dark); margin-right: 3px; font-size: 8pt; }
 
-        /* SEKTIONER */
+        /* --- SEKTIONER --- */
+        section { margin-bottom: 8px; }
+
         h2 {
-            font-size: 11pt;
+            font-size: 10pt;
             text-transform: uppercase;
             border-bottom: 1px solid var(--border);
             color: var(--dark);
-            margin: 12px 0 6px 0;
-            padding-bottom: 2px;
+            margin: 10px 0 5px 0;
+            padding-bottom: 1px;
+            letter-spacing: 0.5px;
         }
 
-        /* PROFILTEXT - Justerad för dina önskemål */
+        /* PROFIL (Tajt) */
         .profile-section p {
-            margin: 0 0 6px 0; /* Lagom mellanrum mellan styckena */
+            margin: 0 0 4px 0;
             text-align: left;
+            font-size: 9pt;
         }
 
-        /* KOMPETENS GRID */
+        /* KOMPETENS GRID (Sparar plats) */
         .skills-grid {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
-            gap: 10px;
+            gap: 8px;
             background: #f8fafc;
-            padding: 8px;
-            border-radius: 6px;
-            margin-bottom: 10px;
+            padding: 6px 8px;
+            border-radius: 4px;
+            margin-bottom: 8px;
+            border: 1px solid #f1f5f9;
         }
-        .skill-col strong { display: block; font-size: 9pt; color: var(--blue); margin-bottom: 2px; }
-        .skill-col span { display: block; font-size: 8.5pt; color: #475569; line-height: 1.3; }
+        .skill-col strong { display: block; font-size: 8.5pt; color: var(--blue); margin-bottom: 1px; }
+        .skill-col span { display: block; font-size: 8pt; color: #475569; line-height: 1.25; }
 
-        /* JOBB & SKOLA LISTA */
-        .entry { margin-bottom: 8px; page-break-inside: avoid; }
+        /* JOBB & UTBILDNING LISTA */
+        .entry { margin-bottom: 6px; page-break-inside: avoid; }
         
         .entry-head {
             display: flex;
             justify-content: space-between;
             font-weight: 700;
-            font-size: 10pt;
+            font-size: 9.5pt;
+            color: var(--dark);
         }
         .entry-sub {
             display: flex;
             justify-content: space-between;
             color: var(--gray);
-            font-size: 9pt;
+            font-size: 8.5pt;
             font-weight: 600;
             margin-bottom: 1px;
         }
-        .entry-text ul {
-            margin: 2px 0 0 0;
-            padding-left: 15px;
-        }
-        .entry-text li { margin-bottom: 1px; font-size: 9.5pt; }
-        .entry-text { font-size: 9.5pt; }
+        .entry-text { font-size: 9pt; }
+        .entry-text ul { margin: 1px 0 0 0; padding-left: 14px; }
+        .entry-text li { margin-bottom: 0px; }
 
-        /* KURSPLAN BOX */
+        /* KURSPLAN BOX (Kompaktare) */
         .course-box {
-            border: 1px solid var(--border);
             border-left: 3px solid var(--blue);
-            padding: 6px 8px;
-            margin-top: 4px;
-            background: #fff;
-            border-radius: 4px;
+            padding: 4px 8px;
+            margin-top: 3px;
+            background: #f9f9f9;
+            border-radius: 0 4px 4px 0;
         }
         .course-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 8px;
+            gap: 6px 15px; /* Mindre gap vertikalt */
         }
-        .c-item strong { font-size: 8.5pt; color: var(--dark); }
-        .c-item span { font-size: 8.5pt; color: var(--gray); display: block; }
+        .c-item strong { font-size: 8pt; color: var(--dark); display: inline-block; width: 100%; border-bottom: 1px solid #eee;}
+        .c-item span { font-size: 8pt; color: #555; display: block; line-height: 1.2; margin-top: 1px; }
 
-        /* PROJEKT */
+        /* PROJEKT (Side-by-side) */
         .project-row {
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 10px;
         }
-        .proj { background: #f8fafc; padding: 6px; border-radius: 4px; border: 1px solid #f1f5f9; }
-        .proj b { font-size: 9.5pt; color: var(--dark); display: block;}
-        .proj small { color: var(--blue); font-family: monospace; display: block; margin-bottom: 1px;}
-        .proj span { font-size: 9pt; }
+        .proj { 
+            background: #fff; 
+            padding: 5px 8px; 
+            border-radius: 4px; 
+            border: 1px solid var(--border); 
+        }
+        .proj b { font-size: 9pt; color: var(--dark); display: block; }
+        .proj small { color: var(--blue); font-family: monospace; font-size: 8pt; display: block; margin-bottom: 1px;}
+        .proj span { font-size: 8.5pt; color: #333; }
 
+        /* Utskriftsfixar */
+        @media print {
+            body { -webkit-print-color-adjust: exact; }
+            .sheet { width: 100%; max-width: 100%; }
+        }
     </style>
 </head>
 <body>
@@ -183,11 +193,9 @@
 
         <section class="profile-section">
             <h2>Profil</h2>
-            <p>Från Team Manager till Nätverkstekniker.</p> 
-            <p>Efter sex år inom operativt ledarskap har jag valt att sadla om för att helhjärtat satsa på mitt tekniska intresse.</p> 
+            <p>Från Team Manager till Nätverkstekniker. Efter sex år inom operativt ledarskap har jag valt att sadla om för att helhjärtat satsa på mitt tekniska intresse.</p> 
             <p>Med min bakgrund inom operativ drift förstår jag vikten av struktur och upptid. Dessa erfarenheter kombinerar jag nu med teknisk kompetens inom Cisco, Azure och nätverkssäkerhet.</p> 
-            <p>Som <strong>Ambassadör på JENSEN</strong> drivs jag av ansvar och utveckling.</p> 
-            <p>Jag söker en LIA-plats våren 2026 där jag får använda både min tekniska problemlösningsförmåga och mitt professionella driv i skarpt läge.</p>
+            <p>Som <strong>Ambassadör på JENSEN</strong> drivs jag av ansvar och utveckling. Jag söker en LIA-plats våren 2026 där jag får använda både min tekniska problemlösningsförmåga och mitt professionella driv i skarpt läge.</p>
         </section>
 
         <div class="skills-grid">
@@ -205,7 +213,7 @@
             </div>
             <div class="skill-col">
                 <strong>Övrigt</strong>
-                <span>Svenska (Modersmål), Engelska (Flytande), B-Körkort.</span>
+                <span>Svenska, Engelska, B-Körkort.</span>
             </div>
         </div>
 
@@ -224,20 +232,20 @@
                     <div class="course-box">
                         <div class="course-grid">
                             <div class="c-item">
-                                <strong>Nätverk & Design:</strong> 
-                                <span>LAN/WAN, TCP/IP, Routing (BGP/OSPF), Switching, WiFi.</span>
+                                <strong>Nätverk & Design</strong> 
+                                <span>LAN/WAN, TCP/IP, Routing (BGP/OSPF), Switching.</span>
                             </div>
                             <div class="c-item">
-                                <strong>Säkerhet & Moln:</strong> 
-                                <span>Brandväggar, SASE, VPN, Sårbarhetsanalys, Azure, Virtuell routing.</span>
+                                <strong>Säkerhet & Moln</strong> 
+                                <span>Firewalls, SASE, VPN, Sårbarhet, Azure, Virtuell routing.</span>
                             </div>
                             <div class="c-item">
-                                <strong>Automation:</strong> 
+                                <strong>Automation</strong> 
                                 <span>Python-scripting för drift, Agila metoder, Dokumentation.</span>
                             </div>
                             <div class="c-item">
-                                <strong>Praktik:</strong> 
-                                <span>Konfigurering av Cisco-utrustning, Felsökning, Övervakning.</span>
+                                <strong>Praktik</strong> 
+                                <span>Konfigurering av Cisco, Felsökning, Övervakning.</span>
                             </div>
                         </div>
                     </div>
@@ -272,7 +280,7 @@
                 </div>
                 <div class="entry-text">
                     <ul>
-                        <li>Ansvarig för daglig drift och teamledning. Agerade Superuser för lagersystem (WMS).</li>
+                        <li>Ansvarig för daglig drift och teamledning. Superuser för lagersystem (WMS).</li>
                         <li>Drev förbättringsarbete för minskade felkällor och hanterade komplexa logistikproblem.</li>
                     </ul>
                 </div>
