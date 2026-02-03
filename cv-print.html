@@ -3,14 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <title>CV | Mattias Englund</title>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
     <style>
         :root {
-            --dark: #0f172a;       /* Mörkare, nästan svart marinblå */
-            --accent: #0e7490;     /* En modern Teal/Cyan ton (mer sofistikerad än klarblå) */
-            --bg-header: #f0f9ff;  /* Mycket ljus blåton för headern */
+            --dark: #0f172a;       
+            --accent: #0e7490;     /* Teal/Cyan - Modern och proffsig */
+            --bg-header: #f0f9ff;  
             --bg-gray: #f8fafc;
             --text-light: #64748b;
             --border: #e2e8f0;
@@ -18,16 +18,15 @@
 
         @page {
             size: A4 portrait;
-            /* Marginaler: Lite mer luft i toppen och botten */
             margin: 12mm 10mm 12mm 10mm;
         }
 
         body {
-            font-family: 'Plus Jakarta Sans', sans-serif; /* Nytt typsnitt */
+            font-family: 'Plus Jakarta Sans', sans-serif;
             color: var(--dark);
             background: white;
             font-size: 9pt; 
-            line-height: 1.5; /* Något ökad läsbarhet */
+            line-height: 1.5;
             margin: 0;
             padding: 0;
             -webkit-print-color-adjust: exact;
@@ -38,24 +37,23 @@
             margin: 0 auto;
         }
 
-        /* --- HEADER (Ny design) --- */
+        /* --- HEADER --- */
         header {
             text-align: center;
-            background-color: var(--bg-header); /* Bakgrundsfärg */
+            background-color: var(--bg-header);
             padding: 20px 10px;
-            border-radius: 8px; /* Mjuka hörn */
+            border-radius: 12px;
             margin-bottom: 20px;
             border: 1px solid #e0f2fe;
         }
 
-        /* LIA-badgen - Elegantare */
         .lia-badge {
             background: white;
             color: var(--accent);
             font-weight: 700;
             font-size: 8pt;
-            padding: 4px 10px;
-            border-radius: 20px; /* Pill-shape */
+            padding: 4px 12px;
+            border-radius: 20px;
             display: inline-block;
             margin-bottom: 8px;
             border: 1px solid var(--accent);
@@ -82,7 +80,6 @@
             letter-spacing: 1px;
         }
 
-        /* Kontaktinfo */
         .contact-row {
             display: flex;
             justify-content: center;
@@ -97,14 +94,13 @@
         /* --- SEKTIONER --- */
         section { margin-bottom: 15px; }
 
-        /* Rubriker - Renare design */
         h2 {
             font-size: 10pt;
             text-transform: uppercase;
             color: var(--accent);
             margin: 0 0 8px 0;
             padding-left: 10px;
-            border-left: 3px solid var(--accent); /* Färgmarkering till vänster */
+            border-left: 3px solid var(--accent);
             letter-spacing: 1px;
             font-weight: 700;
         }
@@ -117,22 +113,58 @@
             color: #334155;
         }
 
-        /* KOMPETENS GRID - Lite mjukare */
+        /* --- NY DESIGN PÅ KOMPETENS-RUTORNA --- */
         .skills-grid {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
             gap: 12px;
             margin-bottom: 15px;
         }
+        
         .skill-col {
             background: white;
             border: 1px solid var(--border);
-            border-top: 2px solid var(--accent); /* Accentfärg på toppen */
-            padding: 8px;
-            border-radius: 4px;
+            border-radius: 8px; /* Mjuka hörn */
+            padding: 10px;
+            position: relative;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.03); /* Liten skugga */
+            overflow: hidden;
         }
-        .skill-col strong { display: block; font-size: 8.5pt; color: var(--dark); margin-bottom: 4px; font-weight: 700;}
-        .skill-col span { display: block; font-size: 8pt; color: #555; line-height: 1.4; }
+
+        /* Färgad linje i toppen */
+        .skill-col::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: var(--accent);
+        }
+
+        .skill-col strong { 
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 8pt; 
+            color: var(--accent); 
+            margin-bottom: 6px; 
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            border-bottom: 1px solid #f1f5f9; /* Avdelare */
+            padding-bottom: 4px;
+        }
+        
+        .skill-col strong i { font-size: 9pt; opacity: 0.8; }
+
+        .skill-col span { 
+            display: block; 
+            font-size: 8.5pt; 
+            color: #475569; 
+            line-height: 1.4; 
+            font-weight: 500;
+        }
 
         /* JOBB & UTBILDNING */
         .entry { margin-bottom: 10px; page-break-inside: avoid; }
@@ -156,11 +188,11 @@
         .entry-text ul { margin: 2px 0 0 0; padding-left: 16px; }
         .entry-text li { margin-bottom: 2px; }
 
-        /* KURSPLAN BOX - Mer "Info-ruta" */
+        /* KURSPLAN BOX */
         .course-box {
             border: 1px solid var(--border);
             background: var(--bg-gray);
-            padding: 8px 10px;
+            padding: 8px 12px;
             margin-top: 6px;
             border-radius: 6px;
         }
@@ -187,10 +219,10 @@
         }
         .proj { 
             background: white; 
-            padding: 8px 12px; 
-            border-radius: 6px; 
+            padding: 10px; 
+            border-radius: 8px; 
             border: 1px solid var(--border);
-            box-shadow: 0 1px 2px rgba(0,0,0,0.03); /* Liten skugga */
+            box-shadow: 0 1px 3px rgba(0,0,0,0.03);
         }
         .proj b { font-size: 9pt; color: var(--dark); display: block; margin-bottom: 2px;}
         .proj small { 
@@ -202,6 +234,7 @@
             border-radius: 3px;
             display: inline-block;
             margin-bottom: 4px;
+            font-weight: 600;
         }
         .proj span { font-size: 8.5pt; color: #555; display: block;}
 
@@ -240,19 +273,19 @@
 
         <div class="skills-grid">
             <div class="skill-col">
-                <strong>NÄTVERK</strong>
+                <strong><i class="fas fa-network-wired"></i> NÄTVERK</strong>
                 <span>Cisco (IOS), TCP/IP, OSPF, BGP, VLAN, STP, DNS/DHCP.</span>
             </div>
             <div class="skill-col">
-                <strong>SÄKERHET & CLOUD</strong>
+                <strong><i class="fas fa-shield-alt"></i> SÄKERHET & CLOUD</strong>
                 <span>Firewalls, VPN, SASE, Zero Trust, Azure AD, Docker.</span>
             </div>
             <div class="skill-col">
-                <strong>VERKTYG & OS</strong>
+                <strong><i class="fas fa-tools"></i> VERKTYG & OS</strong>
                 <span>Linux, Windows Server, Python, Git, Wireshark.</span>
             </div>
             <div class="skill-col">
-                <strong>ÖVRIGT</strong>
+                <strong><i class="fas fa-globe"></i> ÖVRIGT</strong>
                 <span>Svenska, Engelska, B-Körkort.</span>
             </div>
         </div>
