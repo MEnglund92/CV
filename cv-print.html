@@ -26,7 +26,6 @@
             font-family: 'Roboto', sans-serif;
             color: var(--text-main);
             background: white;
-            /* JUSTERAD: Brödtext 8pt */
             font-size: 8pt; 
             line-height: 1.5;
             margin: 0;
@@ -51,27 +50,25 @@
             align-items: center;
             background-color: var(--badge-bg);
             color: var(--badge-text);
-            padding: 4px 12px;
+            padding: 3px 10px;
             border-radius: 50px;
-            font-size: 7.5pt;
+            font-size: 6.5pt; 
             font-weight: 700;
             border: 1px solid var(--badge-border);
             margin-bottom: 8px;
-            text-transform: uppercase;
             letter-spacing: 0.5px;
             box-shadow: 0 1px 2px rgba(0,0,0,0.05);
         }
 
         .status-dot {
-            width: 6px;
-            height: 6px;
+            width: 5px;
+            height: 5px;
             background-color: #3b82f6;
             border-radius: 50%;
             margin-right: 6px;
         }
 
         h1 {
-            /* JUSTERAD: Namn 16pt */
             font-size: 16pt; 
             font-weight: 700;
             text-transform: uppercase;
@@ -81,7 +78,6 @@
         }
 
         .contact-info {
-            /* JUSTERAD: Datum/Info 8pt */
             font-size: 8pt;
             color: var(--text-light);
             display: flex;
@@ -97,7 +93,6 @@
         section { margin-bottom: 14px; }
 
         h2 {
-            /* JUSTERAD: Rubriker 10pt */
             font-size: 10pt;
             text-transform: uppercase;
             color: var(--accent);
@@ -108,9 +103,10 @@
             font-weight: 700;
         }
 
-        /* --- PROFIL --- */
+        /* --- PROFIL (FIXAD JUSTERING) --- */
         .profile-text {
-            text-align: justify;
+            /* ÄNDRAT FRÅN JUSTIFY TILL LEFT FÖR ATT SLIPPA MELLANRUM */
+            text-align: left; 
             margin: 0;
             color: #374151;
             font-size: 8pt;
@@ -147,13 +143,12 @@
 
         .entry-title {
             font-weight: 700;
-            font-size: 9pt; /* Lite större än brödtext för tydlighet */
+            font-size: 9pt;
             color: #000;
         }
 
         .entry-company { font-weight: 500; color: #374151; font-size: 8pt; }
         
-        /* JUSTERAD: Datum 8pt */
         .entry-date { font-size: 8pt; color: var(--text-light); font-feature-settings: "tnum"; }
 
         .entry-body {
@@ -204,7 +199,7 @@
         <header>
             <div class="status-badge">
                 <div class="status-dot"></div>
-                SÖKER LIA: 6 APRIL – 11 JUNI 2026
+                Söker LIA: 6 April – 11 Juni 2026
             </div>
 
             <h1>Mattias Englund</h1>
