@@ -10,9 +10,11 @@
         :root {
             --text-main: #1f2937;
             --text-light: #6b7280;
-            --accent: #2563eb;
+            --accent: #2563eb;     /* Blå accentfärg */
             --line: #e5e7eb;
-            --bg-highlight: #f9fafb; /* Ljus bakgrund för struktur */
+            --badge-bg: #eff6ff;   /* Ljusblå bakgrund till badgen */
+            --badge-text: #1e40af; /* Mörkblå text till badgen */
+            --badge-border: #bfdbfe;
         }
 
         @page {
@@ -39,26 +41,42 @@
         /* --- HEADER --- */
         header {
             text-align: center;
-            margin-bottom: 20px;
+            margin-bottom: 25px;
+        }
+
+        /* DEN NYA RUTAN (STATUS BADGE) */
+        .status-badge {
+            display: inline-flex;
+            align-items: center;
+            background-color: var(--badge-bg);
+            color: var(--badge-text);
+            padding: 6px 16px;
+            border-radius: 50px; /* Pillerform */
+            font-size: 9pt;
+            font-weight: 700;
+            border: 1px solid var(--badge-border);
+            margin-bottom: 12px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+        }
+
+        .status-dot {
+            width: 8px;
+            height: 8px;
+            background-color: #3b82f6;
+            border-radius: 50%;
+            margin-right: 8px;
+            box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.2);
         }
 
         h1 {
-            font-size: 22pt;
+            font-size: 24pt;
             font-weight: 700;
             text-transform: uppercase;
             margin: 0 0 5px 0;
             color: #111;
             letter-spacing: 0.5px;
-        }
-
-        .lia-status {
-            font-size: 10pt;
-            color: var(--accent);
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            margin-bottom: 5px;
-            display: block;
         }
 
         .contact-info {
@@ -68,6 +86,7 @@
             justify-content: center;
             gap: 15px;
             flex-wrap: wrap;
+            margin-top: 8px;
         }
         .contact-info span { display: flex; align-items: center; gap: 5px; }
         .contact-info i { color: var(--text-main); font-size: 9pt;}
@@ -138,24 +157,21 @@
         .entry-body ul { margin: 3px 0 0 0; padding-left: 18px; }
         .entry-body li { margin-bottom: 2px; }
 
-        /* --- NY DESIGN FÖR UTBILDNINGSDETALJER --- */
+        /* --- KURSINFO --- */
         .course-box {
             margin-top: 8px;
-            border-left: 3px solid var(--line); /* Diskret linje till vänster */
+            border-left: 3px solid var(--line);
             padding-left: 12px;
         }
         
         .course-row {
             display: grid;
-            grid-template-columns: 100px 1fr; /* Fast bredd för etikett */
+            grid-template-columns: 100px 1fr;
             margin-bottom: 4px;
             font-size: 9pt;
         }
         
-        .course-label {
-            font-weight: 700;
-            color: var(--text-main);
-        }
+        .course-label { font-weight: 700; color: var(--text-main); }
 
         /* --- PROJEKT --- */
         .project-item { margin-bottom: 8px; }
@@ -167,7 +183,6 @@
             margin-left: 8px;
         }
 
-        /* PRINT */
         @media print {
             body { -webkit-print-color-adjust: exact; }
             .sheet { width: 100%; }
@@ -179,7 +194,11 @@
     <div class="sheet">
         
         <header>
-            <span class="lia-status">SÖKER LIA: 6 APRIL – 11 JUNI 2026</span>
+            <div class="status-badge">
+                <div class="status-dot"></div>
+                SÖKER LIA: 6 APRIL – 11 JUNI 2026
+            </div>
+
             <h1>Mattias Englund</h1>
             <div style="font-size: 11pt; margin-bottom: 8px;">Studerande Nätverkstekniker • Ambassadör</div>
             
@@ -187,7 +206,7 @@
                 <span><i class="fas fa-envelope"></i> Mattias.Englund1992@gmail.com</span>
                 <span><i class="fas fa-phone"></i> 070-429 48 04</span>
                 <span><i class="fab fa-linkedin"></i> linkedin.com/in/mattias-englund-61129331a</span>
-                <span><i class="fas fa-map-marker-alt"></i> Borås</span>
+                <span><i class="fas fa-map-marker-alt"></i> Stockholm</span>
             </div>
         </header>
 
