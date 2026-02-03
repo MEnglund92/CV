@@ -19,6 +19,7 @@
 
         @page {
             size: A4 portrait;
+            /* Marginaler: 15mm runtom är standard och ser bra ut */
             margin: 15mm 15mm 15mm 15mm;
         }
 
@@ -26,8 +27,8 @@
             font-family: 'Roboto', sans-serif;
             color: var(--text-main);
             background: white;
-            /* MINSKAD BASSTORLEK TILL 9PT */
-            font-size: 9pt; 
+            /* JUSTERAD STORLEK: 8pt */
+            font-size: 8pt; 
             line-height: 1.5;
             margin: 0;
             padding: 0;
@@ -45,49 +46,50 @@
             margin-bottom: 20px;
         }
 
-        /* STATUS BADGE (Minskad text) */
+        /* STATUS BADGE */
         .status-badge {
             display: inline-flex;
             align-items: center;
             background-color: var(--badge-bg);
             color: var(--badge-text);
-            padding: 5px 14px; /* Lite mindre padding */
+            padding: 4px 12px;
             border-radius: 50px;
-            font-size: 8pt; /* Minskad från 9pt */
+            font-size: 7.5pt; /* Något mindre än brödtext för att vara diskret */
             font-weight: 700;
             border: 1px solid var(--badge-border);
-            margin-bottom: 10px;
+            margin-bottom: 8px;
             text-transform: uppercase;
             letter-spacing: 0.5px;
             box-shadow: 0 1px 2px rgba(0,0,0,0.05);
         }
 
         .status-dot {
-            width: 7px; /* Lite mindre prick */
-            height: 7px;
+            width: 6px;
+            height: 6px;
             background-color: #3b82f6;
             border-radius: 50%;
-            margin-right: 8px;
-            box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.2);
+            margin-right: 6px;
         }
 
         h1 {
-            font-size: 22pt; /* Minskad från 24pt */
+            /* JUSTERAD STORLEK: 18pt */
+            font-size: 18pt; 
             font-weight: 700;
             text-transform: uppercase;
-            margin: 0 0 4px 0;
+            margin: 0 0 2px 0;
             color: #111;
             letter-spacing: 0.5px;
         }
 
         .contact-info {
-            font-size: 8pt; /* Minskad från 9pt */
+            /* JUSTERAD STORLEK: 8pt */
+            font-size: 8pt;
             color: var(--text-light);
             display: flex;
             justify-content: center;
             gap: 15px;
             flex-wrap: wrap;
-            margin-top: 6px;
+            margin-top: 5px;
         }
         .contact-info span { display: flex; align-items: center; gap: 5px; }
         .contact-info i { color: var(--text-main); font-size: 8pt;}
@@ -96,13 +98,15 @@
         section { margin-bottom: 15px; }
 
         h2 {
-            font-size: 11pt; /* Minskad från 12pt */
+            /* JUSTERAD STORLEK: 10pt */
+            font-size: 10pt;
             text-transform: uppercase;
             color: var(--accent);
             border-bottom: 1px solid var(--line);
             margin: 0 0 8px 0;
             padding-bottom: 3px;
             letter-spacing: 1px;
+            font-weight: 700;
         }
 
         /* --- PROFIL --- */
@@ -110,7 +114,7 @@
             text-align: justify;
             margin: 0;
             color: #374151;
-            font-size: 8.5pt; /* Minskad text */
+            font-size: 8pt;
         }
 
         /* --- KOMPETENS --- */
@@ -119,18 +123,19 @@
             flex-direction: column;
             gap: 3px;
         }
-        .skill-row { font-size: 8.5pt; } /* Minskad från 9.5pt */
+        .skill-row { font-size: 8pt; }
         .skill-category {
             font-weight: 700;
             color: #111;
-            width: 120px; /* Lite smalare kolumn */
+            width: 110px; /* Lite smalare */
             display: inline-block;
+            font-size: 8pt;
         }
         .skill-list { color: #374151; }
 
         /* --- JOBB & UTBILDNING --- */
         .entry {
-            margin-bottom: 12px;
+            margin-bottom: 10px;
             page-break-inside: avoid;
         }
 
@@ -143,43 +148,45 @@
 
         .entry-title {
             font-weight: 700;
-            font-size: 9.5pt; /* Minskad från 10.5pt */
+            font-size: 9pt; /* Något större än brödtext för tydlighet */
             color: #000;
         }
 
-        .entry-company { font-weight: 500; color: #374151; font-size: 9pt; }
+        .entry-company { font-weight: 500; color: #374151; font-size: 8pt; }
+        
+        /* JUSTERAD STORLEK: 8pt */
         .entry-date { font-size: 8pt; color: var(--text-light); font-feature-settings: "tnum"; }
 
         .entry-body {
-            font-size: 8.5pt; /* Minskad från 9.5pt */
+            font-size: 8pt;
             color: #374151;
             margin-top: 1px;
         }
 
-        .entry-body ul { margin: 2px 0 0 0; padding-left: 16px; }
+        .entry-body ul { margin: 2px 0 0 0; padding-left: 14px; }
         .entry-body li { margin-bottom: 1px; }
 
         /* --- KURSINFO --- */
         .course-box {
-            margin-top: 6px;
+            margin-top: 5px;
             border-left: 3px solid var(--line);
             padding-left: 10px;
         }
         
         .course-row {
             display: grid;
-            grid-template-columns: 90px 1fr; /* Justerad bredd */
-            margin-bottom: 3px;
-            font-size: 8.5pt; /* Minskad */
+            grid-template-columns: 85px 1fr;
+            margin-bottom: 2px;
+            font-size: 8pt;
         }
         
         .course-label { font-weight: 700; color: var(--text-main); }
 
         /* --- PROJEKT --- */
         .project-item { margin-bottom: 6px; }
-        .project-head { font-weight: 700; color: #000; font-size: 9pt;}
+        .project-head { font-weight: 700; color: #000; font-size: 8.5pt;}
         .project-tech {
-            font-size: 8pt;
+            font-size: 7.5pt;
             color: var(--accent);
             font-family: monospace;
             margin-left: 8px;
@@ -202,7 +209,7 @@
             </div>
 
             <h1>Mattias Englund</h1>
-            <div style="font-size: 10pt; margin-bottom: 6px;">Studerande Nätverkstekniker • Ambassadör</div>
+            <div style="font-size: 9pt; margin-bottom: 6px; font-weight: 500;">Studerande Nätverkstekniker • Ambassadör</div>
             
             <div class="contact-info">
                 <span><i class="fas fa-envelope"></i> Mattias.Englund1992@gmail.com</span>
