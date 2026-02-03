@@ -51,7 +51,6 @@
             color: var(--badge-text);
             padding: 4px 12px;
             border-radius: 50px;
-            /* JUSTERAD STORLEK: Ökad till 8pt */
             font-size: 8pt;
             font-weight: 700;
             border: 1px solid var(--badge-border);
@@ -157,7 +156,7 @@
         .entry-body ul { margin: 2px 0 0 0; padding-left: 14px; }
         .entry-body li { margin-bottom: 1px; }
 
-        /* --- KURSINFO --- */
+        /* --- KURSINFO (FIXAD BREDD HÄR) --- */
         .course-box {
             margin-top: 5px;
             border-left: 3px solid var(--line);
@@ -166,10 +165,11 @@
         
         .course-row {
             display: grid;
-            grid-template-columns: 95px 1fr; 
+            /* ÄNDRAT HÄR: Ökat till 110px för att "Automation" ska få plats */
+            grid-template-columns: 110px 1fr; 
             margin-bottom: 2px;
             font-size: 8pt;
-            gap: 5px;
+            gap: 0; 
         }
         
         .course-label { font-weight: 700; color: var(--text-main); }
