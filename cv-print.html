@@ -10,8 +10,8 @@
 
     <style>
         :root {
-            --primary: #0f172a; /* Mörk bakgrundsfärg från hemsidan (nu textfärg) */
-            --accent: #0ea5e9;  /* Den klarblå färgen från hemsidan */
+            --primary: #0f172a; 
+            --accent: #0ea5e9;  
             --text: #334155;
             --light-bg: #f8fafc;
             --border: #e2e8f0;
@@ -33,7 +33,7 @@
             padding: 40px;
         }
 
-        /* --- HEADER (Liknar hemsidan) --- */
+        /* --- HEADER --- */
         header {
             text-align: center;
             margin-bottom: 50px;
@@ -44,8 +44,8 @@
         .status-badge {
             display: inline-flex;
             align-items: center;
-            background: #e0f2fe; /* Ljusblå bakgrund */
-            color: #0284c7;       /* Mörkblå text */
+            background: #e0f2fe; 
+            color: #0284c7;       
             padding: 6px 16px;
             border-radius: 20px;
             font-size: 0.85rem;
@@ -77,7 +77,6 @@
             margin-top: 5px;
         }
 
-        /* Kontaktinfo på rad */
         .contact-bar {
             margin-top: 20px;
             display: flex;
@@ -88,27 +87,22 @@
             flex-wrap: wrap;
         }
 
-        .contact-item {
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
-
+        .contact-item { display: flex; align-items: center; gap: 8px; }
         .contact-item i { color: var(--accent); }
 
-        /* --- LAYOUT (Split Section likt hemsidan) --- */
+        /* --- LAYOUT SEKTIONER --- */
         .section-grid {
             display: grid;
-            grid-template-columns: 220px 1fr; /* Vänster spalt rubrik, Höger spalt innehåll */
+            grid-template-columns: 220px 1fr; 
             gap: 40px;
             margin-bottom: 40px;
             border-bottom: 1px solid var(--border);
             padding-bottom: 40px;
+            page-break-inside: avoid;
         }
 
         .section-grid:last-child { border-bottom: none; }
 
-        /* Vänster sida av sektionen */
         .section-title h2 {
             font-size: 1.5rem;
             color: var(--accent);
@@ -119,7 +113,6 @@
             gap: 10px;
         }
 
-        /* Höger sida av sektionen */
         .section-content p {
             margin-top: 0;
             font-size: 1rem;
@@ -127,7 +120,7 @@
             text-align: justify;
         }
 
-        /* Jobb & Utbildning Listor */
+        /* JOBB & UTBILDNING */
         .timeline-item {
             margin-bottom: 25px;
             position: relative;
@@ -162,62 +155,65 @@
             border-radius: 4px;
         }
 
-        .item-desc {
-            font-size: 0.95rem; /* Något mindre text för beskrivningar */
-            color: var(--text);
-        }
+        .item-desc { font-size: 0.95rem; color: var(--text); }
+        .item-desc ul { margin: 8px 0 0 0; padding-left: 18px; color: var(--text); }
+        .item-desc li { margin-bottom: 4px; }
 
-        .item-desc ul {
-            margin: 8px 0 0 0;
-            padding-left: 18px;
-            color: var(--text);
-        }
-
-        /* Kompetens Tags (Likt hemsidan) */
-        .skills-grid {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
-        }
-        
+        /* SKILLS TAGS */
+        .skills-grid { display: flex; flex-wrap: wrap; gap: 10px; }
         .skill-tag {
             background: var(--light-bg);
             color: var(--primary);
-            padding: 8px 16px;
-            border-radius: 8px;
+            padding: 6px 14px;
+            border-radius: 6px;
             font-size: 0.9rem;
             font-weight: 500;
             border: 1px solid var(--border);
         }
 
-        /* Projektkort (Likt hemsidan) */
+        /* PROJEKT KORT */
         .project-card {
             background: #fff;
             border: 1px solid var(--border);
-            padding: 20px;
-            border-radius: 12px;
+            padding: 15px;
+            border-radius: 8px;
             margin-bottom: 15px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.02);
         }
-        
-        .project-head {
-            display: flex;
-            justify-content: space-between;
-            margin-bottom: 5px;
+        .project-head { display: flex; justify-content: space-between; margin-bottom: 5px; }
+        .project-tech { font-family: 'Fira Code', monospace; font-size: 0.8rem; color: var(--accent); }
+
+        /* NY STIL FÖR ÖVRIGT (Boxar) */
+        .misc-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+        .misc-box {
+            background: var(--light-bg);
+            padding: 15px 20px;
+            border-radius: 8px;
+            border-left: 4px solid var(--accent); /* Blå linje till vänster */
+        }
+        .misc-title {
+            font-weight: 700;
+            display: block;
+            margin-bottom: 8px;
+            color: var(--primary);
+            font-size: 1rem;
+        }
+        .misc-content {
+            font-size: 0.95rem;
+            color: var(--text);
+            line-height: 1.5;
         }
 
-        .project-tech {
-            font-family: 'Fira Code', monospace;
-            font-size: 0.8rem;
-            color: var(--accent);
-        }
-
-        /* Print Inställningar */
+        /* PRINT */
         @media print {
             body { margin: 0; padding: 0; }
             .container { max-width: 100%; padding: 20px 40px; }
             a { text-decoration: none; color: inherit; }
             .section-grid { page-break-inside: avoid; }
+            .misc-box { background: #f8fafc !important; border: 1px solid #ddd; border-left: 4px solid #0ea5e9 !important; }
         }
     </style>
 </head>
@@ -427,9 +423,30 @@
                     </div>
                     Uppsättning av hybridmiljö och hantering av användarrättigheter.
                 </div>
+            </div>
+        </div>
 
-                <div style="margin-top: 30px; border-top: 1px solid var(--border); padding-top: 20px;">
-                    <strong>Övrigt:</strong> B-Körkort • Svenska (Modersmål) • Engelska (Flytande)
+        <div class="section-grid">
+            <div class="section-title">
+                <h2><i class="fas fa-globe"></i> Övrigt</h2>
+            </div>
+            <div class="section-content">
+                <div class="misc-container">
+                    <div class="misc-box">
+                        <span class="misc-title"><i class="fas fa-language"></i> Språk</span>
+                        <div class="misc-content">
+                            Svenska (Modersmål)<br>
+                            Engelska (Mycket god)<br>
+                            Kroatiska/Bosniska (Grund)
+                        </div>
+                    </div>
+                    
+                    <div class="misc-box">
+                        <span class="misc-title"><i class="fas fa-car"></i> Körkort</span>
+                        <div class="misc-content">
+                            B-Körkort (Personbil)
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
