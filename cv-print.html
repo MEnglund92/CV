@@ -16,14 +16,14 @@
 
         @page {
             size: A4 portrait;
-            margin: 10mm; /* Små marginaler för att få plats */
+            margin: 10mm; /* Små marginaler */
         }
 
         body {
             font-family: 'Inter', sans-serif;
             color: var(--dark);
             background: white;
-            font-size: 10pt; /* Optimal lässtorlek för CV */
+            font-size: 10pt;
             line-height: 1.4;
             margin: 0;
             padding: 0;
@@ -40,7 +40,7 @@
         header {
             text-align: center;
             border-bottom: 2px solid var(--dark);
-            padding-bottom: 15px;
+            padding-bottom: 10px;
             margin-bottom: 15px;
         }
 
@@ -53,10 +53,10 @@
         }
 
         .role {
-            font-size: 12pt;
+            font-size: 11pt;
             font-weight: 600;
             color: var(--blue);
-            margin: 5px 0;
+            margin: 4px 0;
         }
 
         .lia-badge {
@@ -67,7 +67,7 @@
             padding: 2px 8px;
             border-radius: 4px;
             display: inline-block;
-            margin-bottom: 8px;
+            margin-bottom: 5px;
         }
 
         /* KONTAKT RAD */
@@ -87,33 +87,37 @@
             text-transform: uppercase;
             border-bottom: 1px solid var(--border);
             color: var(--dark);
-            margin: 15px 0 8px 0;
+            margin: 12px 0 6px 0;
             padding-bottom: 2px;
         }
 
-        p { margin: 0 0 8px 0; text-align: justify; }
+        /* PROFILTEXT - Justerad för dina önskemål */
+        .profile-section p {
+            margin: 0 0 6px 0; /* Lagom mellanrum mellan styckena */
+            text-align: left;
+        }
 
-        /* KOMPETENS GRID (Sparar plats vertikalt) */
+        /* KOMPETENS GRID */
         .skills-grid {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
             gap: 10px;
             background: #f8fafc;
-            padding: 10px;
+            padding: 8px;
             border-radius: 6px;
-            margin-bottom: 15px;
+            margin-bottom: 10px;
         }
         .skill-col strong { display: block; font-size: 9pt; color: var(--blue); margin-bottom: 2px; }
         .skill-col span { display: block; font-size: 8.5pt; color: #475569; line-height: 1.3; }
 
         /* JOBB & SKOLA LISTA */
-        .entry { margin-bottom: 10px; page-break-inside: avoid; }
+        .entry { margin-bottom: 8px; page-break-inside: avoid; }
         
         .entry-head {
             display: flex;
             justify-content: space-between;
             font-weight: 700;
-            font-size: 10.5pt;
+            font-size: 10pt;
         }
         .entry-sub {
             display: flex;
@@ -121,40 +125,41 @@
             color: var(--gray);
             font-size: 9pt;
             font-weight: 600;
-            margin-bottom: 2px;
+            margin-bottom: 1px;
         }
         .entry-text ul {
             margin: 2px 0 0 0;
             padding-left: 15px;
         }
-        .entry-text li { margin-bottom: 1px; }
+        .entry-text li { margin-bottom: 1px; font-size: 9.5pt; }
+        .entry-text { font-size: 9.5pt; }
 
-        /* KURSPLAN BOX (Din viktiga info) */
+        /* KURSPLAN BOX */
         .course-box {
             border: 1px solid var(--border);
             border-left: 3px solid var(--blue);
-            padding: 8px;
-            margin-top: 5px;
+            padding: 6px 8px;
+            margin-top: 4px;
             background: #fff;
             border-radius: 4px;
         }
         .course-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 10px;
+            gap: 8px;
         }
         .c-item strong { font-size: 8.5pt; color: var(--dark); }
         .c-item span { font-size: 8.5pt; color: var(--gray); display: block; }
 
-        /* PROJEKT (Sista raden) */
+        /* PROJEKT */
         .project-row {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 15px;
+            gap: 10px;
         }
-        .proj { background: #f8fafc; padding: 8px; border-radius: 4px; }
+        .proj { background: #f8fafc; padding: 6px; border-radius: 4px; border: 1px solid #f1f5f9; }
         .proj b { font-size: 9.5pt; color: var(--dark); display: block;}
-        .proj small { color: var(--blue); font-family: monospace; display: block; margin-bottom: 2px;}
+        .proj small { color: var(--blue); font-family: monospace; display: block; margin-bottom: 1px;}
         .proj span { font-size: 9pt; }
 
     </style>
@@ -176,11 +181,13 @@
             </div>
         </header>
 
-        <section>
+        <section class="profile-section">
             <h2>Profil</h2>
-            <p>
-                Från Team Manager till Nätverkstekniker. Efter sex år inom operativt ledarskap har jag valt att sadla om för att helhjärtat satsa på mitt tekniska intresse. Med min bakgrund inom operativ drift förstår jag vikten av struktur och upptid. Dessa erfarenheter kombinerar jag nu med teknisk kompetens inom Cisco, Azure och nätverkssäkerhet. Som <strong>Ambassadör på JENSEN</strong> drivs jag av ansvar och utveckling. Jag söker en LIA-plats våren 2026 där jag får använda både min tekniska problemlösningsförmåga och mitt professionella driv i skarpt läge.
-            </p>
+            <p>Från Team Manager till Nätverkstekniker.</p> 
+            <p>Efter sex år inom operativt ledarskap har jag valt att sadla om för att helhjärtat satsa på mitt tekniska intresse.</p> 
+            <p>Med min bakgrund inom operativ drift förstår jag vikten av struktur och upptid. Dessa erfarenheter kombinerar jag nu med teknisk kompetens inom Cisco, Azure och nätverkssäkerhet.</p> 
+            <p>Som <strong>Ambassadör på JENSEN</strong> drivs jag av ansvar och utveckling.</p> 
+            <p>Jag söker en LIA-plats våren 2026 där jag får använda både min tekniska problemlösningsförmåga och mitt professionella driv i skarpt läge.</p>
         </section>
 
         <div class="skills-grid">
