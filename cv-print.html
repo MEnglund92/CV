@@ -128,7 +128,7 @@
             font-size: 7pt;
         }
 
-        /* --- KOMPETENS (FIXAD BREDD) --- */
+        /* --- KOMPETENS --- */
         .skills-container {
             display: flex;
             flex-direction: column;
@@ -138,7 +138,7 @@
         .skill-category {
             font-weight: 700;
             color: #111;
-            /* ÄNDRAT HÄR: Ökat från 100px till 115px för att CLOUD & OS ska få plats */
+            /* Behåller denna bredd (115px) då den funkade för CLOUD & OS */
             width: 115px; 
             display: inline-block;
             font-size: 7pt;
@@ -184,12 +184,13 @@
             padding-left: 8px;
         }
         
+        /* FIXAD HÄR: Ökad bredd och tillagt gap */
         .course-row {
             display: grid;
-            grid-template-columns: 90px 1fr; 
+            grid-template-columns: 105px 1fr; /* Ökat till 105px */
             margin-bottom: 1px;
             font-size: 7pt;
-            gap: 0; 
+            column-gap: 5px; /* Nytt säkerhetsavstånd */
         }
         
         .course-label { font-weight: 700; color: var(--text-main); }
