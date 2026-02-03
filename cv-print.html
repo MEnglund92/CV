@@ -8,15 +8,15 @@
 
     <style>
         :root {
-            --text-main: #1f2937;  /* Mörkgrå för text (mjukare än svart) */
-            --text-light: #6b7280; /* Ljusgrå för datum/info */
-            --accent: #2563eb;     /* Din blå färg för rubriker/viktiga ord */
-            --line: #e5e7eb;       /* Tunn linjefärg */
+            --text-main: #1f2937;
+            --text-light: #6b7280;
+            --accent: #2563eb;
+            --line: #e5e7eb;
+            --bg-highlight: #f9fafb; /* Ljus bakgrund för struktur */
         }
 
         @page {
             size: A4 portrait;
-            /* Standard Word-marginaler (ca 1.5 - 2 cm) */
             margin: 15mm 15mm 15mm 15mm;
         }
 
@@ -24,8 +24,8 @@
             font-family: 'Roboto', sans-serif;
             color: var(--text-main);
             background: white;
-            font-size: 10pt; /* Standardstorlek */
-            line-height: 1.5; /* Bra radavstånd = Luftigt */
+            font-size: 10pt;
+            line-height: 1.5;
             margin: 0;
             padding: 0;
             -webkit-print-color-adjust: exact;
@@ -73,9 +73,7 @@
         .contact-info i { color: var(--text-main); font-size: 9pt;}
 
         /* --- SEKTIONER --- */
-        section { 
-            margin-bottom: 18px; /* Luft mellan sektioner */
-        }
+        section { margin-bottom: 18px; }
 
         h2 {
             font-size: 12pt;
@@ -95,28 +93,23 @@
         }
 
         /* --- KOMPETENS (LIST-DESIGN) --- */
-        /* Detta sparar massor av plats jämfört med rutor */
         .skills-container {
             display: flex;
             flex-direction: column;
             gap: 4px;
         }
-        .skill-row {
-            font-size: 9.5pt;
-        }
+        .skill-row { font-size: 9.5pt; }
         .skill-category {
             font-weight: 700;
             color: #111;
-            width: 130px; /* Fast bredd för rubriken */
+            width: 130px;
             display: inline-block;
         }
-        .skill-list {
-            color: #374151;
-        }
+        .skill-list { color: #374151; }
 
         /* --- JOBB & UTBILDNING --- */
         .entry {
-            margin-bottom: 12px;
+            margin-bottom: 15px;
             page-break-inside: avoid;
         }
 
@@ -133,16 +126,8 @@
             color: #000;
         }
 
-        .entry-company {
-            font-weight: 500;
-            color: #374151;
-        }
-
-        .entry-date {
-            font-size: 9pt;
-            color: var(--text-light);
-            font-feature-settings: "tnum"; /* Snygga siffror */
-        }
+        .entry-company { font-weight: 500; color: #374151; }
+        .entry-date { font-size: 9pt; color: var(--text-light); font-feature-settings: "tnum"; }
 
         .entry-body {
             font-size: 9.5pt;
@@ -150,39 +135,31 @@
             margin-top: 2px;
         }
 
-        .entry-body ul {
-            margin: 3px 0 0 0;
-            padding-left: 18px;
+        .entry-body ul { margin: 3px 0 0 0; padding-left: 18px; }
+        .entry-body li { margin-bottom: 2px; }
+
+        /* --- NY DESIGN FÖR UTBILDNINGSDETALJER --- */
+        .course-box {
+            margin-top: 8px;
+            border-left: 3px solid var(--line); /* Diskret linje till vänster */
+            padding-left: 12px;
         }
         
-        .entry-body li {
-            margin-bottom: 2px;
-        }
-
-        /* Särskild styling för kursinfo (Kompakt lista) */
-        .course-details {
-            margin-top: 6px;
-            padding-left: 0;
+        .course-row {
             display: grid;
-            grid-template-columns: 1fr 1fr; /* Två kolumner text */
-            gap: 2px 20px;
-        }
-        .course-item {
+            grid-template-columns: 100px 1fr; /* Fast bredd för etikett */
+            margin-bottom: 4px;
             font-size: 9pt;
         }
-        .course-item strong {
+        
+        .course-label {
+            font-weight: 700;
             color: var(--text-main);
-            font-weight: 600;
         }
 
-        /* --- PROJEKT (HÖGERJUSTERAT) --- */
-        .project-item {
-            margin-bottom: 5px;
-        }
-        .project-head {
-            font-weight: 700;
-            color: #000;
-        }
+        /* --- PROJEKT --- */
+        .project-item { margin-bottom: 8px; }
+        .project-head { font-weight: 700; color: #000; }
         .project-tech {
             font-size: 8.5pt;
             color: var(--accent);
@@ -258,14 +235,28 @@
                 <div class="entry-company">JENSEN Yrkeshögskola</div>
                 <div class="entry-body">
                     Roll: Förtroendevald Ambassadör. Utbildning med fokus på drift, design och säkerhet.
-                    <br><strong>Relevant Kursinnehåll:</strong>
                     
-                    <div class="course-details">
-                        <div class="course-item"><strong>Nätverk:</strong> TCP/IP, Routing (BGP/OSPF), Switching.</div>
-                        <div class="course-item"><strong>Säkerhet:</strong> Brandväggar, SASE, VPN, Sårbarhetsanalys.</div>
-                        <div class="course-item"><strong>Moln:</strong> Azure-nätverk, Virtuell routing, Hybridmiljöer.</div>
-                        <div class="course-item"><strong>Automation:</strong> Python-scripting, Agila metoder.</div>
-                        <div class="course-item"><strong>Praktik:</strong> Konfigurering av fysisk utrustning (Cisco).</div>
+                    <div class="course-box">
+                        <div class="course-row">
+                            <span class="course-label">Nätverk:</span>
+                            <span>TCP/IP, Routing (BGP/OSPF), Switching, WiFi.</span>
+                        </div>
+                        <div class="course-row">
+                            <span class="course-label">Säkerhet:</span>
+                            <span>Brandväggar, SASE, VPN, Sårbarhetsanalys.</span>
+                        </div>
+                        <div class="course-row">
+                            <span class="course-label">Moln:</span>
+                            <span>Azure-nätverk, Virtuell routing, Hybridmiljöer.</span>
+                        </div>
+                        <div class="course-row">
+                            <span class="course-label">Automation:</span>
+                            <span>Python-scripting, Agila metoder.</span>
+                        </div>
+                        <div class="course-row">
+                            <span class="course-label">Praktik:</span>
+                            <span>Konfigurering av fysisk utrustning (Cisco), Felsökning.</span>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -300,7 +291,7 @@
                 <div class="entry-body">
                     <ul>
                         <li>Ansvarig för daglig drift och teamledning. Agerade Superuser för lagersystem (WMS).</li>
-                        <li>Drev förbättringsarbete för minskade felkällor och hanterade komplexa logistikproblem.</li>
+                        <li>Arbetade med ständiga förbättringar för att minska fel och löste problem och avvikelser i det dagliga flödet.</li>
                     </ul>
                 </div>
             </div>
@@ -325,7 +316,7 @@
                 </div>
                 <div class="entry-company">Vasamuseet</div>
                 <div class="entry-body">
-                    Tekniskt precisionsarbete, strukturella förstärkningar och arbete på hög höjd.
+                    Tekniskt precisionsarbete för bevarandet av Regalskeppet Vasa. Utförde strukturella förstärkningar, inklusive byte av över 5 500 bultar i skrovet, samt arbete på hög höjd.
                 </div>
             </div>
         </section>
