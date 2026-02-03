@@ -44,15 +44,15 @@
             margin-bottom: 20px;
         }
 
-        /* STATUS BADGE */
         .status-badge {
             display: inline-flex;
             align-items: center;
             background-color: var(--badge-bg);
             color: var(--badge-text);
-            padding: 3px 10px;
+            padding: 4px 12px;
             border-radius: 50px;
-            font-size: 6.5pt; 
+            /* JUSTERAD STORLEK: Ökad till 8pt */
+            font-size: 8pt;
             font-weight: 700;
             border: 1px solid var(--badge-border);
             margin-bottom: 8px;
@@ -61,8 +61,8 @@
         }
 
         .status-dot {
-            width: 5px;
-            height: 5px;
+            width: 6px;
+            height: 6px;
             background-color: #3b82f6;
             border-radius: 50%;
             margin-right: 6px;
@@ -103,10 +103,9 @@
             font-weight: 700;
         }
 
-        /* --- PROFIL (FIXAD JUSTERING) --- */
+        /* --- PROFIL --- */
         .profile-text {
-            /* ÄNDRAT FRÅN JUSTIFY TILL LEFT FÖR ATT SLIPPA MELLANRUM */
-            text-align: left; 
+            text-align: left;
             margin: 0;
             color: #374151;
             font-size: 8pt;
@@ -148,7 +147,6 @@
         }
 
         .entry-company { font-weight: 500; color: #374151; font-size: 8pt; }
-        
         .entry-date { font-size: 8pt; color: var(--text-light); font-feature-settings: "tnum"; }
 
         .entry-body {
@@ -156,7 +154,6 @@
             color: #374151;
             margin-top: 1px;
         }
-
         .entry-body ul { margin: 2px 0 0 0; padding-left: 14px; }
         .entry-body li { margin-bottom: 1px; }
 
@@ -169,9 +166,10 @@
         
         .course-row {
             display: grid;
-            grid-template-columns: 85px 1fr;
+            grid-template-columns: 95px 1fr; 
             margin-bottom: 2px;
             font-size: 8pt;
+            gap: 5px;
         }
         
         .course-label { font-weight: 700; color: var(--text-main); }
