@@ -10,10 +10,10 @@
         :root {
             --text-main: #1f2937;
             --text-light: #6b7280;
-            --accent: #2563eb;     /* Blå accentfärg */
+            --accent: #2563eb;
             --line: #e5e7eb;
-            --badge-bg: #eff6ff;   /* Ljusblå bakgrund till badgen */
-            --badge-text: #1e40af; /* Mörkblå text till badgen */
+            --badge-bg: #eff6ff;
+            --badge-text: #1e40af;
             --badge-border: #bfdbfe;
         }
 
@@ -26,7 +26,8 @@
             font-family: 'Roboto', sans-serif;
             color: var(--text-main);
             background: white;
-            font-size: 10pt;
+            /* MINSKAD BASSTORLEK TILL 9PT */
+            font-size: 9pt; 
             line-height: 1.5;
             margin: 0;
             padding: 0;
@@ -41,29 +42,29 @@
         /* --- HEADER --- */
         header {
             text-align: center;
-            margin-bottom: 25px;
+            margin-bottom: 20px;
         }
 
-        /* DEN NYA RUTAN (STATUS BADGE) */
+        /* STATUS BADGE (Minskad text) */
         .status-badge {
             display: inline-flex;
             align-items: center;
             background-color: var(--badge-bg);
             color: var(--badge-text);
-            padding: 6px 16px;
-            border-radius: 50px; /* Pillerform */
-            font-size: 9pt;
+            padding: 5px 14px; /* Lite mindre padding */
+            border-radius: 50px;
+            font-size: 8pt; /* Minskad från 9pt */
             font-weight: 700;
             border: 1px solid var(--badge-border);
-            margin-bottom: 12px;
+            margin-bottom: 10px;
             text-transform: uppercase;
             letter-spacing: 0.5px;
             box-shadow: 0 1px 2px rgba(0,0,0,0.05);
         }
 
         .status-dot {
-            width: 8px;
-            height: 8px;
+            width: 7px; /* Lite mindre prick */
+            height: 7px;
             background-color: #3b82f6;
             border-radius: 50%;
             margin-right: 8px;
@@ -71,35 +72,35 @@
         }
 
         h1 {
-            font-size: 24pt;
+            font-size: 22pt; /* Minskad från 24pt */
             font-weight: 700;
             text-transform: uppercase;
-            margin: 0 0 5px 0;
+            margin: 0 0 4px 0;
             color: #111;
             letter-spacing: 0.5px;
         }
 
         .contact-info {
-            font-size: 9pt;
+            font-size: 8pt; /* Minskad från 9pt */
             color: var(--text-light);
             display: flex;
             justify-content: center;
             gap: 15px;
             flex-wrap: wrap;
-            margin-top: 8px;
+            margin-top: 6px;
         }
         .contact-info span { display: flex; align-items: center; gap: 5px; }
-        .contact-info i { color: var(--text-main); font-size: 9pt;}
+        .contact-info i { color: var(--text-main); font-size: 8pt;}
 
         /* --- SEKTIONER --- */
-        section { margin-bottom: 18px; }
+        section { margin-bottom: 15px; }
 
         h2 {
-            font-size: 12pt;
+            font-size: 11pt; /* Minskad från 12pt */
             text-transform: uppercase;
             color: var(--accent);
             border-bottom: 1px solid var(--line);
-            margin: 0 0 10px 0;
+            margin: 0 0 8px 0;
             padding-bottom: 3px;
             letter-spacing: 1px;
         }
@@ -109,26 +110,27 @@
             text-align: justify;
             margin: 0;
             color: #374151;
+            font-size: 8.5pt; /* Minskad text */
         }
 
-        /* --- KOMPETENS (LIST-DESIGN) --- */
+        /* --- KOMPETENS --- */
         .skills-container {
             display: flex;
             flex-direction: column;
-            gap: 4px;
+            gap: 3px;
         }
-        .skill-row { font-size: 9.5pt; }
+        .skill-row { font-size: 8.5pt; } /* Minskad från 9.5pt */
         .skill-category {
             font-weight: 700;
             color: #111;
-            width: 130px;
+            width: 120px; /* Lite smalare kolumn */
             display: inline-block;
         }
         .skill-list { color: #374151; }
 
         /* --- JOBB & UTBILDNING --- */
         .entry {
-            margin-bottom: 15px;
+            margin-bottom: 12px;
             page-break-inside: avoid;
         }
 
@@ -136,48 +138,48 @@
             display: flex;
             justify-content: space-between;
             align-items: baseline;
-            margin-bottom: 2px;
+            margin-bottom: 1px;
         }
 
         .entry-title {
             font-weight: 700;
-            font-size: 10.5pt;
+            font-size: 9.5pt; /* Minskad från 10.5pt */
             color: #000;
         }
 
-        .entry-company { font-weight: 500; color: #374151; }
-        .entry-date { font-size: 9pt; color: var(--text-light); font-feature-settings: "tnum"; }
+        .entry-company { font-weight: 500; color: #374151; font-size: 9pt; }
+        .entry-date { font-size: 8pt; color: var(--text-light); font-feature-settings: "tnum"; }
 
         .entry-body {
-            font-size: 9.5pt;
+            font-size: 8.5pt; /* Minskad från 9.5pt */
             color: #374151;
-            margin-top: 2px;
+            margin-top: 1px;
         }
 
-        .entry-body ul { margin: 3px 0 0 0; padding-left: 18px; }
-        .entry-body li { margin-bottom: 2px; }
+        .entry-body ul { margin: 2px 0 0 0; padding-left: 16px; }
+        .entry-body li { margin-bottom: 1px; }
 
         /* --- KURSINFO --- */
         .course-box {
-            margin-top: 8px;
+            margin-top: 6px;
             border-left: 3px solid var(--line);
-            padding-left: 12px;
+            padding-left: 10px;
         }
         
         .course-row {
             display: grid;
-            grid-template-columns: 100px 1fr;
-            margin-bottom: 4px;
-            font-size: 9pt;
+            grid-template-columns: 90px 1fr; /* Justerad bredd */
+            margin-bottom: 3px;
+            font-size: 8.5pt; /* Minskad */
         }
         
         .course-label { font-weight: 700; color: var(--text-main); }
 
         /* --- PROJEKT --- */
-        .project-item { margin-bottom: 8px; }
-        .project-head { font-weight: 700; color: #000; }
+        .project-item { margin-bottom: 6px; }
+        .project-head { font-weight: 700; color: #000; font-size: 9pt;}
         .project-tech {
-            font-size: 8.5pt;
+            font-size: 8pt;
             color: var(--accent);
             font-family: monospace;
             margin-left: 8px;
@@ -200,7 +202,7 @@
             </div>
 
             <h1>Mattias Englund</h1>
-            <div style="font-size: 11pt; margin-bottom: 8px;">Studerande Nätverkstekniker • Ambassadör</div>
+            <div style="font-size: 10pt; margin-bottom: 6px;">Studerande Nätverkstekniker • Ambassadör</div>
             
             <div class="contact-info">
                 <span><i class="fas fa-envelope"></i> Mattias.Englund1992@gmail.com</span>
