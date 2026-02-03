@@ -55,7 +55,8 @@
             font-size: 8pt;
             font-weight: 700;
             border: 1px solid var(--badge-border);
-            margin-bottom: 8px; /* Luft under rutan */
+            margin-top: 4px;
+            margin-bottom: 8px;
             letter-spacing: 0.5px;
             box-shadow: 0 1px 2px rgba(0,0,0,0.05);
         }
@@ -72,7 +73,7 @@
             font-size: 16pt; 
             font-weight: 700;
             text-transform: uppercase;
-            margin: 0 0 6px 0; /* Lite mer luft ner till LIA-rutan */
+            margin: 0 0 2px 0;
             color: #111;
             letter-spacing: 0.5px;
         }
@@ -82,12 +83,29 @@
             color: var(--text-light);
             display: flex;
             justify-content: center;
-            gap: 15px;
+            align-items: center; /* Centrerar vertikalt */
+            gap: 15px; /* Luft mellan uppgifterna */
             flex-wrap: wrap;
             margin-top: 5px;
         }
-        .contact-info span { display: flex; align-items: center; gap: 5px; }
-        .contact-info i { color: var(--text-main); font-size: 8pt;}
+        
+        .contact-info span { 
+            display: flex; 
+            align-items: center; 
+            gap: 6px; /* Avstånd mellan ikon och text */
+            white-space: nowrap; /* Håller ihop texten */
+        }
+        
+        .contact-info i { 
+            color: var(--text-main); 
+            font-size: 8pt;
+        }
+        
+        /* En liten vertikal avdelare om man vill ha det (valfritt) */
+        .separator {
+            color: #e5e7eb;
+            font-size: 10pt;
+        }
 
         /* --- SEKTIONER --- */
         section { margin-bottom: 14px; }
@@ -197,18 +215,21 @@
         <header>
             <h1>Mattias Englund</h1>
             
+            <div style="font-size: 9pt; margin-bottom: 4px; font-weight: 500;">Studerande Nätverkstekniker • Ambassadör</div>
+
             <div class="status-badge">
                 <div class="status-dot"></div>
                 Söker LIA: 6 April – 11 Juni 2026
             </div>
-
-            <div style="font-size: 9pt; margin-bottom: 6px; font-weight: 500;">Studerande Nätverkstekniker • Ambassadör</div>
             
             <div class="contact-info">
                 <span><i class="fas fa-envelope"></i> Mattias.Englund1992@gmail.com</span>
+                <span class="separator">|</span>
                 <span><i class="fas fa-phone"></i> 070-429 48 04</span>
+                <span class="separator">|</span>
                 <span><i class="fab fa-linkedin"></i> linkedin.com/in/mattias-englund-61129331a</span>
-                <span><i class="fas fa-map-marker-alt"></i> Stockholm</span>
+                <span class="separator">|</span>
+                <span><i class="fas fa-map-marker-alt"></i> Borås</span>
             </div>
         </header>
 
