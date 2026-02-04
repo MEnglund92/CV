@@ -11,7 +11,6 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
     <script src="https://unpkg.com/@lottiefiles/lottie-player@1.5.7/dist/lottie-player.js"></script>
-
     <script src="https://unpkg.com/@dotlottie/player-component@latest/dist/dotlottie-player.mjs" type="module"></script>
     
     <meta property="og:type" content="website">
@@ -37,55 +36,56 @@
             color: var(--text-main);
             margin: 0;
             padding: 0;
-            line-height: 1.8;
+            line-height: 1.6; /* Lite tightare radavstånd */
             overflow-x: hidden;
+            font-size: 16px; /* Basstorlek */
         }
 
-        /* BREDD: 1300px */
+        /* BREDD: Minskat till 1000px för en mer samlad look */
         .container {
-            max-width: 1300px; 
-            margin: 60px auto;
+            max-width: 1000px; 
+            margin: 40px auto; /* Mindre marginal uppe/nere */
             padding: 20px;
         }
 
         /* --- TERMINAL HERO --- */
         .terminal-hero {
             background-color: var(--terminal-bg);
-            border-radius: 12px;
-            padding: 40px;
-            margin-bottom: 60px;
+            border-radius: 10px;
+            padding: 25px; /* Minskat padding */
+            margin-bottom: 40px;
             border: 1px solid var(--border);
-            box-shadow: 0 0 30px rgba(56, 189, 248, 0.15);
+            box-shadow: 0 0 20px rgba(56, 189, 248, 0.1);
             font-family: 'Fira Code', monospace;
-            min-height: 200px;
+            min-height: 140px; /* Minskat höjd */
             display: flex;
             flex-direction: column;
         }
 
         .terminal-header {
             display: flex;
-            gap: 8px;
-            margin-bottom: 20px;
+            gap: 6px;
+            margin-bottom: 15px;
             border-bottom: 1px solid var(--border);
-            padding-bottom: 15px;
+            padding-bottom: 10px;
         }
 
-        .dot { width: 14px; height: 14px; border-radius: 50%; }
+        .dot { width: 12px; height: 12px; border-radius: 50%; } /* Mindre prickar */
         .red { background-color: #ef4444; }
         .yellow { background-color: #f59e0b; }
         .green { background-color: #22c55e; }
 
         .terminal-content {
             color: var(--accent);
-            font-size: 1.2rem;
+            font-size: 1rem; /* Minskat textstorlek */
             white-space: pre-wrap; 
-            line-height: 1.6;
+            line-height: 1.5;
         }
 
         .command { color: #22c55e; margin-right: 8px; }
         .cursor {
             display: inline-block;
-            width: 12px;
+            width: 10px;
             height: 1.2em;
             background-color: var(--accent);
             animation: blink 1s infinite;
@@ -95,11 +95,11 @@
         @keyframes blink { 0% { opacity: 0; } 50% { opacity: 1; } 100% { opacity: 0; } }
 
         /* HEADER */
-        header { text-align: center; margin-bottom: 100px; }
+        header { text-align: center; margin-bottom: 60px; } /* Minskat avstånd */
         
         h1 {
-            font-size: 4rem;
-            margin: 15px 0;
+            font-size: 3rem; /* Minskat från 4rem */
+            margin: 10px 0;
             font-weight: 800;
             color: white;
             letter-spacing: -1px;
@@ -110,45 +110,45 @@
             align-items: center;
             background: rgba(34, 197, 94, 0.1);
             color: #4ade80;
-            padding: 8px 20px;
+            padding: 6px 16px; /* Mindre badge */
             border-radius: 30px;
-            font-size: 1rem;
+            font-size: 0.9rem;
             font-weight: 600;
             border: 1px solid rgba(34, 197, 94, 0.3);
-            margin-bottom: 20px;
+            margin-bottom: 15px;
         }
 
         .status-dot {
-            width: 10px;
-            height: 10px;
+            width: 8px;
+            height: 8px;
             background-color: #4ade80;
             border-radius: 50%;
-            margin-right: 10px;
-            box-shadow: 0 0 10px #4ade80;
+            margin-right: 8px;
+            box-shadow: 0 0 8px #4ade80;
             animation: pulse 2s infinite;
         }
 
         @keyframes pulse { 0% { opacity: 1; } 50% { opacity: 0.5; } 100% { opacity: 1; } }
 
         /* KNAPPAR */
-        .actions { display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; margin-top: 30px; align-items: center; }
+        .actions { display: flex; justify-content: center; gap: 15px; flex-wrap: wrap; margin-top: 25px; align-items: center; }
         
         .btn {
-            display: inline-flex; align-items: center; gap: 10px; padding: 14px 32px;
-            border-radius: 8px; text-decoration: none; font-weight: 600;
+            display: inline-flex; align-items: center; gap: 8px; padding: 10px 24px; /* Mindre knappar */
+            border-radius: 6px; text-decoration: none; font-weight: 600;
             transition: all 0.3s ease; border: 1px solid transparent;
-            font-size: 1.1rem;
+            font-size: 0.95rem; /* Mindre text i knappar */
         }
         .btn-primary { background-color: var(--accent); color: #0f172a; }
-        .btn-primary:hover { background-color: var(--accent-hover); transform: translateY(-3px); box-shadow: 0 10px 25px -10px rgba(56, 189, 248, 0.6); }
+        .btn-primary:hover { background-color: var(--accent-hover); transform: translateY(-2px); box-shadow: 0 5px 15px -5px rgba(56, 189, 248, 0.6); }
         .btn-secondary { background-color: transparent; border: 1px solid var(--border); color: var(--text-main); }
         .btn-secondary:hover { border-color: var(--accent); color: var(--accent); }
 
         .email-copy-text {
             width: 100%;
             text-align: center;
-            margin-top: 20px;
-            font-size: 1rem;
+            margin-top: 15px;
+            font-size: 0.9rem;
             color: var(--text-muted);
             font-family: 'Fira Code', monospace;
         }
@@ -156,15 +156,17 @@
         /* SEKTIONER */
         section {
             background: var(--card-bg); 
-            padding: 80px; 
-            margin-bottom: 60px;
-            border-radius: 20px; 
+            padding: 50px; /* Minskat från 80px */
+            margin-bottom: 40px; /* Minskat avstånd */
+            border-radius: 16px; 
             border: 1px solid var(--border);
         }
         h2 {
-            color: var(--accent); font-size: 2.2rem; margin-top: 0; margin-bottom: 50px;
-            border-bottom: 1px solid var(--border); padding-bottom: 25px;
-            display: flex; align-items: center; gap: 20px; font-weight: 700;
+            color: var(--accent); 
+            font-size: 1.8rem; /* Minskat från 2.2rem */
+            margin-top: 0; margin-bottom: 35px;
+            border-bottom: 1px solid var(--border); padding-bottom: 15px;
+            display: flex; align-items: center; gap: 15px; font-weight: 700;
         }
 
         /* --- LAYOUTS --- */
@@ -172,7 +174,7 @@
         .split-section {
             display: grid;
             grid-template-columns: 1.2fr 1fr;
-            gap: 80px;
+            gap: 50px; /* Minskat gap */
             align-items: center;
         }
         
@@ -181,27 +183,26 @@
         }
 
         .text-content p {
-            max-width: 650px; 
-            font-size: 1.1rem;
+            max-width: 100%; 
+            font-size: 1rem; /* Minskat från 1.1/1.2rem */
         }
 
-        /* Standardstorlek för alla animationer (500px) */
+        /* Standardstorlek för animationer - Minskat från 500px till 400px */
         .anim-container {
             width: 100%;
-            max-width: 500px;
+            max-width: 400px; 
             margin: 0 auto;
-            min-height: 350px; 
+            min-height: 250px; 
             display: flex;
             align-items: center;
             justify-content: center;
         }
 
-        /* Hanterar både gamla lottie-player och nya dotlottie-player */
         .anim-container lottie-player,
         .anim-container dotlottie-player {
             width: 100%;
             height: auto;
-            filter: drop-shadow(0 0 40px rgba(56, 189, 248, 0.15));
+            filter: drop-shadow(0 0 30px rgba(56, 189, 248, 0.1));
         }
 
         /* SKILLS */
@@ -212,83 +213,87 @@
         }
         .skills-anim-center {
             width: 100%;
-            max-width: 300px;
-            margin-bottom: 50px;
-            min-height: 300px;
+            max-width: 250px; /* Minskat */
+            margin-bottom: 30px;
+            min-height: 250px;
         }
 
         /* PROJEKT */
-        .project-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; width: 100%; }
+        .project-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 25px; width: 100%; }
         .project-card {
             background: rgba(255,255,255,0.03);
-            padding: 40px; border-radius: 16px; border: 1px solid var(--border);
+            padding: 25px; /* Mindre padding */
+            border-radius: 12px; border: 1px solid var(--border);
             transition: transform 0.2s;
         }
-        .project-card:hover { transform: translateY(-7px); border-color: var(--accent); }
-        .project-title { font-weight: 700; color: var(--text-main); font-size: 1.3rem; display: block; margin-bottom: 10px; }
-        .project-tech { font-size: 0.95rem; color: var(--accent); font-family: 'Fira Code', monospace; }
+        .project-card:hover { transform: translateY(-5px); border-color: var(--accent); }
+        .project-title { font-weight: 700; color: var(--text-main); font-size: 1.1rem; display: block; margin-bottom: 8px; }
+        .project-tech { font-size: 0.85rem; color: var(--accent); font-family: 'Fira Code', monospace; }
 
         /* LISTOR & TIMELINE */
         .timeline-content { width: 100%; }
-        .timeline-item { margin-bottom: 60px; padding-left: 40px; border-left: 3px solid var(--border); position: relative; }
+        .timeline-item { margin-bottom: 40px; padding-left: 30px; border-left: 2px solid var(--border); position: relative; }
         .timeline-item:last-child { margin-bottom: 0; }
         .timeline-item::before {
-            content: ''; position: absolute; left: -9px; top: 6px; width: 15px; height: 15px;
-            background: var(--accent); border-radius: 50%; border: 4px solid var(--card-bg);
+            content: ''; position: absolute; left: -7px; top: 6px; width: 12px; height: 12px;
+            background: var(--accent); border-radius: 50%; border: 3px solid var(--card-bg);
         }
-        .role-header { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; margin-bottom: 10px; }
-        .role-title { font-size: 1.5rem; font-weight: 700; color: var(--text-main); }
-        .company-name { font-size: 1.2rem; color: var(--accent); font-weight: 500; display: block; margin-bottom: 12px; }
-        .date-badge { font-size: 1rem; background: rgba(56, 189, 248, 0.1); color: var(--accent); padding: 6px 15px; border-radius: 20px; font-weight: 600; }
-        ul { margin-top: 20px; padding-left: 20px; }
-        li { margin-bottom: 12px; color: var(--text-muted); font-size: 1.1rem; }
+        .role-header { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; margin-bottom: 5px; }
+        .role-title { font-size: 1.2rem; font-weight: 700; color: var(--text-main); }
+        .company-name { font-size: 1rem; color: var(--accent); font-weight: 500; display: block; margin-bottom: 8px; }
+        .date-badge { font-size: 0.85rem; background: rgba(56, 189, 248, 0.1); color: var(--accent); padding: 4px 12px; border-radius: 15px; font-weight: 600; }
+        ul { margin-top: 10px; padding-left: 18px; }
+        li { margin-bottom: 8px; color: var(--text-muted); font-size: 0.95rem; }
 
         /* SKILLS STYLING */
         .skills-content { width: 100%; text-align: center; }
-        .skill-category { font-size: 1rem; text-transform: uppercase; letter-spacing: 2px; color: var(--text-muted); margin-top: 50px; margin-bottom: 25px; display: block; font-weight: 700; border-bottom: 1px solid rgba(255,255,255,0.05); padding-bottom: 10px; max-width: 700px; margin-left: auto; margin-right: auto;}
+        .skill-category { font-size: 0.9rem; text-transform: uppercase; letter-spacing: 1.5px; color: var(--text-muted); margin-top: 40px; margin-bottom: 20px; display: block; font-weight: 700; border-bottom: 1px solid rgba(255,255,255,0.05); padding-bottom: 8px; max-width: 600px; margin-left: auto; margin-right: auto;}
         .skill-category:first-of-type { margin-top: 0; }
-        .skills-grid { display: flex; flex-wrap: wrap; gap: 15px; justify-content: center; max-width: 1000px; margin: 0 auto; }
+        .skills-grid { display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; max-width: 900px; margin: 0 auto; }
         .skill-tag {
             background-color: rgba(255, 255, 255, 0.05); color: var(--text-main);
-            padding: 12px 24px; border-radius: 10px; font-size: 1rem; font-weight: 500;
+            padding: 8px 18px; /* Mindre taggar */
+            border-radius: 8px; font-size: 0.9rem; font-weight: 500;
             border: 1px solid var(--border); transition: all 0.2s;
         }
         .skill-tag:hover { border-color: var(--accent); background-color: rgba(56, 189, 248, 0.1); cursor: default; }
 
         /* ÖVRIGT */
         .misc-text { width: 100%; }
-        .misc-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 50px; }
-        .misc-item strong { color: var(--accent); display: block; margin-bottom: 15px; font-size: 1.3rem; }
+        .misc-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; }
+        .misc-item strong { color: var(--accent); display: block; margin-bottom: 10px; font-size: 1.1rem; }
 
         /* FOOTER ANIMATION */
         .footer-anim {
             text-align: center;
-            margin-top: 150px;
-            margin-bottom: 100px;
+            margin-top: 100px;
+            margin-bottom: 60px;
         }
         .footer-text {
             color: var(--text-muted); 
-            font-size: 3rem; 
+            font-size: 2rem; /* Mindre footer text */
             font-weight: 800;
-            margin-top: 30px;
+            margin-top: 20px;
             letter-spacing: -1px;
             color: var(--accent);
-            text-shadow: 0 0 40px rgba(56, 189, 248, 0.2);
+            text-shadow: 0 0 30px rgba(56, 189, 248, 0.2);
         }
 
         /* RESPONSIVITET (MOBIL) */
-        @media (max-width: 1100px) {
-            h1 { font-size: 2.8rem; }
-            .container { margin: 20px auto; padding: 15px; width: 95%; }
+        @media (max-width: 900px) {
+            h1 { font-size: 2.2rem; }
+            .container { margin: 10px auto; padding: 10px; width: 95%; }
             
             .split-section, .split-section.reverse {
                 grid-template-columns: 1fr;
-                gap: 50px;
+                gap: 30px;
             }
             .text-content p { max-width: 100%; }
-            .anim-container { order: -1; max-width: 300px; min-height: 250px; }
+            .anim-container { order: -1; max-width: 250px; min-height: 200px; }
             .project-grid, .misc-grid { grid-template-columns: 1fr; }
-            section { padding: 30px; }
+            section { padding: 25px; }
+            .actions { flex-direction: column; width: 100%; }
+            .btn { width: 100%; justify-content: center; }
         }
     </style>
 </head>
@@ -310,7 +315,7 @@
                 <div class="status-dot"></div> Söker LIA våren 2026
             </div>
             <h1>Mattias Englund</h1>
-            <p style="font-size: 1.6rem; color: var(--text-muted);">
+            <p style="font-size: 1.2rem; color: var(--text-muted);">
                 Studerande Nätverkstekniker • Ambassadör hos JENSEN
             </p>
             
@@ -333,7 +338,7 @@
         <section class="split-section">
             <div class="text-content">
                 <h2><i class="fas fa-user-circle"></i> Om Mig</h2>
-                <p style="font-size: 1.2rem; color: #cbd5e1;">
+                <p style="color: #cbd5e1;">
                     Från Team Manager till Nätverkstekniker. 
                     Efter sex år inom operativt ledarskap satsar jag nu helhjärtat på teknik. Jag kombinerar min erfarenhet av drift och struktur med kompetens inom Cisco, Azure och nätverkssäkerhet.<br><br> Som Ambassadör på JENSEN drivs jag av ansvar och utveckling.<br><br> Jag söker en LIA-plats 6 april – 11 juni 2026 där jag får använda både min tekniska problemlösningsförmåga och mitt professionella driv i skarpt läge.
                 </p>
@@ -344,7 +349,7 @@
         </section>
 
         <section class="split-section reverse">
-            <div class="anim-container" style="max-width: 350px;">
+            <div class="anim-container" style="max-width: 300px;">
                 <dotlottie-player src="https://lottie.host/90ee1a42-08ea-4358-aa56-9c4420e457c4/s6RU2jB7cY.lottie" background="transparent" speed="1" style="width: 100%; height: 100%;" loop autoplay></dotlottie-player>
             </div>
             <div class="text-content">
@@ -353,12 +358,12 @@
                     <div class="project-card">
                         <span class="project-title"><i class="fas fa-network-wired"></i> Cisco Packet Tracer Labb</span>
                         <span class="project-tech">VLAN • OSPF • DHCP</span>
-                        <p style="font-size: 1.1rem; margin-top: 10px;">Konfigurering av företagsnätverk med segmentering och redundans.</p>
+                        <p style="margin-top: 10px; font-size: 0.95rem;">Konfigurering av företagsnätverk med segmentering och redundans.</p>
                     </div>
                     <div class="project-card">
                         <span class="project-title"><i class="fas fa-cloud"></i> Azure Cloud Setup</span>
                         <span class="project-tech">Azure AD • Virtuella Nätverk</span>
-                        <p style="font-size: 1.1rem; margin-top: 10px;">Uppsättning av hybridmiljö och hantering av användarrättigheter.</p>
+                        <p style="margin-top: 10px; font-size: 0.95rem;">Uppsättning av hybridmiljö och hantering av användarrättigheter.</p>
                     </div>
                 </div>
             </div>
@@ -546,7 +551,7 @@
         </section>
 
         <div class="footer-anim">
-            <lottie-player src="https://assets9.lottiefiles.com/packages/lf20_x62chJ.json"  background="transparent"  speed="1"  style="width: 350px; height: 350px; margin: 0 auto;"  loop  autoplay></lottie-player>
+            <lottie-player src="https://assets9.lottiefiles.com/packages/lf20_x62chJ.json"  background="transparent"  speed="1"  style="width: 200px; height: 200px; margin: 0 auto;"  loop  autoplay></lottie-player>
             <p class="footer-text">Redo för nästa uppdrag!</p>
         </div>
 
