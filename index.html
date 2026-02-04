@@ -53,12 +53,12 @@
         .terminal-hero {
             background-color: var(--terminal-bg);
             border-radius: 8px;
-            padding: 20px; /* Mindre padding */
+            padding: 20px;
             margin-bottom: 30px;
             border: 1px solid var(--border);
             box-shadow: 0 0 15px rgba(56, 189, 248, 0.1);
             font-family: 'Fira Code', monospace;
-            min-height: 100px; /* Mer kompakt */
+            min-height: 100px;
             display: flex;
             flex-direction: column;
         }
@@ -78,7 +78,7 @@
 
         .terminal-content {
             color: var(--accent);
-            font-size: 0.9rem; /* Mindre text i terminalen */
+            font-size: 0.9rem;
             white-space: pre-wrap; 
             line-height: 1.4;
         }
@@ -99,7 +99,7 @@
         header { text-align: center; margin-bottom: 50px; }
         
         h1 {
-            font-size: 2.5rem; /* Minskat rejält */
+            font-size: 2.5rem;
             margin: 8px 0;
             font-weight: 800;
             color: white;
@@ -135,7 +135,7 @@
         .actions { display: flex; justify-content: center; gap: 12px; flex-wrap: wrap; margin-top: 20px; align-items: center; }
         
         .btn {
-            display: inline-flex; align-items: center; gap: 8px; padding: 8px 20px; /* Kompakta knappar */
+            display: inline-flex; align-items: center; gap: 8px; padding: 8px 20px;
             border-radius: 6px; text-decoration: none; font-weight: 600;
             transition: all 0.3s ease; border: 1px solid transparent;
             font-size: 0.9rem;
@@ -157,14 +157,14 @@
         /* SEKTIONER */
         section {
             background: var(--card-bg); 
-            padding: 30px; /* Mycket mindre padding */
+            padding: 30px; 
             margin-bottom: 30px; 
             border-radius: 12px; 
             border: 1px solid var(--border);
         }
         h2 {
             color: var(--accent); 
-            font-size: 1.5rem; /* Mindre rubriker */
+            font-size: 1.5rem; 
             margin-top: 0; margin-bottom: 25px;
             border-bottom: 1px solid var(--border); padding-bottom: 12px;
             display: flex; align-items: center; gap: 10px; font-weight: 700;
@@ -175,7 +175,7 @@
         .split-section {
             display: grid;
             grid-template-columns: 1.2fr 1fr;
-            gap: 30px; /* Tajtare gap */
+            gap: 30px; 
             align-items: center;
         }
         
@@ -185,10 +185,10 @@
 
         .text-content p {
             max-width: 100%; 
-            font-size: 0.95rem; /* Något mindre brödtext */
+            font-size: 0.95rem; 
         }
 
-        /* Standardstorlek för animationer - Minskat till 250px */
+        /* Standardstorlek för animationer */
         .anim-container {
             width: 100%;
             max-width: 250px; 
@@ -214,7 +214,7 @@
         }
         .skills-anim-center {
             width: 100%;
-            max-width: 200px; /* Mindre */
+            max-width: 200px; 
             margin-bottom: 20px;
             min-height: 200px;
         }
@@ -223,7 +223,7 @@
         .project-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; width: 100%; }
         .project-card {
             background: rgba(255,255,255,0.03);
-            padding: 20px; /* Mindre padding */
+            padding: 20px; 
             border-radius: 10px; border: 1px solid var(--border);
             transition: transform 0.2s;
         }
@@ -253,7 +253,7 @@
         .skills-grid { display: flex; flex-wrap: wrap; gap: 8px; justify-content: center; max-width: 700px; margin: 0 auto; }
         .skill-tag {
             background-color: rgba(255, 255, 255, 0.05); color: var(--text-main);
-            padding: 6px 14px; /* Mindre taggar */
+            padding: 6px 14px; 
             border-radius: 6px; font-size: 0.85rem; font-weight: 500;
             border: 1px solid var(--border); transition: all 0.2s;
         }
@@ -272,7 +272,7 @@
         }
         .footer-text {
             color: var(--text-muted); 
-            font-size: 1.5rem; /* Mindre footer text */
+            font-size: 1.5rem; 
             font-weight: 800;
             margin-top: 15px;
             letter-spacing: -1px;
@@ -321,7 +321,7 @@
             </p>
             
             <div class="actions">
-                <a href="cv.pdf" download class="btn btn-primary">
+                <a href="cv.pdf" download target="_blank" class="btn btn-primary">
                     <i class="fas fa-file-pdf"></i> Ladda ner CV
                 </a>
                 <a href="mailto:mattias.englund1992@gmail.com" class="btn btn-secondary">
@@ -392,8 +392,7 @@
                 <span class="skill-category" style="text-align: center;">Säkerhet & Övervakning</span>
                 <div class="skills-grid">
                     <span class="skill-tag">Firewalls & ACL</span>
-                    <span class="skill-tag">VPN & Wireguard</span>
-                    <span class="skill-tag">SASE & Zero Trust</span>
+                    <span class="skill-tag">VPN & WireGuard</span> <span class="skill-tag">SASE & Zero Trust</span>
                     <span class="skill-tag">ISO 27001 & CIA</span>
                     <span class="skill-tag">Wireshark</span>
                     <span class="skill-tag">Nätverkssäkerhet</span>
@@ -482,7 +481,7 @@
                     <p>Ansvarig för den dagliga operativa driften på ett av företagets logistikcenter med fokus på effektivitet och teamutveckling.</p>
                     <ul>
                         <li>Ledde ett team genom daglig styrning, resursfördelning och coachning.</li>
-                        <li>Agerade Superuser för lagersystem (WMS) och ansvarade för IT relaterad administration.</li>
+                        <li>Agerade Superuser för lagersystem (WMS) och ansvarade för IT-relaterad administration.</li>
                         <li>Drev förbättringsarbete som resulterade i minskade felkällor och högre leveransprecision mot kund.</li>
                         <li>Hanterade avvikelser och komplexa logistikproblem under tidspress.</li>
                     </ul>
