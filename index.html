@@ -13,11 +13,6 @@
     <script src="https://unpkg.com/@lottiefiles/lottie-player@1.5.7/dist/lottie-player.js"></script>
     <script src="https://unpkg.com/@dotlottie/player-component@latest/dist/dotlottie-player.mjs" type="module"></script>
     
-    <meta property="og:type" content="website">
-    <meta property="og:title" content="Mattias Englund | Nätverkstekniker">
-    <meta property="og:description" content="Nätverkstekniker & Ambassadör på JENSEN. Se mitt CV här.">
-    <meta property="og:image" content="https://menglund92.github.io/profilbild.jpg">
-    
     <style>
         :root {
             --bg-color: #0f172a;
@@ -41,14 +36,8 @@
             font-size: 14px; 
         }
 
-        /* BREDD: 800px */
-        .container {
-            max-width: 800px; 
-            margin: 30px auto; 
-            padding: 15px;
-        }
+        .container { max-width: 800px; margin: 30px auto; padding: 15px; }
 
-        /* --- TERMINAL HERO --- */
         .terminal-hero {
             background-color: var(--terminal-bg);
             border-radius: 8px;
@@ -62,182 +51,59 @@
             flex-direction: column;
         }
 
-        .terminal-header {
-            display: flex;
-            gap: 6px;
-            margin-bottom: 10px;
-            border-bottom: 1px solid var(--border);
-            padding-bottom: 8px;
-        }
-
+        .terminal-header { display: flex; gap: 6px; margin-bottom: 10px; border-bottom: 1px solid var(--border); padding-bottom: 8px; }
         .dot { width: 10px; height: 10px; border-radius: 50%; }
         .red { background-color: #ef4444; }
         .yellow { background-color: #f59e0b; }
         .green { background-color: #22c55e; }
 
-        .terminal-content {
-            color: var(--accent);
-            font-size: 0.9rem;
-            white-space: pre-wrap; 
-            line-height: 1.4;
-        }
-
+        .terminal-content { color: var(--accent); font-size: 0.9rem; white-space: pre-wrap; line-height: 1.4; }
         .command { color: #22c55e; margin-right: 8px; }
-        .cursor {
-            display: inline-block;
-            width: 8px;
-            height: 1.2em;
-            background-color: var(--accent);
-            animation: blink 1s infinite;
-            vertical-align: text-bottom;
-        }
+        .cursor { display: inline-block; width: 8px; height: 1.2em; background-color: var(--accent); animation: blink 1s infinite; vertical-align: text-bottom; }
 
         @keyframes blink { 0% { opacity: 0; } 50% { opacity: 1; } 100% { opacity: 0; } }
 
-        /* HEADER */
         header { text-align: center; margin-bottom: 50px; }
-        
-        h1 {
-            font-size: 2.5rem;
-            margin: 8px 0;
-            font-weight: 800;
-            color: white;
-            letter-spacing: -1px;
-        }
+        h1 { font-size: 2.5rem; margin: 8px 0; font-weight: 800; color: white; letter-spacing: -1px; }
 
         .status-badge {
-            display: inline-flex;
-            align-items: center;
-            background: rgba(56, 189, 248, 0.1);
-            color: var(--accent);
-            padding: 5px 14px;
-            border-radius: 30px;
-            font-size: 0.85rem;
-            font-weight: 600;
-            border: 1px solid rgba(56, 189, 248, 0.3);
-            margin-bottom: 10px;
+            display: inline-flex; align-items: center; background: rgba(56, 189, 248, 0.1); color: var(--accent);
+            padding: 5px 14px; border-radius: 30px; font-size: 0.85rem; font-weight: 600; border: 1px solid rgba(56, 189, 248, 0.3); margin-bottom: 10px;
         }
-
-        .status-dot {
-            width: 6px;
-            height: 6px;
-            background-color: #4ade80;
-            border-radius: 50%;
-            margin-right: 8px;
-            box-shadow: 0 0 6px #4ade80;
-            animation: pulse 2s infinite;
-        }
-
+        .status-dot { width: 6px; height: 6px; background-color: #4ade80; border-radius: 50%; margin-right: 8px; box-shadow: 0 0 6px #4ade80; animation: pulse 2s infinite; }
         @keyframes pulse { 0% { opacity: 1; } 50% { opacity: 0.5; } 100% { opacity: 1; } }
 
-        /* KNAPPAR */
         .actions { display: flex; justify-content: center; gap: 12px; flex-wrap: wrap; margin-top: 20px; align-items: center; }
-        
-        .btn {
-            display: inline-flex; align-items: center; gap: 8px; padding: 8px 20px;
-            border-radius: 6px; text-decoration: none; font-weight: 600;
-            transition: all 0.3s ease; border: 1px solid transparent;
-            font-size: 0.9rem;
-        }
+        .btn { display: inline-flex; align-items: center; gap: 8px; padding: 8px 20px; border-radius: 6px; text-decoration: none; font-weight: 600; transition: all 0.3s ease; font-size: 0.9rem; }
         .btn-primary { background-color: var(--accent); color: #0f172a; }
         .btn-primary:hover { background-color: var(--accent-hover); transform: translateY(-2px); box-shadow: 0 5px 15px -5px rgba(56, 189, 248, 0.6); }
         .btn-secondary { background-color: transparent; border: 1px solid var(--border); color: var(--text-main); }
         .btn-secondary:hover { border-color: var(--accent); color: var(--accent); }
+        .email-copy-text { width: 100%; text-align: center; margin-top: 12px; font-size: 0.8rem; color: var(--text-muted); font-family: 'Fira Code', monospace; }
 
-        .email-copy-text {
-            width: 100%;
-            text-align: center;
-            margin-top: 12px;
-            font-size: 0.8rem;
-            color: var(--text-muted);
-            font-family: 'Fira Code', monospace;
-        }
+        section { background: var(--card-bg); padding: 30px; margin-bottom: 30px; border-radius: 12px; border: 1px solid var(--border); }
+        h2 { color: var(--accent); font-size: 1.5rem; margin-top: 0; margin-bottom: 25px; border-bottom: 1px solid var(--border); padding-bottom: 12px; display: flex; align-items: center; gap: 10px; font-weight: 700; }
 
-        /* SEKTIONER */
-        section {
-            background: var(--card-bg); 
-            padding: 30px; 
-            margin-bottom: 30px; 
-            border-radius: 12px; 
-            border: 1px solid var(--border);
-        }
-        h2 {
-            color: var(--accent); 
-            font-size: 1.5rem; 
-            margin-top: 0; margin-bottom: 25px;
-            border-bottom: 1px solid var(--border); padding-bottom: 12px;
-            display: flex; align-items: center; gap: 10px; font-weight: 700;
-        }
+        .split-section { display: grid; grid-template-columns: 1.2fr 1fr; gap: 30px; align-items: center; }
+        .split-section.reverse { grid-template-columns: 1fr 1.2fr; }
+        .text-content p { max-width: 100%; font-size: 0.95rem; }
 
-        /* --- LAYOUTS --- */
-        
-        .split-section {
-            display: grid;
-            grid-template-columns: 1.2fr 1fr;
-            gap: 30px; 
-            align-items: center;
-        }
-        
-        .split-section.reverse {
-            grid-template-columns: 1fr 1.2fr;
-        }
+        .anim-container { width: 100%; max-width: 250px; margin: 0 auto; min-height: 180px; display: flex; align-items: center; justify-content: center; }
+        .anim-container lottie-player, .anim-container dotlottie-player { width: 100%; height: auto; filter: drop-shadow(0 0 20px rgba(56, 189, 248, 0.1)); }
 
-        .text-content p {
-            max-width: 100%; 
-            font-size: 0.95rem; 
-        }
+        .skills-centered { display: flex; flex-direction: column; align-items: center; }
+        .skills-anim-center { width: 100%; max-width: 200px; margin-bottom: 20px; min-height: 200px; }
 
-        /* Standardstorlek för animationer */
-        .anim-container {
-            width: 100%;
-            max-width: 250px; 
-            margin: 0 auto;
-            min-height: 180px; 
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .anim-container lottie-player,
-        .anim-container dotlottie-player {
-            width: 100%;
-            height: auto;
-            filter: drop-shadow(0 0 20px rgba(56, 189, 248, 0.1));
-        }
-
-        /* SKILLS */
-        .skills-centered {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-        .skills-anim-center {
-            width: 100%;
-            max-width: 200px; 
-            margin-bottom: 20px;
-            min-height: 200px;
-        }
-
-        /* PROJEKT */
         .project-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; width: 100%; }
-        .project-card {
-            background: rgba(255,255,255,0.03);
-            padding: 20px; 
-            border-radius: 10px; border: 1px solid var(--border);
-            transition: transform 0.2s;
-        }
+        .project-card { background: rgba(255,255,255,0.03); padding: 20px; border-radius: 10px; border: 1px solid var(--border); transition: transform 0.2s; }
         .project-card:hover { transform: translateY(-4px); border-color: var(--accent); }
         .project-title { font-weight: 700; color: var(--text-main); font-size: 1rem; display: block; margin-bottom: 6px; }
         .project-tech { font-size: 0.8rem; color: var(--accent); font-family: 'Fira Code', monospace; }
 
-        /* LISTOR & TIMELINE */
         .timeline-content { width: 100%; }
         .timeline-item { margin-bottom: 30px; padding-left: 25px; border-left: 2px solid var(--border); position: relative; }
         .timeline-item:last-child { margin-bottom: 0; }
-        .timeline-item::before {
-            content: ''; position: absolute; left: -6px; top: 6px; width: 10px; height: 10px;
-            background: var(--accent); border-radius: 50%; border: 2px solid var(--card-bg);
-        }
+        .timeline-item::before { content: ''; position: absolute; left: -6px; top: 6px; width: 10px; height: 10px; background: var(--accent); border-radius: 50%; border: 2px solid var(--card-bg); }
         .role-header { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; margin-bottom: 4px; }
         .role-title { font-size: 1.1rem; font-weight: 700; color: var(--text-main); }
         .company-name { font-size: 0.95rem; color: var(--accent); font-weight: 500; display: block; margin-bottom: 6px; }
@@ -245,50 +111,24 @@
         ul { margin-top: 8px; padding-left: 16px; }
         li { margin-bottom: 6px; color: var(--text-muted); font-size: 0.9rem; }
 
-        /* SKILLS STYLING */
         .skills-content { width: 100%; text-align: center; }
         .skill-category { font-size: 0.85rem; text-transform: uppercase; letter-spacing: 1.5px; color: var(--text-muted); margin-top: 30px; margin-bottom: 15px; display: block; font-weight: 700; border-bottom: 1px solid rgba(255,255,255,0.05); padding-bottom: 6px; max-width: 500px; margin-left: auto; margin-right: auto;}
         .skill-category:first-of-type { margin-top: 0; }
         .skills-grid { display: flex; flex-wrap: wrap; gap: 8px; justify-content: center; max-width: 700px; margin: 0 auto; }
-        .skill-tag {
-            background-color: rgba(255, 255, 255, 0.05); color: var(--text-main);
-            padding: 6px 14px; 
-            border-radius: 6px; font-size: 0.85rem; font-weight: 500;
-            border: 1px solid var(--border); transition: all 0.2s;
-        }
+        .skill-tag { background-color: rgba(255, 255, 255, 0.05); color: var(--text-main); padding: 6px 14px; border-radius: 6px; font-size: 0.85rem; font-weight: 500; border: 1px solid var(--border); transition: all 0.2s; }
         .skill-tag:hover { border-color: var(--accent); background-color: rgba(56, 189, 248, 0.1); cursor: default; }
 
-        /* ÖVRIGT */
         .misc-text { width: 100%; }
         .misc-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
         .misc-item strong { color: var(--accent); display: block; margin-bottom: 8px; font-size: 1rem; }
 
-        /* FOOTER ANIMATION */
-        .footer-anim {
-            text-align: center;
-            margin-top: 80px;
-            margin-bottom: 40px;
-        }
-        .footer-text {
-            color: var(--text-muted); 
-            font-size: 1.5rem; 
-            font-weight: 800;
-            margin-top: 15px;
-            letter-spacing: -1px;
-            color: var(--accent);
-            text-shadow: 0 0 20px rgba(56, 189, 248, 0.2);
-        }
+        .footer-anim { text-align: center; margin-top: 80px; margin-bottom: 40px; }
+        .footer-text { color: var(--text-muted); font-size: 1.5rem; font-weight: 800; margin-top: 15px; letter-spacing: -1px; color: var(--accent); text-shadow: 0 0 20px rgba(56, 189, 248, 0.2); }
 
-        /* RESPONSIVITET (MOBIL) */
         @media (max-width: 850px) {
             h1 { font-size: 2rem; }
             .container { margin: 10px auto; padding: 10px; width: 95%; }
-            
-            .split-section, .split-section.reverse {
-                grid-template-columns: 1fr;
-                gap: 30px;
-            }
-            .text-content p { max-width: 100%; }
+            .split-section, .split-section.reverse { grid-template-columns: 1fr; gap: 30px; }
             .anim-container { order: -1; max-width: 220px; min-height: 180px; }
             .project-grid, .misc-grid { grid-template-columns: 1fr; }
             section { padding: 20px; }
@@ -303,9 +143,7 @@
         
         <div class="terminal-hero">
             <div class="terminal-header">
-                <div class="dot red"></div>
-                <div class="dot yellow"></div>
-                <div class="dot green"></div>
+                <div class="dot red"></div><div class="dot yellow"></div><div class="dot green"></div>
             </div>
             <div class="terminal-content"><span class="command">mattias@MacBook-Pro ~ % </span><span id="typewriter"></span><span class="cursor">&nbsp;</span></div>
         </div>
@@ -315,23 +153,12 @@
                 <div class="status-dot"></div> Examen juni 2026 – Start enligt överenskommelse
             </div>
             <h1>Mattias Englund</h1>
-            <p style="font-size: 1rem; color: var(--text-muted);">
-                Blivande Nätverkstekniker • Ambassadör hos JENSEN
-            </p>
+            <p style="font-size: 1rem; color: var(--text-muted);">Nätverkstekniker • Ambassadör hos JENSEN</p>
             
             <div class="actions">
-                <a href="cv.pdf" download target="_blank" class="btn btn-primary">
-                    <i class="fas fa-file-pdf"></i> Ladda ner CV
-                </a>
-                <a href="mailto:mattias.englund1992@gmail.com" class="btn btn-secondary">
-                    <i class="fas fa-envelope"></i> Maila mig
-                </a>
-                <a href="https://linkedin.com/in/mattias-englund-61129331a" target="_blank" class="btn btn-secondary">
-                    <i class="fab fa-linkedin"></i> LinkedIn
-                </a>
-                <div class="email-copy-text">
-                    <i class="fas fa-arrow-up"></i> Eller kopiera: Mattias.Englund1992@gmail.com
-                </div>
+                <a href="cv.pdf" download target="_blank" class="btn btn-primary"><i class="fas fa-file-pdf"></i> Ladda ner CV</a>
+                <a href="mailto:mattias.englund1992@gmail.com" class="btn btn-secondary"><i class="fas fa-envelope"></i> Maila mig</a>
+                <a href="https://linkedin.com/in/mattias-englund-61129331a" target="_blank" class="btn btn-secondary"><i class="fab fa-linkedin"></i> LinkedIn</a>
             </div>
         </header>
 
@@ -339,19 +166,18 @@
             <div class="text-content">
                 <h2><i class="fas fa-user-circle"></i> Om Mig</h2>
                 <p style="color: #cbd5e1;">
-                    Från Team Manager till Nätverkstekniker. 
-                    Efter sex år inom operativt ledarskap satsar jag nu helhjärtat på teknik. Jag kombinerar min erfarenhet av drift och struktur med kompetens inom Cisco, Azure och nätverkssäkerhet.<br><br> Som Ambassadör på JENSEN drivs jag av ansvar och utveckling.<br><br> 
+                    Från Team Manager till Nätverkstekniker. Efter sex år inom operativt ledarskap satsar jag nu helhjärtat på teknik. Jag kombinerar min erfarenhet av drift och struktur med kompetens inom Cisco, Azure och nätverksautomation.<br><br> Som Ambassadör på JENSEN drivs jag av ansvar och utveckling.<br><br> 
                     <strong>Jag tar formell examen i juni 2026, och är flexibel gällande startdatum med möjlighet att påbörja min nästa utmaning enligt överenskommelse.</strong>
                 </p>
             </div>
             <div class="anim-container">
-                <lottie-player src="https://assets10.lottiefiles.com/packages/lf20_w51pcehl.json" background="transparent" speed="1" style="width: 100%; height: 100%;" loop autoplay></lottie-player>
+                <lottie-player src="https://assets10.lottiefiles.com/packages/lf20_w51pcehl.json" background="transparent" speed="1" loop autoplay></lottie-player>
             </div>
         </section>
 
         <section class="split-section reverse">
             <div class="anim-container" style="max-width: 200px;">
-                <dotlottie-player src="https://lottie.host/90ee1a42-08ea-4358-aa56-9c4420e457c4/s6RU2jB7cY.lottie" background="transparent" speed="1" style="width: 100%; height: 100%;" loop autoplay></dotlottie-player>
+                <dotlottie-player src="https://lottie.host/90ee1a42-08ea-4358-aa56-9c4420e457c4/s6RU2jB7cY.lottie" background="transparent" speed="1" loop autoplay></dotlottie-player>
             </div>
             <div class="text-content">
                 <h2><i class="fas fa-laptop-code"></i> Projekt & Labb</h2>
@@ -374,105 +200,63 @@
             <h2><i class="fas fa-microchip"></i> Teknisk Kompetens</h2>
             
             <div class="skills-anim-center">
-                 <lottie-player src="https://assets2.lottiefiles.com/packages/lf20_1LhsaB.json" background="transparent" speed="0.7" style="width: 100%; height: 100%;" loop autoplay></lottie-player>
+                 <lottie-player src="https://assets2.lottiefiles.com/packages/lf20_1LhsaB.json" background="transparent" speed="0.7" loop autoplay></lottie-player>
             </div>
 
             <div class="skills-content">
-                <span class="skill-category" style="text-align: center;">Nätverk & Protokoll</span>
+                <span class="skill-category" style="text-align: center;">Nätverk & Säkerhet</span>
                 <div class="skills-grid">
                     <span class="skill-tag">Cisco (Routers, IOS)</span>
                     <span class="skill-tag">TCP/IP & OSI</span>
                     <span class="skill-tag">BGP & Routing</span>
                     <span class="skill-tag">Switching & VLAN</span>
-                    <span class="skill-tag">SSH (Secure Shell)</span>
-                    <span class="skill-tag">DNS & DHCP</span>
-                    <span class="skill-tag">LAN & WAN</span>
-                </div>
-
-                <span class="skill-category" style="text-align: center;">Säkerhet & Övervakning</span>
-                <div class="skills-grid">
                     <span class="skill-tag">Firewalls & ACL</span>
                     <span class="skill-tag">VPN & WireGuard</span>
-                    <span class="skill-tag">SASE & Zero Trust</span>
-                    <span class="skill-tag">ISO 27001 & CIA</span>
-                    <span class="skill-tag">Wireshark</span>
-                    <span class="skill-tag">Nätverkssäkerhet</span>
+                    <span class="skill-tag">Zero Trust & ISO 27001</span>
                 </div>
 
-                <span class="skill-category" style="text-align: center;">Moln & Virtualisering</span>
+                <span class="skill-category" style="text-align: center;">Automation, Övervakning & AI</span>
+                <div class="skills-grid">
+                    <span class="skill-tag">Python & Scapy</span>
+                    <span class="skill-tag">Grafana & Prometheus</span>
+                    <span class="skill-tag">InfluxDB</span>
+                    <span class="skill-tag">AI (Ollama & Claude)</span>
+                    <span class="skill-tag">Wireshark</span>
+                </div>
+
+                <span class="skill-category" style="text-align: center;">Moln, OS & Agilt</span>
                 <div class="skills-grid">
                     <span class="skill-tag">Microsoft Azure</span>
-                    <span class="skill-tag">NSG (Network Security Groups)</span>
                     <span class="skill-tag">Docker</span>
-                    <span class="skill-tag">Terraform (IaC)</span>
-                    <span class="skill-tag">VMware & Hyper-V</span>
-                    <span class="skill-tag">KVM & Virtuell Routing</span>
-                </div>
-
-                <span class="skill-category" style="text-align: center;">Verktyg & OS</span>
-                <div class="skills-grid">
-                    <span class="skill-tag">Linux & Unix</span>
-                    <span class="skill-tag">Windows Server</span>
-                    <span class="skill-tag">Python</span>
+                    <span class="skill-tag">Linux & Windows Server</span>
                     <span class="skill-tag">Git & GitHub</span>
-                    <span class="skill-tag">Visual Studio</span>
-                    <span class="skill-tag">AI & Claude</span>
+                    <span class="skill-tag">Agile / Scrum</span>
                 </div>
-            </div>
-        </section>
-
-        <section class="split-section">
-            <div class="timeline-content">
-                <h2><i class="fas fa-graduation-cap"></i> Utbildning</h2>
-                
-                <div class="timeline-item">
-                    <div class="role-header">
-                        <span class="role-title">Studerande Nätverkstekniker</span>
-                        <span class="date-badge">Sep 2025 till Juni 2026</span>
-                    </div>
-                    <span class="company-name">JENSEN Yrkeshögskola</span>
-                    <p>Yrkesinriktad utbildning med fokus på drift, design och säkerhet i moderna företagsnätverk.</p>
-                    <ul>
-                        <li><strong>Roll:</strong> Förtroendevald som Ambassadör för klassen.</li>
-                        <li><strong>Kärnkurser:</strong> Datakommunikation, Nätverksdesign, Nätverkssäkerhet & Scripting.</li>
-                        <li><strong>Projekt:</strong> Praktisk konfigurering av switchar och routrar, felsökning samt säkerhetsprotokoll.</li>
-                    </ul>
-                </div>
-
-                <div class="timeline-item">
-                    <div class="role-header">
-                        <span class="role-title">Certifikat & Kurser</span>
-                        <span class="date-badge">Utfärdade Okt 2025</span>
-                    </div>
-                    <span class="company-name">LinkedIn Learning</span>
-                    <ul>
-                        <li>Cisco CCNA (200-301) Cert Prep: Network Fundamentals</li>
-                        <li>Networking Foundations: IP Addressing & Subnetting</li>
-                        <li>Python for Non-Programmers</li>
-                    </ul>
-                </div>
-
-                <div class="timeline-item">
-                    <div class="role-header">
-                        <span class="role-title">Hantverksprogrammet, Finsnickeri</span>
-                        <span class="date-badge">2009 till 2012</span>
-                    </div>
-                    <span class="company-name">S:t Martins Gymnasium</span>
-                    <p>Grundläggande hantverksutbildning med internationell praktik i Tyskland och Bosnien.</p>
-                </div>
-            </div>
-            <div class="anim-container">
-                <lottie-player src="https://assets3.lottiefiles.com/packages/lf20_DMgKk1.json" background="transparent" speed="1" style="width: 100%; height: 100%;" loop autoplay></lottie-player>
             </div>
         </section>
 
         <section class="split-section reverse">
             <div class="anim-container">
-                <dotlottie-player src="https://lottie.host/a79956a3-b796-4968-9906-7323504cae88/9XNUbBz2T1.lottie" background="transparent" speed="1" style="width: 100%; height: 100%;" loop autoplay></dotlottie-player>
+                <dotlottie-player src="https://lottie.host/a79956a3-b796-4968-9906-7323504cae88/9XNUbBz2T1.lottie" background="transparent" speed="1" loop autoplay></dotlottie-player>
             </div>
             <div class="timeline-content">
                 <h2><i class="fas fa-briefcase"></i> Arbetslivserfarenhet</h2>
                 
+                <div class="timeline-item">
+                    <div class="role-header">
+                        <span class="role-title">LIA - Nätverksutvecklare & Tekniker</span>
+                        <span class="date-badge">April 2026 till Juni 2026</span>
+                    </div>
+                    <span class="company-name">NetSim Studio (JENSEN)</span>
+                    <p>Utveckling av en mjukvaruplattform som förvandlar laptops till nätverksagenter för att simulera realistisk trafik och cyberattacker mot Cisco-infrastruktur.</p>
+                    <ul>
+                        <li>Bygger trafik- och attackagenter med <strong>Python, Scapy och iperf3</strong>.</li>
+                        <li>Sätter upp realtidsövervakning (Observability) med <strong>Grafana, Prometheus och InfluxDB</strong>.</li>
+                        <li>Integrerar lokal AI (<strong>Ollama</strong>) för dynamisk orkestrering av nätverksscenarier.</li>
+                        <li>Arbetar <strong>agilt (Scrum)</strong> i 2-veckors sprintar med versionshantering i GitHub.</li>
+                    </ul>
+                </div>
+
                 <div class="timeline-item">
                     <div class="role-header">
                         <span class="role-title">Team Area Manager</span>
@@ -495,10 +279,6 @@
                     </div>
                     <span class="company-name">Ingram Micro / Lernia</span>
                     <p>Startade som konsult men blev snabbt direktanställd och befordrad till gruppansvarig för returavdelningen.</p>
-                    <ul>
-                        <li>Ansvarade för returflödet för flera nyckelkunder.</li>
-                        <li>Utvecklade och dokumenterade nya rutiner för att säkerställa spårbarhet.</li>
-                    </ul>
                 </div>
 
                 <div class="timeline-item">
@@ -507,26 +287,42 @@
                         <span class="date-badge">Jan 2017 till Okt 2018</span>
                     </div>
                     <span class="company-name">Vasamuseet (Statens Maritima Museer)</span>
-                    <p>Ett tekniskt precisionsarbete för att säkra bevarandet av kulturarvet Regalskeppet Vasa.</p>
+                    <p>Tekniskt precisionsarbete för att säkra bevarandet av kulturarvet Regalskeppet Vasa. Utförde strukturella förstärkningar på hög höjd.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="split-section">
+            <div class="timeline-content">
+                <h2><i class="fas fa-graduation-cap"></i> Utbildning</h2>
+                
+                <div class="timeline-item">
+                    <div class="role-header">
+                        <span class="role-title">Studerande Nätverkstekniker</span>
+                        <span class="date-badge">Sep 2025 till Juni 2026</span>
+                    </div>
+                    <span class="company-name">JENSEN Yrkeshögskola</span>
+                    <p>Yrkesinriktad utbildning med fokus på drift, design och säkerhet i moderna företagsnätverk.</p>
                     <ul>
-                        <li>Utförde strukturella förstärkningar, inklusive byte av över 5 500 bultar i skeppsskrovet.</li>
-                        <li>Arbetade på hög höjd med skylift och travers, vilket krävde stort säkerhetsfokus.</li>
+                        <li><strong>Roll:</strong> Förtroendevald som Ambassadör för klassen.</li>
+                        <li><strong>Kärnkurser:</strong> Datakommunikation, Nätverksdesign, Nätverkssäkerhet & Scripting.</li>
                     </ul>
                 </div>
 
-                 <div class="timeline-item">
+                <div class="timeline-item">
                     <div class="role-header">
-                        <span class="role-title">Snickare</span>
-                        <span class="date-badge">2016 till 2017</span>
+                        <span class="role-title">Certifikat & Kurser</span>
+                        <span class="date-badge">Utfärdade Okt 2025</span>
                     </div>
-                    <span class="company-name">AB Linhult & Jonsdotter</span>
-                    <p>Specialiserad på båt- och möbelsnickeri i historiska miljöer. Arbetet krävde stor noggrannhet och problemlösningsförmåga.</p>
+                    <span class="company-name">LinkedIn Learning</span>
                     <ul>
-                        <li>Genomförde omfattande renovering av däck och inredningsdetaljer på isbrytaren Sankt Erik.</li>
-                        <li>Arbetade med precisionssnickeri och restaurering av kulturhistoriska objekt.</li>
-                        <li>Deltog i arbetet med bultbyten och strukturförstärkning på Regalskeppet Vasa.</li>
+                        <li>Cisco CCNA (200-301) Cert Prep: Network Fundamentals</li>
+                        <li>Python for Non-Programmers</li>
                     </ul>
                 </div>
+            </div>
+            <div class="anim-container">
+                <lottie-player src="https://assets3.lottiefiles.com/packages/lf20_DMgKk1.json" background="transparent" speed="1" loop autoplay></lottie-player>
             </div>
         </section>
         
@@ -536,9 +332,7 @@
                 <div class="misc-grid">
                     <div class="misc-item">
                         <strong><i class="fas fa-language"></i> Språk</strong>
-                        Svenska (Modersmål)<br>
-                        Engelska (Mycket god nivå)<br>
-                        Kroatiska/Bosniska (Grundläggande)
+                        Svenska (Modersmål)<br>Engelska (Mycket god nivå)<br>Kroatiska/Bosniska (Grundläggande)
                     </div>
                     <div class="misc-item">
                         <strong><i class="fas fa-car"></i> Körkort</strong>
@@ -547,12 +341,12 @@
                 </div>
             </div>
             <div class="anim-container">
-                <dotlottie-player src="https://lottie.host/e4136ddc-eb78-4ccf-8aab-44ded26234e2/PvKIU0LvJ2.lottie" background="transparent" speed="1" style="width: 100%; height: 100%;" loop autoplay></dotlottie-player>
+                <dotlottie-player src="https://lottie.host/e4136ddc-eb78-4ccf-8aab-44ded26234e2/PvKIU0LvJ2.lottie" background="transparent" speed="1" loop autoplay></dotlottie-player>
             </div>
         </section>
 
         <div class="footer-anim">
-            <lottie-player src="https://assets9.lottiefiles.com/packages/lf20_x62chJ.json"  background="transparent"  speed="1"  style="width: 150px; height: 150px; margin: 0 auto;"  loop  autoplay></lottie-player>
+            <lottie-player src="https://assets9.lottiefiles.com/packages/lf20_x62chJ.json" background="transparent" speed="1" style="width: 150px; height: 150px; margin: 0 auto;" loop autoplay></lottie-player>
             <p class="footer-text">Redo för nästa uppdrag!</p>
         </div>
 
@@ -560,50 +354,20 @@
 
     <script>
         const baseText = "whoami\n> Mattias Englund\n> ";
-        
-        const roles = [
-            "Network Technician...",
-            "JENSEN Ambassador...",
-            "Network Engineer...",
-            "Powered by Coffee & TCP/IP..."
-        ];
-
-        const typingSpeed = 100;
-        const deletingSpeed = 50;
-        const pauseTime = 1500;
-
-        let roleIndex = 0;
-        let charIndex = 0;
-        let isDeleting = false;
+        const roles = ["Network Technician...", "JENSEN Ambassador...", "Network Automation...", "Powered by Coffee & TCP/IP..."];
+        let roleIndex = 0, charIndex = 0, isDeleting = false;
         
         function typeEffect() {
             const currentRole = roles[roleIndex];
             const element = document.getElementById("typewriter");
-            
-            if (isDeleting) {
-                element.innerHTML = baseText + currentRole.substring(0, charIndex - 1);
-                charIndex--;
-            } else {
-                element.innerHTML = baseText + currentRole.substring(0, charIndex + 1);
-                charIndex++;
-            }
-
-            let typeSpeed = isDeleting ? deletingSpeed : typingSpeed;
-
-            if (!isDeleting && charIndex === currentRole.length) {
-                typeSpeed = pauseTime;
-                isDeleting = true;
-            } 
-            else if (isDeleting && charIndex === 0) {
-                isDeleting = false;
-                roleIndex = (roleIndex + 1) % roles.length;
-            }
-
+            if (isDeleting) { element.innerHTML = baseText + currentRole.substring(0, charIndex - 1); charIndex--; }
+            else { element.innerHTML = baseText + currentRole.substring(0, charIndex + 1); charIndex++; }
+            let typeSpeed = isDeleting ? 50 : 100;
+            if (!isDeleting && charIndex === currentRole.length) { typeSpeed = 1500; isDeleting = true; } 
+            else if (isDeleting && charIndex === 0) { isDeleting = false; roleIndex = (roleIndex + 1) % roles.length; }
             setTimeout(typeEffect, typeSpeed);
         }
-        
         window.onload = typeEffect;
     </script>
-
 </body>
 </html>
