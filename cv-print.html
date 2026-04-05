@@ -18,12 +18,12 @@
 
         body {
             font-family: 'Inter', sans-serif;
-            background-color: #e2e8f0; /* Grå bakgrund i webbläsaren */
+            background-color: #e2e8f0; 
             color: var(--text-body);
             margin: 0;
             padding: 20px;
-            font-size: 9.5pt;
-            line-height: 1.4;
+            font-size: 9pt; /* Minskad grundstorlek för att garantera plats */
+            line-height: 1.35; /* Tajtare radavstånd */
             display: flex;
             justify-content: center;
         }
@@ -36,18 +36,18 @@
             box-sizing: border-box;
             box-shadow: 0 10px 25px rgba(0,0,0,0.1);
             display: flex;
-            overflow: hidden;
+            overflow: hidden; /* Förhindrar att innehåll blöder över till sida 2 */
         }
 
         /* --- VÄNSTER KOLUMN (Sidebar) --- */
         .sidebar {
-            width: 75mm;
+            width: 73mm;
             background-color: var(--sidebar-bg);
-            padding: 12mm 8mm;
+            padding: 10mm 8mm; /* Minskad padding för mer utrymme */
             border-right: 1px solid var(--border);
             display: flex;
             flex-direction: column;
-            gap: 20px;
+            gap: 16px; /* Tajtare mellan sektionerna */
         }
 
         .contact-list {
@@ -56,7 +56,7 @@
             margin: 0;
             display: flex;
             flex-direction: column;
-            gap: 8px;
+            gap: 6px;
             font-size: 8.5pt;
         }
 
@@ -79,19 +79,19 @@
             text-transform: uppercase;
             letter-spacing: 1px;
             border-bottom: 2px solid var(--accent);
-            padding-bottom: 4px;
-            margin: 0 0 10px 0;
+            padding-bottom: 2px;
+            margin: 0 0 8px 0;
         }
 
         .sidebar-block {
-            margin-bottom: 12px;
+            margin-bottom: 10px;
         }
 
         .sidebar-title {
             font-weight: 700;
             font-size: 9pt;
             color: var(--text-dark);
-            margin-bottom: 2px;
+            margin-bottom: 1px;
         }
         
         .sidebar-text {
@@ -100,31 +100,31 @@
         }
 
         .education-item {
-            margin-bottom: 10px;
+            margin-bottom: 8px;
         }
         
         .education-date {
             font-size: 8pt;
             color: var(--accent);
             font-weight: 600;
-            margin-bottom: 2px;
+            margin-bottom: 1px;
             display: block;
         }
 
         /* --- HÖGER KOLUMN (Main Content) --- */
         .main-content {
-            width: 135mm;
-            padding: 12mm 12mm;
+            width: 137mm;
+            padding: 10mm 12mm; /* Minskad padding uppe och nere */
             display: flex;
             flex-direction: column;
         }
 
         header {
-            margin-bottom: 20px;
+            margin-bottom: 15px; /* Mindre luft under headern */
         }
 
         h1 {
-            font-size: 26pt;
+            font-size: 24pt;
             font-weight: 800;
             margin: 0 0 2px 0;
             color: var(--text-dark);
@@ -132,7 +132,7 @@
         }
 
         .subtitle {
-            font-size: 12pt;
+            font-size: 11pt;
             font-weight: 600;
             color: var(--accent);
             margin: 0 0 4px 0;
@@ -152,39 +152,39 @@
         }
 
         .main-content h2 {
-            font-size: 13pt;
+            font-size: 12pt;
             color: var(--text-dark);
             border-bottom: 1px solid var(--border);
-            padding-bottom: 4px;
-            margin: 0 0 10px 0;
+            padding-bottom: 3px;
+            margin: 0 0 8px 0;
         }
 
         .profile-text {
-            margin: 0 0 20px 0;
+            margin: 0 0 15px 0;
             color: var(--text-body);
         }
 
         .experience-item {
-            margin-bottom: 14px;
+            margin-bottom: 10px; /* Tajtare mellan jobben */
         }
 
         .exp-header {
             display: flex;
             justify-content: space-between;
             align-items: baseline;
-            margin-bottom: 2px;
+            margin-bottom: 1px;
         }
 
         .exp-title {
             font-weight: 700;
-            font-size: 10.5pt;
+            font-size: 10pt;
             color: var(--text-dark);
         }
 
         .exp-company {
             font-weight: 600;
             color: var(--accent);
-            font-size: 9.5pt;
+            font-size: 9pt;
         }
 
         .exp-date {
@@ -194,17 +194,17 @@
         }
 
         .experience-item p {
-            margin: 2px 0 4px 0;
+            margin: 2px 0 3px 0;
         }
 
         ul.exp-list {
             margin: 0;
-            padding-left: 16px;
+            padding-left: 14px;
             color: var(--text-body);
         }
 
         ul.exp-list li {
-            margin-bottom: 3px;
+            margin-bottom: 2px;
         }
 
         /* --- Utskrift / PDF --- */
@@ -343,7 +343,7 @@
             <section>
                 <h2>Projekt & Labb</h2>
                 
-                <div class="experience-item" style="margin-bottom: 8px;">
+                <div class="experience-item" style="margin-bottom: 6px;">
                     <div class="exp-header">
                         <span class="exp-title">Cisco Packet Tracer Labb</span>
                         <span class="exp-date">VLAN • OSPF • DHCP</span>
