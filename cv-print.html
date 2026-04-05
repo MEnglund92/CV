@@ -7,13 +7,12 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
-        /* Grundinställningar */
         :root {
             --text-dark: #1e293b;
             --text-light: #475569;
             --accent: #0ea5e9;
             --border: #cbd5e1;
-            --bg-color: #f8fafc; /* Ljus bakgrund i webbläsaren */
+            --bg-color: #f8fafc;
         }
 
         body {
@@ -22,43 +21,41 @@
             color: var(--text-dark);
             margin: 0;
             padding: 20px;
-            font-size: 10pt; /* Mindre text för att passa 1 sida */
-            line-height: 1.4;
+            font-size: 9.5pt; /* Minskad en aning */
+            line-height: 1.35; /* Tajtare radavstånd */
             display: flex;
             justify-content: center;
         }
 
-        /* A4-Papperet */
         .a4-page {
             background-color: white;
             width: 210mm;
             min-height: 297mm;
-            padding: 15mm;
+            padding: 12mm 15mm; /* Lite mindre padding uppe/nere */
             box-sizing: border-box;
             box-shadow: 0 10px 25px rgba(0,0,0,0.1);
         }
 
-        /* Header */
         header {
             text-align: center;
             border-bottom: 2px solid var(--accent);
-            padding-bottom: 12px;
-            margin-bottom: 15px;
+            padding-bottom: 10px;
+            margin-bottom: 12px;
         }
 
         h1 {
-            font-size: 24pt;
+            font-size: 22pt;
             font-weight: 700;
-            margin: 0 0 5px 0;
+            margin: 0 0 4px 0;
             color: #0f172a;
             letter-spacing: -0.5px;
         }
 
         .subtitle {
-            font-size: 11pt;
+            font-size: 10.5pt;
             font-weight: 600;
             color: var(--accent);
-            margin: 0 0 8px 0;
+            margin: 0 0 6px 0;
             text-transform: uppercase;
             letter-spacing: 1px;
         }
@@ -67,46 +64,38 @@
             display: flex;
             justify-content: center;
             gap: 15px;
-            font-size: 9pt;
+            font-size: 8.5pt;
             color: var(--text-light);
         }
 
-        .contact-info a {
-            color: var(--text-light);
-            text-decoration: none;
-        }
-
-        /* Sektioner */
         h2 {
-            font-size: 12pt;
+            font-size: 11.5pt;
             color: #0f172a;
             border-bottom: 1px solid var(--border);
-            padding-bottom: 4px;
-            margin: 15px 0 8px 0;
+            padding-bottom: 3px;
+            margin: 12px 0 6px 0; /* Mindre avstånd över/under rubriker */
             text-transform: uppercase;
             letter-spacing: 0.5px;
         }
 
         p {
-            margin: 0 0 8px 0;
+            margin: 0 0 6px 0;
             color: var(--text-light);
         }
 
-        /* Grid för Teknisk Kompetens */
         .skills-grid {
             display: grid;
             grid-template-columns: 120px 1fr;
-            gap: 4px 10px;
-            font-size: 9.5pt;
+            gap: 3px 10px;
+            font-size: 9pt;
         }
         .skill-title {
             font-weight: 700;
             color: var(--text-dark);
         }
 
-        /* Listor (Utbildning & Erfarenhet) */
         .item {
-            margin-bottom: 10px;
+            margin-bottom: 8px; /* Tajtare mellan blocken */
         }
         .item-header {
             display: flex;
@@ -116,46 +105,33 @@
         }
         .item-title {
             font-weight: 700;
-            font-size: 10.5pt;
+            font-size: 10pt;
             color: var(--text-dark);
         }
         .item-company {
             font-weight: 600;
             color: var(--accent);
-            font-size: 10pt;
+            font-size: 9.5pt;
         }
         .item-date {
-            font-size: 9pt;
+            font-size: 8.5pt;
             color: var(--text-light);
             font-weight: 600;
         }
         
         ul {
-            margin: 4px 0 0 0;
-            padding-left: 18px;
+            margin: 3px 0 0 0;
+            padding-left: 16px;
             color: var(--text-light);
         }
         li {
             margin-bottom: 2px;
         }
 
-        /* Utskrifts-regler (När man sparar till PDF) */
         @media print {
-            body {
-                background: white;
-                margin: 0;
-                padding: 0;
-            }
-            .a4-page {
-                box-shadow: none;
-                width: 100%;
-                height: 100%;
-                padding: 10mm; /* Lite mindre padding vid utskrift för säkerhets skull */
-            }
-            @page {
-                size: A4;
-                margin: 0;
-            }
+            body { background: white; margin: 0; padding: 0; }
+            .a4-page { box-shadow: none; width: 100%; height: 100%; padding: 10mm; }
+            @page { size: A4; margin: 0; }
         }
     </style>
 </head>
@@ -165,7 +141,7 @@
         <header>
             <h1>MATTIAS ENGLUND</h1>
             <div class="subtitle">Blivande Nätverkstekniker • Ambassadör</div>
-            <div style="font-size: 9.5pt; font-weight: 600; color: var(--text-dark); margin-bottom: 8px;">
+            <div style="font-size: 9pt; font-weight: 600; color: var(--text-dark); margin-bottom: 8px;">
                 Examen juni 2026 – Start enligt överenskommelse
             </div>
             <div class="contact-info">
