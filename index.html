@@ -36,8 +36,13 @@
             font-size: 14px; 
         }
 
-        .container { max-width: 800px; margin: 30px auto; padding: 15px; }
+        .container {
+            max-width: 800px;
+            margin: 30px auto;
+            padding: 15px;
+        }
 
+        /* --- TERMINAL HERO --- */
         .terminal-hero {
             background-color: var(--terminal-bg);
             border-radius: 8px;
@@ -51,79 +56,302 @@
             flex-direction: column;
         }
 
-        .terminal-header { display: flex; gap: 6px; margin-bottom: 10px; border-bottom: 1px solid var(--border); padding-bottom: 8px; }
+        .terminal-header {
+            display: flex;
+            gap: 6px;
+            margin-bottom: 10px;
+            border-bottom: 1px solid var(--border);
+            padding-bottom: 8px;
+        }
+
         .dot { width: 10px; height: 10px; border-radius: 50%; }
         .red { background-color: #ef4444; }
         .yellow { background-color: #f59e0b; }
         .green { background-color: #22c55e; }
 
-        .terminal-content { color: var(--accent); font-size: 0.9rem; white-space: pre-wrap; line-height: 1.4; }
+        .terminal-content {
+            color: var(--accent);
+            font-size: 0.9rem;
+            white-space: pre-wrap;
+            line-height: 1.4;
+        }
+
         .command { color: #22c55e; margin-right: 8px; }
-        .cursor { display: inline-block; width: 8px; height: 1.2em; background-color: var(--accent); animation: blink 1s infinite; vertical-align: text-bottom; }
+        .cursor {
+            display: inline-block;
+            width: 8px;
+            height: 1.2em;
+            background-color: var(--accent);
+            animation: blink 1s infinite;
+            vertical-align: text-bottom;
+        }
 
         @keyframes blink { 0% { opacity: 0; } 50% { opacity: 1; } 100% { opacity: 0; } }
 
+        /* HEADER */
         header { text-align: center; margin-bottom: 50px; }
-        h1 { font-size: 2.5rem; margin: 8px 0; font-weight: 800; color: white; letter-spacing: -1px; }
+        
+        h1 {
+            font-size: 2.5rem;
+            margin: 8px 0;
+            font-weight: 800;
+            color: white;
+            letter-spacing: -1px;
+        }
 
         .status-badge {
-            display: inline-flex; align-items: center; background: rgba(56, 189, 248, 0.1); color: var(--accent);
-            padding: 5px 14px; border-radius: 30px; font-size: 0.85rem; font-weight: 600; border: 1px solid rgba(56, 189, 248, 0.3); margin-bottom: 10px;
+            display: inline-flex;
+            align-items: center;
+            background: rgba(56, 189, 248, 0.1);
+            color: var(--accent);
+            padding: 5px 14px;
+            border-radius: 30px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            border: 1px solid rgba(56, 189, 248, 0.3);
+            margin-bottom: 10px;
         }
-        .status-dot { width: 6px; height: 6px; background-color: #4ade80; border-radius: 50%; margin-right: 8px; box-shadow: 0 0 6px #4ade80; animation: pulse 2s infinite; }
+
+        .status-dot {
+            width: 6px;
+            height: 6px;
+            background-color: #4ade80;
+            border-radius: 50%;
+            margin-right: 8px;
+            box-shadow: 0 0 6px #4ade80;
+            animation: pulse 2s infinite;
+        }
+
         @keyframes pulse { 0% { opacity: 1; } 50% { opacity: 0.5; } 100% { opacity: 1; } }
 
-        .actions { display: flex; justify-content: center; gap: 12px; flex-wrap: wrap; margin-top: 20px; align-items: center; }
-        .btn { display: inline-flex; align-items: center; gap: 8px; padding: 8px 20px; border-radius: 6px; text-decoration: none; font-weight: 600; transition: all 0.3s ease; font-size: 0.9rem; }
+        /* KNAPPAR */
+        .actions {
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+            flex-wrap: wrap;
+            margin-top: 20px;
+            align-items: center;
+        }
+        
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 8px 20px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            font-size: 0.9rem;
+        }
+
         .btn-primary { background-color: var(--accent); color: #0f172a; }
-        .btn-primary:hover { background-color: var(--accent-hover); transform: translateY(-2px); box-shadow: 0 5px 15px -5px rgba(56, 189, 248, 0.6); }
+        .btn-primary:hover {
+            background-color: var(--accent-hover);
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px -5px rgba(56, 189, 248, 0.6);
+        }
+
         .btn-secondary { background-color: transparent; border: 1px solid var(--border); color: var(--text-main); }
         .btn-secondary:hover { border-color: var(--accent); color: var(--accent); }
-        .email-copy-text { width: 100%; text-align: center; margin-top: 12px; font-size: 0.8rem; color: var(--text-muted); font-family: 'Fira Code', monospace; }
 
-        section { background: var(--card-bg); padding: 30px; margin-bottom: 30px; border-radius: 12px; border: 1px solid var(--border); }
-        h2 { color: var(--accent); font-size: 1.5rem; margin-top: 0; margin-bottom: 25px; border-bottom: 1px solid var(--border); padding-bottom: 12px; display: flex; align-items: center; gap: 10px; font-weight: 700; }
+        .email-copy-text {
+            width: 100%;
+            text-align: center;
+            margin-top: 12px;
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            font-family: 'Fira Code', monospace;
+        }
 
-        .split-section { display: grid; grid-template-columns: 1.2fr 1fr; gap: 30px; align-items: center; }
-        .split-section.reverse { grid-template-columns: 1fr 1.2fr; }
-        .text-content p { max-width: 100%; font-size: 0.95rem; }
+        /* SEKTIONER */
+        section {
+            background: var(--card-bg);
+            padding: 30px;
+            margin-bottom: 30px;
+            border-radius: 12px;
+            border: 1px solid var(--border);
+        }
 
-        .anim-container { width: 100%; max-width: 250px; margin: 0 auto; min-height: 180px; display: flex; align-items: center; justify-content: center; }
-        .anim-container lottie-player, .anim-container dotlottie-player { width: 100%; height: auto; filter: drop-shadow(0 0 20px rgba(56, 189, 248, 0.1)); }
+        h2 {
+            color: var(--accent);
+            font-size: 1.5rem;
+            margin-top: 0;
+            margin-bottom: 25px;
+            border-bottom: 1px solid var(--border);
+            padding-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-weight: 700;
+        }
 
-        .skills-centered { display: flex; flex-direction: column; align-items: center; }
-        .skills-anim-center { width: 100%; max-width: 200px; margin-bottom: 20px; min-height: 200px; }
+        .split-section {
+            display: grid;
+            grid-template-columns: 1.2fr 1fr;
+            gap: 30px;
+            align-items: center;
+        }
 
+        .split-section.reverse {
+            grid-template-columns: 1fr 1.2fr;
+        }
+
+        .text-content p {
+            max-width: 100%;
+            font-size: 0.95rem;
+        }
+
+        .anim-container {
+            width: 100%;
+            max-width: 250px;
+            margin: 0 auto;
+            min-height: 180px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .anim-container lottie-player,
+        .anim-container dotlottie-player {
+            width: 100%;
+            height: auto;
+            filter: drop-shadow(0 0 20px rgba(56, 189, 248, 0.1));
+        }
+
+        /* SKILLS */
+        .skills-centered {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .skills-anim-center {
+            width: 100%;
+            max-width: 200px;
+            margin-bottom: 20px;
+            min-height: 200px;
+        }
+
+        .skills-content { width: 100%; text-align: center; }
+
+        .skill-category {
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            color: var(--text-muted);
+            margin-top: 30px;
+            margin-bottom: 15px;
+            display: block;
+            font-weight: 700;
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+            padding-bottom: 6px;
+            max-width: 500px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .skill-category:first-of-type { margin-top: 0; }
+
+        .skills-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            justify-content: center;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .skill-tag {
+            background-color: rgba(255, 255, 255, 0.05);
+            color: var(--text-main);
+            padding: 6px 14px;
+            border-radius: 6px;
+            font-size: 0.85rem;
+            font-weight: 500;
+            border: 1px solid var(--border);
+            transition: all 0.2s;
+        }
+
+        .skill-tag:hover {
+            border-color: var(--accent);
+            background-color: rgba(56, 189, 248, 0.1);
+            cursor: default;
+        }
+
+        /* TIMELINE */
+        .timeline-content { width: 100%; }
+
+        .timeline-item {
+            margin-bottom: 30px;
+            padding-left: 25px;
+            border-left: 2px solid var(--border);
+            position: relative;
+        }
+
+        .timeline-item:last-child { margin-bottom: 0; }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -6px;
+            top: 6px;
+            width: 10px;
+            height: 10px;
+            background: var(--accent);
+            border-radius: 50%;
+            border: 2px solid var(--card-bg);
+        }
+
+        .role-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            margin-bottom: 4px;
+        }
+
+        .role-title { font-size: 1.1rem; font-weight: 700; color: var(--text-main); }
+        .company-name { font-size: 0.95rem; color: var(--accent); font-weight: 500; display: block; margin-bottom: 6px; }
+        .date-badge {
+            font-size: 0.8rem;
+            background: rgba(56, 189, 248, 0.1);
+            color: var(--accent);
+            padding: 3px 10px;
+            border-radius: 12px;
+            font-weight: 600;
+        }
+
+        ul { margin-top: 8px; padding-left: 16px; }
+        li { margin-bottom: 6px; color: var(--text-muted); font-size: 0.9rem; }
+
+        /* PROJEKT */
         .project-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; width: 100%; }
-        .project-card { background: rgba(255,255,255,0.03); padding: 20px; border-radius: 10px; border: 1px solid var(--border); transition: transform 0.2s; }
+        .project-card {
+            background: rgba(255,255,255,0.03);
+            padding: 20px;
+            border-radius: 10px;
+            border: 1px solid var(--border);
+            transition: transform 0.2s;
+        }
         .project-card:hover { transform: translateY(-4px); border-color: var(--accent); }
         .project-title { font-weight: 700; color: var(--text-main); font-size: 1rem; display: block; margin-bottom: 6px; }
         .project-tech { font-size: 0.8rem; color: var(--accent); font-family: 'Fira Code', monospace; }
 
-        .timeline-content { width: 100%; }
-        .timeline-item { margin-bottom: 30px; padding-left: 25px; border-left: 2px solid var(--border); position: relative; }
-        .timeline-item:last-child { margin-bottom: 0; }
-        .timeline-item::before { content: ''; position: absolute; left: -6px; top: 6px; width: 10px; height: 10px; background: var(--accent); border-radius: 50%; border: 2px solid var(--card-bg); }
-        .role-header { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; margin-bottom: 4px; }
-        .role-title { font-size: 1.1rem; font-weight: 700; color: var(--text-main); }
-        .company-name { font-size: 0.95rem; color: var(--accent); font-weight: 500; display: block; margin-bottom: 6px; }
-        .date-badge { font-size: 0.8rem; background: rgba(56, 189, 248, 0.1); color: var(--accent); padding: 3px 10px; border-radius: 12px; font-weight: 600; }
-        ul { margin-top: 8px; padding-left: 16px; }
-        li { margin-bottom: 6px; color: var(--text-muted); font-size: 0.9rem; }
-
-        .skills-content { width: 100%; text-align: center; }
-        .skill-category { font-size: 0.85rem; text-transform: uppercase; letter-spacing: 1.5px; color: var(--text-muted); margin-top: 30px; margin-bottom: 15px; display: block; font-weight: 700; border-bottom: 1px solid rgba(255,255,255,0.05); padding-bottom: 6px; max-width: 500px; margin-left: auto; margin-right: auto;}
-        .skill-category:first-of-type { margin-top: 0; }
-        .skills-grid { display: flex; flex-wrap: wrap; gap: 8px; justify-content: center; max-width: 700px; margin: 0 auto; }
-        .skill-tag { background-color: rgba(255, 255, 255, 0.05); color: var(--text-main); padding: 6px 14px; border-radius: 6px; font-size: 0.85rem; font-weight: 500; border: 1px solid var(--border); transition: all 0.2s; }
-        .skill-tag:hover { border-color: var(--accent); background-color: rgba(56, 189, 248, 0.1); cursor: default; }
-
-        .misc-text { width: 100%; }
+        /* ÖVRIGT */
         .misc-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
         .misc-item strong { color: var(--accent); display: block; margin-bottom: 8px; font-size: 1rem; }
 
         .footer-anim { text-align: center; margin-top: 80px; margin-bottom: 40px; }
-        .footer-text { color: var(--text-muted); font-size: 1.5rem; font-weight: 800; margin-top: 15px; letter-spacing: -1px; color: var(--accent); text-shadow: 0 0 20px rgba(56, 189, 248, 0.2); }
+        .footer-text {
+            color: var(--accent);
+            font-size: 1.5rem;
+            font-weight: 800;
+            margin-top: 15px;
+            letter-spacing: -1px;
+            text-shadow: 0 0 20px rgba(56, 189, 248, 0.2);
+        }
 
         @media (max-width: 850px) {
             h1 { font-size: 2rem; }
@@ -143,7 +371,9 @@
         
         <div class="terminal-hero">
             <div class="terminal-header">
-                <div class="dot red"></div><div class="dot yellow"></div><div class="dot green"></div>
+                <div class="dot red"></div>
+                <div class="dot yellow"></div>
+                <div class="dot green"></div>
             </div>
             <div class="terminal-content"><span class="command">mattias@MacBook-Pro ~ % </span><span id="typewriter"></span><span class="cursor">&nbsp;</span></div>
         </div>
@@ -204,7 +434,7 @@
             </div>
 
             <div class="skills-content">
-                <span class="skill-category" style="text-align: center;">Nätverk & Säkerhet</span>
+                <span class="skill-category">Nätverk & Säkerhet</span>
                 <div class="skills-grid">
                     <span class="skill-tag">Cisco (Routers, IOS)</span>
                     <span class="skill-tag">TCP/IP & OSI</span>
@@ -215,7 +445,7 @@
                     <span class="skill-tag">Zero Trust & ISO 27001</span>
                 </div>
 
-                <span class="skill-category" style="text-align: center;">Automation, Övervakning & AI</span>
+                <span class="skill-category">Automation, Övervakning & AI</span>
                 <div class="skills-grid">
                     <span class="skill-tag">Python & Scapy</span>
                     <span class="skill-tag">Grafana & Prometheus</span>
@@ -224,7 +454,7 @@
                     <span class="skill-tag">Wireshark</span>
                 </div>
 
-                <span class="skill-category" style="text-align: center;">Moln, OS & Agilt</span>
+                <span class="skill-category">Moln, OS & Agilt</span>
                 <div class="skills-grid">
                     <span class="skill-tag">Microsoft Azure</span>
                     <span class="skill-tag">Docker</span>
@@ -247,8 +477,8 @@
                         <span class="role-title">LIA - Nätverksutvecklare & Tekniker</span>
                         <span class="date-badge">April 2026 till Juni 2026</span>
                     </div>
-                    <span class="company-name">NetSim Studio (JENSEN)</span>
-                    <p>Utveckling av en mjukvaruplattform som förvandlar laptops till nätverksagenter för att simulera realistisk trafik och cyberattacker mot Cisco-infrastruktur.</p>
+                    <span class="company-name">Saldes Technology Group AB</span>
+                    <p>Utveckling av mjukvaruplattformen NetSim Studio för att simulera realistisk trafik och cyberattacker mot Cisco-infrastruktur.</p>
                     <ul>
                         <li>Bygger trafik- och attackagenter med <strong>Python, Scapy och iperf3</strong>.</li>
                         <li>Sätter upp realtidsövervakning (Observability) med <strong>Grafana, Prometheus och InfluxDB</strong>.</li>
@@ -267,8 +497,7 @@
                     <ul>
                         <li>Ledde ett team genom daglig styrning, resursfördelning och coachning.</li>
                         <li>Agerade Superuser för lagersystem (WMS) och ansvarade för IT-relaterad administration.</li>
-                        <li>Drev förbättringsarbete som resulterade i minskade felkällor och högre leveransprecision mot kund.</li>
-                        <li>Hanterade avvikelser och komplexa logistikproblem under tidspress.</li>
+                        <li>Drev förbättringsarbete och hanterade avvikelser under tidspress.</li>
                     </ul>
                 </div>
 
@@ -278,7 +507,7 @@
                         <span class="date-badge">2018 till 2019</span>
                     </div>
                     <span class="company-name">Ingram Micro / Lernia</span>
-                    <p>Startade som konsult men blev snabbt direktanställd och befordrad till gruppansvarig för returavdelningen.</p>
+                    <p>Ansvarade för returflödet för nyckelkunder och utvecklade nya rutiner för spårbarhet.</p>
                 </div>
 
                 <div class="timeline-item">
@@ -287,7 +516,7 @@
                         <span class="date-badge">Jan 2017 till Okt 2018</span>
                     </div>
                     <span class="company-name">Vasamuseet (Statens Maritima Museer)</span>
-                    <p>Tekniskt precisionsarbete för att säkra bevarandet av kulturarvet Regalskeppet Vasa. Utförde strukturella förstärkningar på hög höjd.</p>
+                    <p>Tekniskt precisionsarbete för bevarandet av Regalskeppet Vasa. Utförde strukturella förstärkningar på hög höjd.</p>
                 </div>
             </div>
         </section>
@@ -326,22 +555,17 @@
             </div>
         </section>
         
-        <section class="split-section">
-            <div class="misc-text">
-                <h2><i class="fas fa-globe"></i> Övrigt</h2>
-                <div class="misc-grid">
-                    <div class="misc-item">
-                        <strong><i class="fas fa-language"></i> Språk</strong>
-                        Svenska (Modersmål)<br>Engelska (Mycket god nivå)<br>Kroatiska/Bosniska (Grundläggande)
-                    </div>
-                    <div class="misc-item">
-                        <strong><i class="fas fa-car"></i> Körkort</strong>
-                        B-Körkort (Personbil)
-                    </div>
+        <section>
+            <h2><i class="fas fa-globe"></i> Övrigt</h2>
+            <div class="misc-grid">
+                <div class="misc-item">
+                    <strong><i class="fas fa-language"></i> Språk</strong>
+                    Svenska (Modersmål)<br>Engelska (Mycket god nivå)<br>Kroatiska/Bosniska (Grundläggande)
                 </div>
-            </div>
-            <div class="anim-container">
-                <dotlottie-player src="https://lottie.host/e4136ddc-eb78-4ccf-8aab-44ded26234e2/PvKIU0LvJ2.lottie" background="transparent" speed="1" loop autoplay></dotlottie-player>
+                <div class="misc-item">
+                    <strong><i class="fas fa-car"></i> Körkort</strong>
+                    B-Körkort (Personbil)
+                </div>
             </div>
         </section>
 
