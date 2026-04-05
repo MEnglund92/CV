@@ -4,37 +4,213 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CV | Mattias Englund</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
-        :root { --text-dark: #1e293b; --text-light: #475569; --accent: #0ea5e9; --border: #cbd5e1; --bg-color: #f8fafc; }
-        body { font-family: 'Inter', sans-serif; background-color: var(--bg-color); color: var(--text-dark); margin: 0; padding: 20px; font-size: 9pt; line-height: 1.35; display: flex; justify-content: center; }
-        
-        .a4-page { background-color: white; width: 210mm; min-height: 297mm; padding: 12mm 15mm; box-sizing: border-box; box-shadow: 0 10px 25px rgba(0,0,0,0.1); }
-        
-        header { text-align: center; border-bottom: 2px solid var(--accent); padding-bottom: 8px; margin-bottom: 12px; }
-        h1 { font-size: 20pt; font-weight: 700; margin: 0 0 4px 0; color: #0f172a; letter-spacing: -0.5px; }
-        .subtitle { font-size: 10pt; font-weight: 600; color: var(--accent); margin: 0 0 4px 0; text-transform: uppercase; letter-spacing: 1px; }
-        .contact-info { display: flex; justify-content: center; gap: 12px; font-size: 8.5pt; color: var(--text-light); }
-        
-        h2 { font-size: 11pt; color: #0f172a; border-bottom: 1px solid var(--border); padding-bottom: 2px; margin: 10px 0 6px 0; text-transform: uppercase; letter-spacing: 0.5px; }
-        p { margin: 0 0 5px 0; color: var(--text-light); }
-        
-        .skills-grid { display: grid; grid-template-columns: 140px 1fr; gap: 2px 10px; font-size: 8.5pt; }
-        .skill-title { font-weight: 700; color: var(--text-dark); }
-        
-        .item { margin-bottom: 7px; }
-        .item-header { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 1px; }
-        .item-title { font-weight: 700; font-size: 9.5pt; color: var(--text-dark); }
-        .item-company { font-weight: 600; color: var(--accent); font-size: 9pt; }
-        .item-date { font-size: 8.5pt; color: var(--text-light); font-weight: 600; }
-        
-        ul { margin: 2px 0 0 0; padding-left: 14px; color: var(--text-light); }
-        li { margin-bottom: 1px; }
+        :root {
+            --text-dark: #0f172a;
+            --text-body: #334155;
+            --text-light: #64748b;
+            --accent: #0ea5e9;
+            --sidebar-bg: #f8fafc;
+            --border: #e2e8f0;
+        }
 
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #e2e8f0; /* Grå bakgrund i webbläsaren */
+            color: var(--text-body);
+            margin: 0;
+            padding: 20px;
+            font-size: 9.5pt;
+            line-height: 1.4;
+            display: flex;
+            justify-content: center;
+        }
+
+        /* A4 Container med Grid */
+        .a4-page {
+            background-color: white;
+            width: 210mm;
+            height: 297mm; /* Tvingar exakt 1 sida */
+            box-sizing: border-box;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+            display: flex;
+            overflow: hidden;
+        }
+
+        /* --- VÄNSTER KOLUMN (Sidebar) --- */
+        .sidebar {
+            width: 75mm;
+            background-color: var(--sidebar-bg);
+            padding: 12mm 8mm;
+            border-right: 1px solid var(--border);
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .contact-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            font-size: 8.5pt;
+        }
+
+        .contact-list li {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--text-body);
+        }
+
+        .contact-list i {
+            color: var(--accent);
+            width: 14px;
+            text-align: center;
+        }
+
+        .sidebar h2 {
+            font-size: 10.5pt;
+            color: var(--text-dark);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            border-bottom: 2px solid var(--accent);
+            padding-bottom: 4px;
+            margin: 0 0 10px 0;
+        }
+
+        .sidebar-block {
+            margin-bottom: 12px;
+        }
+
+        .sidebar-title {
+            font-weight: 700;
+            font-size: 9pt;
+            color: var(--text-dark);
+            margin-bottom: 2px;
+        }
+        
+        .sidebar-text {
+            font-size: 8.5pt;
+            color: var(--text-light);
+        }
+
+        .education-item {
+            margin-bottom: 10px;
+        }
+        
+        .education-date {
+            font-size: 8pt;
+            color: var(--accent);
+            font-weight: 600;
+            margin-bottom: 2px;
+            display: block;
+        }
+
+        /* --- HÖGER KOLUMN (Main Content) --- */
+        .main-content {
+            width: 135mm;
+            padding: 12mm 12mm;
+            display: flex;
+            flex-direction: column;
+        }
+
+        header {
+            margin-bottom: 20px;
+        }
+
+        h1 {
+            font-size: 26pt;
+            font-weight: 800;
+            margin: 0 0 2px 0;
+            color: var(--text-dark);
+            letter-spacing: -1px;
+        }
+
+        .subtitle {
+            font-size: 12pt;
+            font-weight: 600;
+            color: var(--accent);
+            margin: 0 0 4px 0;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .availability-badge {
+            display: inline-block;
+            font-size: 8.5pt;
+            font-weight: 600;
+            background-color: #f1f5f9;
+            color: var(--text-dark);
+            padding: 4px 10px;
+            border-radius: 4px;
+            border: 1px solid var(--border);
+        }
+
+        .main-content h2 {
+            font-size: 13pt;
+            color: var(--text-dark);
+            border-bottom: 1px solid var(--border);
+            padding-bottom: 4px;
+            margin: 0 0 10px 0;
+        }
+
+        .profile-text {
+            margin: 0 0 20px 0;
+            color: var(--text-body);
+        }
+
+        .experience-item {
+            margin-bottom: 14px;
+        }
+
+        .exp-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            margin-bottom: 2px;
+        }
+
+        .exp-title {
+            font-weight: 700;
+            font-size: 10.5pt;
+            color: var(--text-dark);
+        }
+
+        .exp-company {
+            font-weight: 600;
+            color: var(--accent);
+            font-size: 9.5pt;
+        }
+
+        .exp-date {
+            font-size: 8.5pt;
+            color: var(--text-light);
+            font-weight: 600;
+        }
+
+        .experience-item p {
+            margin: 2px 0 4px 0;
+        }
+
+        ul.exp-list {
+            margin: 0;
+            padding-left: 16px;
+            color: var(--text-body);
+        }
+
+        ul.exp-list li {
+            margin-bottom: 3px;
+        }
+
+        /* --- Utskrift / PDF --- */
         @media print {
             body { background: white; margin: 0; padding: 0; }
-            .a4-page { box-shadow: none; width: 100%; height: 100%; padding: 10mm; }
+            .a4-page { box-shadow: none; width: 100%; height: 100%; }
             @page { size: A4; margin: 0; }
         }
     </style>
@@ -42,115 +218,149 @@
 <body>
 
     <div class="a4-page">
-        <header>
-            <h1>MATTIAS ENGLUND</h1>
-            <div class="subtitle">Blivande Nätverkstekniker • Ambassadör</div>
-            <div style="font-size: 9pt; font-weight: 600; color: var(--text-dark); margin-bottom: 8px;">
-                Examen juni 2026 – Start enligt överenskommelse
-            </div>
-            <div class="contact-info">
-                <span><i class="fas fa-envelope"></i> Mattias.Englund1992@gmail.com</span>
-                <span><i class="fas fa-phone"></i> 070-429 48 04</span>
-                <span><i class="fab fa-linkedin"></i> linkedin.com/in/mattias-englund-61129331a</span>
-                <span><i class="fas fa-map-marker-alt"></i> Borås</span>
-            </div>
-        </header>
-
-        <section>
-            <h2>Profil</h2>
-            <p>
-                Från Team Manager till Nätverkstekniker. Efter sex år inom operativt ledarskap satsar jag nu helhjärtat på teknik. Jag kombinerar min erfarenhet av drift och struktur med kompetens inom Cisco, Azure och nätverksautomation. Jag tar formell examen i juni 2026, och är flexibel gällande startdatum med möjlighet att påbörja min nästa utmaning enligt överenskommelse.
-            </p>
-        </section>
-
-        <section>
-            <h2>Teknisk Kompetens</h2>
-            <div class="skills-grid">
-                <div class="skill-title">NÄTVERK & SÄKERHET</div>
-                <div>Cisco (IOS), TCP/IP, OSPF, BGP, VLAN, Firewalls (ACL), VPN, Zero Trust.</div>
-                
-                <div class="skill-title">AUTOMATION & ÖVERVAKNING</div>
-                <div>Python, Scapy, Grafana, Prometheus, InfluxDB, AI (Ollama), Wireshark.</div>
-                
-                <div class="skill-title">MOLN, OS & AGILT</div>
-                <div>Azure AD, Docker, Linux, Windows Server, Git/GitHub, Scrum, Kanban.</div>
-            </div>
-        </section>
-
-        <section>
-            <h2>Arbetslivserfarenhet & Praktik</h2>
+        
+        <aside class="sidebar">
             
-            <div class="item">
-                <div class="item-header">
-                    <span class="item-title">LIA - Nätverksutvecklare & Tekniker | <span class="item-company">NetSim Studio (JENSEN)</span></span>
-                    <span class="item-date">April 2026 – Juni 2026</span>
-                </div>
-                <p>Utveckling av mjukvaruplattform för att simulera realistisk trafik och attacker mot Cisco-infrastruktur.</p>
-                <ul>
-                    <li>Bygger trafik- och attackagenter med <strong>Python, Scapy och iperf3</strong>.</li>
-                    <li>Sätter upp realtidsövervakning (Observability) med <strong>Grafana, Prometheus och InfluxDB</strong>.</li>
-                    <li>Integrerar lokal AI (<strong>Ollama</strong>) och arbetar agilt (Scrum) i sprintar.</li>
+            <div class="sidebar-section">
+                <h2>Kontakt</h2>
+                <ul class="contact-list">
+                    <li><i class="fas fa-envelope"></i> Mattias.Englund1992@gmail.com</li>
+                    <li><i class="fas fa-phone"></i> 070-429 48 04</li>
+                    <li><i class="fab fa-linkedin"></i> /in/mattias-englund-61129331a</li>
+                    <li><i class="fas fa-map-marker-alt"></i> Borås</li>
                 </ul>
             </div>
 
-            <div class="item">
-                <div class="item-header">
-                    <span class="item-title">Team Area Manager | <span class="item-company">CEVA Logistics</span></span>
-                    <span class="item-date">Juli 2019 – Sep 2025</span>
+            <div class="sidebar-section">
+                <h2>Kompetens</h2>
+                
+                <div class="sidebar-block">
+                    <div class="sidebar-title">Nätverk & Säkerhet</div>
+                    <div class="sidebar-text">Cisco (IOS), TCP/IP, OSPF, BGP, VLAN, Firewalls (ACL), VPN, Zero Trust, ISO 27001.</div>
                 </div>
-                <p>Ansvarig för daglig operativ drift, ständiga förbättringar (Minskade felkällor) och teamledning. Agerade även Superuser för lagersystem (WMS).</p>
+                
+                <div class="sidebar-block">
+                    <div class="sidebar-title">Automation & Övervakning</div>
+                    <div class="sidebar-text">Python, Scapy, Grafana, Prometheus, InfluxDB, AI (Ollama), Wireshark.</div>
+                </div>
+                
+                <div class="sidebar-block">
+                    <div class="sidebar-title">Moln, OS & Agilt</div>
+                    <div class="sidebar-text">Azure AD, Docker, Linux, Windows Server, Git/GitHub, Scrum, Kanban.</div>
+                </div>
             </div>
 
-            <div class="item">
-                <div class="item-header">
-                    <span class="item-title">Lagerarbetare & Gruppansvarig | <span class="item-company">Ingram Micro / Lernia</span></span>
-                    <span class="item-date">2018 – 2019</span>
+            <div class="sidebar-section">
+                <h2>Utbildning</h2>
+                
+                <div class="education-item">
+                    <span class="education-date">Sep 2025 – Juni 2026</span>
+                    <div class="sidebar-title">Nätverkstekniker (200 YH-p)</div>
+                    <div class="sidebar-text">JENSEN Yrkeshögskola<br>Förtroendevald Ambassadör.</div>
+                </div>
+
+                <div class="education-item">
+                    <span class="education-date">Utfärdade Okt 2025</span>
+                    <div class="sidebar-title">Cisco CCNA Prep, IP & Python</div>
+                    <div class="sidebar-text">LinkedIn Learning</div>
                 </div>
             </div>
 
-            <div class="item">
-                <div class="item-header">
-                    <span class="item-title">Teknisk Medarbetare | <span class="item-company">Vasamuseet</span></span>
-                    <span class="item-date">Jan 2017 – Okt 2018</span>
+            <div class="sidebar-section">
+                <h2>Övrigt</h2>
+                <div class="sidebar-text">
+                    <strong>Språk:</strong> Svenska (Modersmål), Engelska (Mycket god).<br><br>
+                    <strong>Körkort:</strong> B-Körkort.
                 </div>
-                <p>Tekniskt precisionsarbete för bevarandet av Regalskeppet Vasa (Strukturella förstärkningar på skrov).</p>
             </div>
-        </section>
 
-        <section>
-            <h2>Utbildning</h2>
+        </aside>
+
+        <main class="main-content">
             
-            <div class="item">
-                <div class="item-header">
-                    <span class="item-title">Nätverkstekniker (200 YH-p) | <span class="item-company">JENSEN Yrkeshögskola</span></span>
-                    <span class="item-date">Sep 2025 – Juni 2026</span>
+            <header>
+                <h1>MATTIAS ENGLUND</h1>
+                <div class="subtitle">Nätverkstekniker</div>
+                <div class="availability-badge">Examen juni 2026 – Start enligt överenskommelse</div>
+            </header>
+
+            <section>
+                <h2>Profil</h2>
+                <p class="profile-text">
+                    Från Team Manager till Nätverkstekniker. Efter sex år inom operativt ledarskap satsar jag nu helhjärtat på teknik. Jag kombinerar min erfarenhet av drift och struktur med djup kompetens inom Cisco, Azure och nätverksautomation. Jag tar formell examen i juni 2026, och är flexibel gällande startdatum med möjlighet att påbörja min nästa utmaning enligt överenskommelse.
+                </p>
+            </section>
+
+            <section>
+                <h2>Arbetslivserfarenhet & Praktik</h2>
+                
+                <div class="experience-item">
+                    <div class="exp-header">
+                        <span class="exp-title">LIA - Nätverksutvecklare & Tekniker</span>
+                        <span class="exp-date">April 2026 – Juni 2026</span>
+                    </div>
+                    <div class="exp-company">NetSim Studio (JENSEN)</div>
+                    <p>Utveckling av mjukvaruplattform för att simulera realistisk trafik och attacker mot Cisco-infrastruktur.</p>
+                    <ul class="exp-list">
+                        <li>Bygger trafik- och attackagenter med <strong>Python, Scapy och iperf3</strong>.</li>
+                        <li>Sätter upp realtidsövervakning med <strong>Grafana, Prometheus och InfluxDB</strong>.</li>
+                        <li>Integrerar lokal AI (<strong>Ollama</strong>) och arbetar agilt (Scrum) i sprintar.</li>
+                    </ul>
                 </div>
-                <ul>
-                    <li><strong>Roll:</strong> Förtroendevald Ambassadör för klassen.</li>
-                    <li><strong>Fokus:</strong> Datakommunikation, Nätverksdesign, Nätverkssäkerhet & Scripting.</li>
-                </ul>
-            </div>
 
-            <div class="item">
-                <div class="item-header">
-                    <span class="item-title">Certifikat: Cisco CCNA Prep, IP & Python | <span class="item-company">LinkedIn Learning</span></span>
-                    <span class="item-date">Okt 2025</span>
+                <div class="experience-item">
+                    <div class="exp-header">
+                        <span class="exp-title">Team Area Manager</span>
+                        <span class="exp-date">Juli 2019 – Sep 2025</span>
+                    </div>
+                    <div class="exp-company">CEVA Logistics</div>
+                    <p>Ansvarig för daglig operativ drift, ständiga förbättringar (minskade felkällor) och teamledning.</p>
+                    <ul class="exp-list">
+                        <li>Agerade Superuser för lagersystem (WMS).</li>
+                        <li>Hanterade avvikelser och incidenter under tidspress i det dagliga flödet.</li>
+                    </ul>
                 </div>
-            </div>
-        </section>
 
-        <section>
-            <h2>Projekt</h2>
-            <div class="item" style="margin-bottom: 4px;">
-                <span class="item-title">Cisco Packet Tracer Labb</span> <span style="color: var(--text-light);">| VLAN • OSPF • DHCP</span>
-                <p style="margin-top: 1px;">Konfigurering av företagsnätverk med segmentering och redundans.</p>
-            </div>
-            <div class="item">
-                <span class="item-title">Azure Cloud Setup</span> <span style="color: var(--text-light);">| Azure AD • Virtuella Nätverk</span>
-                <p style="margin-top: 1px;">Uppsättning av hybridmiljö och hantering av användarrättigheter.</p>
-            </div>
-        </section>
+                <div class="experience-item">
+                    <div class="exp-header">
+                        <span class="exp-title">Lagerarbetare & Gruppansvarig</span>
+                        <span class="exp-date">2018 – 2019</span>
+                    </div>
+                    <div class="exp-company">Ingram Micro / Lernia</div>
+                    <p>Ansvarade för returflödet för nyckelkunder och utvecklade nya rutiner för spårbarhet.</p>
+                </div>
 
+                <div class="experience-item">
+                    <div class="exp-header">
+                        <span class="exp-title">Teknisk Medarbetare</span>
+                        <span class="exp-date">Jan 2017 – Okt 2018</span>
+                    </div>
+                    <div class="exp-company">Vasamuseet (Statens Maritima Museer)</div>
+                    <p>Tekniskt precisionsarbete för bevarandet av Regalskeppet Vasa (Strukturella förstärkningar, bultbyten på skrov).</p>
+                </div>
+            </section>
+
+            <section>
+                <h2>Projekt & Labb</h2>
+                
+                <div class="experience-item" style="margin-bottom: 8px;">
+                    <div class="exp-header">
+                        <span class="exp-title">Cisco Packet Tracer Labb</span>
+                        <span class="exp-date">VLAN • OSPF • DHCP</span>
+                    </div>
+                    <p>Konfigurering av företagsnätverk med segmentering och redundans.</p>
+                </div>
+
+                <div class="experience-item">
+                    <div class="exp-header">
+                        <span class="exp-title">Azure Cloud Setup</span>
+                        <span class="exp-date">Azure AD • Virtuella Nätverk</span>
+                    </div>
+                    <p>Uppsättning av hybridmiljö och hantering av användarrättigheter.</p>
+                </div>
+            </section>
+
+        </main>
     </div>
 
 </body>
