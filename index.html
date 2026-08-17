@@ -1,597 +1,923 @@
 <!DOCTYPE html>
 <html lang="sv">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CV | Mattias Englund</title>
-    
-    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>👨‍💻</text></svg>">
-    
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Fira+Code&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CV | Mattias Englund — Nätverkstekniker & Automation</title>
+<meta name="description" content="Mattias Englund — Nätverkstekniker & Automation. Cisco-infrastruktur, Python-automation och Grafana-telemetri. Examinerad juni 2026, tillgänglig för nya uppdrag.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%230a1226'/%3E%3Ctext x='16' y='23' font-family='Arial' font-size='18' font-weight='700' fill='%23c9a86a' text-anchor='middle'%3EZ%3C/text%3E%3C/svg%3E">
+<style>
+/* ============================================================
+   ZTechME — 01 · Executive (anpassad för CV)
+   Dark navy / charcoal premium corporate · gold accent
+   ============================================================ */
+:root {
+  --bg: #0a1226;
+  --bg-2: #0e1830;
+  --surface: rgba(255, 255, 255, 0.03);
+  --surface-solid: #12203a;
+  --border: rgba(255, 255, 255, 0.08);
+  --border-strong: rgba(255, 255, 255, 0.16);
+  --text: #eef1f6;
+  --muted: #9aa3b2;
+  --accent: #c9a86a;
+  --accent-soft: rgba(201, 168, 106, 0.12);
+  --radius: 14px;
+  --shadow: 0 24px 60px -28px rgba(0, 0, 0, 0.7);
+  --font-head: "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+  --font-body: "Segoe UI", system-ui, -apple-system, sans-serif;
+  --font-mono: "Cascadia Code", "Consolas", "Roboto Mono", monospace;
+  --space: 8px;
+}
 
-    <script src="https://unpkg.com/@lottiefiles/lottie-player@1.5.7/dist/lottie-player.js"></script>
-    <script src="https://unpkg.com/@dotlottie/player-component@latest/dist/dotlottie-player.mjs" type="module"></script>
-    
-    <style>
-        :root {
-            --bg-color: #0f172a;
-            --card-bg: #1e293b;
-            --text-main: #e2e8f0;
-            --text-muted: #94a3b8;
-            --accent: #38bdf8;
-            --accent-hover: #0ea5e9;
-            --border: #334155;
-            --terminal-bg: #020617;
-        }
+* { margin: 0; padding: 0; box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
 
-        body {
-            font-family: 'Inter', sans-serif;
-            background-color: var(--bg-color);
-            color: var(--text-main);
-            margin: 0;
-            padding: 0;
-            line-height: 1.5; 
-            overflow-x: hidden;
-            font-size: 14px; 
-        }
+html { scroll-behavior: smooth; scroll-padding-top: 100px; }
 
-        .container {
-            max-width: 800px;
-            margin: 30px auto;
-            padding: 15px;
-        }
+body {
+  font-family: var(--font-body);
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
 
-        /* --- TERMINAL HERO --- */
-        .terminal-hero {
-            background-color: var(--terminal-bg);
-            border-radius: 8px;
-            padding: 20px;
-            margin-bottom: 30px;
-            border: 1px solid var(--border);
-            box-shadow: 0 0 15px rgba(56, 189, 248, 0.1);
-            font-family: 'Fira Code', monospace;
-            min-height: 100px;
-            display: flex;
-            flex-direction: column;
-        }
+::selection { background: var(--accent); color: #0a1226; }
 
-        .terminal-header {
-            display: flex;
-            gap: 6px;
-            margin-bottom: 10px;
-            border-bottom: 1px solid var(--border);
-            padding-bottom: 8px;
-        }
+a { color: inherit; text-decoration: none; }
+ul, ol { list-style: none; }
+button { font: inherit; color: inherit; background: none; border: 0; cursor: pointer; }
+em { font-style: italic; color: var(--accent); }
 
-        .dot { width: 10px; height: 10px; border-radius: 50%; }
-        .red { background-color: #ef4444; }
-        .yellow { background-color: #f59e0b; }
-        .green { background-color: #22c55e; }
+.container { width: min(1160px, 92vw); margin-inline: auto; }
+.section { padding: 96px 0; }
+.section__head { max-width: 720px; margin-bottom: 48px; }
+.section__title { font-family: var(--font-head); font-size: clamp(1.7rem, 3.4vw, 2.6rem); line-height: 1.15; font-weight: 700; }
 
-        .terminal-content {
-            color: var(--accent);
-            font-size: 0.9rem;
-            white-space: pre-wrap;
-            line-height: 1.4;
-        }
+.eyebrow {
+  font-family: var(--font-mono);
+  font-size: 0.95rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 16px;
+}
 
-        .command { color: #22c55e; margin-right: 8px; }
-        .cursor {
-            display: inline-block;
-            width: 8px;
-            height: 1.2em;
-            background-color: var(--accent);
-            animation: blink 1s infinite;
-            vertical-align: text-bottom;
-        }
+.skip-link {
+  position: fixed; top: -100px; left: 16px; z-index: 200;
+  background: var(--accent); color: #0a1226;
+  padding: 10px 18px; border-radius: 8px; font-weight: 600;
+  transition: top 0.2s ease;
+}
+.skip-link:focus { top: 16px; }
 
-        @keyframes blink { 0% { opacity: 0; } 50% { opacity: 1; } 100% { opacity: 0; } }
+/* ---------------- brand logo ---------------- */
+.brand-logo { height: 80px; width: auto; display: block; filter: drop-shadow(0 2px 10px rgba(0,0,0,0.4)); }
 
-        /* HEADER */
-        header { text-align: center; margin-bottom: 50px; }
-        
-        h1 {
-            font-size: 2.5rem;
-            margin: 8px 0;
-            font-weight: 800;
-            color: white;
-            letter-spacing: -1px;
-        }
+/* ---------------- name wordmark ---------------- */
+.nav__wordmark {
+  font-family: var(--font-head);
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--text);
+  letter-spacing: -0.01em;
+  display: inline-flex;
+  align-items: baseline;
+  gap: 6px;
+  padding: 4px 0;
+  position: relative;
+}
+.nav__wordmark .wm-gold { color: var(--accent); }
+.nav__wordmark::after {
+  content: ""; position: absolute; left: 0; right: 0; bottom: 0; height: 2px;
+  background: var(--accent); border-radius: 2px; transform: scaleX(0);
+  transform-origin: left; transition: transform 0.25s ease;
+}
+.nav__wordmark:hover::after { transform: scaleX(1); }
+@media (max-width: 47.99rem) { .nav__wordmark { font-size: 1.05rem; } }
 
-        .status-badge {
-            display: inline-flex;
-            align-items: center;
-            background: rgba(56, 189, 248, 0.1);
-            color: var(--accent);
-            padding: 5px 14px;
-            border-radius: 30px;
-            font-size: 0.85rem;
-            font-weight: 600;
-            border: 1px solid rgba(56, 189, 248, 0.3);
-            margin-bottom: 10px;
-        }
+/* ---------------- nav ---------------- */
+.nav {
+  position: sticky; top: 0; z-index: 100;
+  background: rgba(10, 18, 38, 0.82);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border-bottom: 1px solid var(--border);
+  transition: background 0.3s ease, border-color 0.3s ease;
+}
+.nav.is-scrolled { background: rgba(10, 18, 38, 0.95); border-color: var(--border-strong); }
+.nav__inner { display: flex; align-items: center; justify-content: space-between; gap: 24px; padding: 16px 0; }
+.nav__brand { display: inline-flex; align-items: center; }
+.nav__links { display: none; align-items: center; gap: 26px; }
+.nav__links a {
+  font-size: 0.95rem; color: var(--muted); position: relative;
+  padding: 4px 0; transition: color 0.2s ease;
+}
+.nav__links a::after {
+  content: ""; position: absolute; left: 0; right: 0; bottom: -2px; height: 2px;
+  background: var(--accent); border-radius: 2px; transform: scaleX(0);
+  transform-origin: left; transition: transform 0.25s ease;
+}
+.nav__links a:hover, .nav__links a.is-active { color: var(--text); }
+.nav__links a.is-active::after, .nav__links a:hover::after { transform: scaleX(1); }
 
-        .status-dot {
-            width: 6px;
-            height: 6px;
-            background-color: #4ade80;
-            border-radius: 50%;
-            margin-right: 8px;
-            box-shadow: 0 0 6px #4ade80;
-            animation: pulse 2s infinite;
-        }
+.nav__toggle { display: inline-flex; flex-direction: column; gap: 5px; padding: 8px; }.nav__toggle span { width: 22px; height: 2px; background: var(--text); border-radius: 2px; transition: transform 0.25s ease, opacity 0.25s ease; }
+.nav__toggle.is-active span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+.nav__toggle.is-active span:nth-child(2) { opacity: 0; }
+.nav__toggle.is-active span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
 
-        @keyframes pulse { 0% { opacity: 1; } 50% { opacity: 0.5; } 100% { opacity: 1; } }
+.nav__mobile {
+  position: fixed; inset: 0; z-index: 250;
+  height: 100vh; height: 100dvh;
+  display: grid; place-content: center; gap: 12px; text-align: center;
+  background: rgba(10, 18, 38, 0.72);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  opacity: 0; visibility: hidden; transform: translateY(-12px);
+  transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.3s ease;
+  overflow: hidden;
+  overscroll-behavior: contain;
+}
+.nav__mobile::after {
+  content: ""; position: absolute; inset: 0; pointer-events: none;
+  background: linear-gradient(105deg, transparent 40%, var(--accent-soft) 50%, transparent 60%);
+  opacity: 0.55;
+  transform: translateX(-100%);
+  animation: portrait-sweep 5s ease-in-out infinite;
+}
+.nav__mobile.is-open { opacity: 1; visibility: visible; transform: none; }
+.nav__mobile a {
+  position: relative; z-index: 1;
+  font-family: var(--font-head); font-size: 1.35rem; color: var(--text);
+  min-width: min(300px, 84vw);
+  padding: 16px 28px;
+  background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius);
+  transition: border-color 0.2s ease, transform 0.2s ease, color 0.2s ease, background 0.2s ease;
+}
+.nav__mobile a:hover { color: var(--accent); border-color: var(--accent); background: var(--accent-soft); transform: translateY(-2px); }
+.nav__close {
+  position: absolute; top: calc(14px + env(safe-area-inset-top)); right: 14px;
+  z-index: 2; width: 42px; height: 42px; border-radius: 50%;
+  display: grid; place-items: center;
+  background: rgba(10, 18, 38, 0.6); border: 1px solid var(--border-strong); color: var(--text);
+  transition: color 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
+}
+.nav__close:hover { color: var(--accent); border-color: var(--accent); transform: rotate(90deg); }
+body.is-menu-open { overflow: hidden; }
 
-        /* KNAPPAR */
-        .actions {
-            display: flex;
-            justify-content: center;
-            gap: 12px;
-            flex-wrap: wrap;
-            margin-top: 20px;
-            align-items: center;
-        }
-        
-        .btn {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            padding: 8px 20px;
-            border-radius: 6px;
-            text-decoration: none;
-            font-weight: 600;
-            transition: all 0.3s ease;
-            font-size: 0.9rem;
-        }
+@media (min-width: 64rem) {
+  .nav__links { display: flex; }
+  .nav__toggle { display: none; }
+}
 
-        .btn-primary { background-color: var(--accent); color: #0f172a; }
-        .btn-primary:hover {
-            background-color: var(--accent-hover);
-            transform: translateY(-2px);
-            box-shadow: 0 5px 15px -5px rgba(56, 189, 248, 0.6);
-        }
+/* ---------------- buttons ---------------- */
+.btn {
+  display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+  min-height: 48px; padding: 12px 26px; border-radius: 999px;
+  font-weight: 600; font-size: 0.95rem;
+  border: 1px solid transparent; cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+}
+.btn:hover { transform: translateY(-2px); }
+.btn:active { transform: translateY(0); }
+.btn--primary { background: var(--accent); color: #0a1226; }
+.btn--primary:hover { box-shadow: 0 10px 30px -10px rgba(201, 168, 106, 0.5); }
+.btn--ghost { border-color: var(--border-strong); color: var(--text); }
+.btn--ghost:hover { border-color: var(--accent); color: var(--accent); }
+.btn--nav { min-height: 40px; padding: 8px 18px; background: var(--accent-soft); color: var(--accent); border-color: var(--border); }
+.btn--nav:hover { border-color: var(--accent); }
+.btn--block { width: 100%; margin-top: 8px; }
 
-        .btn-secondary { background-color: transparent; border: 1px solid var(--border); color: var(--text-main); }
-        .btn-secondary:hover { border-color: var(--accent); color: var(--accent); }
+/* ---------------- hero ---------------- */
+.hero { padding: 96px 0 0; position: relative; }
+.hero__grid { display: grid; gap: 48px; align-items: center; grid-template-columns: 1fr; }
+.hero__content { display: grid; gap: 20px; }
+.hero__title { font-family: var(--font-head); font-size: clamp(2.4rem, 6vw, 4rem); line-height: 1.06; font-weight: 700; text-wrap: balance; }
+.hero__lead { font-size: 1.15rem; color: var(--muted); max-width: 56ch; }
+.hero__actions { display: flex; flex-wrap: wrap; gap: 14px; margin-top: 8px; }
 
-        .email-copy-text {
-            width: 100%;
-            text-align: center;
-            margin-top: 12px;
-            font-size: 0.8rem;
-            color: var(--text-muted);
-            font-family: 'Fira Code', monospace;
-        }
+.hero__visual { display: flex; justify-content: flex-start; }
+.portrait {
+  width: 100%; max-width: 180px;
+  border-radius: var(--radius);
+  background: var(--surface-solid);
+  border: 1px solid var(--border);
+  position: relative; overflow: hidden;
+}
+.portrait__img { display: block; width: 100%; aspect-ratio: 4 / 5; object-fit: cover; }
+.portrait__caption { padding: 14px 8px 0; }
+.portrait__label {
+  display: block; font-family: var(--font-head); font-weight: 700;
+  letter-spacing: 0.08em; font-size: 0.78rem; color: var(--accent);
+  white-space: nowrap;
+}
+.portrait__label::after {
+  content: ""; display: block; height: 2px; width: 100%; margin-top: 8px;
+  background: linear-gradient(90deg, transparent 30%, var(--accent) 50%, transparent 70%);
+  border-radius: 2px;
+  transform: translateX(-100%);
+  animation: portrait-underline 5s ease-in-out infinite;
+}
+@keyframes portrait-underline {
+  0%, 12% { transform: translateX(-100%); }
+  88%, 100% { transform: translateX(100%); }
+}
+.portrait__sub {
+  display: block; margin-top: 5px;
+  font-size: 0.72rem; color: var(--muted);
+}
 
-        /* SEKTIONER */
-        section {
-            background: var(--card-bg);
-            padding: 30px;
-            margin-bottom: 30px;
-            border-radius: 12px;
-            border: 1px solid var(--border);
-        }
+.hero__stats { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; margin-top: 64px; padding: 28px 0; border-top: 1px solid var(--border); text-align: center; justify-items: center; }
+.stat strong { display: block; font-family: var(--font-head); font-size: 1.7rem; color: var(--accent); }
+.stat span { font-size: 0.85rem; color: var(--muted); }
 
-        h2 {
-            color: var(--accent);
-            font-size: 1.5rem;
-            margin-top: 0;
-            margin-bottom: 25px;
-            border-bottom: 1px solid var(--border);
-            padding-bottom: 12px;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            font-weight: 700;
-        }
+@media (min-width: 48rem) { .hero__stats { grid-template-columns: repeat(3, 1fr); } }
+@media (min-width: 64rem) {
+  .hero__grid { grid-template-columns: 3fr 1fr; }
+  .hero { padding-top: 120px; }
+}
 
-        .split-section {
-            display: grid;
-            grid-template-columns: 1.2fr 1fr;
-            gap: 30px;
-            align-items: center;
-        }
+/* ---------------- about ---------------- */
+.about__grid { display: grid; gap: 40px; grid-template-columns: 1fr; }
+.about__body p { color: var(--muted); margin-bottom: 18px; max-width: 60ch; }
+.about__facts { display: grid; gap: 14px; margin: 26px 0; }
+.about__facts li { display: grid; grid-template-columns: 110px 1fr; gap: 16px; padding: 12px 0; border-bottom: 1px solid var(--border); }
+.about__facts span { color: var(--muted); font-size: 0.85rem; }
+.about__facts li:last-child { border-bottom: 0; }
+.text-link { display: inline-flex; align-items: center; gap: 8px; color: var(--accent); font-weight: 600; }
+.text-link span { transition: transform 0.2s ease; }
+.text-link:hover span { transform: translateX(4px); }
+@media (min-width: 64rem) { .about__grid { grid-template-columns: 1fr 1.2fr; } .about__aside { position: sticky; top: 96px; align-self: start; } }
 
-        .split-section.reverse {
-            grid-template-columns: 1fr 1.2fr;
-        }
+/* ---------------- services / kompetens ---------------- */
+.services { background: var(--bg-2); }
+.services__grid { display: grid; gap: 20px; grid-template-columns: 1fr; }
+@media (min-width: 48rem) { .services__grid { grid-template-columns: repeat(2, 1fr); } }
+.card {
+  background: var(--surface); border: 1px solid var(--border);
+  border-radius: var(--radius); padding: 30px;
+  display: flex; flex-direction: column; gap: 14px;
+  transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+.card:hover { transform: translateY(-6px); border-color: var(--border-strong); box-shadow: var(--shadow); }
+.service__index { font-family: var(--font-mono); font-size: 0.8rem; color: var(--accent); letter-spacing: 0.1em; }
+.service h3 { font-family: var(--font-head); font-size: 1.3rem; }
+.service p { color: var(--muted); font-size: 0.95rem; }
+.service__tags { display: flex; flex-wrap: wrap; gap: 8px; margin-top: auto; }
+.service__tags li { font-size: 0.8rem; color: var(--text); background: var(--accent-soft); border: 1px solid var(--border); padding: 5px 12px; border-radius: 999px; }
 
-        .text-content p {
-            max-width: 100%;
-            font-size: 0.95rem;
-        }
+/* ---------------- work / projekt ---------------- */
+.projects { background: var(--bg-2); }
+.work__list { display: grid; gap: 20px; }
+.work__item { padding: 0; overflow: hidden; }
+.work__media { aspect-ratio: 16 / 9; overflow: hidden; display: block; }
+.ph { width: 100%; height: 100%; display: grid; place-items: center; background: linear-gradient(135deg, var(--bg-2), var(--surface-solid)); border-bottom: 1px solid var(--border); }
+.ph span { font-family: var(--font-mono); letter-spacing: 0.2em; font-size: 0.8rem; color: var(--muted); transition: color 0.2s ease; }
+.work__media:hover .ph span { color: var(--accent); }
+.work__body { padding: 28px; display: grid; gap: 10px; }
+.work__tag { font-family: var(--font-mono); font-size: 0.75rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--accent); }
+.work__body h3 { font-family: var(--font-head); font-size: 1.35rem; }
+.work__body h3 a:hover { color: var(--accent); }
+.work__body p { color: var(--muted); font-size: 0.95rem; }
+.work__stack { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 6px; }
+.work__stack li { font-size: 0.8rem; color: var(--text); background: var(--surface); border: 1px solid var(--border); padding: 4px 12px; border-radius: 999px; }
+@media (min-width: 64rem) { .work__list { grid-template-columns: repeat(3, 1fr); } }
 
-        .anim-container {
-            width: 100%;
-            max-width: 250px;
-            margin: 0 auto;
-            min-height: 180px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
+/* ---------------- resume / arbete ---------------- */
+.resume__col { margin-bottom: 40px; }
+.resume__h { font-family: var(--font-mono); font-size: 0.95rem; letter-spacing: 0.16em; text-transform: uppercase; color: var(--accent); margin-bottom: 20px; }
+.timeline { display: grid; gap: 0; }
+.timeline__item {
+  padding: 26px 28px; margin-bottom: 20px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+.timeline__item:last-child { margin-bottom: 0; }
+.timeline__item:hover { transform: translateY(-6px); border-color: var(--border-strong); box-shadow: 0 18px 34px -18px rgba(0, 0, 0, 0.55); }
+.timeline__meta { font-family: var(--font-mono); font-size: 0.75rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); margin-bottom: 6px; display: inline-flex; align-items: center; gap: 8px; }
+.timeline__meta::before {
+  content: ""; width: 9px; height: 9px; border-radius: 50%;
+  background: var(--accent); flex-shrink: 0;
+}
+.timeline__item h4 { font-family: var(--font-head); font-size: 1.15rem; margin-bottom: 6px; }
+.timeline__item h4 span { color: var(--accent); font-weight: 600; }
+.timeline__item p { color: var(--muted); font-size: 0.95rem; }
+.timeline__item ul { margin-top: 10px; display: grid; gap: 6px; }
+.timeline__item ul li { position: relative; padding-left: 18px; color: var(--muted); font-size: 0.92rem; }
+.timeline__item ul li::before { content: "→"; position: absolute; left: 0; color: var(--accent); }
+.resume__grid { display: grid; gap: 20px; grid-template-columns: 1fr; }
+@media (min-width: 48rem) { .resume__grid { grid-template-columns: repeat(2, 1fr); } }
+.edu__role { color: var(--accent) !important; font-weight: 600; }
 
-        .anim-container lottie-player,
-        .anim-container dotlottie-player {
-            width: 100%;
-            height: auto;
-            filter: drop-shadow(0 0 20px rgba(56, 189, 248, 0.1));
-        }
+/* ---------------- contact ---------------- */
+.contact { background: var(--bg-2); }
+.contact__panel { padding: 40px; }
+.contact__grid { display: grid; gap: 14px; grid-template-columns: 1fr; margin-bottom: 24px; }
+@media (min-width: 48rem) { .contact__grid { grid-template-columns: repeat(2, 1fr); } }
+.contact__item {
+  display: grid; place-items: center; gap: 10px; text-align: center; padding: 22px;
+  border: 1px solid var(--border); border-radius: var(--radius);
+  transition: border-color 0.2s ease, transform 0.2s ease;
+}
+.contact__item:hover { border-color: var(--accent); transform: translateY(-2px); }
+.contact__icon { color: var(--accent); }
+.contact__value { font-weight: 600; color: var(--text); word-break: break-word; }
+.contact__desc { color: var(--muted); font-size: 0.85rem; }
 
-        /* SKILLS */
-        .skills-centered {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
+/* ---------------- footer ---------------- */
+.footer { border-top: 1px solid var(--border); padding: 40px 0; }
+.footer__inner { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 20px; }
+.footer__brand { display: inline-flex; }
+.footer__note { color: var(--muted); font-size: 0.85rem; }
+.footer__note a:hover { color: var(--accent); }
 
-        .skills-anim-center {
-            width: 100%;
-            max-width: 200px;
-            margin-bottom: 20px;
-            min-height: 200px;
-        }
+/* ---------------- cursor (pulsing core) ---------------- */
+@media (hover: hover) and (pointer: fine) {
+  .has-cursor,
+  .has-cursor a,
+  .has-cursor button,
+  .has-cursor .service,
+  .has-cursor .work__item,
+  .has-cursor .contact__item,
+  .has-cursor .nav__toggle {
+    cursor: none;
+  }
+}
+.cursor {
+  position: fixed; top: 0; left: 0; z-index: 300;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+.has-cursor .cursor { opacity: 1; }
+.cursor__core {
+  position: absolute; top: 0; left: 0;
+  width: 12px; height: 12px; border-radius: 50%;
+  background: var(--accent);
+  box-shadow: 0 0 20px -2px var(--accent);
+  transform: translate(-50%, -50%);
+  transition: width 0.2s ease, height 0.2s ease;
+}
+.cursor.is-active .cursor__core { width: 18px; height: 18px; }
+.cursor__pulse {
+  position: absolute; top: 0; left: 0;
+  width: 12px; height: 12px; border-radius: 50%;
+  border: 1.5px solid var(--accent);
+  transform: translate(-50%, -50%);
+  opacity: 0.9;
+  pointer-events: none;
+}
 
-        .skills-content { width: 100%; text-align: center; }
+.progress-rail {
+  position: fixed; left: 0; right: 0; top: 0; height: 3px; z-index: 200;
+  background: transparent;
+}
+.progress-rail__bar { display: block; height: 100%; width: 0; background: linear-gradient(90deg, var(--accent), #e6c48f); }
 
-        .skill-category {
-            font-size: 0.85rem;
-            text-transform: uppercase;
-            letter-spacing: 1.5px;
-            color: var(--text-muted);
-            margin-top: 30px;
-            margin-bottom: 15px;
-            display: block;
-            font-weight: 700;
-            border-bottom: 1px solid rgba(255,255,255,0.05);
-            padding-bottom: 6px;
-            max-width: 500px;
-            margin-left: auto;
-            margin-right: auto;
-        }
+/* ---------------- reveal ---------------- */
+[data-reveal] { opacity: 0; transform: translateY(24px); transition: opacity 0.7s ease, transform 0.7s ease; }
+[data-reveal].is-visible { opacity: 1; transform: none; }
 
-        .skill-category:first-of-type { margin-top: 0; }
+/* ---------------- polish ---------------- */
+* { scrollbar-width: thin; scrollbar-color: var(--accent) var(--bg-2); }
+::-webkit-scrollbar { width: 10px; height: 10px; }
+::-webkit-scrollbar-track { background: var(--bg-2); }
+::-webkit-scrollbar-thumb { background: var(--accent); border-radius: 6px; border: 2px solid var(--bg-2); }
+::-webkit-scrollbar-thumb:hover { filter: brightness(1.12); }
+:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
 
-        .skills-grid {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 8px;
-            justify-content: center;
-            max-width: 700px;
-            margin: 0 auto;
-        }
+.portrait::after {
+  content: ""; position: absolute; inset: 0; pointer-events: none;
+  background: linear-gradient(105deg, transparent 40%, var(--accent-soft) 50%, transparent 60%);
+  opacity: 0.6;
+  transform: translateX(-100%);
+  animation: portrait-sweep 5s ease-in-out infinite;
+}
+@keyframes portrait-sweep {
+  0%, 12% { transform: translateX(-100%); }
+  88%, 100% { transform: translateX(100%); }
+}
 
-        .skill-tag {
-            background-color: rgba(255, 255, 255, 0.05);
-            color: var(--text-main);
-            padding: 6px 14px;
-            border-radius: 6px;
-            font-size: 0.85rem;
-            font-weight: 500;
-            border: 1px solid var(--border);
-            transition: all 0.2s;
-        }
+@media (max-width: 47.99rem) {
+  .brand-logo { height: 52px; filter: drop-shadow(0 1px 6px rgba(0,0,0,0.35)); }
+  .section { padding: 60px 0; }
+  .hero { padding-top: 60px; }
+  .hero__stats { margin-top: 48px; }
+  .hero__title { font-size: clamp(2rem, 9vw, 2.6rem); }
+  .section__head { margin-bottom: 32px; }
+  .nav__inner { gap: 12px; }
+  .btn--nav { display: none; }
+  .card { padding: 24px 20px; }
+  .contact__panel { padding: 26px 20px; }
+}
+@media (max-width: 23rem) {
+  .brand-logo { height: 42px; }
+}
 
-        .skill-tag:hover {
-            border-color: var(--accent);
-            background-color: rgba(56, 189, 248, 0.1);
-            cursor: default;
-        }
-
-        /* TIMELINE */
-        .timeline-content { width: 100%; }
-
-        .timeline-item {
-            margin-bottom: 30px;
-            padding-left: 25px;
-            border-left: 2px solid var(--border);
-            position: relative;
-        }
-
-        .timeline-item:last-child { margin-bottom: 0; }
-
-        .timeline-item::before {
-            content: '';
-            position: absolute;
-            left: -6px;
-            top: 6px;
-            width: 10px;
-            height: 10px;
-            background: var(--accent);
-            border-radius: 50%;
-            border: 2px solid var(--card-bg);
-        }
-
-        .role-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            flex-wrap: wrap;
-            margin-bottom: 4px;
-        }
-
-        .role-title { font-size: 1.1rem; font-weight: 700; color: var(--text-main); }
-        .company-name { font-size: 0.95rem; color: var(--accent); font-weight: 500; display: block; margin-bottom: 6px; }
-        .date-badge {
-            font-size: 0.8rem;
-            background: rgba(56, 189, 248, 0.1);
-            color: var(--accent);
-            padding: 3px 10px;
-            border-radius: 12px;
-            font-weight: 600;
-        }
-
-        ul { margin-top: 8px; padding-left: 16px; }
-        li { margin-bottom: 6px; color: var(--text-muted); font-size: 0.9rem; }
-
-        /* PROJEKT */
-        .project-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; width: 100%; }
-        .project-card {
-            background: rgba(255,255,255,0.03);
-            padding: 20px;
-            border-radius: 10px;
-            border: 1px solid var(--border);
-            transition: transform 0.2s;
-        }
-        .project-card:hover { transform: translateY(-4px); border-color: var(--accent); }
-        .project-title { font-weight: 700; color: var(--text-main); font-size: 1rem; display: block; margin-bottom: 6px; }
-        .project-tech { font-size: 0.8rem; color: var(--accent); font-family: 'Fira Code', monospace; }
-
-        /* ÖVRIGT */
-        .misc-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
-        .misc-item strong { color: var(--accent); display: block; margin-bottom: 8px; font-size: 1rem; }
-
-        .footer-anim { text-align: center; margin-top: 80px; margin-bottom: 40px; }
-        .footer-text {
-            color: var(--accent);
-            font-size: 1.5rem;
-            font-weight: 800;
-            margin-top: 15px;
-            letter-spacing: -1px;
-            text-shadow: 0 0 20px rgba(56, 189, 248, 0.2);
-        }
-
-        @media (max-width: 850px) {
-            h1 { font-size: 2rem; }
-            .container { margin: 10px auto; padding: 10px; width: 95%; }
-            .split-section, .split-section.reverse { grid-template-columns: 1fr; gap: 30px; }
-            .anim-container { order: -1; max-width: 220px; min-height: 180px; }
-            .project-grid, .misc-grid { grid-template-columns: 1fr; }
-            section { padding: 20px; }
-            .actions { flex-direction: column; width: 100%; }
-            .btn { width: 100%; justify-content: center; }
-        }
-    </style>
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; }
+  [data-reveal] { opacity: 1; transform: none; }
+}
+</style>
 </head>
 <body>
+<a class="skip-link" href="#om-mig">Hoppa till innehåll</a>
 
-    <div class="container">
-        
-        <div class="terminal-hero">
-            <div class="terminal-header">
-                <div class="dot red"></div>
-                <div class="dot yellow"></div>
-                <div class="dot green"></div>
-            </div>
-            <div class="terminal-content"><span class="command">mattias@MacBook-Pro ~ % </span><span id="typewriter"></span><span class="cursor">&nbsp;</span></div>
+<div class="cursor" aria-hidden="true"><span class="cursor__core"></span></div>
+<div class="progress-rail" aria-hidden="true"><span class="progress-rail__bar"></span></div>
+
+<header class="nav" id="nav">
+  <div class="nav__inner container">
+    <a class="nav__brand" href="#top" data-nav><span class="nav__wordmark">Mattias <span class="wm-gold">Englund</span></span></a>
+    <nav class="nav__links" aria-label="Primär">
+      <a href="#om-mig" data-nav>Om mig</a>
+      <a href="#kompetens" data-nav>Kompetens</a>
+      <a href="#projekt" data-nav>Projekt</a>
+      <a href="#arbete" data-nav>Arbete</a>
+      <a href="#utbildning" data-nav>Utbildning</a>
+      <a href="#kontakt" data-nav>Kontakt</a>
+    </nav>
+    <a class="btn btn--nav" href="cv.pdf" download data-nav><span>Ladda ner CV</span></a>
+    <button class="nav__toggle" type="button" aria-expanded="false" aria-controls="mobile-menu" aria-label="Växla meny">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+  <div class="nav__mobile" id="mobile-menu">
+    <button class="nav__close" type="button" aria-label="Stäng meny">
+      <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg>
+    </button>
+    <a href="#om-mig" data-nav>Om mig</a>
+    <a href="#kompetens" data-nav>Kompetens</a>
+    <a href="#projekt" data-nav>Projekt</a>
+    <a href="#arbete" data-nav>Arbete</a>
+    <a href="#utbildning" data-nav>Utbildning</a>
+    <a href="#kontakt" data-nav>Kontakt</a>
+  </div>
+</header>
+
+<main id="top">
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero__grid container">
+      <div class="hero__content">
+        <p class="eyebrow" data-reveal>Examinerad Nätverkstekniker • Tillgänglig för nya uppdrag</p>
+        <h1 class="hero__title" data-reveal>Stabila nätverk, enkla lösningar och <em>tydliga resultat</em>.</h1>
+        <p class="hero__lead" data-reveal>Jag är Mattias Englund, nätverkstekniker med fokus på automation. Med 6+ års operativt ledarskap i bagaget designar, felsöker och underhåller jag tillförlitliga nätverk — Cisco-infrastruktur, Python-automation och Grafana-telemetri.</p>
+        <div class="hero__actions" data-reveal>
+          <a class="btn btn--primary" href="#kontakt" data-magnetic><span>Kontakta mig</span></a>
         </div>
-
-        <header>
-            <div class="status-badge">
-                <div class="status-dot"></div> Examen juni 2026 – Start enligt överenskommelse
-            </div>
-            <h1>Mattias Englund</h1>
-            <p style="font-size: 1rem; color: var(--text-muted);">Nätverkstekniker • Ambassadör hos JENSEN</p>
-            
-            <div class="actions">
-                <a href="cv.pdf" download target="_blank" class="btn btn-primary"><i class="fas fa-file-pdf"></i> Ladda ner CV</a>
-                <a href="mailto:mattias.englund1992@gmail.com" class="btn btn-secondary"><i class="fas fa-envelope"></i> Maila mig</a>
-                <a href="https://linkedin.com/in/mattias-englund-61129331a" target="_blank" class="btn btn-secondary"><i class="fab fa-linkedin"></i> LinkedIn</a>
-            </div>
-        </header>
-
-        <section class="split-section">
-            <div class="text-content">
-                <h2><i class="fas fa-user-circle"></i> Om Mig</h2>
-                <p style="color: #cbd5e1;">
-                    Från Team Manager till Nätverkstekniker. Efter sex år inom operativt ledarskap satsar jag nu helhjärtat på teknik. Jag kombinerar min erfarenhet av drift och struktur med kompetens inom Cisco, Azure och nätverksautomation.<br><br> Som Ambassadör på JENSEN drivs jag av ansvar och utveckling.<br><br> 
-                    <strong>Jag tar formell examen i juni 2026, och är flexibel gällande startdatum med möjlighet att påbörja min nästa utmaning enligt överenskommelse.</strong>
-                </p>
-            </div>
-            <div class="anim-container">
-                <lottie-player src="https://assets10.lottiefiles.com/packages/lf20_w51pcehl.json" background="transparent" speed="1" loop autoplay></lottie-player>
-            </div>
-        </section>
-
-        <section class="split-section reverse">
-            <div class="anim-container" style="max-width: 200px;">
-                <dotlottie-player src="https://lottie.host/90ee1a42-08ea-4358-aa56-9c4420e457c4/s6RU2jB7cY.lottie" background="transparent" speed="1" loop autoplay></dotlottie-player>
-            </div>
-            <div class="text-content">
-                <h2><i class="fas fa-laptop-code"></i> Projekt & Labb</h2>
-                <div class="project-grid">
-                    <div class="project-card">
-                        <span class="project-title"><i class="fas fa-network-wired"></i> Cisco Packet Tracer Labb</span>
-                        <span class="project-tech">VLAN • OSPF • DHCP</span>
-                        <p style="margin-top: 8px; font-size: 0.9rem;">Konfigurering av företagsnätverk med segmentering och redundans.</p>
-                    </div>
-                    <div class="project-card">
-                        <span class="project-title"><i class="fas fa-cloud"></i> Azure Cloud Setup</span>
-                        <span class="project-tech">Azure AD • Virtuella Nätverk</span>
-                        <p style="margin-top: 8px; font-size: 0.9rem;">Uppsättning av hybridmiljö och hantering av användarrättigheter.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section class="skills-centered">
-            <h2><i class="fas fa-microchip"></i> Teknisk Kompetens</h2>
-            
-            <div class="skills-anim-center">
-                 <lottie-player src="https://assets2.lottiefiles.com/packages/lf20_1LhsaB.json" background="transparent" speed="0.7" loop autoplay></lottie-player>
-            </div>
-
-            <div class="skills-content">
-                <span class="skill-category">Nätverk & Säkerhet</span>
-                <div class="skills-grid">
-                    <span class="skill-tag">Cisco (Routers, IOS)</span>
-                    <span class="skill-tag">TCP/IP & OSI</span>
-                    <span class="skill-tag">BGP & Routing</span>
-                    <span class="skill-tag">Switching & VLAN</span>
-                    <span class="skill-tag">Firewalls & ACL</span>
-                    <span class="skill-tag">VPN & WireGuard</span>
-                    <span class="skill-tag">Zero Trust & ISO 27001</span>
-                </div>
-
-                <span class="skill-category">Automation, Övervakning & AI</span>
-                <div class="skills-grid">
-                    <span class="skill-tag">Python & Scapy</span>
-                    <span class="skill-tag">Grafana & Prometheus</span>
-                    <span class="skill-tag">InfluxDB</span>
-                    <span class="skill-tag">AI (Ollama & Claude)</span>
-                    <span class="skill-tag">Wireshark</span>
-                </div>
-
-                <span class="skill-category">Moln, OS & Agilt</span>
-                <div class="skills-grid">
-                    <span class="skill-tag">Microsoft Azure</span>
-                    <span class="skill-tag">Docker</span>
-                    <span class="skill-tag">Linux & Windows Server</span>
-                    <span class="skill-tag">Git & GitHub</span>
-                    <span class="skill-tag">Agile / Scrum</span>
-                </div>
-            </div>
-        </section>
-
-        <section class="split-section reverse">
-            <div class="anim-container">
-                <dotlottie-player src="https://lottie.host/a79956a3-b796-4968-9906-7323504cae88/9XNUbBz2T1.lottie" background="transparent" speed="1" loop autoplay></dotlottie-player>
-            </div>
-            <div class="timeline-content">
-                <h2><i class="fas fa-briefcase"></i> Arbetslivserfarenhet</h2>
-                
-                <div class="timeline-item">
-                    <div class="role-header">
-                        <span class="role-title">LIA - Nätverksutvecklare & Tekniker</span>
-                        <span class="date-badge">April 2026 till Juni 2026</span>
-                    </div>
-                    <span class="company-name">Saldes Technology Group AB</span>
-                    <p>Utveckling av mjukvaruplattformen NetSim Studio för att simulera realistisk trafik och cyberattacker mot Cisco-infrastruktur.</p>
-                    <ul>
-                        <li>Bygger trafik- och attackagenter med <strong>Python, Scapy och iperf3</strong>.</li>
-                        <li>Sätter upp realtidsövervakning (Observability) med <strong>Grafana, Prometheus och InfluxDB</strong>.</li>
-                        <li>Integrerar lokal AI (<strong>Ollama</strong>) för dynamisk orkestrering av nätverksscenarier.</li>
-                        <li>Arbetar <strong>agilt (Scrum)</strong> i 2-veckors sprintar med versionshantering i GitHub.</li>
-                    </ul>
-                </div>
-
-                <div class="timeline-item">
-                    <div class="role-header">
-                        <span class="role-title">Team Area Manager</span>
-                        <span class="date-badge">Juli 2019 till Sep 2025</span>
-                    </div>
-                    <span class="company-name">CEVA Logistics</span>
-                    <p>Ansvarig för den dagliga operativa driften på ett av företagets logistikcenter med fokus på effektivitet och teamutveckling.</p>
-                    <ul>
-                        <li>Ledde ett team genom daglig styrning, resursfördelning och coachning.</li>
-                        <li>Agerade Superuser för lagersystem (WMS) och ansvarade för IT-relaterad administration.</li>
-                        <li>Drev förbättringsarbete och hanterade avvikelser under tidspress.</li>
-                    </ul>
-                </div>
-
-                <div class="timeline-item">
-                    <div class="role-header">
-                        <span class="role-title">Lagerarbetare & Gruppansvarig</span>
-                        <span class="date-badge">2018 till 2019</span>
-                    </div>
-                    <span class="company-name">Ingram Micro / Lernia</span>
-                    <p>Ansvarade för returflödet för nyckelkunder och utvecklade nya rutiner för spårbarhet.</p>
-                </div>
-
-                <div class="timeline-item">
-                    <div class="role-header">
-                        <span class="role-title">Teknisk Medarbetare (Timmerman)</span>
-                        <span class="date-badge">Jan 2017 till Okt 2018</span>
-                    </div>
-                    <span class="company-name">Vasamuseet (Statens Maritima Museer)</span>
-                    <p>Tekniskt precisionsarbete för bevarandet av Regalskeppet Vasa. Utförde strukturella förstärkningar på hög höjd.</p>
-                </div>
-            </div>
-        </section>
-
-        <section class="split-section">
-            <div class="timeline-content">
-                <h2><i class="fas fa-graduation-cap"></i> Utbildning</h2>
-                
-                <div class="timeline-item">
-                    <div class="role-header">
-                        <span class="role-title">Studerande Nätverkstekniker</span>
-                        <span class="date-badge">Sep 2025 till Juni 2026</span>
-                    </div>
-                    <span class="company-name">JENSEN Yrkeshögskola</span>
-                    <p>Yrkesinriktad utbildning med fokus på drift, design och säkerhet i moderna företagsnätverk.</p>
-                    <ul>
-                        <li><strong>Roll:</strong> Förtroendevald som Ambassadör för klassen.</li>
-                        <li><strong>Kärnkurser:</strong> Datakommunikation, Nätverksdesign, Nätverkssäkerhet & Scripting.</li>
-                    </ul>
-                </div>
-
-                <div class="timeline-item">
-                    <div class="role-header">
-                        <span class="role-title">Certifikat & Kurser</span>
-                        <span class="date-badge">Utfärdade Okt 2025</span>
-                    </div>
-                    <span class="company-name">LinkedIn Learning</span>
-                    <ul>
-                        <li>Cisco CCNA (200-301) Cert Prep: Network Fundamentals</li>
-                        <li>Python for Non-Programmers</li>
-                    </ul>
-                </div>
-            </div>
-            <div class="anim-container">
-                <lottie-player src="https://assets3.lottiefiles.com/packages/lf20_DMgKk1.json" background="transparent" speed="1" loop autoplay></lottie-player>
-            </div>
-        </section>
-        
-        <section>
-            <h2><i class="fas fa-globe"></i> Övrigt</h2>
-            <div class="misc-grid">
-                <div class="misc-item">
-                    <strong><i class="fas fa-language"></i> Språk</strong>
-                    Svenska (Modersmål)<br>Engelska (Mycket god nivå)<br>Kroatiska/Bosniska (Grundläggande)
-                </div>
-                <div class="misc-item">
-                    <strong><i class="fas fa-car"></i> Körkort</strong>
-                    B-Körkort (Personbil)
-                </div>
-            </div>
-        </section>
-
-        <div class="footer-anim">
-            <lottie-player src="https://assets9.lottiefiles.com/packages/lf20_x62chJ.json" background="transparent" speed="1" style="width: 150px; height: 150px; margin: 0 auto;" loop autoplay></lottie-player>
-            <p class="footer-text">Redo för nästa uppdrag!</p>
+      </div>
+      <div class="hero__visual" data-reveal>
+        <div class="portrait">
+          <img class="portrait__img" src="portrait.jpg" alt="Mattias Englund">
+          <div class="portrait__caption">
+            <span class="portrait__label">MATTIAS ENGLUND</span>
+            <span class="portrait__sub">Nätverkstekniker & Automation</span>
+          </div>
         </div>
-
+      </div>
     </div>
+    <div class="hero__stats container">
+      <div class="stat" data-reveal><strong>6+</strong><span>År operativt ledarskap</span></div>
+      <div class="stat" data-reveal><strong>4</strong><span>Kompetensområden</span></div>
+      <div class="stat" data-reveal><strong>3+</strong><span>Levererade projekt</span></div>
+    </div>
+  </section>
 
-    <script>
-        const baseText = "whoami\n> Mattias Englund\n> ";
-        const roles = ["Network Technician...", "JENSEN Ambassador...", "Network Automation...", "Powered by Coffee & TCP/IP..."];
-        let roleIndex = 0, charIndex = 0, isDeleting = false;
-        
-        function typeEffect() {
-            const currentRole = roles[roleIndex];
-            const element = document.getElementById("typewriter");
-            if (isDeleting) { element.innerHTML = baseText + currentRole.substring(0, charIndex - 1); charIndex--; }
-            else { element.innerHTML = baseText + currentRole.substring(0, charIndex + 1); charIndex++; }
-            let typeSpeed = isDeleting ? 50 : 100;
-            if (!isDeleting && charIndex === currentRole.length) { typeSpeed = 1500; isDeleting = true; } 
-            else if (isDeleting && charIndex === 0) { isDeleting = false; roleIndex = (roleIndex + 1) % roles.length; }
-            setTimeout(typeEffect, typeSpeed);
-        }
-        window.onload = typeEffect;
-    </script>
+  <!-- OM MIG -->
+  <section class="about section" id="om-mig">
+    <div class="container about__grid">
+      <div class="about__aside" data-reveal>
+        <p class="eyebrow">Om mig</p>
+        <h2 class="section__title">En lugn operatör bakom komplexa system.</h2>
+      </div>
+      <div class="about__body" data-reveal>
+        <p>Från Team Manager till Nätverkstekniker. Efter sex år inom operativt ledarskap har jag nu tagit examen som nätverkstekniker och kombinerar min erfarenhet av drift och struktur med kompetens inom Cisco, Azure och nätverksautomation.</p>
+        <p>Min filosofi är enkel. Tillförlitliga system är designade, inte önskade. Tydlig dokumentation, ärlig övervakning och säkerhet inbyggt från start — det är den standard jag håller mitt arbete till.</p>
+        <ul class="about__facts">
+          <li><span>Plats</span> Borås, Sverige</li>
+          <li><span>Roll</span> Nätverkstekniker & Automation</li>
+          <li><span>Bakgrund</span> Nätverkstekniker & 6+ år ledarskap</li>
+          <li><span>Status</span> Tillgänglig för nya uppdrag</li>
+        </ul>
+        <a class="text-link" href="#arbete" data-magnetic>Läs om arbetslivserfarenheten <span aria-hidden="true">→</span></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- KOMPETENS -->
+  <section class="services section" id="kompetens">
+    <div class="container">
+      <div class="section__head">
+        <p class="eyebrow" data-reveal>Kompetens</p>
+        <h2 class="section__title" data-reveal>Mina <em>kompetensområden</em>.</h2>
+      </div>
+      <div class="services__grid">
+        <article class="service card" data-reveal>
+          <span class="service__index">01</span>
+          <h3>Nätverk & säkerhet</h3>
+          <p>Resilienta och säkra nätverk byggda på branschstandardverktyg — från routinggrunder till zero-trust-gränser.</p>
+          <ul class="service__tags">
+            <li>Cisco</li><li>OSPF</li><li>BGP</li><li>VLAN</li><li>ACL</li><li>VPN</li><li>Zero Trust</li><li>ISO 27001</li>
+          </ul>
+        </article>
+        <article class="service card" data-reveal>
+          <span class="service__index">02</span>
+          <h3>Automation & övervakning</h3>
+          <p>Synliga, automatiserade operationer. Jag bygger de lager av observerbarhet och scripting som håller nätverk ärliga.</p>
+          <ul class="service__tags">
+            <li>Python</li><li>Scapy</li><li>Grafana</li><li>Prometheus</li><li>InfluxDB</li><li>Ollama</li><li>Wireshark</li>
+          </ul>
+        </article>
+        <article class="service card" data-reveal>
+          <span class="service__index">03</span>
+          <h3>Moln, OS & agilt</h3>
+          <p>Moderna hybridmiljöer hanterade med disciplin — identitet, virtualisering och allt versionshanterat.</p>
+          <ul class="service__tags">
+            <li>Azure AD</li><li>Virtuella Nätverk</li><li>Docker</li><li>Linux</li><li>Windows Server</li><li>Git/GitHub</li><li>Scrum</li>
+          </ul>
+        </article>
+        <article class="service card" data-reveal>
+          <span class="service__index">04</span>
+          <h3>Webb & apputveckling</h3>
+          <p>Egna webbplatser och appar, byggda för att vara snabba, tillgängliga och underhållbara.</p>
+          <ul class="service__tags">
+            <li>JavaScript</li><li>HTML/CSS</li><li>PWA</li><li>Electron</li><li>GitHub Pages</li>
+          </ul>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROJEKT -->
+  <section class="work section" id="projekt">
+    <div class="container">
+      <div class="section__head">
+        <p class="eyebrow" data-reveal>Projekt & labb</p>
+        <h2 class="section__title" data-reveal>Projekt & labb <em>jag byggt</em>.</h2>
+      </div>
+      <div class="work__list">
+        <article class="work__item card" data-reveal>
+          <div class="work__media"><div class="ph" role="img" aria-label="NetSim Studio förhandsvisning"><span>NETSIM STUDIO</span></div></div>
+          <div class="work__body">
+            <p class="work__tag">Simulering · Säkerhet</p>
+            <h3>NetSim Studio</h3>
+            <p>Miljö för trafik- och cyberattackssimulering för träning och analys — byggd under LIA hos Saldes.</p>
+            <ul class="work__stack"><li>Python</li><li>Scapy</li><li>Grafana</li><li>Docker</li><li>Ollama</li></ul>
+          </div>
+        </article>
+        <article class="work__item card" data-reveal>
+          <div class="work__media"><div class="ph" role="img" aria-label="Cisco Enterprise Lab förhandsvisning"><span>CISCO ENTERPRISE LAB</span></div></div>
+          <div class="work__body">
+            <p class="work__tag">Routing & switching</p>
+            <h3>Cisco Enterprise Lab</h3>
+            <p>Fler-VLAN-företagstopologi med routing, filtrering och adressautomation.</p>
+            <ul class="work__stack"><li>VLAN</li><li>OSPF</li><li>BGP</li><li>ACL</li><li>DHCP</li></ul>
+          </div>
+        </article>
+        <article class="work__item card" data-reveal>
+          <div class="work__media"><div class="ph" role="img" aria-label="Azure Hybrid Cloud förhandsvisning"><span>AZURE HYBRID CLOUD</span></div></div>
+          <div class="work__body">
+            <p class="work__tag">Moln & identitet</p>
+            <h3>Azure Hybrid Cloud</h3>
+            <p>Hybrididentitet och nätverk byggt på Azure Active Directory och virtuella nätverk.</p>
+            <ul class="work__stack"><li>Azure AD</li><li>Virtuella Nätverk</li><li>IAM</li></ul>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- SIDOPROJEKT -->
+  <section class="work section projects" id="sidoprojekt">
+    <div class="container">
+      <div class="section__head">
+        <p class="eyebrow" data-reveal>Sidoprojekt</p>
+        <h2 class="section__title" data-reveal>Sidoprojekt jag byggt och använder.</h2>
+      </div>
+      <div class="work__list">
+        <article class="work__item card" data-reveal>
+          <a class="work__media" href="https://MEnglund92.github.io/netstudy" target="_blank" rel="noopener" aria-label="NetStudy live demo">
+            <div class="ph"><span>NETSTUDY</span></div>
+          </a>
+          <div class="work__body">
+            <p class="work__tag">Nätverksstudieapp · Offline PWA</p>
+            <h3><a href="https://github.com/MEnglund92/netstudy" target="_blank" rel="noopener">NetStudy</a></h3>
+            <p>Offline CCNA-kamrat byggd från riktigt kursmaterial – utrustad med 11 000+ flashcards, 5 000+ CLI-kommandon, interaktiva labbar och tidsatta övningsprov.</p>
+            <ul class="work__stack"><li>JavaScript</li><li>PWA</li><li>SM-2 SRS</li><li>GitHub Pages</li></ul>
+            <a class="text-link" href="https://github.com/MEnglund92/netstudy" target="_blank" rel="noopener" data-magnetic>Visa på GitHub <span aria-hidden="true">→</span></a>
+          </div>
+        </article>
+        <article class="work__item card" data-reveal>
+          <a class="work__media" href="https://MEnglund92.github.io/english-study-hub/" target="_blank" rel="noopener" aria-label="English Study Hub live demo">
+            <div class="ph"><span>ENGLISH STUDY HUB</span></div>
+          </a>
+          <div class="work__body">
+            <p class="work__tag">Ordapp · Offline PWA + Desktop</p>
+            <h3><a href="https://github.com/MEnglund92/english-study-hub" target="_blank" rel="noopener">English Study Hub</a></h3>
+            <p>Offline-applikation med ett ordförråd på 19 000+ ord från 40 läroböcker – utrustad med interaktiva flashcards, quiz, prov och ordspel.</p>
+            <ul class="work__stack"><li>JavaScript</li><li>PWA</li><li>Electron</li><li>Web Speech</li></ul>
+            <a class="text-link" href="https://github.com/MEnglund92/english-study-hub" target="_blank" rel="noopener" data-magnetic>Visa på GitHub <span aria-hidden="true">→</span></a>
+          </div>
+        </article>
+        <article class="work__item card" data-reveal>
+          <a class="work__media" href="https://MEnglund92.github.io/Human-Behavior/" target="_blank" rel="noopener" aria-label="Human Behavior live demo">
+            <div class="ph"><span>HUMAN BEHAVIOR</span></div>
+          </a>
+          <div class="work__body">
+            <p class="work__tag">Beteendevetenskapsapp · PWA + TTS</p>
+            <h3><a href="https://github.com/MEnglund92/Human-Behavior" target="_blank" rel="noopener">Human Behavior</a></h3>
+            <p>Interaktiv studieapplikation inom beteendevetenskap med 20 ämnen, scenariolabb och spaced repetition med tvåspråkig röstfunktion (sv/en).</p>
+            <ul class="work__stack"><li>JavaScript</li><li>Python</li><li>Piper TTS</li><li>PWA</li></ul>
+            <a class="text-link" href="https://github.com/MEnglund92/Human-Behavior" target="_blank" rel="noopener" data-magnetic>Visa på GitHub <span aria-hidden="true">→</span></a>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ARBETE -->
+  <section class="resume section" id="arbete">
+    <div class="container">
+      <div class="section__head">
+        <p class="eyebrow" data-reveal>Arbetslivserfarenhet & praktik</p>
+        <h2 class="section__title" data-reveal>Erfarenhet, utbildning och <em>riktning</em>.</h2>
+      </div>
+
+      <div class="resume__col">
+        <h3 class="resume__h"><em>Erfarenhet</em></h3>
+        <ol class="timeline">
+          <li class="timeline__item" data-reveal>
+            <p class="timeline__meta">April 2026 · Juni 2026</p>
+            <h4>LIA — Nätverksutvecklare & Tekniker <span>· Saldes Technology Group AB</span></h4>
+            <p>Utveckling av mjukvaruplattformen NetSim Studio för att simulera realistisk trafik och cyberattacker mot Cisco-infrastruktur.</p>
+            <ul>
+              <li>Bygger trafik- och attackagenter med Python, Scapy och iperf3.</li>
+              <li>Sätter upp realtidsövervakning (Observability) med Grafana, Prometheus och InfluxDB.</li>
+              <li>Integrerar lokal AI (Ollama) för dynamisk orkestrering av nätverksscenarier.</li>
+              <li>Arbetar agilt (Scrum) i 2-veckors sprintar med versionshantering i GitHub.</li>
+            </ul>
+          </li>
+          <li class="timeline__item" data-reveal>
+            <p class="timeline__meta">Juli 2019 · Sep 2025</p>
+            <h4>Team Area Manager <span>· CEVA Logistics</span></h4>
+            <p>Ansvarig för den dagliga operativa driften på ett av företagets logistikcenter med fokus på effektivitet och teamutveckling.</p>
+            <ul>
+              <li>Ledde ett team genom daglig styrning, resursfördelning och coachning.</li>
+              <li>Agerade Superuser för lagersystem (WMS) och ansvarade för IT-relaterad administration.</li>
+              <li>Drev förbättringsarbete och hanterade avvikelser under tidspress.</li>
+            </ul>
+          </li>
+          <li class="timeline__item" data-reveal>
+            <p class="timeline__meta">2018 · 2019</p>
+            <h4>Lagerarbetare & Gruppansvarig <span>· Ingram Micro</span></h4>
+            <p>Ledde och samordnade det dagliga arbetet kring returhantering för nyckelkunder. Utvecklade standardiserade arbetssätt för ökad spårbarhet, minskade ledtider och effektivare lagerlogistik.</p>
+          </li>
+          <li class="timeline__item" data-reveal>
+            <p class="timeline__meta">Jan 2017 · Okt 2018</p>
+            <h4>Teknisk Medarbetare <span>· Vasamuseet (Statens Maritima Museer)</span></h4>
+            <p>Utförde tekniskt precisionsarbete och avancerat bevarande av Regalskeppet Vasa. Ansvarade för strukturella förstärkningar, bultbyten på hög höjd och rigorösa säkerhetsprotokoll kring ett av världens mest värdefulla kulturarv.</p>
+          </li>
+        </ol>
+      </div>
+
+      <div class="resume__grid">
+        <div class="resume__col">
+          <h3 class="resume__h"><em>Utbildning</em></h3>
+          <div class="edu card" data-reveal>
+            <p class="timeline__meta">Sep 2025 · Juni 2026</p>
+            <h4>Nätverkstekniker</h4>
+            <p>Yrkeshögskoleutbildning med fokus på drift, nätverksdesign, säkerhet och automation i moderna företagsmiljöer.</p>
+            <p class="edu__role">Förtroendevald som Ambassadör för klassen.</p>
+            <p style="color: var(--muted); font-size: 0.9rem; margin-top: 8px;"><strong style="color: var(--text);">Certifikat & kurser (LinkedIn Learning, utfärdade okt 2025):</strong> Cisco CCNA (200-301) Cert Prep: Network Fundamentals · Python for Non-Programmers.</p>
+          </div>
+        </div>
+        <div class="resume__col">
+          <h3 class="resume__h"><em>ZTechME</em></h3>
+          <div class="edu card" data-reveal>
+            <p class="timeline__meta">Egen verksamhet · ztechme.se</p>
+            <h4>ZTechME</h4>
+            <p>Genom min egen verksamhet bygger jag webbplatser, nätverks- och automatiseringslösningar samt egna studieappar. Det håller mig skarp och ger mig frihet att lära nytt.</p>
+            <ul class="service__tags" style="margin-top: 12px;">
+              <li>Webbplatser</li><li>Nätverkslösningar</li><li>Automatisering</li><li>Studieappar</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- KONTAKT -->
+  <section class="contact section" id="kontakt">
+    <div class="container">
+      <div class="contact__panel card" data-reveal>
+        <p class="eyebrow">Kontakt</p>
+        <h2 class="section__title">Hör av dig — <em>jag svarar snabbt</em>.</h2>
+        <p class="contact__value" style="margin: 16px 0 8px;">Nätverkstekniker & Automation – Tillgänglig för anställning och konsultuppdrag</p>
+        <div class="contact__grid">
+          <a class="contact__item" href="mailto:mattias.englund1992@gmail.com" data-magnetic>
+            <svg class="contact__icon" viewBox="0 0 24 24" width="22" height="22" fill="currentColor" aria-hidden="true"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4-8 5-8-5V6l8 5 8-5v2z"/></svg>
+            <span class="contact__value">Mattias.Englund1992@gmail.com</span>
+            <span class="contact__desc">Frågor, roller och projekt</span>
+          </a>
+          <a class="contact__item" href="tel:0704294804" data-magnetic>
+            <svg class="contact__icon" viewBox="0 0 24 24" width="22" height="22" fill="currentColor" aria-hidden="true"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+            <span class="contact__value">070-429 48 04</span>
+            <span class="contact__desc">Ring eller sms</span>
+          </a>
+          <a class="contact__item" href="https://linkedin.com/in/mattias-englund-61129331a" target="_blank" rel="noopener" data-magnetic>
+            <svg class="contact__icon" viewBox="0 0 24 24" width="22" height="22" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.47-.9 1.63-1.85 3.36-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.72v20.55C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.72V1.72C24 .77 23.2 0 22.22 0z"/></svg>
+            <span class="contact__value">Mattias Englund</span>
+            <span class="contact__desc">LinkedIn</span>
+          </a>
+          <a class="contact__item" href="https://github.com/MEnglund92" target="_blank" rel="noopener" data-magnetic>
+            <svg class="contact__icon" viewBox="0 0 24 24" width="22" height="22" fill="currentColor" aria-hidden="true"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
+            <span class="contact__value">GitHub</span>
+            <span class="contact__desc">MEnglund92</span>
+          </a>
+          <a class="contact__item" href="https://ztechme.se" target="_blank" rel="noopener" data-magnetic>
+            <svg class="contact__icon" viewBox="0 0 24 24" width="22" height="22" fill="currentColor" aria-hidden="true"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/></svg>
+            <span class="contact__value">ztechme.se</span>
+            <span class="contact__desc">Mitt företag & webbplats</span>
+          </a>
+        </div>
+        <a class="btn btn--primary btn--block" href="mailto:mattias.englund1992@gmail.com" data-magnetic><span>Maila Mattias Englund</span></a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="container footer__inner">
+    <p class="footer__brand"><span class="nav__wordmark">Mattias <span class="wm-gold">Englund</span></span></p>
+    <nav class="footer__nav" aria-label="Sidfot">
+      <a href="#om-mig">Om mig</a>
+      <a href="#kompetens">Kompetens</a>
+      <a href="#projekt">Projekt</a>
+      <a href="#arbete">Arbete</a>
+      <a href="#kontakt">Kontakt</a>
+    </nav>
+    <p class="footer__note">© <span data-year>2026</span> Mattias Englund · Nätverkstekniker &amp; Automation</p>
+  </div>
+</footer>
+
+<script>
+(function () {
+  "use strict";
+
+  var prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  var finePointer = window.matchMedia("(hover: hover) and (pointer: fine)").matches;
+
+  /* ---------- Cursor: pulsing core ---------- */
+  var cursor = document.querySelector(".cursor");
+  if (cursor && finePointer && !prefersReducedMotion) {
+    document.documentElement.classList.add("has-cursor");
+    var core = cursor.querySelector(".cursor__core");
+    var targetX = window.innerWidth / 2, targetY = window.innerHeight / 2;
+    var curX = targetX, curY = targetY, active = false, lastPulse = 0;
+
+    document.addEventListener("mousemove", function (e) {
+      targetX = e.clientX; targetY = e.clientY;
+      if (!active) { active = true; curX = targetX; curY = targetY; }
+    }, { passive: true });
+
+    document.querySelectorAll("a, button, .service, .work__item, .contact__item, .nav__toggle").forEach(function (el) {
+      el.addEventListener("mouseenter", function () { cursor.classList.add("is-active"); });
+      el.addEventListener("mouseleave", function () { cursor.classList.remove("is-active"); });
+    });
+
+    function emitPulse(scale) {
+      var pulse = document.createElement("span");
+      pulse.className = "cursor__pulse";
+      cursor.appendChild(pulse);
+      requestAnimationFrame(function () {
+        pulse.style.transition = "transform 1.1s ease-out, opacity 1.1s ease-out";
+        pulse.style.transform = "translate(-50%, -50%) scale(" + scale + ")";
+        pulse.style.opacity = "0";
+      });
+      setTimeout(function () { if (pulse.parentNode) pulse.parentNode.removeChild(pulse); }, 1150);
+      while (cursor.children.length > 7) cursor.removeChild(cursor.children[1]);
+    }
+
+    (function loop(now) {
+      if (active) {
+        curX += (targetX - curX) * 0.18;
+        curY += (targetY - curY) * 0.18;
+        cursor.style.transform = "translate(" + curX + "px, " + curY + "px)";
+        var hovered = cursor.classList.contains("is-active");
+        if (now - lastPulse > (hovered ? 520 : 900)) { lastPulse = now; emitPulse(hovered ? 6 : 4); }
+      }
+      requestAnimationFrame(loop);
+    })(0);
+  }
+
+  /* ---------- Magnetic elements ---------- */
+  var items = document.querySelectorAll("[data-magnetic]");
+  if (finePointer && !prefersReducedMotion) {
+    items.forEach(function (el) {
+      el.addEventListener("mousemove", function (e) {
+        var rect = el.getBoundingClientRect();
+        var relX = e.clientX - (rect.left + rect.width / 2);
+        var relY = e.clientY - (rect.top + rect.height / 2);
+        var k = el.classList.contains("btn") && !el.classList.contains("btn--block") ? 0.28 : 0.07;
+        el.style.transform = "translate(" + relX * k + "px, " + relY * k + "px)";
+      });
+      el.addEventListener("mouseleave", function () { el.style.transform = "translate(0, 0)"; });
+    });
+  }
+
+  /* ---------- Reading progress rail ---------- */
+  var bar = document.querySelector(".progress-rail__bar");
+  if (bar) {
+    var ticking = false;
+    function onScroll() {
+      if (ticking) return;
+      ticking = true;
+      requestAnimationFrame(function () {
+        var doc = document.documentElement;
+        var max = doc.scrollHeight - window.innerHeight;
+        bar.style.width = (max > 0 ? (window.scrollY / max) * 100 : 0) + "%";
+        ticking = false;
+      });
+    }
+    window.addEventListener("scroll", onScroll, { passive: true });
+    onScroll();
+  }
+
+  /* ---------- Nav state + active link ---------- */
+  var nav = document.getElementById("nav");
+  var sections = document.querySelectorAll("main section[id]");
+  var navLinks = document.querySelectorAll(".nav__links a[data-nav]");
+  var scrollTicking = false;
+
+  function onNavScroll() {
+    if (scrollTicking) return;
+    scrollTicking = true;
+    requestAnimationFrame(function () {
+      if (window.scrollY > 8) nav.classList.add("is-scrolled");
+      else nav.classList.remove("is-scrolled");
+
+      var pos = window.scrollY + 120, currentId = "top";
+      sections.forEach(function (s) { if (pos >= s.offsetTop) currentId = s.id; });
+      navLinks.forEach(function (a) {
+        a.classList.toggle("is-active", a.getAttribute("href") === "#" + currentId);
+      });
+      scrollTicking = false;
+    });
+  }
+  window.addEventListener("scroll", onNavScroll, { passive: true });
+  onNavScroll();
+
+  /* ---------- Section reveals ---------- */
+  var revealEls = document.querySelectorAll("[data-reveal]");
+  if ("IntersectionObserver" in window) {
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) { entry.target.classList.add("is-visible"); io.unobserve(entry.target); }
+      });
+    }, { threshold: 0.12, rootMargin: "0px 0px -8% 0px" });
+    revealEls.forEach(function (el) { io.observe(el); });
+  } else {
+    revealEls.forEach(function (el) { el.classList.add("is-visible"); });
+  }
+
+  /* ---------- Mobile nav ---------- */
+  var toggle = document.querySelector(".nav__toggle");
+  var mobileMenu = document.getElementById("mobile-menu");
+  function setMenu(open) {
+    if (toggle) { toggle.setAttribute("aria-expanded", String(open)); toggle.classList.toggle("is-active", open); }
+    if (mobileMenu) mobileMenu.classList.toggle("is-open", open);
+    document.body.classList.toggle("is-menu-open", open);
+  }
+  if (toggle && mobileMenu) {
+    toggle.addEventListener("click", function () { setMenu(toggle.getAttribute("aria-expanded") !== "true"); });
+    mobileMenu.addEventListener("click", function (e) { if (e.target === mobileMenu) setMenu(false); });
+    var closeBtn = mobileMenu.querySelector(".nav__close");
+    if (closeBtn) closeBtn.addEventListener("click", function () { setMenu(false); });
+  }
+
+  /* ---------- Smooth anchor scroll with offset ---------- */
+  document.querySelectorAll('a[href^="#"]').forEach(function (a) {
+    a.addEventListener("click", function (e) {
+      var id = a.getAttribute("href");
+      if (id.length < 2) return;
+      var target = document.querySelector(id);
+      if (!target) return;
+      e.preventDefault();
+      var top = target.getBoundingClientRect().top + window.scrollY - 76;
+      window.scrollTo({ top: top, behavior: prefersReducedMotion ? "auto" : "smooth" });
+      setMenu(false);
+    });
+  });
+
+  /* ---------- Footer year ---------- */
+  var year = document.querySelector("[data-year]");
+  if (year) year.textContent = String(new Date().getFullYear());
+})();
+</script>
 </body>
 </html>
