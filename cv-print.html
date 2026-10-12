@@ -24,7 +24,7 @@
             margin: 0;
             padding: 20px;
             font-size: 8.4pt;
-            line-height: 1.26;
+            line-height: 1.2;
             display: flex;
             justify-content: center;
         }
@@ -46,7 +46,7 @@
             text-align: center;
             background: var(--accent-soft);
             border-bottom: 4px solid var(--accent);
-            padding: 9mm 12mm 7mm 12mm;
+            padding: 6mm 12mm 5mm 12mm;
         }
         .name-block h1 {
             font-size: 26pt; font-weight: 900; color: var(--text-dark);
@@ -74,18 +74,18 @@
 
         .side {
             border-right: 1px solid var(--border);
-            padding: 9mm 9mm;
+            padding: 6mm 8mm;
             display: flex;
             flex-direction: column;
-            gap: 19px;
+            gap: 13px;
             background: #fcfdfe;
         }
 
         .main {
-            padding: 9mm 11mm;
+            padding: 6mm 10mm;
             display: flex;
             flex-direction: column;
-            gap: 19px;
+            gap: 13px;
         }
 
         /* Section number markers */
@@ -93,24 +93,26 @@
             display: flex; align-items: center; gap: 8px;
             font-size: 10pt; font-weight: 800; color: var(--text-dark);
             text-transform: uppercase; letter-spacing: 1.5px;
-            margin: 0 0 12px 0;
+            margin: 0 0 8px 0;
         }
         .sec-title .line { flex: 1; height: 2px; background: var(--accent); }
 
-        .contact-list { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 11px; }
+        .contact-list { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 8px; }
         .contact-list li { display: flex; align-items: center; gap: 9px; font-size: 8.3pt; }
         .contact-list i { color: var(--accent-strong); width: 14px; text-align: center; }
 
         .sidebar-title { font-weight: 700; font-size: 9pt; color: var(--text-dark); margin-bottom: 4px; }
         .sidebar-text { font-size: 8.4pt; color: var(--text-light); }
-        .sidebar-block { margin-bottom: 13px; }
+        .sidebar-block { margin-bottom: 9px; }
         .sidebar-block:last-child { margin-bottom: 0; }
-        .education-item { margin-bottom: 13px; }
+        .education-item { margin-bottom: 9px; }
         .education-date { font-size: 7.8pt; color: var(--accent-strong); font-weight: 700; letter-spacing: 0.5px; text-transform: uppercase; display: block; margin-bottom: 4px; }
+        .cert-mini { font-size: 6.5pt; line-height: 1.35; color: var(--text-light); margin-top: 3px; }
+        .cert-mini strong { color: var(--text-dark); font-weight: 700; }
 
         .profile-text { margin: 0; }
 
-        .experience-item { margin-bottom: 15px; }
+        .experience-item { margin-bottom: 10px; }
         .experience-item:last-child { margin-bottom: 0; }
         .exp-header { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 4px; gap: 8px; }
         .exp-title { font-weight: 700; font-size: 10.2pt; color: var(--text-dark); }
@@ -118,9 +120,9 @@
         .exp-date { font-size: 8.2pt; color: var(--text-light); font-weight: 600; white-space: nowrap; }
         .experience-item p { margin: 4px 0 5px 0; }
         ul.exp-list { margin: 4px 0 0; padding-left: 14px; }
-        ul.exp-list li { margin-bottom: 4px; }
+        ul.exp-list li { margin-bottom: 2px; }
 
-        .proj-item { display: flex; gap: 10px; align-items: baseline; margin-bottom: 13px; }
+        .proj-item { display: flex; gap: 10px; align-items: baseline; margin-bottom: 8px; }
         .proj-item:last-child { margin-bottom: 0; }
         .proj-body .proj-name { font-weight: 700; font-size: 9.6pt; color: var(--text-dark); }
         .proj-body p { margin: 1px 0 0; }
@@ -151,7 +153,6 @@
                         <li><i class="fas fa-envelope"></i> Mattias.Englund1992@gmail.com</li>
                         <li><i class="fas fa-phone"></i> 070-429 48 04</li>
                         <li><i class="fab fa-linkedin-in"></i> /in/mattias-englund-61129331a</li>
-                        <li><i class="fas fa-globe"></i> ztechme.se</li>
                         <li><i class="fas fa-map-marker-alt"></i> Borås</li>
                     </ul>
                 </div>
@@ -181,19 +182,14 @@
                     <div class="education-item">
                         <span class="education-date">Sep 2025 – Juni 2026</span>
                         <div class="sidebar-title">Nätverkstekniker</div>
-                        <div class="sidebar-text">JENSEN Yrkeshögskola<br>Examen juni 2026.</div>
+                        <div class="sidebar-text">JENSEN Yrkeshögskola<br>Examinerad nätverkstekniker, juni 2026.</div>
                     </div>
                     <div class="education-item" style="margin-bottom:0;">
-                        <span class="education-date">Utfärdade Okt 2025</span>
+                        <span class="education-date">Utfärdade Okt 2025 – Sep 2026</span>
                         <div class="sidebar-title">Cisco CCNA Prep, IP & Python</div>
                         <div class="sidebar-text">LinkedIn Learning</div>
+                        <div class="cert-mini"><strong>Övriga certifikat:</strong> Cisco Networking Foundations: IP Addressing · Switching and Routing · Networking Foundations: Networking Basics · IP Addressing · Learning Subnetting · Learning IP Addressing · Learning DNS · Cisco Networking Academy: Networking Basics.</div>
                     </div>
-                </div>
-
-                <div>
-                    <div class="sec-title">ZTechME<span class="line"></span></div>
-                    <div class="sidebar-title">Egen verksamhet – ztechme.se</div>
-                    <div class="sidebar-text">Genom min egen verksamhet bygger jag webbplatser, nätverks- och automatiseringslösningar samt egna studieappar. Det håller mig skarp och ger mig frihet att lära nytt.</div>
                 </div>
 
                 <div>
@@ -209,7 +205,7 @@
                 <section>
                     <div class="sec-title">Profil<span class="line"></span></div>
                     <p class="profile-text">
-                        Från Team Manager till Nätverkstekniker. Efter sex år inom operativt ledarskap har jag nu tagit examen som nätverkstekniker och kombinerar min erfarenhet av drift och struktur med kompetens inom Cisco, Azure och nätverksautomation. Genom mitt företag ZTechME (ztechme.se) utvecklar jag även egna appar och verktyg. Min filosofi är enkel. Tillförlitliga system är designade, inte önskade. Tydlig dokumentation, ärlig övervakning och säkerhet inbyggt från start — det är den standard jag håller mitt arbete till.
+                        Från Team Manager till Nätverkstekniker. Efter sex år inom operativt ledarskap har jag nu tagit examen som nätverkstekniker och kombinerar min erfarenhet av drift och struktur med kompetens inom Cisco, Azure och nätverksautomation. Min filosofi är enkel. Tillförlitliga system är designade, inte önskade. Tydlig dokumentation, ärlig övervakning och säkerhet inbyggt från start — det är den standard jag håller mitt arbete till.
                     </p>
                 </section>
 
@@ -233,14 +229,16 @@
 
                     <div class="experience-item">
                         <div class="exp-header">
-                            <span class="exp-title">Team Area Manager</span>
+                            <span class="exp-title">Area Manager</span>
                             <span class="exp-date">Juli 2019 – Sep 2025</span>
                         </div>
                         <div class="exp-company">CEVA Logistics</div>
-                        <p>Ansvarig för den dagliga operativa driften på ett av företagets logistikcenter med fokus på effektivitet och teamutveckling.</p>
+                        <p>Ansvarig för daglig operativ drift på ett av företagets logistikcenter, med fokus på ständiga förbättringar, teamledning och effektivitet.</p>
                         <ul class="exp-list">
-                            <li>Agerade Superuser för lagersystem (WMS).</li>
-                            <li>Hanterade avvikelser och incidenter under tidspress i det dagliga flödet.</li>
+                            <li>Ledde och utvecklade teamet genom daglig styrning, resursfördelning och coachning.</li>
+                            <li>Drev ständiga förbättringsarbeten som minskade felkällor i det dagliga flödet.</li>
+                            <li>Agerade Superuser för lagersystem (WMS) och ansvarade för IT-relaterad administration.</li>
+                            <li>Hanterade avvikelser och incidenter under tidspress med fokus på snabb återställning.</li>
                         </ul>
                     </div>
 
